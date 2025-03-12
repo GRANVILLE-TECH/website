@@ -7,6 +7,7 @@ import glen_img from "../assets/team/glen_img.jpg";
 import { g, u } from "framer-motion/client";
 import utk from "../assets/team/utkarshpal_img.jpeg";
 import ashish from "../assets/team/ashish_img.jpeg";
+import Ramkishore from "../assets/team/Ramkishor_img.jpg";
 
 const teamMembers = [
   {
@@ -38,11 +39,11 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/mohd-mursaleen-b2870b281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
-    name: "Ashish Gusain",
+    name: "Ramkishore M",
     role: "Software Engineer",
     bio: " Engineers designs, builds, tests, and maintains software solutions, ensuring functionality & scalability.",
     image: ashish,
-    linkedin: "https://www.linkedin.com/in/ashish-gusain-aa279a280/",
+    linkedin: "https://www.linkedin.com/in/ramkishore-m/",
   },
 ];
 
