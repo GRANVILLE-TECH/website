@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Red+Rose:wght@300..700&family=Varela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  /* Primary Colors */
+  --color-primary-dark: #1A1A2E;
+  --color-accent: #E94560;
+  --color-secondary-accent: #0F3460;
+
+  /* Neutral Colors */
+  --color-background: #121212;
+  --color-surface: #1E1E1E;
+  --color-border: #333333;
+
+  /* Text Colors */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B0B0B0;
+  --color-text-disabled: #666666;
+
+  /* Highlight Colors */
+  --color-success: #4CAF50;
+  --color-warning: #FFC107;
+  --color-error: #FF5252;
+
+  /* Gradients */
+  --gradient-button: linear-gradient(135deg, #E94560, #0F3460);
+  --gradient-background: linear-gradient(135deg, #1A1A2E, #0F3460);
+}
+::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+
+body{
+  font-family: "Red Rose", serif;
+  padding: 0;
+  margin: 0;
+
+
+}
+
+
+.orbitron-logo {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+.red-rose {
+  font-family: "Red Rose", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
