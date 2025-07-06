@@ -129,7 +129,7 @@ const ContactPage = () => {
             ease: "easeOut",
           }}
         >
-          Get in Touch with Greenville-Tech
+          Get in Touch with Granville-Tech
         </motion.h1>
         <motion.p
           className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl font-medium text-white max-w-3xl"
