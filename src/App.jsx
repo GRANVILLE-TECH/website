@@ -6,6 +6,7 @@ import Innovations from "./pages/innovations";
 import Services from "./pages/services";
 import Partners from "./pages/partners";
 import Team from "./pages/team";
+import Booking from "./pages/booking";
 import ContactUs from "./pages/contact";
 import { AiFillLinkedin } from "react-icons/ai";
 import Loader from "./components/Loader";
@@ -53,6 +54,9 @@ export default function App() {
         </section>
         <section id="team">
           <Team />
+        </section>
+        <section id="booking">
+          <Booking />
         </section>
         <section id="contact">
           <ContactUs />
@@ -114,6 +118,14 @@ export default function App() {
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   Our Team
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#booking"
+                  className="text-silver hover:text-white transition-all duration-300"
+                >
+                  Booking
                 </a>
               </li>
               <li>
