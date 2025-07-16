@@ -3,24 +3,6 @@ import { motion } from "framer-motion";
 import bg_img from "../assets/ai_back.jpeg";
 import Button from "../components/Button";
 
-// Letter-by-letter animation helper function
-const letterByLetter = (text) => {
-  return Array.from(text).map((char, index) => (
-    <motion.span
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.05,
-        ease: "easeOut",
-      }}
-    >
-      {char}
-    </motion.span>
-  ));
-};
-
 export default function Hero() {
   const scrollToInnovations = () => {
     const innovationsSection = document.getElementById("innovations");
@@ -41,14 +23,14 @@ export default function Hero() {
 
       {/* Content Section */}
       <div className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-6 space-y-8">
-        {/* Main Heading with Framer Motion letter-by-letter animation */}
+        {/* Main Heading without individual letter animation */}
         <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-extrabold leading-tight text-white sm:tracking-wider text-center break-words"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          {letterByLetter("Reimagining the future with every innovation")}
+          Reimagining the future with every innovation
         </motion.h1>
 
         {/* Subheading with fade-in and slide-up animation */}
