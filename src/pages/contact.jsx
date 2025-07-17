@@ -99,12 +99,25 @@ const ContactPage = () => {
   };
 
   // Handle dropdown selection
-  const handleServiceSelect = (service) => {
+const handleServiceSelect = (service) => {
     setFormData((prevData) => ({
       ...prevData,
       service,
     }));
     setIsOpen(false);
+  };
+
+  const scheduleConsultation = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/nayebaredominique7/30min",
+      });
+      return;
+    }
+    const bookingSection = document.getElementById("booking");
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -170,6 +183,16 @@ const ContactPage = () => {
         >
           Fill out the form below, and we'll get back to you within 24 hours.
         </motion.p>
+
+        <div className="flex justify-center mt-6">
+          <motion.button
+            onClick={scheduleConsultation}
+            className="px-6 py-3 bg-gray-300 text-black rounded-lg hover:bg-white transition-all duration-300"
+            whileInView={{ opacity: [0, 1], y: [20, 0] }}
+          >
+            Schedule a Consultation
+          </motion.button>
+        </div>
 
         <motion.form
           className="mt-8 space-y-6"
