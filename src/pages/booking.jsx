@@ -13,7 +13,6 @@ const Booking = () => {
 
   return (
     <section
-      id="booking"
       className="bg-gradient-to-b w-full from-black to-[#111111] text-white py-20 px-6"
     >
       <div className="max-w-4xl mx-auto text-center">

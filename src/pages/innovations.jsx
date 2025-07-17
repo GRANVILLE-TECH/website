@@ -381,7 +381,6 @@ export default function Innovations() {
 
   return (
     <section
-      id="innovations"
       className="bg-gradient-to-b from-black via-[#111111] to-[#111111] w-[100%] text-white py-32 px-6"
     >
       <div className="text-center mb-20">
