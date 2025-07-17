@@ -24,6 +24,19 @@ export default function Hero() {
     }
   };
 
+  const scrollToBooking = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/nayebaredominique7/30min",
+      });
+      return;
+    }
+    const bookingSection = document.getElementById("booking");
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       className="relative h-screen w-full bg-cover bg-center"
@@ -75,11 +88,18 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          <Button
-            text="Start Your Journey"
-            className="hover:scale-105 transition-all duration-300 ease-in-out"
-            onClick={scrollToInnovations} 
-          />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              text="Start Your Journey"
+              className="hover:scale-105 transition-all duration-300 ease-in-out"
+              onClick={scrollToInnovations}
+            />
+            <Button
+              text="Schedule a Consultation"
+              className="hover:scale-105 transition-all duration-300 ease-in-out"
+              onClick={scrollToBooking}
+            />
+          </div>
         </motion.div>
       </div>
 
