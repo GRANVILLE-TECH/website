@@ -50,7 +50,6 @@ const teamMembers = [
 export default function Team() {
   return (
     <section
-      id="team"
       className="bg-gradient-to-b w-[100%] from-black to-[#111111] text-silver py-32 px-6 relative overflow-hidden"
     >
       <motion.h2

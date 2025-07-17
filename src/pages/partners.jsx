@@ -19,7 +19,6 @@ export default function Partners() {
 
   return (
     <section
-      id="partners"
       className="bg-gradient-to-b w-[100%] from-black to-[#111111] text-white py-20 px-8 md:pr-20 pr-6  sm:pr-16 relative overflow-hidden"
     >
       <motion.h2
