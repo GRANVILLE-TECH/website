@@ -8,6 +8,7 @@ import Partners from "./pages/partners";
 import Team from "./pages/team";
 import Booking from "./pages/booking";
 import ContactUs from "./pages/contact";
+import { Link } from "react-router-dom";
 import { AiFillLinkedin } from "react-icons/ai";
 import Loader from "./components/Loader";
 import logo from "../src/assets/Logo.svg";
@@ -45,12 +46,30 @@ export default function App() {
         </section>
         <section id="innovations">
           <Innovations />
+          <div className="mt-8 text-center">
+            <Link
+              to="/innovations"
+              className="bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-4 py-2 rounded"
+            >
+              Explore Innovations
+            </Link>
+          </div>
         </section>
         <section id="services">
           <Services />
         </section>
         <section id="partners">
           <Partners />
+        </section>
+        <section id="blog">
+          <div className="py-16 text-center">
+            <Link
+              to="/articles"
+              className="bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-4 py-2 rounded"
+            >
+              Read Articles
+            </Link>
+          </div>
         </section>
         <section id="team">
           <Team />
