@@ -6,6 +6,8 @@ import App from './App.jsx'
 import ArticlesPage from './pages/ArticlesPage.jsx'
 import InnovationsPage from './pages/InnovationsPage.jsx'
 
+// Set up client-side routing
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
