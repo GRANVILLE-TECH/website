@@ -46,14 +46,12 @@ export default function App() {
         </section>
         <section id="innovations">
           <Innovations />
-          <div className="mt-8 text-center">
-            <Link
-              to="/innovations"
-              className="bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-4 py-2 rounded"
-            >
-              Explore Innovations
-            </Link>
-          </div>
+          <Link
+            to="/innovations"
+            className="inline-block mt-4 px-4 py-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-white rounded shadow"
+          >
+            Explore Innovations
+          </Link>
         </section>
         <section id="services">
           <Services />
@@ -61,15 +59,15 @@ export default function App() {
         <section id="partners">
           <Partners />
         </section>
-        <section id="blog">
-          <div className="py-16 text-center">
-            <Link
-              to="/articles"
-              className="bg-gradient-to-r from-yellow-400 to-amber-500 text-white px-4 py-2 rounded"
-            >
-              Read Articles
-            </Link>
-          </div>
+        <section id="articles" className="p-8">
+          <h2 className="text-2xl font-bold mb-2">From Our Blog</h2>
+          <p className="text-gray-600 mb-4">Latest insights, articles, and thought leadership.</p>
+          <Link
+            to="/articles"
+            className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-white rounded shadow"
+          >
+            Read Articles
+          </Link>
         </section>
         <section id="team">
           <Team />
