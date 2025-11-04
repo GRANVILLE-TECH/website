@@ -5,7 +5,6 @@ import About from "./pages/about";
 import Innovations from "./pages/innovations";
 import Services from "./pages/services";
 import Partners from "./pages/partners";
-import Team from "./pages/team";
 import Booking from "./pages/booking";
 import ContactUs from "./pages/contact";
 import { Link } from "react-router-dom";
@@ -69,9 +68,6 @@ export default function App() {
             Read Articles
           </Link>
         </section>
-        <section id="team">
-          <Team />
-        </section>
         <section id="booking">
           <Booking />
         </section>
@@ -127,14 +123,6 @@ export default function App() {
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   Our Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#team"
-                  className="text-silver hover:text-white transition-all duration-300"
-                >
-                  Our Team
                 </a>
               </li>
               <li>
