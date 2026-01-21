@@ -4,7 +4,9 @@ import bg_img from "../assets/ai_back.jpeg";
 import Button from "../components/Button";
 
 // Letter-by-letter animation helper function
-const letterByLetter = (text) =>
+// Note: Wrap the returned array in parentheses to avoid
+// automatic semicolon insertion breaking the implicit return.
+const letterByLetter = (text) => (
   Array.from(text).map((char, index) => (
     <motion.span
       key={index}
@@ -14,7 +16,8 @@ const letterByLetter = (text) =>
     >
       {char}
     </motion.span>
-  ));
+  ))
+);
 
 export default function Hero() {
   const scrollToInnovations = () => {
