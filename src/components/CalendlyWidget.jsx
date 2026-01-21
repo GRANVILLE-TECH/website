@@ -1,28 +1,27 @@
 import React, { useEffect } from 'react';
 
-let calendlyScriptLoaded = false;
-
-const loadCalendlyScript = () => {
-  if (!calendlyScriptLoaded) {
+const CalendlyWidget = ({ url, style }) => {
+  useEffect(() => {
+    // Load Calendly script
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
-    script.id = 'calendly-widget-script';
-    document.body.appendChild(script);
-    calendlyScriptLoaded = true;
-  }
-};
 
-const CalendlyWidget = ({ url, style }) => {
-  useEffect(() => {
-    loadCalendlyScript();
+    // Only append if not already loaded
+    if (!document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]')) {
+      document.body.appendChild(script);
+    }
+
+    return () => {
+      // Cleanup is handled by React
+    };
   }, []);
 
   return (
     <div
       className="calendly-inline-widget"
       data-url={url}
-      style={style}
+      style={{ minWidth: '320px', height: '700px', ...style }}
     />
   );
 };

@@ -16,10 +16,10 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    
+
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); 
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -45,12 +45,6 @@ export default function App() {
         </section>
         <section id="innovations">
           <Innovations />
-          <Link
-            to="/innovations"
-            className="inline-block mt-4 px-4 py-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-white rounded shadow"
-          >
-            Explore Innovations
-          </Link>
         </section>
         <section id="services">
           <Services />
