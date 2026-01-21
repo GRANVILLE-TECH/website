@@ -17,17 +17,17 @@ export default function Nav() {
       const hash = window.location.hash;
 
       if (hash === '#home') {
-        document.title = 'Home - Greenville-tech';
+        document.title = 'Home - Granville-Tech';
       } else if (hash === '#about') {
-        document.title = 'About - Greenville-Tech';
+        document.title = 'About - Granville-Tech';
       } else if (hash === '#innovations') {
-        document.title = 'Innovations - Greenville-Tech';
-      } else if (hash === '#services ') {
-        document.title = 'Services - Greenville-Tech';
-      } else if (hash === '#team') {
-        document.title = 'Team - Greenville-Tech';
+        document.title = 'Innovations - Granville-Tech';
+      } else if (hash === '#services') {
+        document.title = 'Services - Granville-Tech';
       } else if (hash === '#contact') {
-        document.title = 'Contact - Greenville-Tech';
+        document.title = 'Contact - Granville-Tech';
+      } else if (hash === '#booking') {
+        document.title = 'Booking - Granville-Tech';
       } else {
         document.title = 'Granville-Tech'; // Default title
       }
@@ -79,7 +79,7 @@ export default function Nav() {
           staggerChildren: 0.2, // Animates links sequentially
         }}
       >
-        {['Home', 'About', 'Innovations', 'Services', 'Team'].map((item, index) => (
+        {['Home', 'About', 'Innovations', 'Services', 'Booking'].map((item, index) => (
           <motion.li
             key={index}
             initial={{ opacity: 0, y: -15 }}
@@ -145,7 +145,7 @@ export default function Nav() {
         animate={{ opacity: 1 }}
         transition={{ staggerChildren: 0.3 }}
       >
-        {['Home', 'About', 'Innovations', 'Services', 'Team', 'Contact'].map((item, index) => (
+        {['Home', 'About', 'Innovations', 'Services', 'Booking', 'Contact'].map((item, index) => (
           <motion.li
             key={index}
             initial={{ opacity: 0, y: -15 }}

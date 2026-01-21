@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
+import { PlayCircle } from "lucide-react";
 
 // Import your image assets
 import aletu from "../assets/innovations/DALL·E 2024-12-04 19.34.44 - A hopeful vision of Uganda's educational transformation featuring divers (1).webp";
@@ -12,10 +13,12 @@ import timeshift from "../assets/innovations/time shift.jpg";
 
 const innovationInfo = [
   {
-    title: "Adaptive learning for educational transform of Uganda",
+    title: "Adaptive learning for educational transform of Uganda",
     tagline: "Revolutionizing education, one student at a time",
     description:
       "A cloud-based, AI-driven educational platform designed for secondary schools in Uganda. It delivers personalized, mastery-based instruction aligned with local curriculums",
+    videoUrl: "https://player.cloudinary.com/embed/?cloud_name=dggkj1npz&public_id=ALETU__AI_Tutor_for_a_Nation_wmmbbc&profile=cld-default",
+    hasVideo: true,
     ValueProposition: {
       Problem:
         "For secondary schools in Uganda facing challenges with high dropout rates, limited teacher capacity, and low student engagement",
@@ -85,6 +88,8 @@ const innovationInfo = [
     tagline: "Rediscover peace of mind with intelligent surveillance",
     description:
       "An AI-driven surveillance system that transforms hours of CCTV footage into curated daily highlight reels, saving time and enhancing security",
+    videoUrl: null, // Add your Cloudinary video URL here
+    hasVideo: false,
     ValueProposition: {
       Problem:
         "Homeowners and property managers face the tedious task of manually reviewing hours of CCTV footage to monitor their homes or properties Conventional systems lack intelligence to identify and summarize significant activities, making surveillance inefficient and time-consuming",
@@ -155,6 +160,8 @@ const innovationInfo = [
     tagline: "Giving voice to the unspoken",
     description:
       "An AI-powered platform that converts sign language into spoken words in real-time using advanced vision processing models",
+    videoUrl: null, // Add your Cloudinary video URL here
+    hasVideo: false,
     ValueProposition: {
       Problem:
         "Individuals who rely on sign language face barriers in verbal communication, especially in professional, academic, and public settings",
@@ -218,6 +225,8 @@ const innovationInfo = [
     tagline: "Your voice, carried in the palm of your hand",
     description:
       "A wearable device that translates sign language into speech on the go, enhancing mobile communication.",
+    videoUrl: null, // Add your Cloudinary video URL here
+    hasVideo: false,
     ValueProposition: {
       Problem:
         "Sign language users need a portable, always-available solution for seamless communication in dynamic, on-the-go environments.",
@@ -281,6 +290,8 @@ const innovationInfo = [
     tagline: "Trade like the masters without years of study",
     description:
       "An AI-powered trading platform that mirrors strategies of seasoned mentors to assist traders in real-time.",
+    videoUrl: null, // Add your Cloudinary video URL here
+    hasVideo: false,
     ValueProposition: {
       Problem:
         "Aspiring and intermediate traders often lack the time, expertise, or confidence to make informed trading decisions.",
@@ -371,8 +382,14 @@ export default function Innovations() {
     setCurrentPage(1);
   };
 
+  const getTotalPages = () => {
+    // If innovation has video, add 1 extra page
+    return activeInnovation?.hasVideo ? 4 : 3;
+  };
+
   const handleNextPage = () => {
-    if (currentPage < 3) setCurrentPage(currentPage + 1);
+    const totalPages = getTotalPages();
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
   const handlePrevPage = () => {
@@ -381,7 +398,6 @@ export default function Innovations() {
 
   return (
     <section
-      id="innovations"
       className="bg-gradient-to-b from-black via-[#111111] to-[#111111] w-[100%] text-white py-32 px-6"
     >
       <div className="text-center mb-20">
@@ -408,7 +424,7 @@ export default function Innovations() {
         {innovations.map((innovation, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center bg-gradient-to-b from-[#1e1e1e] to-black rounded-xl cursor-pointer transform"
+            className="flex flex-col items-center bg-gradient-to-b from-[#1e1e1e] to-black rounded-xl cursor-pointer transform relative"
             onClick={() => {
               setActiveInnovation(innovation);
               setCurrentPage(1);
@@ -431,13 +447,24 @@ export default function Innovations() {
               ease: "easeInOut",
             }}
           >
-            <div className="relative overflow-hidden rounded-lg mb-4 w-full h-64">
-              <motion.img
-                src={innovation.image}
-                alt={innovation.title}
-                loading="lazy"
-                className="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out transform"
-              />
+            <div className="relative overflow-hidden rounded-lg mb-4 w-full h-64 bg-gradient-to-br from-[#1a1a1a] to-black flex items-center justify-center">
+              {/* Video Badge Overlay */}
+              {innovation.hasVideo && (
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center hover:bg-black/60 transition-all duration-300 cursor-pointer">
+                  <div className="flex flex-col items-center gap-2">
+                    <PlayCircle className="w-16 h-16 text-white" />
+                    <span className="text-white font-semibold text-sm">Watch Demo</span>
+                  </div>
+                </div>
+              )}
+              
+              {/* Video Available Badge */}
+              {innovation.hasVideo && (
+                <div className="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                  <PlayCircle className="w-3 h-3" />
+                  VIDEO
+                </div>
+              )}
             </div>
 
             <div className="text-center px-4 py-2">
@@ -483,6 +510,35 @@ export default function Innovations() {
                 }}
                 id="innovations-detail"
               >
+                {/* Video Page - Only show if video exists */}
+                {activeInnovation.hasVideo && (
+                  <div className="w-full flex-shrink-0 p-4 space-y-8">
+                    <h3 className="text-3xl font-semibold text-white text-center mb-6">
+                      {activeInnovation.title} - Demo Video
+                    </h3>
+                    
+                    <div className="aspect-video w-full bg-black rounded-lg overflow-hidden">
+                      <iframe
+                        src={activeInnovation.videoUrl}
+                        className="w-full h-full"
+                        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                        allowFullScreen
+                        frameBorder="0"
+                        title={`${activeInnovation.title} Demo Video`}
+                      />
+                    </div>
+                    
+                    <div className="text-center mt-6">
+                      <p className="text-lg text-gray-300 mb-4">
+                        {activeInnovation.description}
+                      </p>
+                      <p className="text-sm text-gray-400 italic">
+                        &ldquo;{activeInnovation.tagline}&rdquo;
+                      </p>
+                    </div>
+                  </div>
+                )}
+                
                 {/* Key Components Section */}
                 <div className="w-full flex-shrink-0 p-4 space-y-8">
                   <div>
@@ -602,20 +658,26 @@ export default function Innovations() {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="absolute bottom-8 mt-4 left-1/2 transform -translate-x-1/2 flex justify-between space-x-4">
+            <div className="absolute bottom-8 mt-4 left-1/2 transform -translate-x-1/2 flex justify-between items-center space-x-4">
               <button
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
                 aria-label="Previous Page"
-                className="bg-[white] text-black px-4 py-2 rounded-lg shadow hover:border border border-transparent hover:border-black transition-all"
+                className="bg-[white] text-black px-4 py-2 rounded-lg shadow hover:border border border-transparent hover:border-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <MdKeyboardDoubleArrowLeft className="text-lg" />
               </button>
+              
+              {/* Page Indicator */}
+              <span className="text-white text-sm">
+                {currentPage} / {getTotalPages()}
+              </span>
+              
               <button
                 onClick={handleNextPage}
-                disabled={currentPage === 3}
+                disabled={currentPage === getTotalPages()}
                 aria-label="Next Page"
-                className="bg-[white] text-black px-4 py-2 rounded-lg shadow hover:border border border-transparent hover:border-black transition-all"
+                className="bg-[white] text-black px-4 py-2 rounded-lg shadow hover:border border border-transparent hover:border-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <MdKeyboardDoubleArrowRight className="text-lg" />
               </button>
