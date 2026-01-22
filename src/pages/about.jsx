@@ -1,10 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import oneness from "../assets/values/oneness.webp";
-import excellence from "../assets/values/excellence.webp";
-import innovation from "../assets/values/innovation.webp";
-import legacy from "../assets/values/legacy.webp";
-import creativity from "../assets/values/creativity.webp";
+// Images now imported within the component
+import InteractiveSelector from "../components/InteractiveSelector";
 
 export default function About() {
   return (
@@ -44,7 +41,7 @@ export default function About() {
         </motion.p>
       </div>
 
-      
+
 
       {/* Core Values Heading */}
       <motion.h3
@@ -57,121 +54,9 @@ export default function About() {
       </motion.h3>
 
       {/* Core Values Grid */}
-      <div className="flex flex-wrap justify-center gap-12 lg:gap-16 z-20">
-        {/* Core Value 1 - Oneness */}
-        <motion.div
-          className="flex flex-col items-center justify-between w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33%-2rem)] lg:w-[calc(33%-2rem)] transform transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-xl overflow-hidden border-2 border-transparent  bg-[#111111]"
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-          <motion.img
-            src={oneness}
-            alt="Oneness"
-            className="w-full h-[250px] object-cover rounded-t-lg shadow-md transition-all duration-300"
-          />
-          <div className="p-6 flex flex-col items-center text-center">
-            <h4 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              Oneness
-            </h4>
-            <p className="text-base sm:text-lg text-silver">
-              Collaboration is key to success. We believe in unity, combining
-              diverse minds to achieve extraordinary results
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Core Value 2 - Innovation */}
-        <motion.div
-          className="flex flex-col items-center justify-between w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33%-2rem)] lg:w-[calc(33%-2rem)] transform transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-xl overflow-hidden border-2 border-transparent  bg-[#111111]"
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-        >
-          <motion.img
-            src={innovation}
-            alt="Innovation"
-            className="w-full h-[250px] object-cover rounded-t-lg shadow-md transition-all duration-300"
-          />
-          <div className="p-6 flex flex-col items-center text-center">
-            <h4 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              Innovation
-            </h4>
-            <p className="text-base sm:text-lg text-silver">
-              We challenge the norm, pushing boundaries with innovative
-              solutions that shape the future of technology
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Core Value 3 - Legacy */}
-        <motion.div
-          className="flex flex-col items-center justify-between w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33%-2rem)] lg:w-[calc(33%-2rem)] transform transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-xl overflow-hidden border-2 border-transparent  bg-[#111111]"
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
-        >
-          <motion.img
-            src={legacy}
-            alt="Legacy"
-            className="w-full h-[250px] object-cover rounded-t-lg shadow-md transition-all duration-300"
-          />
-          <div className="p-6 flex flex-col items-center text-center">
-            <h4 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              Legacy
-            </h4>
-            <p className="text-base sm:text-lg text-silver">
-              Our efforts are geared towards leaving a lasting impact on
-              history, shaping the future for generations to come
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Core Value 4 - Creativity */}
-        <motion.div
-          className="flex flex-col items-center justify-between w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33%-2rem)] lg:w-[calc(33%-2rem)] transform transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-xl overflow-hidden border-2 border-transparent  bg-[#111111]"
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.9 }}
-        >
-          <motion.img
-            src={creativity}
-            alt="Creativity"
-            className="w-full h-[250px] object-cover rounded-t-lg shadow-md transition-all duration-300"
-          />
-          <div className="p-6 flex flex-col items-center text-center">
-            <h4 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              Creativity
-            </h4>
-            <p className="text-base sm:text-lg text-silver">
-              Embracing curiosity, we encourage thinking beyond the present to
-              discover new horizons
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Core Value 5 - Excellence */}
-        <motion.div
-          className="flex flex-col items-center justify-between w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33%-2rem)] lg:w-[calc(33%-2rem)] transform transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-xl overflow-hidden border-2 border-transparent  bg-[#111111]"
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 1.2 }}
-        >
-          <motion.img
-            src={excellence}
-            alt="Excellence"
-            className="w-full h-[250px] object-cover rounded-t-lg shadow-md transition-all duration-300"
-          />
-          <div className="p-6 flex flex-col items-center text-center">
-            <h4 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              Excellence
-            </h4>
-            <p className="text-base sm:text-lg text-silver">
-              We hold ourselves to the highest standards, continually striving
-              for excellence in every aspect of our work
-            </p>
-          </div>
-        </motion.div>
+      {/* Core Values Grid replaced by InteractiveSelector */}
+      <div className="z-20 w-full mb-20">
+        <InteractiveSelector />
       </div>
 
       {/* Final Paragraph */}
