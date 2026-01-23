@@ -87,7 +87,7 @@ const innovationInfo = [
   {
     title: "TimeSift",
     tagline: "Rediscover peace of mind with intelligent surveillance",
-    category: "Surveillance",
+    category: "Security",
     description:
       "An AI-driven surveillance system that transforms hours of CCTV footage into curated daily highlight reels, saving time and enhancing security",
     videoUrl: null, // Add your Cloudinary video URL here
