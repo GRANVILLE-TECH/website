@@ -54,7 +54,7 @@ export default function App() {
         </section>
         <section id="articles" className="p-8">
           <h2 className="text-2xl font-bold mb-2">From Our Blog</h2>
-          <p className="text-gray-600 mb-4">Latest insights, articles, and thought leadership.</p>
+          <p className="text-gray-600 mb-4">Latest insights, articles.</p>
           <Link
             to="/articles"
             className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-white rounded shadow"
