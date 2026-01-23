@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaHandshake, FaLightbulb, FaHistory, FaPaintBrush, FaMedal } from 'react-icons/fa';
-import oneness from '../assets/values/oneness.webp';
+import oneness from '../assets/values/Network.webp';
 import excellence from '../assets/values/excellence.webp';
 import innovation from '../assets/values/innovation.webp';
 import legacy from '../assets/values/legacy.webp';
@@ -13,7 +13,7 @@ const InteractiveSelector = () => {
 
     const options = [
         {
-            title: "Oneness",
+            title: "Network",
             description: "Collaboration is key to success. We believe in unity.",
             image: oneness,
             icon: <FaHandshake size={24} className="text-white" />
