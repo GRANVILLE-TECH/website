@@ -1,13 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 import partner1 from "../assets/partners/cerfodes.webp";
-
+import partner2 from "../assets/partners/GAIMESVG.svg";
 export default function Partners() {
   const partners = [
     {
       name: "CERFODES",
       image: partner1,
       url: "https://cerfodes.com/",
+    },
+    {
+      name: "GAIME Conference",
+      image: partner2,
+      url: "https://www.gaimeconference.ai/en/partners",
     },
   ];
 
@@ -25,10 +30,10 @@ export default function Partners() {
         }}
         className="text-4xl sm:text-5xl lg:text-5xl text-center font-extrabold mb-12 text-white"
       >
-        Our Trusted Partner
+        Our Trusted Partners
       </motion.h2>
 
-      <div className="flex justify-center">
+      <div className="flex flex-wrap justify-center gap-12 items-center">
         {partners.map((partner, index) => (
           <motion.a
             key={index}
@@ -45,7 +50,7 @@ export default function Partners() {
               <img
                 src={partner.image}
                 alt={partner.name}
-                className="w-[300px] sm:w-[450px] md:w-[550px] lg:w-[600px] h-auto mx-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto mx-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                 loading="lazy"
               />
             </div>
