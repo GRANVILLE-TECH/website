@@ -71,7 +71,7 @@ export default function About() {
           stiffness: 80,
         }}
       >
-        At Granville-Tech, we're not just creating products—we're crafting
+        At Granville-Tech, we're not just creating products we're crafting
         experiences that resonate, inspire, and transform. Each innovation is a
         testament to our dedication to pushing boundaries and redefining
         possibilities. We invite you to be a part of this exciting journey, to
