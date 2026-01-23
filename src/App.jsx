@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { AiFillLinkedin } from "react-icons/ai";
 import Loader from "./components/Loader";
 import logo from "../src/assets/Logo.svg";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -170,6 +171,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 }
