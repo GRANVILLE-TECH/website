@@ -30,7 +30,7 @@ export default function Partners() {
         }}
         className="text-4xl sm:text-5xl lg:text-5xl text-center font-extrabold mb-12 text-white"
       >
-        Our Trusted Partners
+        OUR CLIENTS
       </motion.h2>
 
       <div className="flex flex-wrap justify-center gap-12 items-center">
