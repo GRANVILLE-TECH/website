@@ -1,17 +1,20 @@
-import React from "react";
 import { motion } from "framer-motion";
+import { LogoCarousel } from "../components/LogoCarousel";
 import partner1 from "../assets/partners/cerfodes.webp";
 import partner2 from "../assets/partners/GAIMESVG.svg";
+
 export default function Partners() {
   const partners = [
     {
+      id: 1,
       name: "CERFODES",
-      image: partner1,
+      src: partner1,
       url: "https://cerfodes.com/",
     },
     {
+      id: 2,
       name: "GAIME Conference",
-      image: partner2,
+      src: partner2,
       url: "https://www.gaimeconference.ai/en/partners",
     },
   ];
@@ -33,29 +36,8 @@ export default function Partners() {
         OUR CLIENTS
       </motion.h2>
 
-      <div className="flex flex-wrap justify-center gap-12 items-center">
-        {partners.map((partner, index) => (
-          <motion.a
-            key={index}
-            href={partner.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="bg-transparent p-8 rounded-lg transition-all duration-300">
-              <img
-                src={partner.image}
-                alt={partner.name}
-                className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto mx-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                loading="lazy"
-              />
-            </div>
-          </motion.a>
-        ))}
+      <div className="w-full">
+        <LogoCarousel logos={partners} columns={2} />
       </div>
     </section>
   );
