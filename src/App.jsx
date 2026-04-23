@@ -3,6 +3,7 @@ import Nav from "./components/navbar";
 import Hero from "./pages/hero";
 import About from "./pages/about";
 import Innovations from "./pages/innovations";
+import VideoShowcase from "./pages/VideoShowcase";
 import Services from "./pages/services";
 import Partners from "./pages/partners";
 import Booking from "./pages/booking";
@@ -43,6 +44,9 @@ export default function App() {
         </section>
         <section id="about">
           <About />
+        </section>
+        <section id="video-showcase">
+          <VideoShowcase />
         </section>
         <section id="innovations">
           <Innovations />
