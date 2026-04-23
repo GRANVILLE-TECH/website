@@ -20,8 +20,8 @@ export default function VideoShowcase() {
             See Our Vision in Action
           </h2>
           <p className="text-lg sm:text-xl text-silver max-w-2xl mx-auto leading-relaxed">
-            Discover how Granville-Tech is shaping the future through
-            innovation, intelligence, and impact.
+            Discover the intersection of research and technology as we pioneer 
+            intelligent solutions designed to educate and transform industries.
           </p>
         </motion.div>
 
