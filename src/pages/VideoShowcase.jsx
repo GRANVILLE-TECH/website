@@ -17,7 +17,7 @@ export default function VideoShowcase() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4">
-            See Our Vision in Action
+            Vision in Action
           </h2>
           <p className="text-lg sm:text-xl text-silver max-w-2xl mx-auto leading-relaxed">
             Discover the intersection of research and technology as we pioneer 
