@@ -24,7 +24,6 @@ import dharrenImg from '../assets/team/dharren pius makoha.jpg';
 const alumniData = [
   {
     name: "Sujal Saraswat",
-    role: "Former AI Developer",
     bio: "AI Intern @Techolution | Ex - AI Research Associate @WorkingFox | Internal Smart India Hackathon Winner | GDSC WinterHacks 2022 Winner | Computer science undergrad with expertise in AI/ML | IIIT Kottayam’26.",
     image: sujalImg,
     linkedin: "https://www.linkedin.com/in/sujal-saraswat-7575a5144/",
@@ -33,7 +32,6 @@ const alumniData = [
   },
   {
     name: "Dharren Pius Makoha",
-    role: "Former Technical Lead",
     bio: "Founder & CTSO, ACL | Rogue-Proof AI & Autonomous Systems | Defense, Healthcare & Environmental Tech.",
     image: dharrenImg,
     linkedin: "https://www.linkedin.com/in/iamdevdharrenzug/",
@@ -42,7 +40,6 @@ const alumniData = [
   },
   {
     name: "Vijay Venkat",
-    role: "Former Technical Lead",
     bio: "Backend developer | Golang | DevOps, currently studying at IIIT Kottayam.",
     image: vijayImg,
     linkedin: "https://www.linkedin.com/in/vijayvenkatj/",
@@ -51,7 +48,6 @@ const alumniData = [
   },
   {
     name: "Radhika Nambiar",
-    role: "Former UI/UX Designer",
     bio: "Intern @ IBM ISL | AI/ML Research Intern @TCS Research | Ex-MLE Intern @ Granville Tech | Student at Indian Institute of Information technology kottayam.",
     image: radhikaImg,
     linkedin: "https://www.linkedin.com/in/radhika-nambiar-a11336270/",
@@ -60,7 +56,6 @@ const alumniData = [
   },
   {
     name: "Suraj Rathor",
-    role: "Former Full Stack Developer",
     bio: "Backend Developer @Sovansh Technology |Software Development Intern @Granville-Tech | GDSC WinterHacks 2022 | Internal Smart India Hackathon Winner | Computer Science undergrad @IIIT Kottayam’26.",
     image: surajImg,
     linkedin: "https://www.linkedin.com/in/suraj-rathor-1116472b0/",
@@ -69,7 +64,6 @@ const alumniData = [
   },
   {
     name: "Rishi Jain",
-    role: "Former Backend Engineer",
     bio: "AI Research Intern @SHL ||Ex-AI/ML Intern @Dassault Systèmes ||Ex-Data Science Intern @SymphonyAI ||Ex-AI/ML Intern @Rapid Innovation || Ex-ML Intern @GRANVILLE TECH || Indian Institute of Information Technology Kottayam",
     image: rishiImg,
     linkedin: "https://www.linkedin.com/in/rishi-jain-a3baa3323/",
@@ -78,7 +72,6 @@ const alumniData = [
   },
   {
     name: "Glen Enosh",
-    role: "Former Research Analyst",
     bio: "MLE Intern @ TIFIN || Generative AI Researcher @ Mozilla || Ex-Mentor of AI/ML Club Enigma-IIITK || Ex-Generative AI Intern @ Granville Tech ||  Ex-Deep Learning Research Intern @ NCCR || IIIT Kottayam ’27.",
     image: glenImg,
     linkedin: "https://www.linkedin.com/in/jglenenosh/",
@@ -87,7 +80,6 @@ const alumniData = [
   },
   {
     name: "Mohd Mursaleen",
-    role: "Former Data Engineer",
     bio: "AI/ML Engineer | Data Science Enthusiast l AIML intern @ granville-tech.",
     image: mohamedImg,
     linkedin: "https://www.linkedin.com/in/shinsei-mori-b2870b281/",
@@ -96,7 +88,6 @@ const alumniData = [
   },
   {
     name: "Praveen Kumar",
-    role: "Former Technical Consultant",
     bio: "IIITK’27 | AI Intern @ Backspace Tech | Generative AI Intern @ Granville Tech | AI Intern @ Infosys Springboard | Research Intern @ NIT Trichy | AI & ML Enthusiast | AI & DS  SubLead @ Betalabs IIIT Kottayam.",
     image: praveenImg,
     linkedin: "https://www.linkedin.com/in/spraveenkumar2205/",
@@ -105,7 +96,6 @@ const alumniData = [
   },
   {
     name: "Alok Prakash",
-    role: "Former Software Engineer",
     bio: "Research Intern @IIT Hyd | Ex Developer Intern @IBL | Ex-Design Intern @Granville Tech | Ex-Lead @Tech-Club IIITK.",
     image: alokImg,
     linkedin: "https://www.linkedin.com/in/alokprakash1587/",
@@ -114,7 +104,6 @@ const alumniData = [
   },
   {
     name: "Kishore Shankar S",
-    role: "Former Solutions Architect",
     bio: "IIIT Kottayam ’27 | Ex - Research Intern @ NIT Trichy | Ex - Generative AI intern @ Granville Tech.",
     image: kishoreImg,
     linkedin: "https://www.linkedin.com/in/kishore-shankar-s-93a37228a/",
@@ -123,7 +112,6 @@ const alumniData = [
   },
   {
     name: "Aaditya Yadav",
-    role: "Former AI Intern",
     bio: "MNNIT '25 Bachelor of Technology - BTech, Mechanical Engineering Contributed to  ALETU, an AI-powered adaptive learning platform .",
     image: aadityaImg,
     linkedin: "https://www.linkedin.com/in/aaditya-yadav-91ab7a280/",
@@ -209,13 +197,9 @@ export default function Alumni() {
 
                 {/* Content */}
                 <div className="flex-grow">
-                  <h3 className="text-2xl font-bold mb-1 tracking-tight leading-tight">
+                  <h3 className="text-2xl font-bold mb-4 tracking-tight leading-tight">
                     {person.name}
                   </h3>
-                  <p className={`text-sm font-bold mb-4 uppercase tracking-wider ${person.isDark ? 'text-white' : 'text-[#4a7c59]'
-                    }`}>
-                    {person.role}
-                  </p>
                   <p className={`text-sm leading-relaxed mb-8 ${person.isDark ? 'text-gray-300' : 'text-gray-500'
                     }`}>
                     {person.bio}
