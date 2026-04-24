@@ -55,9 +55,10 @@ const ContactPage = () => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Email address is invalid. Please enter a valid email.";
     }
-    if (formData.phone && !/^\d{10}$/.test(formData.phone)) {
-      newErrors.phone = "Phone number must be 10 digits.";
+    if (formData.phone && !/^\d{10,15}$/.test(formData.phone)) {
+      newErrors.phone = "Phone number must be between 10-15 digits.";
     }
+    if (!formData.service) newErrors.service = "Please select a service.";
     if (!formData.message) newErrors.message = "Message is required.";
 
     setErrors(newErrors);
@@ -70,10 +71,10 @@ const ContactPage = () => {
       setIsSubmitting(true);
       try {
         const response = await emailjs.sendForm(
-          "service_7ni88o8",
-          "template_i53s3m3",
+          import.meta.env.VITE_SERVICE_ID,
+          import.meta.env.VITE_TEMPLATE_ID,
           formRef.current,
-          "vV2ZEovI7Ry_SMesg"
+          import.meta.env.VITE_PUBLIC_KEY
         );
         setSuccessMessage("Message Sent Successfully!");
         setFormData({
@@ -184,7 +185,7 @@ const handleServiceSelect = (service) => {
           Fill out the form below, and we'll get back to you within 24 hours.
         </motion.p>
 
-        <div className="flex justify-center mt-6">
+        <div className="flex flex-col items-center mt-6 space-y-4">
           <motion.button
             onClick={scheduleConsultation}
             className="px-6 py-3 bg-gray-300 text-black rounded-lg hover:bg-white transition-all duration-300"
@@ -192,6 +193,21 @@ const handleServiceSelect = (service) => {
           >
             Schedule a Consultation
           </motion.button>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center gap-2 text-silver"
+          >
+            <span className="text-gray-500">Or email us directly at:</span>
+            <a 
+              href="mailto:info@granvilletech.co?subject=Inquiry from Granville-Tech Website" 
+              className="text-white hover:text-yellow-500 font-semibold transition-colors underline decoration-yellow-500/30 underline-offset-4"
+            >
+              info@granvilletech.co
+            </a>
+          </motion.div>
         </div>
 
         <motion.form
@@ -362,10 +378,10 @@ const handleServiceSelect = (service) => {
             {isSubmitting ? (
               <button
                 type="button"
-                onClick={console.log("Form Data:", formData)}
-                className="w-full p-4 bg-gray-500 text-white rounded-lg cursor-not-allowed"
+                className="w-full p-4 bg-gray-500 text-white rounded-lg cursor-not-allowed flex items-center justify-center gap-2"
                 disabled
               >
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                 Sending...
               </button>
             ) : (

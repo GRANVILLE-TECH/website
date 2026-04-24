@@ -11,7 +11,7 @@ import Booking from "./pages/booking";
 import ResourceLibrary from "./pages/ResourceLibrary";
 import ContactUs from "./pages/contact";
 import { Link } from "react-router-dom";
-import { AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
+import { AiFillLinkedin, AiFillYoutube, AiFillMail } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
 import Loader from "./components/Loader";
 import logo from "../src/assets/Logo.svg";
@@ -193,6 +193,13 @@ export default function App() {
               >
                 <AiFillYoutube size={28} />
                 <span className="text-lg">YouTube</span>
+              </a>
+              <a
+                href="mailto:info@granvilletech.co?subject=Inquiry from Granville-Tech Website"
+                className="inline-flex items-center space-x-2 text-silver hover:text-white transition-all duration-300"
+              >
+                <AiFillMail size={28} />
+                <span className="text-lg font-medium">info@granvilletech.co</span>
               </a>
             </div>
           </div>
