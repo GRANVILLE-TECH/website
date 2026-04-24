@@ -2,7 +2,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import { PlayCircle } from "lucide-react";
+import { PlayCircle, FileText, Download, ExternalLink } from "lucide-react";
+
+// Import ALETU Presentations
+import blueprintPdf from "../assets/ALETU slides/ALETU_Africa_s_Adaptive_Education_Blueprint.pdf";
+import curriculumPdf from "../assets/ALETU slides/ALETU_Neural_Curriculum.pdf";
+import masteryPdf from "../assets/ALETU slides/ALETU_Scaling_Mastery_in_Africa.pdf";
 
 // Import your image assets
 import aletu from "../assets/innovations/DALL·E 2024-12-04 19.34.44 - A hopeful vision of Uganda's educational transformation featuring divers (1).webp";
@@ -83,6 +88,23 @@ const innovationInfo = [
     },
     ValuePropositionStatement:
       "ALETU empowers Ugandan secondary schools to overcome high dropout rates, limited teacher capacity, and low student engagement by providing an AI-driven, culturally aligned educational platform It delivers personalized learning paths, mastery-based instruction, and actionable insights for educators, enabling improved academic outcomes, reduced dropout rates, and data-informed policymaking for a brighter educational future",
+    presentations: [
+      {
+        title: "Adaptive Education Blueprint",
+        description: "A comprehensive guide to transforming Uganda's educational landscape through adaptive AI.",
+        file: blueprintPdf
+      },
+      {
+        title: "Neural Curriculum",
+        description: "Deep dive into the AI-driven curriculum design and mastery-based learning paths.",
+        file: curriculumPdf
+      },
+      {
+        title: "Scaling Mastery in Africa",
+        description: "Strategic framework for scaling high-impact educational solutions across the continent.",
+        file: masteryPdf
+      }
+    ]
   },
   {
     title: "TimeSift",
@@ -395,8 +417,10 @@ export default function Innovations() {
   };
 
   const getTotalPages = () => {
-    // If innovation has video, add 1 extra page
-    return activeInnovation?.hasVideo ? 4 : 3;
+    let pages = 3;
+    if (activeInnovation?.hasVideo) pages += 1;
+    if (activeInnovation?.presentations) pages += 1;
+    return pages;
   };
 
   const handleNextPage = () => {
@@ -596,6 +620,69 @@ export default function Innovations() {
                         >
                           Contact Us
                         </a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Presentations Page - Only show if presentations exist */}
+                {activeInnovation.presentations && (
+                  <div className="w-full flex-shrink-0 p-4 space-y-8">
+                    <div className="text-center mb-8">
+                      <h3 className="text-3xl font-semibold text-white mb-2">
+                        Resource Library
+                      </h3>
+                      <p className="text-silver">
+                        Explore our detailed presentations and technical blueprints for {activeInnovation.title}.
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      {activeInnovation.presentations.map((presentation, idx) => (
+                        <motion.div
+                          key={idx}
+                          whileHover={{ y: -5 }}
+                          className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center group"
+                        >
+                          <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-yellow-500/20 transition-all">
+                            <FileText className="text-black w-8 h-8" />
+                          </div>
+                          <h4 className="text-white font-bold mb-2">{presentation.title}</h4>
+                          <p className="text-gray-400 text-sm mb-6 flex-grow">
+                            {presentation.description}
+                          </p>
+                          <div className="flex gap-3 w-full">
+                            <a
+                              href={presentation.file}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 bg-white/10 hover:bg-white/20 text-white py-2 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-all"
+                            >
+                              <ExternalLink size={14} /> View
+                            </a>
+                            <a
+                              href={presentation.file}
+                              download
+                              className="flex-1 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black py-2 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all"
+                            >
+                              <Download size={14} /> Get PDF
+                            </a>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-2xl p-6 mt-8">
+                      <div className="flex items-start gap-4">
+                        <div className="p-2 bg-yellow-500/20 rounded-lg">
+                          <ExternalLink className="text-yellow-500 w-5 h-5" />
+                        </div>
+                        <div>
+                          <h5 className="text-white font-semibold mb-1">Looking for more?</h5>
+                          <p className="text-gray-400 text-sm">
+                            These documents represent our core strategy and technical foundations. Contact our team for detailed implementation case studies or partnership inquiries.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>

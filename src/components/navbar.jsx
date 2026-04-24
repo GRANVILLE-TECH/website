@@ -24,6 +24,8 @@ export default function Nav() {
         document.title = 'Innovations - Granville-Tech';
       } else if (hash === '#services') {
         document.title = 'Services - Granville-Tech';
+      } else if (hash === '#resources') {
+        document.title = 'Resources - Granville-Tech';
       } else if (hash === '#contact') {
         document.title = 'Contact - Granville-Tech';
       } else if (hash === '#booking') {
@@ -79,7 +81,7 @@ export default function Nav() {
           staggerChildren: 0.2, // Animates links sequentially
         }}
       >
-        {['Home', 'About', 'Innovations', 'Services', 'Booking'].map((item, index) => (
+        {['Home', 'About', 'Innovations', 'Services', 'Booking', 'Resources'].map((item, index) => (
           <motion.li
             key={index}
             initial={{ opacity: 0, y: -15 }}
@@ -145,7 +147,7 @@ export default function Nav() {
         animate={{ opacity: 1 }}
         transition={{ staggerChildren: 0.3 }}
       >
-        {['Home', 'About', 'Innovations', 'Services', 'Booking', 'Contact'].map((item, index) => (
+        {['Home', 'About', 'Innovations', 'Services', 'Booking', 'Resources', 'Contact'].map((item, index) => (
           <motion.li
             key={index}
             initial={{ opacity: 0, y: -15 }}

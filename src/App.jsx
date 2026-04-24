@@ -8,6 +8,7 @@ import Services from "./pages/services";
 import Partners from "./pages/partners";
 import SocialHub from "./pages/SocialHub";
 import Booking from "./pages/booking";
+import ResourceLibrary from "./pages/ResourceLibrary";
 import ContactUs from "./pages/contact";
 import { Link } from "react-router-dom";
 import { AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
@@ -15,6 +16,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import Loader from "./components/Loader";
 import logo from "../src/assets/Logo.svg";
 import { Analytics } from "@vercel/analytics/react";
+import CookieConsent from "./components/CookieConsent";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -55,6 +57,9 @@ export default function App() {
         </section>
         <section id="services">
           <Services />
+        </section>
+        <section id="resources">
+          <ResourceLibrary />
         </section>
         <section id="partners">
           <Partners />
@@ -139,6 +144,14 @@ export default function App() {
               </li>
               <li>
                 <a
+                  href="#resources"
+                  className="text-silver hover:text-white transition-all duration-300"
+                >
+                  Resources
+                </a>
+              </li>
+              <li>
+                <a
                   href="#contact"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
@@ -198,6 +211,7 @@ export default function App() {
         </div>
       </footer>
       <Analytics />
+      <CookieConsent />
     </div>
   );
 }
