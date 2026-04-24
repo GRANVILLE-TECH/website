@@ -152,6 +152,14 @@ export default function App() {
               </li>
               <li>
                 <a
+                  href="#alumni"
+                  className="text-silver hover:text-white transition-all duration-300"
+                >
+                  Alumni
+                </a>
+              </li>
+              <li>
+                <a
                   href="#contact"
                   className="text-silver hover:text-white transition-all duration-300"
                 >

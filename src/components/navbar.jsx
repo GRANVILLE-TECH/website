@@ -15,8 +15,14 @@ export default function Nav() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
+      const path = window.location.pathname;
 
-      if (hash === '#home') {
+      if (path === '/alumni') {
+        document.title = 'Alumni - Granville-Tech';
+        return;
+      }
+
+      if (hash === '#home' || hash === '') {
         document.title = 'Home - Granville-Tech';
       } else if (hash === '#about') {
         document.title = 'About - Granville-Tech';
@@ -35,138 +41,135 @@ export default function Nav() {
       }
     };
 
-    // Call the function to set the title on component mount
     handleHashChange();
-
-    // Listen for hash changes and update the title accordingly
     window.addEventListener('hashchange', handleHashChange);
-
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
 
+  const navItems = [
+    { name: 'Home', href: '/#home' },
+    { name: 'About', href: '/#about' },
+    { name: 'Innovations', href: '/#innovations' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Booking', href: '/#booking' },
+    { name: 'Resources', href: '/#resources' },
+    { name: 'Alumni', href: '/alumni' },
+  ];
+
   return (
-   <nav className="bg-black/40 text-white py-2 fixed w-full top-0 left-0 z-50 shadow-lg backdrop-blur-md">
-  <div className="max-w-screen-xl mx-auto flex justify-between items-center px-4">
-    {/* Logo Section */}
-    <motion.div
-      className="flex items-center space-x-3"
-      initial={{ opacity: 0, x: -30 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
-    >
-      <img
-        src={logo}
-        alt="Granville-Tech Logo"
-        className="h-12 w-12 rounded-full border border-silver/40"
-      />
-      <a
-        href="#home"
-        className="text-2xl font-semibold tracking-wider font-serif orbitron-logo text-silver hover:text-gray-300 transition-all duration-300"
-      >
-        Granville
-      </a>
-    </motion.div>
-
-    {/* Desktop Navigation Links */}
-    <div className="hidden lg:flex space-x-8 items-center">
-      <motion.ul
-        className="flex space-x-8 items-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          delayChildren: 0.3,
-          staggerChildren: 0.2, // Animates links sequentially
-        }}
-      >
-        {['Home', 'About', 'Innovations', 'Services', 'Booking', 'Resources'].map((item, index) => (
-          <motion.li
-            key={index}
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
-            <a
-              href={`#${item.toLowerCase()}`}
-              className="text-lg font-medium relative group transition-all duration-300"
-            >
-              {item}
-              {/* Underline Effect */}
-              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-white to-silver transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </motion.li>
-        ))}
-      </motion.ul>
-
-      {/* Contact Button */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut', delay: 1 }}
-      >
-        <motion.a
-          href="#contact"
-          className="text-lg font-semibold text-white border-silver border hover:bg-gray-300 hover:text-black px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all opacity-80 duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
+    <nav className="bg-black/40 text-white py-2 fixed w-full top-0 left-0 z-50 shadow-lg backdrop-blur-md">
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center px-4">
+        {/* Logo Section */}
+        <motion.div
+          className="flex items-center space-x-3"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          Contact Us
-        </motion.a>
-      </motion.div>
-    </div>
-
-    {/* Mobile Menu Button (Hamburger or X Icon using Lucide) */}
-    <div className="lg:hidden flex items-center">
-      <button
-        className="text-white"
-        onClick={toggleMenu}
-      >
-        {menuOpen ? (
-          <X className="w-6 h-6" /> // Show X when menu is open
-        ) : (
-          <Menu className="w-6 h-6" /> // Show hamburger when menu is closed
-        )}
-      </button>
-    </div>
-  </div>
-
-  {/* Mobile Menu (Conditional Rendering) */}
-  {menuOpen && (
-    <motion.div
-      className="lg:hidden absolute top-16 left-0 w-full bg-black text-white text-center py-4"
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 50 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-    >
-      <motion.ul
-        className="space-y-6 mb-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ staggerChildren: 0.3 }}
-      >
-        {['Home', 'About', 'Innovations', 'Services', 'Booking', 'Resources', 'Contact'].map((item, index) => (
-          <motion.li
-            key={index}
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+          <img
+            src={logo}
+            alt="Granville-Tech Logo"
+            className="h-12 w-12 rounded-full border border-silver/40"
+          />
+          <a
+            href="/#home"
+            className="text-2xl font-semibold tracking-wider font-serif orbitron-logo text-silver hover:text-gray-300 transition-all duration-300"
           >
-            <a
-              href={`#${item.toLowerCase()}`}
-              className="text-xl font-medium"
-              onClick={() => setMenuOpen(false)} // Close menu when a link is clicked
+            Granville
+          </a>
+        </motion.div>
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex space-x-8 items-center">
+          <motion.ul
+            className="flex space-x-8 items-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delayChildren: 0.3,
+              staggerChildren: 0.2,
+            }}
+          >
+            {navItems.map((item, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: -15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+              >
+                <a
+                  href={item.href}
+                  className="text-lg font-medium relative group transition-all duration-300"
+                >
+                  {item.name}
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-white to-silver transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </motion.li>
+            ))}
+          </motion.ul>
+
+          {/* Contact Button */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 1 }}
+          >
+            <motion.a
+              href="/#contact"
+              className="text-lg font-semibold text-white border-silver border hover:bg-gray-300 hover:text-black px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all opacity-80 duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
             >
-              {item}
-            </a>
-          </motion.li>
-        ))}
-      </motion.ul>
-    </motion.div>
-  )}
-</nav>
+              Contact Us
+            </motion.a>
+          </motion.div>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden flex items-center">
+          <button className="text-white" onClick={toggleMenu}>
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <motion.div
+          className="lg:hidden absolute top-16 left-0 w-full bg-black text-white text-center py-4"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
+          <motion.ul
+            className="space-y-6 mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ staggerChildren: 0.3 }}
+          >
+            {[...navItems, { name: 'Contact', href: '/#contact' }].map((item, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: -15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+              >
+                <a
+                  href={item.href}
+                  className="text-xl font-medium"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </motion.div>
+      )}
+    </nav>
 
   );
 }
