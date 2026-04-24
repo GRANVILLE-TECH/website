@@ -18,6 +18,7 @@ import alokImg from '../assets/team/alok prakash.jpg';
 import kishoreImg from '../assets/team/Kishore shankar a.jpg';
 import aadityaImg from '../assets/team/Aaditya yadav.jpg';
 import vijayImg from '../assets/team/Vijay venkat.jpg';
+import dharrenImg from '../assets/team/dharren pius makoha.jpg';
 
 // Alumni Data from Book1.csv
 const alumniData = [
@@ -26,6 +27,13 @@ const alumniData = [
     role: "Former AI Developer",
     image: sujalImg,
     linkedin: "https://www.linkedin.com/in/sujal-saraswat-7575a5144/",
+    year: "Legacy Member"
+  },
+  {
+    name: "Dharren Pius Makoha",
+    role: "Former Technical Lead",
+    image: dharrenImg,
+    linkedin: "https://www.linkedin.com/in/iamdevdharrenzug/",
     year: "Legacy Member"
   },
   {
