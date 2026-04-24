@@ -20,91 +20,115 @@ import aadityaImg from '../assets/team/Aaditya yadav.jpg';
 import vijayImg from '../assets/team/Vijay venkat.jpg';
 import dharrenImg from '../assets/team/dharren pius makoha.jpg';
 
-// Alumni Data from Book1.csv
+// Alumni Data with extracted bios
 const alumniData = [
   {
     name: "Sujal Saraswat",
     role: "Former AI Developer",
+    bio: "A Computer Science student at IIIT Kottayam with a strong focus on Artificial Intelligence, Machine Learning, and Deep Learning.",
     image: sujalImg,
     linkedin: "https://www.linkedin.com/in/sujal-saraswat-7575a5144/",
-    year: "Legacy Member"
+    university: "IIIT Kottayam",
+    isDark: true
   },
   {
     name: "Dharren Pius Makoha",
     role: "Former Technical Lead",
+    bio: "Founder and CTSO of Aegis Continuum Labs, specializing in the development of autonomous systems for military and civilian applications.",
     image: dharrenImg,
     linkedin: "https://www.linkedin.com/in/iamdevdharrenzug/",
-    year: "Legacy Member"
-  },
-  {
-    name: "Suraj Rathor",
-    role: "Former Full Stack Developer",
-    image: surajImg,
-    linkedin: "https://www.linkedin.com/in/suraj-rathor-1116472b0/",
-    year: "Legacy Member"
-  },
-  {
-    name: "Radhika Nambiar",
-    role: "Former UI/UX Designer",
-    image: radhikaImg,
-    linkedin: "https://www.linkedin.com/in/radhika-nambiar-a11336270/",
-    year: "Legacy Member"
-  },
-  {
-    name: "Rishi Jain",
-    role: "Former Backend Engineer",
-    image: rishiImg,
-    linkedin: "https://www.linkedin.com/in/rishi-jain-a3baa3323/",
-    year: "Legacy Member"
-  },
-  {
-    name: "Glen Enosh",
-    role: "Former Research Analyst",
-    image: glenImg,
-    linkedin: "https://www.linkedin.com/in/jglenenosh/",
-    year: "Legacy Member"
-  },
-  {
-    name: "Mohd Mursaleen",
-    role: "Former Data Engineer",
-    image: mohamedImg,
-    linkedin: "https://www.linkedin.com/in/shinsei-mori-b2870b281/",
-    year: "Legacy Member"
-  },
-  {
-    name: "Praveen Kumar",
-    role: "Former Technical Consultant",
-    image: praveenImg,
-    linkedin: "https://www.linkedin.com/in/spraveenkumar2205/",
-    year: "Legacy Member"
-  },
-  {
-    name: "Alok Prakash",
-    role: "Former Software Engineer",
-    image: alokImg,
-    linkedin: "https://www.linkedin.com/in/alokprakash1587/",
-    year: "Legacy Member"
-  },
-  {
-    name: "Kishore Shankar S",
-    role: "Former Solutions Architect",
-    image: kishoreImg,
-    linkedin: "https://www.linkedin.com/in/kishore-shankar-s-93a37228a/",
-    year: "Legacy Member"
-  },
-  {
-    name: "Aaditya Yadav",
-    role: "Former AI Intern",
-    image: aadityaImg,
-    linkedin: "https://www.linkedin.com/in/aaditya-yadav-91ab7a280/",
-    year: "Legacy Member"
+    university: "ACL Labs",
+    isDark: false
   },
   {
     name: "Vijay Venkat",
     role: "Former Technical Lead",
+    bio: "A backend engineer with expertise in Go, TypeScript, and distributed architectures, currently studying at IIIT Kottayam.",
     image: vijayImg,
     linkedin: "https://www.linkedin.com/in/vijayvenkatj/",
-    year: "Legacy Member"
+    university: "IIIT Kottayam",
+    isDark: true
+  },
+  {
+    name: "Radhika Nambiar",
+    role: "Former UI/UX Designer",
+    bio: "Previously an MLE Intern at Granville Tech, she is now an SDE Intern at IBM ISL and AI/ML Research Intern at TCS Research.",
+    image: radhikaImg,
+    linkedin: "https://www.linkedin.com/in/radhika-nambiar-a11336270/",
+    university: "IIIT Kottayam",
+    isDark: false
+  },
+  {
+    name: "Suraj Rathor",
+    role: "Former Full Stack Developer",
+    bio: "Computer Science student at IIIT Kottayam, specializing in Full Stack development and competitive programming.",
+    image: surajImg,
+    linkedin: "https://www.linkedin.com/in/suraj-rathor-1116472b0/",
+    university: "IIIT Kottayam",
+    isDark: true
+  },
+  {
+    name: "Rishi Jain",
+    role: "Former Backend Engineer",
+    bio: "Focused on backend development and system architecture, with a passion for building scalable AI integrations.",
+    image: rishiImg,
+    linkedin: "https://www.linkedin.com/in/rishi-jain-a3baa3323/",
+    university: "IIIT Kottayam",
+    isDark: false
+  },
+  {
+    name: "Glen Enosh",
+    role: "Former Research Analyst",
+    bio: "Passionate about AI research and analysis, Glen contributed significantly to data-driven insights during his tenure.",
+    image: glenImg,
+    linkedin: "https://www.linkedin.com/in/jglenenosh/",
+    university: "IIIT Kottayam",
+    isDark: true
+  },
+  {
+    name: "Mohd Mursaleen",
+    role: "Former Data Engineer",
+    bio: "Data Engineer skilled in managing large datasets and optimizing AI model training pipelines.",
+    image: mohamedImg,
+    linkedin: "https://www.linkedin.com/in/shinsei-mori-b2870b281/",
+    university: "IIIT Kottayam",
+    isDark: false
+  },
+  {
+    name: "Praveen Kumar",
+    role: "Former Technical Consultant",
+    bio: "Technical Consultant with a focus on bridging the gap between complex AI systems and business needs.",
+    image: praveenImg,
+    linkedin: "https://www.linkedin.com/in/spraveenkumar2205/",
+    university: "IIIT Kottayam",
+    isDark: true
+  },
+  {
+    name: "Alok Prakash",
+    role: "Former Software Engineer",
+    bio: "Software Engineer dedicated to building high-performance AI solutions and modern web applications.",
+    image: alokImg,
+    linkedin: "https://www.linkedin.com/in/alokprakash1587/",
+    university: "IIIT Kottayam",
+    isDark: false
+  },
+  {
+    name: "Kishore Shankar S",
+    role: "Former Solutions Architect",
+    bio: "Designing robust AI frameworks and enterprise-level solutions to drive innovation.",
+    image: kishoreImg,
+    linkedin: "https://www.linkedin.com/in/kishore-shankar-s-93a37228a/",
+    university: "IIIT Kottayam",
+    isDark: true
+  },
+  {
+    name: "Aaditya Yadav",
+    role: "Former AI Intern",
+    bio: "Aspiring AI Researcher with a strong background in machine learning and automated systems.",
+    image: aadityaImg,
+    linkedin: "https://www.linkedin.com/in/aaditya-yadav-91ab7a280/",
+    university: "IIIT Kottayam",
+    isDark: false
   }
 ];
 
@@ -115,104 +139,105 @@ export default function Alumni() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden bg-black min-h-screen">
+    <div className="overflow-x-hidden bg-[#faf9f6] min-h-screen font-sans">
       <Nav />
       
-      <main className="pt-20">
-        <section id="alumni" className="bg-[#050505] text-white py-32 px-6">
-          <div className="max-w-7xl mx-auto">
-            {/* Section Header */}
-            <div className="text-center mb-20">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-sm font-bold tracking-widest uppercase mb-6"
-              >
-                <GraduationCap size={18} />
-                Our Legacy
-              </motion.div>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight"
-              >
-                Granville-Tech <span className="text-yellow-500">Alumni</span>
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="text-silver text-lg max-w-3xl mx-auto"
-              >
-                Celebrating the innovators and pioneers who have helped shape the future of AI at Granville-Tech. 
-              </motion.p>
-            </div>
-
-            {/* Alumni Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-              {alumniData.map((person, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group relative"
-                >
-                  <div className="relative overflow-hidden rounded-[2rem] bg-[#111] border border-white/5 transition-all duration-500 group-hover:border-yellow-500/30">
-                    <div className="aspect-square overflow-hidden bg-[#1a1a1a]">
-                      <img
-                        src={person.image}
-                        alt={person.name}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100"
-                        onError={(e) => {
-                          e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(person.name)}&background=random&color=fff&size=400`;
-                        }}
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-transform duration-500">
-                      <span className="text-yellow-500 text-xs font-bold tracking-widest uppercase mb-2 block">
-                        {person.year}
-                      </span>
-                      <h3 className="text-2xl font-bold mb-6 group-hover:text-yellow-400 transition-colors">
-                        {person.name}
-                      </h3>
-                      <div className="flex gap-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                        <a
-                          href={person.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-12 h-12 rounded-full bg-[#0077b5] text-white flex items-center justify-center transition-all hover:scale-110 shadow-lg shadow-[#0077b5]/20"
-                          title="LinkedIn Profile"
-                        >
-                          <Linkedin size={22} />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Bottom CTA */}
+      <main className="pt-24 pb-32">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="mb-20">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="mt-24 text-center p-12 rounded-[3rem] bg-gradient-to-b from-white/5 to-transparent border border-white/5"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center gap-2 text-[#2d4a3e] font-bold tracking-widest uppercase mb-4"
             >
-              <h3 className="text-2xl font-bold mb-4">Are you a Granville-Tech Alum?</h3>
-              <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                We'd love to stay connected and feature your journey.
-              </p>
-              <a
-                href="/#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-yellow-500 text-black font-bold rounded-full hover:bg-yellow-400 transition-all hover:scale-105"
-              >
-                Connect with Us
-              </a>
+              <GraduationCap size={20} />
+              Alumni Network
             </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-5xl md:text-7xl font-extrabold text-[#1a3a2a] mb-6"
+            >
+              Our Legacy of <span className="text-[#4a7c59]">Innovation</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-gray-600 text-lg max-w-2xl"
+            >
+              Meet the brilliant minds who have shaped Granville-Tech and continue to lead the AI revolution worldwide.
+            </motion.p>
           </div>
-        </section>
+
+          {/* Alumni Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {alumniData.map((person, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05 }}
+                className={`relative p-8 rounded-[2rem] flex flex-col h-full transition-all duration-500 hover:scale-[1.02] ${
+                  person.isDark 
+                    ? 'bg-[#1a3a2a] text-[#aef359]' 
+                    : 'bg-white text-[#1a3a2a] border border-[#e5e7eb]'
+                }`}
+              >
+                {/* Header: Photo and LinkedIn */}
+                <div className="flex justify-between items-start mb-8">
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gray-200">
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(person.name)}&background=random&color=fff&size=400`;
+                      }}
+                    />
+                  </div>
+                  <a
+                    href={person.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`transition-opacity hover:opacity-70 ${
+                      person.isDark ? 'text-[#aef359]' : 'text-[#1a3a2a]'
+                    }`}
+                  >
+                    <Linkedin size={24} fill="currentColor" />
+                  </a>
+                </div>
+
+                {/* Content */}
+                <div className="flex-grow">
+                  <h3 className="text-2xl font-bold mb-1 tracking-tight leading-tight">
+                    {person.name}
+                  </h3>
+                  <p className={`text-sm font-bold mb-4 uppercase tracking-wider ${
+                    person.isDark ? 'text-white' : 'text-[#4a7c59]'
+                  }`}>
+                    {person.role}
+                  </p>
+                  <p className={`text-sm leading-relaxed mb-8 ${
+                    person.isDark ? 'text-gray-300' : 'text-gray-500'
+                  }`}>
+                    {person.bio}
+                  </p>
+                </div>
+
+                {/* Footer: University */}
+                <div className="mt-auto">
+                  <p className={`text-sm font-bold italic tracking-wide ${
+                    person.isDark ? 'text-[#aef359]' : 'text-[#1a3a2a]'
+                  }`}>
+                    {person.university}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </main>
 
       <footer className="bg-[#111111] text-silver py-12 px-6 lg:px-20">
