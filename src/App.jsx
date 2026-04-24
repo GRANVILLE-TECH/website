@@ -10,7 +10,8 @@ import SocialHub from "./pages/SocialHub";
 import Booking from "./pages/booking";
 import ContactUs from "./pages/contact";
 import { Link } from "react-router-dom";
-import { AiFillLinkedin } from "react-icons/ai";
+import { AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
+import { FaXTwitter } from "react-icons/fa6";
 import Loader from "./components/Loader";
 import logo from "../src/assets/Logo.svg";
 import { Analytics } from "@vercel/analytics/react";
@@ -147,23 +148,40 @@ export default function App() {
             </ul>
           </nav>
 
-          {/* LinkedIn Social Link */}
+          {/* Social Links */}
           <div className="mb-6 sm:mb-12">
             <p className="text-sm sm:text-base text-white opacity-85 mb-4">
               Connect with us:
             </p>
-            <a
-              href="https://www.linkedin.com/company/granvilletek/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-start space-x-2 text-silver hover:text-white transition-all duration-300"
-            >
-              <AiFillLinkedin
-                size={28}
-                className="text-silver hover:text-white"
-              />
-              <span className="text-lg sm:text-xl">LinkedIn</span>
-            </a>
+            <div className="flex flex-wrap gap-6 sm:gap-10">
+              <a
+                href="https://www.linkedin.com/company/granvilletek/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 text-silver hover:text-white transition-all duration-300"
+              >
+                <AiFillLinkedin size={28} />
+                <span className="text-lg">LinkedIn</span>
+              </a>
+              <a
+                href="https://x.com/Niquestetia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 text-silver hover:text-white transition-all duration-300"
+              >
+                <FaXTwitter size={24} />
+                <span className="text-lg">X</span>
+              </a>
+              <a
+                href="http://www.youtube.com/@granvilletech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 text-silver hover:text-white transition-all duration-300"
+              >
+                <AiFillYoutube size={28} />
+                <span className="text-lg">YouTube</span>
+              </a>
+            </div>
           </div>
 
           {/* Copyright & Legal */}

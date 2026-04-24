@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin, ExternalLink, Calendar } from "lucide-react";
+import { Linkedin, ExternalLink, Calendar, Youtube } from "lucide-react";
 
 // Custom X (Twitter) Icon Component
 const XIcon = ({ className }) => (
@@ -41,6 +41,14 @@ const socialPosts = [
     content: "Innovation redefines what is possible. We envision a future where technology solutions inspire generations to think beyond limits.",
     link: "https://x.com/Niquestetia",
     tags: ["#FutureThinking", "#GranvilleTech"]
+  },
+  {
+    id: 5,
+    platform: "youtube",
+    date: "Official",
+    content: "Watch our deep dives into AI innovation, project showcases, and the future of technology in Africa on our official channel.",
+    link: "http://www.youtube.com/@granvilletech",
+    tags: ["#AIVideo", "#TechShowcase", "#Innovation"]
   }
 ];
 
@@ -60,6 +68,8 @@ const SocialCard = ({ post, index }) => {
           <div className={`${isLinkedIn ? "bg-[#0077b5]/10" : "bg-white/5"} p-2 rounded-lg`}>
             {isLinkedIn ? (
               <Linkedin className="text-[#0077b5] w-5 h-5" />
+            ) : post.platform === "youtube" ? (
+              <Youtube className="text-[#FF0000] w-5 h-5" />
             ) : (
               <XIcon className="text-white w-5 h-5" />
             )}
@@ -86,7 +96,7 @@ const SocialCard = ({ post, index }) => {
         rel="noopener noreferrer"
         className="inline-flex items-center text-xs font-semibold text-white group-hover:text-silver transition-colors"
       >
-        View on {isLinkedIn ? "LinkedIn" : "X"}
+        View on {isLinkedIn ? "LinkedIn" : post.platform === "youtube" ? "YouTube" : "X"}
         <ExternalLink className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
       </a>
     </motion.div>
@@ -130,9 +140,20 @@ export default function SocialHub() {
           >
             Catch our latest updates, industry insights, and innovation stories across LinkedIn and X.
           </motion.p>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="http://www.youtube.com/@granvilletech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all"
+          >
+            YouTube Channel
+            <Youtube className="ml-2 w-5 h-5" />
+          </motion.a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {socialPosts.map((post, index) => (
             <SocialCard key={post.id} post={post} index={index} />
           ))}
