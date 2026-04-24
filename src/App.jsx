@@ -6,7 +6,7 @@ import Innovations from "./pages/innovations";
 import VideoShowcase from "./pages/VideoShowcase";
 import Services from "./pages/services";
 import Partners from "./pages/partners";
-import LinkedInFeed from "./pages/LinkedInFeed";
+import SocialHub from "./pages/SocialHub";
 import Booking from "./pages/booking";
 import ContactUs from "./pages/contact";
 import { Link } from "react-router-dom";
@@ -59,7 +59,7 @@ export default function App() {
           <Partners />
         </section>
         <section id="social-hub">
-          <LinkedInFeed />
+          <SocialHub />
         </section>
         <section id="articles" className="p-8">
           <h2 className="text-2xl font-bold mb-2">From Our Blog</h2>
