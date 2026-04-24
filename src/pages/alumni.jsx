@@ -25,7 +25,7 @@ const alumniData = [
   {
     name: "Sujal Saraswat",
     role: "Former AI Developer",
-    bio: "A Computer Science student at IIIT Kottayam with a strong focus on Artificial Intelligence, Machine Learning, and Deep Learning.",
+    bio: "AI Intern @Techolution | Ex - AI Research Associate @WorkingFox | Internal Smart India Hackathon Winner | GDSC WinterHacks 2022 Winner | Computer science undergrad with expertise in AI/ML | IIIT Kottayam’26.",
     image: sujalImg,
     linkedin: "https://www.linkedin.com/in/sujal-saraswat-7575a5144/",
     university: "IIIT Kottayam",
@@ -34,7 +34,7 @@ const alumniData = [
   {
     name: "Dharren Pius Makoha",
     role: "Former Technical Lead",
-    bio: "Founder and CTSO of Aegis Continuum Labs, specializing in the development of autonomous systems for military and civilian applications.",
+    bio: "Founder & CTSO, ACL | Rogue-Proof AI & Autonomous Systems | Defense, Healthcare & Environmental Tech.",
     image: dharrenImg,
     linkedin: "https://www.linkedin.com/in/iamdevdharrenzug/",
     university: "ACL Labs",
@@ -43,7 +43,7 @@ const alumniData = [
   {
     name: "Vijay Venkat",
     role: "Former Technical Lead",
-    bio: "A backend engineer with expertise in Go, TypeScript, and distributed architectures, currently studying at IIIT Kottayam.",
+    bio: "Backend developer | Golang | DevOps, currently studying at IIIT Kottayam.",
     image: vijayImg,
     linkedin: "https://www.linkedin.com/in/vijayvenkatj/",
     university: "IIIT Kottayam",
@@ -52,7 +52,7 @@ const alumniData = [
   {
     name: "Radhika Nambiar",
     role: "Former UI/UX Designer",
-    bio: "Previously an MLE Intern at Granville Tech, she is now an SDE Intern at IBM ISL and AI/ML Research Intern at TCS Research.",
+    bio: "Intern @ IBM ISL | AI/ML Research Intern @TCS Research | Ex-MLE Intern @ Granville Tech | Student at Indian Institute of Information technology kottayam.",
     image: radhikaImg,
     linkedin: "https://www.linkedin.com/in/radhika-nambiar-a11336270/",
     university: "IIIT Kottayam",
@@ -61,7 +61,7 @@ const alumniData = [
   {
     name: "Suraj Rathor",
     role: "Former Full Stack Developer",
-    bio: "Computer Science student at IIIT Kottayam, specializing in Full Stack development and competitive programming.",
+    bio: "Backend Developer @Sovansh Technology |Software Development Intern @Granville-Tech | GDSC WinterHacks 2022 | Internal Smart India Hackathon Winner | Computer Science undergrad @IIIT Kottayam’26.",
     image: surajImg,
     linkedin: "https://www.linkedin.com/in/suraj-rathor-1116472b0/",
     university: "IIIT Kottayam",
@@ -70,7 +70,7 @@ const alumniData = [
   {
     name: "Rishi Jain",
     role: "Former Backend Engineer",
-    bio: "Focused on backend development and system architecture, with a passion for building scalable AI integrations.",
+    bio: "AI Research Intern @SHL ||Ex-AI/ML Intern @Dassault Systèmes ||Ex-Data Science Intern @SymphonyAI ||Ex-AI/ML Intern @Rapid Innovation || Ex-ML Intern @GRANVILLE TECH || Indian Institute of Information Technology Kottayam",
     image: rishiImg,
     linkedin: "https://www.linkedin.com/in/rishi-jain-a3baa3323/",
     university: "IIIT Kottayam",
@@ -79,7 +79,7 @@ const alumniData = [
   {
     name: "Glen Enosh",
     role: "Former Research Analyst",
-    bio: "Passionate about AI research and analysis, Glen contributed significantly to data-driven insights during his tenure.",
+    bio: "MLE Intern @ TIFIN || Generative AI Researcher @ Mozilla || Ex-Mentor of AI/ML Club Enigma-IIITK || Ex-Generative AI Intern @ Granville Tech ||  Ex-Deep Learning Research Intern @ NCCR || IIIT Kottayam ’27.",
     image: glenImg,
     linkedin: "https://www.linkedin.com/in/jglenenosh/",
     university: "IIIT Kottayam",
@@ -88,7 +88,7 @@ const alumniData = [
   {
     name: "Mohd Mursaleen",
     role: "Former Data Engineer",
-    bio: "Data Engineer skilled in managing large datasets and optimizing AI model training pipelines.",
+    bio: "AI/ML Engineer | Data Science Enthusiast l AIML intern @ granville-tech.",
     image: mohamedImg,
     linkedin: "https://www.linkedin.com/in/shinsei-mori-b2870b281/",
     university: "IIIT Kottayam",
@@ -97,7 +97,7 @@ const alumniData = [
   {
     name: "Praveen Kumar",
     role: "Former Technical Consultant",
-    bio: "Technical Consultant with a focus on bridging the gap between complex AI systems and business needs.",
+    bio: "IIITK’27 | AI Intern @ Backspace Tech | Generative AI Intern @ Granville Tech | AI Intern @ Infosys Springboard | Research Intern @ NIT Trichy | AI & ML Enthusiast | AI & DS  SubLead @ Betalabs IIIT Kottayam.",
     image: praveenImg,
     linkedin: "https://www.linkedin.com/in/spraveenkumar2205/",
     university: "IIIT Kottayam",
@@ -106,7 +106,7 @@ const alumniData = [
   {
     name: "Alok Prakash",
     role: "Former Software Engineer",
-    bio: "Software Engineer dedicated to building high-performance AI solutions and modern web applications.",
+    bio: "Research Intern @IIT Hyd | Ex Developer Intern @IBL | Ex-Design Intern @Granville Tech | Ex-Lead @Tech-Club IIITK.",
     image: alokImg,
     linkedin: "https://www.linkedin.com/in/alokprakash1587/",
     university: "IIIT Kottayam",
@@ -115,7 +115,7 @@ const alumniData = [
   {
     name: "Kishore Shankar S",
     role: "Former Solutions Architect",
-    bio: "Designing robust AI frameworks and enterprise-level solutions to drive innovation.",
+    bio: "IIIT Kottayam ’27 | Ex - Research Intern @ NIT Trichy | Ex - Generative AI intern @ Granville Tech.",
     image: kishoreImg,
     linkedin: "https://www.linkedin.com/in/kishore-shankar-s-93a37228a/",
     university: "IIIT Kottayam",
@@ -124,7 +124,7 @@ const alumniData = [
   {
     name: "Aaditya Yadav",
     role: "Former AI Intern",
-    bio: "Aspiring AI Researcher with a strong background in machine learning and automated systems.",
+    bio: "MNNIT '25 Bachelor of Technology - BTech, Mechanical Engineering Contributed to  ALETU, an AI-powered adaptive learning platform .",
     image: aadityaImg,
     linkedin: "https://www.linkedin.com/in/aaditya-yadav-91ab7a280/",
     university: "IIIT Kottayam",
@@ -141,7 +141,7 @@ export default function Alumni() {
   return (
     <div className="overflow-x-hidden bg-[#faf9f6] min-h-screen font-sans">
       <Nav />
-      
+
       <main className="pt-24 pb-32">
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
@@ -179,11 +179,10 @@ export default function Alumni() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className={`relative p-8 rounded-[2rem] flex flex-col h-full transition-all duration-500 hover:scale-[1.02] ${
-                  person.isDark 
-                    ? 'bg-[#1a3a2a] text-[#aef359]' 
-                    : 'bg-white text-[#1a3a2a] border border-[#e5e7eb]'
-                }`}
+                className={`relative p-8 rounded-[2rem] flex flex-col h-full transition-all duration-500 hover:scale-[1.02] ${person.isDark
+                  ? 'bg-[#1a3a2a] text-[#aef359]'
+                  : 'bg-white text-[#1a3a2a] border border-[#e5e7eb]'
+                  }`}
               >
                 {/* Header: Photo and LinkedIn */}
                 <div className="flex justify-between items-start mb-8">
@@ -201,9 +200,8 @@ export default function Alumni() {
                     href={person.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`transition-opacity hover:opacity-70 ${
-                      person.isDark ? 'text-[#aef359]' : 'text-[#1a3a2a]'
-                    }`}
+                    className={`transition-opacity hover:opacity-70 ${person.isDark ? 'text-[#aef359]' : 'text-[#1a3a2a]'
+                      }`}
                   >
                     <Linkedin size={24} fill="currentColor" />
                   </a>
@@ -214,23 +212,20 @@ export default function Alumni() {
                   <h3 className="text-2xl font-bold mb-1 tracking-tight leading-tight">
                     {person.name}
                   </h3>
-                  <p className={`text-sm font-bold mb-4 uppercase tracking-wider ${
-                    person.isDark ? 'text-white' : 'text-[#4a7c59]'
-                  }`}>
+                  <p className={`text-sm font-bold mb-4 uppercase tracking-wider ${person.isDark ? 'text-white' : 'text-[#4a7c59]'
+                    }`}>
                     {person.role}
                   </p>
-                  <p className={`text-sm leading-relaxed mb-8 ${
-                    person.isDark ? 'text-gray-300' : 'text-gray-500'
-                  }`}>
+                  <p className={`text-sm leading-relaxed mb-8 ${person.isDark ? 'text-gray-300' : 'text-gray-500'
+                    }`}>
                     {person.bio}
                   </p>
                 </div>
 
                 {/* Footer: University */}
                 <div className="mt-auto">
-                  <p className={`text-sm font-bold italic tracking-wide ${
-                    person.isDark ? 'text-[#aef359]' : 'text-[#1a3a2a]'
-                  }`}>
+                  <p className={`text-sm font-bold italic tracking-wide ${person.isDark ? 'text-[#aef359]' : 'text-[#1a3a2a]'
+                    }`}>
                     {person.university}
                   </p>
                 </div>
