@@ -17,6 +17,7 @@ import praveenImg from '../assets/team/praveen kumar.jpg';
 import alokImg from '../assets/team/alok prakash.jpg';
 import kishoreImg from '../assets/team/Kishore shankar a.jpg';
 import aadityaImg from '../assets/team/Aaditya yadav.jpg';
+import vijayImg from '../assets/team/Vijay venkat.jpg';
 
 // Alumni Data from Book1.csv
 const alumniData = [
@@ -91,10 +92,10 @@ const alumniData = [
     year: "Legacy Member"
   },
   {
-    name: "Nikhil Wakode",
-    role: "Former Systems Analyst",
-    image: "https://ui-avatars.com/api/?name=Nikhil+Wakode&background=random&color=fff&size=400",
-    linkedin: "https://www.linkedin.com/in/wakode-nikhil/",
+    name: "Vijay Venkat",
+    role: "Former Technical Lead",
+    image: vijayImg,
+    linkedin: "https://www.linkedin.com/in/vijayvenkatj/",
     year: "Legacy Member"
   }
 ];
