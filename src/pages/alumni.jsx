@@ -147,7 +147,7 @@ export default function Alumni() {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-7xl font-extrabold text-[#1a3a2a] mb-6"
             >
-              Our Legacy of <span className="text-[#4a7c59]">Innovation</span>
+              Our Legacy <span className="text-[#4a7c59]">Innovators</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
