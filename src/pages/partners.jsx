@@ -33,7 +33,7 @@ export default function Partners() {
         }}
         className="text-4xl sm:text-5xl lg:text-5xl text-center font-extrabold mb-12 text-white"
       >
-        BACKED BY
+        OUR CLIENTS
       </motion.h2>
 
       <div className="w-full">
