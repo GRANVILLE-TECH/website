@@ -508,7 +508,7 @@ export default function Innovations() {
               {innovation.image && (
                 <img
                   src={innovation.image}
-                  alt={innovation.title}
+                  alt={`AI Solution for ${innovation.category}: ${innovation.title} - ${innovation.tagline}`}
                   className="w-full h-full object-cover"
                 />
               )}

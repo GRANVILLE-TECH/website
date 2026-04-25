@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft } from 'react-icons/md';
 import { BookOpen, Calendar, Clock, User, Tag } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 // Article data structure
 const articlesData = [
@@ -375,6 +376,10 @@ const articlesData = [
 ];
 
 export default function ArticlesPage() {
+  useSEO(
+    "Articles & Insights",
+    "Deep dives into African EdTech strategy, innovation, and the future of education with Granville-Tech."
+  );
   const [activeArticle, setActiveArticle] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
 

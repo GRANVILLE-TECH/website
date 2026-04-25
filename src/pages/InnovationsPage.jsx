@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 export default function InnovationsPage() {
+  useSEO(
+    "Our Innovations",
+    "Discover the latest AI innovations and projects from Granville-Tech, including ALETU, EchoSign, and TimeSift."
+  );
   return (
     <div className="p-8 space-y-6">
       <h1 className="text-3xl font-bold">Innovations</h1>

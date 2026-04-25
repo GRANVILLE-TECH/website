@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, GraduationCap } from 'lucide-react';
 import Nav from '../components/navbar';
+import useSEO from '../hooks/useSEO';
 import logo from "../assets/Logo.svg";
 import { AiFillLinkedin, AiFillYoutube, AiFillMail } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
@@ -121,9 +122,12 @@ const alumniData = [
 ];
 
 export default function Alumni() {
+  useSEO(
+    "Alumni Network",
+    "Connect with our community of innovators and professionals who have been part of the Granville-Tech journey."
+  );
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Alumni - Granville-Tech';
   }, []);
 
   return (

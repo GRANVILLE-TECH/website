@@ -17,8 +17,13 @@ import Loader from "./components/Loader";
 import logo from "../src/assets/Logo.svg";
 import { Analytics } from "@vercel/analytics/react";
 import CookieConsent from "./components/CookieConsent";
+import useSEO from "./hooks/useSEO";
 
 export default function App() {
+  useSEO(
+    "Driving Innovation with AI Solutions",
+    "Granville-Tech provides cutting-edge AI solutions for businesses, driving innovation and enhancing productivity across Africa and beyond."
+  );
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
