@@ -10,27 +10,47 @@ const Newsletter = () => {
     e.preventDefault();
     if (!email) return;
 
+    // Rate Limit Check (from Loops.so logic)
+    const timestamp = new Date().valueOf();
+    const previousTimestamp = localStorage.getItem("loops-form-timestamp");
+
+    if (previousTimestamp && Number(previousTimestamp) + 60000 > timestamp) {
+      setStatus("error");
+      // Optionally set a specific message for rate limiting
+      return;
+    }
+    
+    localStorage.setItem("loops-form-timestamp", timestamp);
     setStatus("loading");
 
     try {
-      // Reusing EmailJS - you can set a specific TEMPLATE_ID for newsletters in your .env later
-      const templateParams = {
+      // Loops.so requires x-www-form-urlencoded format
+      const formBody = new URLSearchParams({
+        userGroup: "",
+        mailingLists: "",
         email: email,
-        type: "Newsletter Signup",
-        date: new Date().toLocaleDateString(),
-      };
+      });
 
-      await emailjs.send(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        templateParams
-      );
+      const response = await fetch("https://app.loops.so/api/newsletter-form/cmoinvtnw00bf0i47iedqnppu", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formBody.toString(),
+      });
 
-      setStatus("success");
-      setEmail("");
+      if (response.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        const data = await response.json();
+        console.error("Loops Error:", data.message || response.statusText);
+        setStatus("error");
+      }
     } catch (error) {
-      console.error("Newsletter Error:", error);
+      console.error("Network Error:", error);
       setStatus("error");
+      localStorage.setItem("loops-form-timestamp", ""); // Reset on network failure
     }
   };
 
@@ -76,54 +96,71 @@ const Newsletter = () => {
                 exit={{ opacity: 0, scale: 0.8 }}
                 className="py-4"
               >
-                <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#EDEADE]/10 rounded-full text-[#EDEADE] border border-[#EDEADE]/20">
-                  <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Welcome to the community!</span>
+                <div className="inline-flex flex-col items-center gap-4">
+                  <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#EDEADE]/10 rounded-full text-[#EDEADE] border border-[#EDEADE]/20">
+                    <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Thanks! We'll be in touch!</span>
+                  </div>
+                  <button 
+                    onClick={() => setStatus("")}
+                    className="text-sm text-gray-500 hover:text-[#EDEADE] transition-colors underline underline-offset-4"
+                  >
+                    &larr; Back
+                  </button>
                 </div>
               </motion.div>
             ) : (
-              <motion.form
-                key="form"
-                onSubmit={handleSubscribe}
-                className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto"
+              <motion.div
+                key="form-container"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <input
-                  type="email"
-                  placeholder="Your Email Address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 p-4 bg-black/40 border border-[#EDEADE]/10 rounded-xl text-[#EDEADE] placeholder-gray-500 focus:ring-2 focus:ring-[#EDEADE]/30 outline-none transition-all"
-                  required
-                />
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="px-8 py-4 bg-[#EDEADE] text-black font-bold rounded-xl hover:bg-[#DED9C8] transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center min-w-[140px]"
+                <form
+                  onSubmit={handleSubscribe}
+                  className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto"
                 >
-                  {status === "loading" ? (
-                    <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></div>
-                  ) : (
-                    "Subscribe"
-                  )}
-                </button>
-              </motion.form>
+                  <input
+                    type="email"
+                    placeholder="you@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 p-4 bg-black/40 border border-[#EDEADE]/10 rounded-xl text-[#EDEADE] placeholder-gray-500 focus:ring-2 focus:ring-[#EDEADE]/30 outline-none transition-all"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="px-8 py-4 bg-[#EDEADE] text-black font-bold rounded-xl hover:bg-[#DED9C8] transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center min-w-[140px]"
+                  >
+                    {status === "loading" ? (
+                      <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></div>
+                    ) : (
+                      "Join Waitlist"
+                    )}
+                  </button>
+                </form>
+
+                {status === "error" && (
+                  <div className="flex flex-col items-center gap-2 mt-4">
+                    <p className="text-red-400 text-sm">
+                      {localStorage.getItem("loops-form-timestamp") && Number(localStorage.getItem("loops-form-timestamp")) + 60000 > new Date().valueOf()
+                        ? "Too many signups, please try again in a little while."
+                        : "Oops! Something went wrong, please try again."}
+                    </p>
+                    <button 
+                      onClick={() => setStatus("")}
+                      className="text-xs text-gray-500 hover:text-[#EDEADE] transition-colors"
+                    >
+                      &larr; Back
+                    </button>
+                  </div>
+                )}
+              </motion.div>
             )}
           </AnimatePresence>
-
-          {status === "error" && (
-            <motion.p 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
-              className="text-red-400 text-sm mt-4"
-            >
-              Something went wrong. Please try again or contact us directly.
-            </motion.p>
-          )}
 
           <p className="mt-6 text-xs text-gray-500">
             No spam. Just innovation. Unsubscribe at any time.
