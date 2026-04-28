@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
+import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import Contact_hero from "../assets/rb_74.png";
 
 const ContactPage = () => {
@@ -11,6 +11,7 @@ const ContactPage = () => {
     phone: "",
     service: "",
     message: "",
+    _honeypot: "", // Spam protection
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,6 +21,9 @@ const ContactPage = () => {
   const formRef = useRef(null);
 
   useEffect(() => {
+    // Initialize EmailJS with your Public Key
+    emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
+
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
@@ -33,11 +37,15 @@ const ContactPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-    validateForm();
+    setFormData((prevData) => {
+      const newData = {
+        ...prevData,
+        [name]: value,
+      };
+      // Validate with the new data
+      validateForm(newData);
+      return newData;
+    });
   };
 
   const toggleDropdown = () => {
@@ -45,21 +53,21 @@ const ContactPage = () => {
   };
 
   // Form validation function
-  const validateForm = () => {
+  const validateForm = (data = formData) => {
     const newErrors = {};
 
-    if (!formData.firstName) newErrors.firstName = "First name is required.";
-    if (!formData.lastName) newErrors.lastName = "Last name is required.";
-    if (!formData.email) {
+    if (!data.firstName) newErrors.firstName = "First name is required.";
+    if (!data.lastName) newErrors.lastName = "Last name is required.";
+    if (!data.email) {
       newErrors.email = "Email is required.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!/\S+@\S+\.\S+/.test(data.email)) {
       newErrors.email = "Email address is invalid. Please enter a valid email.";
     }
-    if (formData.phone && !/^\d{10,15}$/.test(formData.phone)) {
+    if (data.phone && !/^\d{10,15}$/.test(data.phone)) {
       newErrors.phone = "Phone number must be between 10-15 digits.";
     }
-    if (!formData.service) newErrors.service = "Please select a service.";
-    if (!formData.message) newErrors.message = "Message is required.";
+    if (!data.service) newErrors.service = "Please select a service.";
+    if (!data.message) newErrors.message = "Message is required.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -67,16 +75,33 @@ const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Spam check
+    if (formData._honeypot) {
+      console.warn("Spam detected.");
+      return;
+    }
+
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        const response = await emailjs.sendForm(
+        // We use .send() instead of .sendForm() for better reliability and control
+        const templateParams = {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone || "Not provided",
+          service: formData.service,
+          message: formData.message,
+        };
+
+        await emailjs.send(
           import.meta.env.VITE_SERVICE_ID,
           import.meta.env.VITE_TEMPLATE_ID,
-          formRef.current,
-          import.meta.env.VITE_PUBLIC_KEY
+          templateParams
         );
-        setSuccessMessage("Message Sent Successfully!");
+
+        setSuccessMessage("success");
         setFormData({
           firstName: "",
           lastName: "",
@@ -84,27 +109,28 @@ const ContactPage = () => {
           phone: "",
           service: "",
           message: "",
+          _honeypot: "",
         });
         setErrors({});
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 3000);
       } catch (error) {
-        setSuccessMessage("Failed to send message. Please try again.");
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 3000);
+        console.error("EmailJS Error:", error);
+        setSuccessMessage("error");
+      } finally {
+        setIsSubmitting(false);
       }
-      setIsSubmitting(false);
     }
   };
 
   // Handle dropdown selection
 const handleServiceSelect = (service) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      service,
-    }));
+    setFormData((prevData) => {
+      const newData = {
+        ...prevData,
+        service,
+      };
+      validateForm(newData);
+      return newData;
+    });
     setIsOpen(false);
   };
 
@@ -222,6 +248,16 @@ const handleServiceSelect = (service) => {
           }}
           transition={{ staggerChildren: 0.2 }}
         >
+          {/* Honeypot Field (Hidden from users) */}
+          <input
+            type="text"
+            name="_honeypot"
+            style={{ display: "none" }}
+            value={formData._honeypot}
+            onChange={handleChange}
+            tabIndex="-1"
+            autoComplete="off"
+          />
           {/* First and Last Name */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {["firstName", "lastName"].map((field, idx) => (
@@ -402,20 +438,54 @@ const handleServiceSelect = (service) => {
         </motion.form>
 
         {/* Success/Error Message */}
-        {successMessage && (
-          <motion.div
-            className={`mt-4 p-4 text-center rounded-lg transition-all duration-300 ${
-              successMessage.includes("Failed")
-                ? "bg-black text-silver"
-                : "bg-black text-silver"
-            }`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            {successMessage}
-          </motion.div>
-        )}
+        <AnimatePresence mode="wait">
+          {successMessage === "success" && (
+            <motion.div
+              key="success"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: -20 }}
+              className="mt-8 p-6 bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl text-center"
+            >
+              <div className="flex flex-col items-center gap-4">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                  <p className="text-gray-400">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+                </div>
+                <button 
+                  onClick={() => setSuccessMessage("")}
+                  className="mt-2 text-sm text-gray-500 hover:text-white transition-colors"
+                >
+                  Dismiss
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {successMessage === "error" && (
+            <motion.div
+              key="error"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: -20 }}
+              className="mt-8 p-6 bg-red-500/10 border border-red-500/20 backdrop-blur-xl rounded-2xl text-center"
+            >
+              <h3 className="text-xl font-bold text-red-500 mb-2">Oops! Something went wrong</h3>
+              <p className="text-gray-400">We couldn't send your message. Please try again later or email us directly.</p>
+              <button 
+                onClick={() => setSuccessMessage("")}
+                className="mt-4 px-4 py-2 bg-red-500/20 text-red-500 rounded-lg hover:bg-red-500/30 transition-all"
+              >
+                Try Again
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

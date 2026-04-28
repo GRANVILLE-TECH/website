@@ -41,7 +41,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-6 space-y-8">
         {/* Main Heading with Framer Motion letter-by-letter animation */}
         <AnimatedText
-          text="Reimagining the future with every innovation"
+          text="Granville Reimagining the future with every innovation"
           gradientColors="linear-gradient(90deg, #666666, #ffffff, #666666)"
           className="py-0"
           textClassName="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-extrabold leading-tight text-center break-words"

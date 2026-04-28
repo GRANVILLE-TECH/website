@@ -9,7 +9,7 @@ export default function InnovationsPage() {
   );
   return (
     <div className="p-8 space-y-6">
-      <h1 className="text-3xl font-bold">Innovations</h1>
+      <h1 className="text-3xl font-bold">Granville-Tech Innovations</h1>
       <p className="text-lg text-gray-700">Discover the latest AI innovations and projects.</p>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

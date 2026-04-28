@@ -10,6 +10,7 @@ import SocialHub from "./pages/SocialHub";
 import Booking from "./pages/booking";
 import ResourceLibrary from "./pages/ResourceLibrary";
 import ContactUs from "./pages/contact";
+import Newsletter from "./components/Newsletter";
 import { Link } from "react-router-dom";
 import { AiFillLinkedin, AiFillYoutube, AiFillMail } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
@@ -87,6 +88,9 @@ export default function App() {
         </section>
         <section id="contact">
           <ContactUs />
+        </section>
+        <section id="newsletter">
+          <Newsletter />
         </section>
       </main>
 

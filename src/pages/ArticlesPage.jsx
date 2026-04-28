@@ -478,7 +478,7 @@ export default function ArticlesPage() {
           className="text-center mb-8"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
-            Articles & Insights
+            Granville-Tech Articles & Insights
           </h1>
           <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
             Deep dives into African EdTech strategy, innovation, and the future of education
