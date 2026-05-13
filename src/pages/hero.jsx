@@ -58,17 +58,22 @@ export default function Hero() {
       
       .stars-bg {
         background-image: 
-          radial-gradient(1px 1px at 20% 30%, white, transparent),
-          radial-gradient(1px 1px at 60% 70%, white, transparent),
-          radial-gradient(1px 1px at 50% 50%, white, transparent),
-          radial-gradient(1px 1px at 80% 10%, white, transparent),
-          radial-gradient(1px 1px at 90% 60%, white, transparent),
-          radial-gradient(1px 1px at 33% 80%, white, transparent),
-          radial-gradient(1px 1px at 15% 60%, white, transparent),
-          radial-gradient(1px 1px at 70% 40%, white, transparent);
-        background-size: 200% 200%, 180% 180%, 250% 250%, 220% 220%, 190% 190%, 240% 240%, 210% 210%, 230% 230%;
-        background-position: 0% 0%, 40% 40%, 60% 60%, 20% 20%, 80% 80%, 30% 30%, 70% 70%, 50% 50%;
-        opacity: 0.3;
+          radial-gradient(1.5px 1.5px at 20% 30%, white, transparent),
+          radial-gradient(2px 2px at 60% 70%, white, transparent),
+          radial-gradient(1.5px 1.5px at 50% 50%, white, transparent),
+          radial-gradient(2px 2px at 80% 10%, white, transparent),
+          radial-gradient(1.5px 1.5px at 90% 60%, white, transparent),
+          radial-gradient(2px 2px at 33% 80%, white, transparent),
+          radial-gradient(1.5px 1.5px at 15% 60%, white, transparent),
+          radial-gradient(2px 2px at 70% 40%, white, transparent);
+        background-size: 200% 200%;
+        animation: stars-twinkle 4s ease-in-out infinite alternate;
+        opacity: 0.5;
+      }
+
+      @keyframes stars-twinkle {
+        from { opacity: 0.3; transform: scale(1); }
+        to { opacity: 0.7; transform: scale(1.05); }
       }
     `;
     document.head.appendChild(style);
