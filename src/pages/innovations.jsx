@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import { PlayCircle, FileText, Download, ExternalLink } from "lucide-react";
+import { PlayCircle, FileText, Download, ExternalLink, Heart } from "lucide-react";
+import InnovationSupportCTA from "../components/InnovationSupportCTA";
 
 // Import ALETU Presentations
 import blueprintPdf from "../assets/ALETU slides/ALETU_Africa_s_Adaptive_Education_Blueprint.pdf";
@@ -417,9 +418,10 @@ export default function Innovations() {
   };
 
   const getTotalPages = () => {
-    let pages = 3;
+    let pages = 3; // Basic info, Vision, Value Prop
     if (activeInnovation?.hasVideo) pages += 1;
     if (activeInnovation?.presentations) pages += 1;
+    pages += 1; // Support slide (NEW)
     return pages;
   };
 
@@ -821,7 +823,10 @@ export default function Innovations() {
                     </div>
                   </div>
                 </div>
+                {/* Support Slide */}
+                <InnovationSupportCTA innovationName={activeInnovation.title} />
               </div>
+
             </div>
 
             {/* Navigation Buttons */}
