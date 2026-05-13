@@ -54,7 +54,8 @@ export default {
 				}
 			},
 			animation: {
-				'bounce-custom': 'bounceCustom 1s ease-in-out infinite'
+				'bounce-custom': 'bounceCustom 1s ease-in-out infinite',
+				'text-shimmer': 'textShimmer 20s linear infinite'
 			},
 			keyframes: {
 				bounceCustom: {
@@ -64,6 +65,10 @@ export default {
 					'50%': {
 						transform: 'translateY(-5px)'
 					}
+				},
+				textShimmer: {
+					'from': { backgroundPosition: '0% 50%' },
+					'to': { backgroundPosition: '100% 50%' }
 				}
 			},
 			borderRadius: {

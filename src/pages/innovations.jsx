@@ -11,7 +11,7 @@ import curriculumPdf from "../assets/ALETU slides/ALETU_Neural_Curriculum.pdf";
 import masteryPdf from "../assets/ALETU slides/ALETU_Scaling_Mastery_in_Africa.pdf";
 
 // Import your image assets
-import aletu from "../assets/innovations/DALL·E 2024-12-04 19.34.44 - A hopeful vision of Uganda's educational transformation featuring divers (1).webp";
+import aletu from "../assets/innovations/Data-Science-Practitioner.png-update-min-702x468.png";
 import mirrorMentor from "../assets/innovations/mirrior mentor.webp";
 import echo from "../assets/innovations/echo sign.jpg";
 import echoWearable from "../assets/innovations/ech sign wearable.webp";
@@ -109,17 +109,17 @@ const innovationInfo = [
   },
   {
     title: "TimeSift",
-    tagline: "Rediscover peace of mind with intelligent surveillance",
+    tagline: "Rediscover peace of mind with intelligent security",
     category: "Security",
     description:
-      "An AI-driven surveillance system that transforms hours of CCTV footage into curated daily highlight reels, saving time and enhancing security",
+      "An AI-driven security system that transforms hours of CCTV footage into curated daily highlight reels, saving time and enhancing security",
     videoUrl: null, // Add your Cloudinary video URL here
     hasVideo: false,
     ValueProposition: {
       Problem:
-        "Homeowners and property managers face the tedious task of manually reviewing hours of CCTV footage to monitor their homes or properties Conventional systems lack intelligence to identify and summarize significant activities, making surveillance inefficient and time-consuming",
+        "Homeowners and property managers face the tedious task of manually reviewing hours of CCTV footage to monitor their homes or properties Conventional systems lack intelligence to identify and summarize significant activities, making security inefficient and time-consuming",
       Solution:
-        "TimeSift uses advanced AI to sift through hours of footage and generate concise highlight reels tailored to user preferencesIt identifies significant events like unusual movements, visitors, or deliveries, saving users time while enhancing peace of mind",
+        "TimeSift uses advanced AI to sift through hours of footage and generate concise highlight reels tailored to user preferencesIt identifies significant events like unusual movements, visitors, or deliveries, saving users time while enhancing security",
       KeyBenefits: {
         TimeEfficiency: "Users spend less time reviewing irrelevant footage",
         EnhancedSecurity: "Alerts on unusual or suspicious activity",
@@ -155,7 +155,7 @@ const innovationInfo = [
       },
     },
     VisionStatement:
-      "To redefine home and property surveillance with AI, providing effortless security and peace of mind by turning hours of video into moments of significance",
+      "To redefine home and property security with AI, providing effortless security and peace of mind by turning hours of video into moments of significance",
     TargetAudience: {
       Homeowners: {
         Message:
@@ -167,10 +167,10 @@ const innovationInfo = [
       },
       SmartHomeEnthusiasts: {
         Message:
-          "Integrate TimeSift with your smart home to make surveillance even smarter and more efficient",
+          "Integrate TimeSift with your smart home to make security even smarter and more efficient",
       },
       SmallBusiness: {
-        Message: " Small business owners with basic surveillance setups",
+        Message: " Small business owners with basic security setups",
       },
       TravelersAndRemoteHomeowners: {
         Message:
@@ -178,7 +178,7 @@ const innovationInfo = [
       },
     },
     ValuePropositionStatement:
-      "For homeowners, property managers, and smart home enthusiasts seeking smarter and more efficient surveillance solutions, TimeSift is an AI-driven system that transforms hours of CCTV footage into curated daily highlight reels Unlike traditional surveillance systems that rely on manual review",
+      "For homeowners, property managers, and smart home enthusiasts seeking smarter and more efficient security Solutions, TimeSift is an AI-driven system that transforms hours of CCTV footage into curated daily highlight reels Unlike traditional security systems that rely on manual review",
   },
   {
     title: "EchoSign",
@@ -388,7 +388,7 @@ const formatKey = (key) => {
 
 // Images mapped for JSON data
 const imageMapping = {
-  "Adaptive learning for educational transform of Uganda": aletu,
+  "Adaptive learning for educational transform of Uganda": aletu,
   TimeSift: timeshift,
   EchoSign: echo,
   "EchoSign Wearable": echoWearable,
@@ -406,7 +406,7 @@ export default function Innovations() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "EdTech", "FinTech", "Surveillance", "Accessibility"];
+  const categories = ["All", "EdTech", "FinTech", "Security", "Accessibility"];
 
   const filteredInnovations = selectedCategory === "All"
     ? innovations

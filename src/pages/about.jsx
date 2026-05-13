@@ -12,7 +12,7 @@ export default function About() {
 
       <div className="text-center mb-16">
         <motion.h2
-          className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-4"
+          className="text-5xl sm:text-7xl font-black tracking-tighter uppercase mb-4 text-transparent bg-clip-text bg-[url('https://plus.unsplash.com/premium_photo-1661882403999-46081e67c401?w=900&auto=format&fit=crop&q=60')] bg-[length:200%_auto] animate-text-shimmer opacity-90"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{
@@ -25,14 +25,9 @@ export default function About() {
         </motion.h2>
         <motion.p
           className="text-xl sm:text-2xl text-center max-w-4xl mx-auto mb-20 z-20 text-silver leading-relaxed"
-          whileInView={{ x: 0, opacity: 1 }}
-          initial={{ x: -50, opacity: 0 }}
-          transition={{
-            duration: 1,
-            delay: 0.5,
-            type: "spring",
-            stiffness: 80,
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
           Granville-Tech is at the forefront of AI-driven innovation, empowering
           businesses with transformative solutions. Our team of experts develops
@@ -41,11 +36,9 @@ export default function About() {
         </motion.p>
       </div>
 
-
-
       {/* Core Values Heading */}
       <motion.h3
-        className="text-3xl sm:text-4xl font-semibold text-center text-white mb-16 z-20"
+        className="text-3xl sm:text-5xl font-bold text-center uppercase mb-16 z-20 text-transparent bg-clip-text bg-[url('https://plus.unsplash.com/premium_photo-1661963874418-df1110ee39c1?w=900&auto=format&fit=crop&q=60')] bg-[length:200%_auto] animate-text-shimmer opacity-80"
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 1, delay: 0.8 }}
