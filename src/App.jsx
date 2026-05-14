@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Nav from "./components/navbar";
 import Hero from "./pages/hero";
 import About from "./pages/about";
@@ -12,13 +12,42 @@ import ResourceLibrary from "./pages/ResourceLibrary";
 import ContactUs from "./pages/contact";
 import Newsletter from "./components/Newsletter";
 import { Link } from "react-router-dom";
+import AletuShowcase from "./components/AletuShowcase";
 import { AiFillLinkedin, AiFillYoutube, AiFillMail } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
+import { ArrowRightIcon } from "lucide-react";
 import Loader from "./components/Loader";
 import logo from "../src/assets/Logo.svg";
 import { Analytics } from "@vercel/analytics/react";
 import CookieConsent from "./components/CookieConsent";
 import useSEO from "./hooks/useSEO";
+
+// Helper component for lazy rendering sections only when they are near the viewport
+const DeferredSection = ({ children, className }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" } // Start loading 200px before it enters the viewport
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={className}>
+      {isVisible ? children : <div className="h-96" />}
+    </div>
+  );
+};
 
 export default function App() {
   useSEO(
@@ -28,12 +57,8 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    // Hide loader immediately once initial JS is ready
+    setIsLoading(false);
   }, []);
 
   if (isLoading) {
@@ -47,51 +72,75 @@ export default function App() {
         <Nav />
       </header>
 
-      {/* Main Content: All Sections in One Page */}
+      {/* Main Content Area */}
       <main>
+        {/* Critical path: Hero is rendered immediately */}
         <section id="home">
           <Hero />
         </section>
-        <section id="about">
+
+        {/* Deferred sections to improve performance */}
+        <DeferredSection id="about">
           <About />
-        </section>
-        <section id="video-showcase">
+        </DeferredSection>
+
+        <DeferredSection id="video-showcase">
           <VideoShowcase />
-        </section>
-        <section id="innovations">
+        </DeferredSection>
+
+        <DeferredSection id="innovations">
           <Innovations />
-        </section>
-        <section id="services">
+        </DeferredSection>
+
+        <DeferredSection id="aletu">
+          <AletuShowcase />
+        </DeferredSection>
+
+        <DeferredSection id="services">
           <Services />
-        </section>
-        <section id="resources">
+        </DeferredSection>
+
+        <DeferredSection id="resources">
           <ResourceLibrary />
-        </section>
-        <section id="partners">
+        </DeferredSection>
+
+        <DeferredSection id="partners">
           <Partners />
-        </section>
-        <section id="social-hub">
+        </DeferredSection>
+
+        <DeferredSection id="social-hub">
           <SocialHub />
-        </section>
-        <section id="articles" className="p-8">
-          <h2 className="text-2xl font-bold mb-2">From Our Blog</h2>
-          <p className="text-gray-600 mb-4">Latest insights, articles.</p>
-          <Link
-            to="/articles"
-            className="inline-block px-4 py-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-white rounded shadow"
-          >
-            Read Articles
-          </Link>
-        </section>
-        <section id="booking">
+        </DeferredSection>
+
+        <DeferredSection id="articles">
+          <section className="py-24 px-6 bg-black relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/5 to-sky-500/5" />
+            <div className="max-w-7xl mx-auto relative z-10 text-center">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">Insight Collective</h2>
+              <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+                Deep dives into AI ethics, neural architectures, and the future of educational technology in emerging markets.
+              </p>
+              <Link
+                to="/articles"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-amber-400 transition-all duration-300"
+              >
+                Explore Articles <ArrowRightIcon className="h-5 w-5" />
+              </Link>
+            </div>
+          </section>
+        </DeferredSection>
+
+        <DeferredSection id="booking">
           <Booking />
-        </section>
-        <section id="contact">
+        </DeferredSection>
+
+        <DeferredSection id="contact">
           <ContactUs />
-        </section>
-        <section id="newsletter">
+        </DeferredSection>
+
+        <DeferredSection id="newsletter">
           <Newsletter />
-        </section>
+        </DeferredSection>
       </main>
 
       {/* Footer Section */}
@@ -133,6 +182,14 @@ export default function App() {
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   Our Innovations
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#aletu"
+                  className="text-silver hover:text-white transition-all duration-300"
+                >
+                  ALETU LMS
                 </a>
               </li>
               <li>
