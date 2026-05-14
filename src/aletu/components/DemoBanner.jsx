@@ -1,9 +1,12 @@
 import React from 'react';
 import { ArrowLeftIcon, BookOpenIcon, ExternalLinkIcon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function DemoBanner() {
+  const navigate = useNavigate();
+
   const handleExit = () => {
-    window.location.href = '/#aletu-demo';
+    navigate('/#aletu-demo');
   };
 
   return (

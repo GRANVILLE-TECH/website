@@ -23,7 +23,7 @@ import CookieConsent from "./components/CookieConsent";
 import useSEO from "./hooks/useSEO";
 
 // Helper component for lazy rendering sections only when they are near the viewport
-const DeferredSection = ({ children, className }) => {
+const DeferredSection = ({ children, className, id }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -43,7 +43,7 @@ const DeferredSection = ({ children, className }) => {
   }, []);
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={className} id={id}>
       {isVisible ? children : <div className="h-96" />}
     </div>
   );
@@ -92,7 +92,7 @@ export default function App() {
           <Innovations />
         </DeferredSection>
 
-        <DeferredSection id="aletu">
+        <DeferredSection id="aletu-demo">
           <AletuShowcase />
         </DeferredSection>
 
@@ -186,7 +186,7 @@ export default function App() {
               </li>
               <li>
                 <a
-                  href="#aletu"
+                  href="#aletu-demo"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   ALETU LMS

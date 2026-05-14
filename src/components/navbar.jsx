@@ -66,6 +66,9 @@ export default function Nav() {
   ];
 
   const isActive = (href) => {
+    if (href === '/#home' && location.pathname === '/' && !window.location.hash) {
+      return true;
+    }
     if (href.startsWith('/#')) {
       return location.pathname === '/' && window.location.hash === href.replace('/', '');
     }
@@ -105,8 +108,8 @@ export default function Nav() {
           <ul className="flex items-center gap-8">
             {navItems.map((item, index) => (
               <li key={index}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className={`text-sm font-bold tracking-widest uppercase relative group transition-colors duration-300 ${
                     isActive(item.href) ? 'text-amber-400' : 'text-white/70 hover:text-white'
                   }`}
@@ -115,17 +118,17 @@ export default function Nav() {
                   <span className={`absolute -bottom-1 left-0 h-[2px] bg-amber-400 transition-all duration-300 ${
                     isActive(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
                   }`} />
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
 
-          <a
-            href="/#contact"
+          <Link
+            to="/#contact"
             className="px-6 py-2.5 bg-white text-black text-xs font-black tracking-widest uppercase rounded-full hover:bg-amber-400 transition-all duration-300 shadow-xl active:scale-95"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -163,14 +166,14 @@ export default function Nav() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + index * 0.05 }}
                   >
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className="text-4xl sm:text-5xl font-black text-white hover:text-amber-400 transition-colors flex items-center gap-4 group"
                       onClick={() => setMenuOpen(false)}
                     >
                       {item.name}
                       <ArrowRight className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-amber-400" />
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
