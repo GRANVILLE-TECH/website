@@ -4,6 +4,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import App from './App.jsx';
 import './index.css';
+import { registerSW } from 'virtual:pwa-register';
+
+// Register the PWA service worker
+if ('serviceWorker' in navigator) {
+  registerSW({ immediate: true });
+}
 
 // Lazy load non-critical pages
 const ArticlesPage = lazy(() => import('./pages/ArticlesPage.jsx'));
