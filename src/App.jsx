@@ -21,6 +21,7 @@ import logo from "../src/assets/Logo.svg";
 import { Analytics } from "@vercel/analytics/react";
 import CookieConsent from "./components/CookieConsent";
 import useSEO from "./hooks/useSEO";
+import { useTranslation } from "react-i18next";
 
 // Helper component for lazy rendering sections only when they are near the viewport
 const DeferredSection = ({ children, className, id }) => {
@@ -50,9 +51,10 @@ const DeferredSection = ({ children, className, id }) => {
 };
 
 export default function App() {
+  const { t } = useTranslation();
   useSEO(
-    "Driving Innovation with AI Solutions",
-    "Granville-Tech provides cutting-edge AI solutions for businesses, driving innovation and enhancing productivity across Africa and beyond."
+    t('footer.brandTagline') + " - Granville-Tech",
+    t('hero.subCopy')
   );
   const [isLoading, setIsLoading] = useState(true);
 
@@ -153,7 +155,7 @@ export default function App() {
               Granville-Tech
             </h3>
             <p className="text-lg sm:text-xl font-light text-white opacity-85">
-              Driving Innovation with AI Solutions
+              {t('footer.brandTagline')}
             </p>
           </div>
 
@@ -165,7 +167,7 @@ export default function App() {
                   href="#home"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
-                  Home
+                  {t('nav.home')}
                 </a>
               </li>
               <li>
@@ -173,7 +175,7 @@ export default function App() {
                   href="#about"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
-                  About Us
+                  {t('nav.about')}
                 </a>
               </li>
               <li>
@@ -181,7 +183,7 @@ export default function App() {
                   href="#innovations"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
-                  Our Innovations
+                  {t('nav.innovations')}
                 </a>
               </li>
               <li>
@@ -197,7 +199,7 @@ export default function App() {
                   href="#services"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
-                  Our Services
+                  {t('nav.services')}
                 </a>
               </li>
               <li>
@@ -205,7 +207,7 @@ export default function App() {
                   href="#booking"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
-                  Booking
+                  {t('nav.booking')}
                 </a>
               </li>
               <li>
@@ -213,7 +215,7 @@ export default function App() {
                   href="#resources"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
-                  Resources
+                  {t('nav.resources')}
                 </a>
               </li>
               <li>
@@ -221,7 +223,7 @@ export default function App() {
                   href="#alumni"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
-                  Alumni
+                  {t('nav.alumni')}
                 </a>
               </li>
               <li>
@@ -229,7 +231,7 @@ export default function App() {
                   href="#contact"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
-                  Contact Us
+                  {t('nav.contact')}
                 </a>
               </li>
             </ul>
@@ -238,7 +240,7 @@ export default function App() {
           {/* Social Links */}
           <div className="mb-6 sm:mb-12">
             <p className="text-sm sm:text-base text-white opacity-85 mb-4">
-              Connect with us:
+              {t('footer.connect')}
             </p>
             <div className="flex flex-wrap gap-6 sm:gap-10">
               <a
@@ -281,12 +283,10 @@ export default function App() {
           {/* Copyright & Legal */}
           <div className="mt-8 sm:mt-10 border-t border-gray-300 pt-6">
             <p className="text-sm sm:text-base text-silver opacity-80">
-              &copy; {new Date().getFullYear()} Granville-Tech. All rights
-              reserved.
+              {t('footer.copyright', { year: new Date().getFullYear() })}
             </p>
             <p className="text-sm sm:text-base text-silver opacity-80 mt-2">
-              Designed and developed with precision to drive AI solutions
-              forward.
+              {t('footer.crafted')}
             </p>
           </div>
         </div>

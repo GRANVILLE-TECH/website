@@ -1,0 +1,551 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "innovations": "Innovaciones",
+    "services": "Servicios",
+    "booking": "Reservas",
+    "resources": "Recursos",
+    "alumni": "Exalumnos",
+    "contact": "Contacto",
+    "navigationTitle": "Navegación",
+    "office": "Oficina",
+    "location": "Kampala, Uganda"
+  },
+  "hero": {
+    "badge": "✦ Impulsando la innovación con soluciones de IA",
+    "headlinePart1": "Reimaginando",
+    "headlinePart2": "El futuro",
+    "headlinePart3": "de la inteligencia",
+    "subCopy": "Pioneros en soluciones transformadoras de IA que redefinen industrias y potencian un mañana más inteligente en África y más allá.",
+    "ctaInnovations": "Nuestras Innovaciones",
+    "ctaContact": "Póngase en contacto",
+    "scroll": "Deslizar",
+    "rotatingRing": "Granville-Tech • Soluciones de IA • Innovación • África •"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "description": "Granville-Tech está a la vanguardia de la innovación impulsada por IA, capacitando a las empresas con soluciones transformadoras. Nuestro equipo de expertos desarrolla tecnologías de IA de última generación para resolver desafíos del mundo real e impulsar un cambio impactante en las industrias de todo el mundo.",
+    "coreValues": "Nuestros Valores Fundamentales",
+    "finalParagraph": "En Granville-Tech, no solo creamos productos, creamos experiencias que resuenan, inspiran y transforman. Cada innovación es un testimonio de nuestra dedicación para superar los límites y redefinir las posibilidades. Lo invitamos a ser parte de este viaje emocionante, a imaginar junto a nosotros y a ayudar a dar forma a un futuro donde la tecnología sirva como una fuerza para el cambio positivo.",
+    "values": {
+      "network": {
+        "title": "Red",
+        "description": "La colaboración es clave para el éxito. Creemos en la unidad."
+      },
+      "innovation": {
+        "title": "Innovación",
+        "description": "Superando límites con soluciones que dan forma al futuro."
+      },
+      "legacy": {
+        "title": "Legado",
+        "description": "Creando un impacto duradero para las generaciones venideras."
+      },
+      "creativity": {
+        "title": "Creatividad",
+        "description": "Abrazando la curiosidad para descubrir nuevos horizontes."
+      },
+      "excellence": {
+        "title": "Excelencia",
+        "description": "Esforzándonos continuamente por alcanzar los estándares más altos."
+      }
+    }
+  },
+  "contact": {
+    "getInTouch": "Póngase en contacto con Granville-Tech",
+    "tagline": "Estamos aquí para responder cualquier pregunta que tenga sobre nuestras soluciones de IA",
+    "title": "Contacto",
+    "instruction": "Complete el formulario a continuación y nos pondremos en contacto con usted dentro de las 24 horas.",
+    "scheduleConsultation": "Programar una consulta",
+    "orEmailUs": "O envíenos un correo electrónico directamente a:",
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Dirección de correo electrónico",
+      "phone": "Número de teléfono (Opcional)",
+      "selectService": "Seleccione un servicio",
+      "query": "Ingrese su consulta",
+      "submit": "Enviar",
+      "sending": "Enviando..."
+    },
+    "errors": {
+      "firstName": "El nombre es obligatorio.",
+      "lastName": "El apellido es obligatorio.",
+      "emailRequired": "El correo electrónico es obligatorio.",
+      "emailInvalid": "La dirección de correo electrónico no es válida. Ingrese un correo electrónico válido.",
+      "phoneInvalid": "El número de teléfono debe tener entre 10 y 15 dígitos.",
+      "service": "Seleccione un servicio.",
+      "message": "El mensaje es obligatorio."
+    },
+    "services": {
+      "recommendation": "Sistemas de recomendación",
+      "consulting": "Consultoría de estrategia de IA",
+      "custom": "Soluciones de IA personalizadas",
+      "assistants": "Asistentes inteligentes",
+      "enterprise": "Inteligencia empresarial"
+    },
+    "success": {
+      "title": "¡Mensaje enviado!",
+      "description": "Gracias por contactarnos. Nuestro equipo se comunicará con usted dentro de las 24 horas.",
+      "dismiss": "Descartar"
+    },
+    "error": {
+      "title": "¡Ups! Algo salió mal",
+      "description": "No pudimos enviar su mensaje. Inténtelo de nuevo más tarde o envíenos un correo electrónico directamente.",
+      "tryAgain": "Intentar de nuevo"
+    }
+  },
+  "footer": {
+    "brandTagline": "Impulsando la innovación con soluciones de IA",
+    "connect": "Conéctate con nosotros:",
+    "copyright": "© {{year}} Granville-Tech. Todos los derechos reservados.",
+    "crafted": "Diseñado y desarrollado con precisión para impulsar las soluciones de IA."
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Transformando los negocios a través de la tecnología inteligente",
+    "recommendationTitle": "Sistemas de recomendación",
+    "recommendationDesc": "Algoritmos impulsados por IA que ofrecen información personalizada mediante análisis de comportamiento avanzado y comprensión contextual",
+    "recommendationBenefits": [
+      "Motor de recomendación inteligente",
+      "Perfilado de usuarios en tiempo real",
+      "Mecanismos de aprendizaje adaptativo"
+    ],
+    "strategyTitle": "Consultoría de estrategia de IA",
+    "strategyDesc": "Estrategia integral de transformación digital que aprovecha la IA para desbloquear la eficiencia operativa y las ventajas competitivas",
+    "strategyBenefits": [
+      "Integración estratégica de IA",
+      "Marcos de innovación",
+      "Evaluación de IA empresarial"
+    ],
+    "customTitle": "Soluciones de IA personalizadas",
+    "customDesc": "Sistemas inteligentes a medida diseñados para resolver desafíos comerciales complejos con arquitecturas modulares y escalables",
+    "customBenefits": [
+      "Arquitectura de IA a medida",
+      "Diseño de soluciones escalables",
+      "Oleoducto de innovación"
+    ],
+    "enterpriseTitle": "Enterprise Intelligence",
+    "enterpriseDesc": "Modelos de IA patentados entrenados con datos organizacionales, que generan información útil para una toma de decisiones inteligente",
+    "enterpriseBenefits": [
+      "Modelado específico de dominio",
+      "Analítica predictiva",
+      "Amplificación del conocimiento"
+    ],
+    "assistantsTitle": "Asistentes inteligentes",
+    "assistantsDesc": "Plataformas avanzadas de interacción multicanal que utilizan el procesamiento del lenguaje natural para interacciones sofisticadas con los clientes",
+    "assistantsBenefits": [
+      "Soporte omnicanal",
+      "Comunicación contextual",
+      "Mayor compromiso"
+    ]
+  },
+  "videoShowcase": {
+    "title": "Visión en Acción",
+    "description": "Descubra la intersección de la investigación y la tecnología mientras somos pioneros en soluciones inteligentes diseñadas para educar y transformar industrias.",
+    "caption": "Reimaginando el futuro con cada innovación",
+    "iframeTitle": "Granville-Tech — Vea Nuestra Visión en Acción"
+  },
+  "innovations": {
+    "title": "Nuestras Innovaciones",
+    "subtitle": "Pioneros en soluciones de IA transformadoras que redefinen industrias y potencian un mañana más inteligente.",
+    "backToHome": "Volver al Inicio",
+    "detailTitle": "Innovaciones de Granville-Tech",
+    "detailSubtitle": "Descubra las últimas innovaciones y proyectos de IA.",
+    "requestDemo": "Solicitar Demostración",
+    "contactUs": "Contacto",
+    "demoVideo": "Video de Demostración",
+    "valueProposition": "Propuesta de Valor",
+    "keyComponents": "Componentes Clave",
+    "visionStatement": "Declaración de Visión",
+    "targetAudience": "Público Objetivo",
+    "problem": "Problema",
+    "solution": "Solución",
+    "keyBenefits": "Beneficios Clave",
+    "differentiators": "Diferenciadores",
+    "lookingForMore": "¿Busca algo más?",
+    "lookingForMoreDesc": "Estos documentos representan nuestra estrategia central y fundamentos técnicos. Póngase en contacto con nuestro equipo para estudios de casos detallados o consultas de asociación.",
+    "watchDemo": "Ver Demostración",
+    "videoBadge": "VIDEO",
+    "problemFocused": "Enfocado en el Problema",
+    "solutionOriented": "Orientado a la Solución",
+    "uniqueDifferentiators": "Diferenciadores Únicos",
+    "items": {
+      "aletu": {
+        "title": "Aprendizaje adaptativo para la transformación educativa de Uganda",
+        "tagline": "Revolucionando la educación, un estudiante a la vez",
+        "description": "Una plataforma educativa basada en la nube e impulsada por IA diseñada para escuelas secundarias en Uganda. Ofrece instrucción personalizada basada en el dominio y alineada con los planes de estudio locales",
+        "valueProposition": {
+          "problem": "Para las escuelas secundarias en Uganda que enfrentan desafíos como altas tasas de deserción escolar, capacidad limitada de los maestros y baja participación de los estudiantes",
+          "solution": "ALETU es una plataforma educativa adaptativa y personalizada que aprovecha rutas de aprendizaje impulsadas por IA, principios de aprendizaje de dominio y evaluaciones cognitivas para transformar los resultados educativos",
+          "keyBenefits": {
+            "students": "Reciben una educación atractiva y personalizada que mejora los resultados",
+            "teachers": "Ahorran tiempo en tareas administrativas y se concentran en una tutoría significativa",
+            "schools": "Reducen las tasas de deserción escolar y mejoran el rendimiento académico general",
+            "policymakers": "Obtienen información útil para fundamentar las estrategias educativas nacionales"
+          },
+          "differentiators": [
+            "Contenido educativo personalizado y alineado culturalmente",
+            "Integración perfecta de temas transversales como la conciencia ambiental y la ética",
+            "Planes de lecciones y evaluaciones generados por IA y alineados con el plan de estudios nacional"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "highDropoutRates": "Altas tasas de deserción escolar en las escuelas secundarias de Uganda",
+            "overburdenedTeachers": "Maestros sobrecargados y con pocas herramientas para la personalización",
+            "lackOfDataDrivenApproaches": "Falta de enfoques basados en datos para monitorear y mejorar el rendimiento de los estudiantes"
+          },
+          "solutionOriented": {
+            "aiAdaptiveLearning": "El aprendizaje adaptativo impulsado por IA permite que cada estudiante progrese a su propio ritmo",
+            "masteryLearning": "Los principios de aprendizaje de dominio aseguran que los estudiantes comprendan completamente los conceptos antes de avanzar",
+            "integratedDashboards": "Los paneles integrados y la analítica brindan a los maestros información útil para intervenir"
+          },
+          "uniqueDifferentiators": {
+            "culturalAlignment": "Contenido educativo personalizado y alineado culturalmente",
+            "crossCuttingIssues": "Integración perfecta de temas transversales como la conciencia ambiental y la ética",
+            "nationalCurriculum": "Planes de lecciones y evaluaciones generados por IA y alineados con el plan de estudios nacional"
+          }
+        },
+        "visionStatement": "Proporcionar soluciones educativas adaptativas impulsadas por IA que capaciten a los estudiantes para sobresalir a través del aprendizaje personalizado, apoyen a los maestros en sus funciones de mentores y defensores, y permitan a las escuelas ofrecer una educación inclusiva, impactante y basada en datos para un futuro mejor",
+        "targetAudience": {
+          "teachers": "Dedique menos tiempo a las tareas administrativas y más a orientar e inspirar a sus estudiantes. ALETU está aquí para ayudarle a lograr un mayor impacto",
+          "students": "Tu aprendizaje, tu ritmo, tu futuro. ALETU te ayuda a tener éxito haciendo que cada lección sea ideal para ti",
+          "administratorsAndPolicymakers": "Impulse mejores resultados educativos con información basada en datos y tecnologías de aprendizaje adaptativo. ALETU se alinea con sus objetivos para un futuro más brillante"
+        },
+        "valuePropositionStatement": "ALETU permite a las escuelas secundarias de Uganda superar las altas tasas de deserción, la capacidad limitada de los docentes y la baja participación estudiantil mediante una plataforma educativa alineada culturalmente e impulsada por IA. Ofrece rutas de aprendizaje personalizadas, instrucción basada en el dominio e información práctica para educadores, lo que permite mejores resultados académicos, menor deserción y decisiones políticas fundamentadas en datos para un futuro educativo más brillante",
+        "presentations": {
+          "blueprint": {
+            "title": "Plano de educación adaptativa",
+            "description": "Una guía completa para transformar el panorama educativo de Uganda mediante IA adaptativa."
+          },
+          "curriculum": {
+            "title": "Plan de estudios neuronal",
+            "description": "Inmersión profunda en el diseño curricular impulsado por IA y rutas de aprendizaje basadas en el dominio."
+          },
+          "mastery": {
+            "title": "Escalar el dominio en África",
+            "description": "Marco estratégico para escalar soluciones educativas de alto impacto en todo el continente."
+          }
+        }
+      },
+      "timesift": {
+        "title": "TimeSift",
+        "tagline": "Recupere la tranquilidad con seguridad inteligente",
+        "description": "Un sistema de seguridad impulsado por IA que transforma horas de grabaciones de CCTV en resúmenes diarios seleccionados, ahorrando tiempo y mejorando la seguridad",
+        "valueProposition": {
+          "problem": "Los propietarios de viviendas y administradores de propiedades se enfrentan a la tediosa tarea de revisar manualmente horas de grabaciones de CCTV. Los sistemas convencionales carecen de la inteligencia para identificar y resumir actividades importantes, lo que hace que la seguridad sea ineficiente y consuma mucho tiempo",
+          "solution": "TimeSift utiliza IA avanzada para filtrar horas de grabaciones y generar resúmenes concisos adaptados a las preferencias del usuario. Identifica eventos significativos como movimientos inusuales, visitantes o entregas, ahorrando tiempo a los usuarios y mejorando la seguridad",
+          "keyBenefits": {
+            "timeEfficiency": "Los usuarios pasan menos tiempo revisando grabaciones irrelevantes",
+            "enhancedSecurity": "Alertas sobre actividades inusuales o sospechosas",
+            "personalization": "Aprende las preferencias del usuario para ofrecer resúmenes a medida"
+          },
+          "differentiators": [
+            "Detecta y resalta automáticamente eventos significativos",
+            "Personaliza los resúmenes según las preferencias definidas por el usuario",
+            "Ahorra tiempo y mejora la tranquilidad al proporcionar una vista rápida y útil de las actividades cotidianas"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "tediousManualReview": "Proceso lento de revisión manual de horas de grabaciones de CCTV",
+            "lackOfIntelligenceInSystems": "Los sistemas convencionales carecen de inteligencia para identificar y resumir actividades significativas"
+          },
+          "solutionOriented": {
+            "aiAlgorithms": "Sistema impulsado por IA que filtra las grabaciones para generar resúmenes de forma automática",
+            "eventDetection": "Detección de eventos importantes como movimientos inusuales, visitantes o entregas"
+          },
+          "uniqueDifferentiators": {
+            "personalization": "Se adapta a las preferencias del usuario para proporcionar resúmenes muy relevantes",
+            "timeSaving": "Transforma horas de grabaciones en un resumen breve y útil",
+            "peaceOfMind": "Garantiza que los usuarios estén siempre al tanto de los eventos críticos sin tener que buscar en grabaciones largas"
+          }
+        },
+        "visionStatement": "Redefinir la seguridad del hogar y la propiedad con IA, proporcionando seguridad sin esfuerzo y tranquilidad al convertir horas de video en momentos importantes",
+        "targetAudience": {
+          "homeowners": "Pase menos tiempo monitoreando grabaciones y más tiempo disfrutando de su hogar. TimeSift le brinda la tranquilidad que se merece",
+          "propertyManagers": "Administre múltiples propiedades con facilidad revisando rápidamente las grabaciones de seguridad relevantes. TimeSift le ayuda a enfocarse en lo más importante",
+          "smartHomeEnthusiasts": "Integre TimeSift con su hogar inteligente para hacer que la seguridad sea aún más inteligente y eficiente",
+          "smallBusiness": "Propietarios de pequeñas empresas con configuraciones de seguridad básicas",
+          "travelersAndRemoteHomeowners": "Viajeros y propietarios de viviendas a distancia que necesitan resúmenes periódicos de la actividad de la propiedad"
+        },
+        "valuePropositionStatement": "Para propietarios de viviendas, administradores de propiedades y entusiastas de hogares inteligentes que buscan soluciones de seguridad más eficientes, TimeSift es un sistema impulsado por IA que transforma horas de grabaciones de CCTV en resúmenes diarios seleccionados, a diferencia de los sistemas tradicionales que dependen de la revisión manual"
+      },
+      "echosign": {
+        "title": "EchoSign",
+        "tagline": "Dando voz a lo no dicho",
+        "description": "Una plataforma impulsada por IA que convierte el lenguaje de señas en palabras habladas en tiempo real mediante modelos avanzados de procesamiento de visión",
+        "valueProposition": {
+          "problem": "Las personas que dependen del lenguaje de señas enfrentan barreras en la comunicación verbal, especialmente en entornos profesionales, académicos y públicos",
+          "solution": "EchoSign utiliza IA avanzada para traducir el lenguaje de señas a palabras habladas en tiempo real, fomentando la inclusión y la independencia",
+          "keyBenefits": {
+            "independence": "Los usuarios pueden comunicarse verbalmente sin depender de intérpretes",
+            "inclusivity": "Participar sin problemas en conversaciones, presentaciones y compromisos profesionales",
+            "flexibility": "Adaptable a diversos entornos, incluidos salones de clases, conferencias y entornos de medios"
+          },
+          "differentiators": [
+            "Traducción en tiempo real de lenguaje de señas a voz natural",
+            "Sistema impulsado por IA que interpreta con precisión gestos, expresiones faciales y movimientos corporales",
+            "Diseñado para una amplia gama de entornos, desde la educación hasta espacios profesionales"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "languageBarriers": "Las personas que dependen del lenguaje de señas se enfrentan a barreras en la comunicación verbal, sobre todo en entornos profesionales, académicos y públicos",
+            "interpreterDependence": "La dependencia de intérpretes limita la independencia y la espontaneidad, creando desafíos para una comunicación fluida"
+          },
+          "solutionOriented": {
+            "aiTranslation": "EchoSign utiliza IA avanzada para traducir el lenguaje de señas a palabras habladas en tiempo real",
+            "adaptiveLearning": "Analiza los gestos de las manos, las expresiones faciales y los movimientos corporales para proporcionar una síntesis de voz precisa y natural, lo que permite la independencia y la accesibilidad"
+          },
+          "uniqueDifferentiators": {
+            "accessibility": "Hace que la comunicación verbal sea accesible para las personas que usan el lenguaje de señas",
+            "empowerment": "Capacita a los usuarios para comunicarse de forma independiente sin necesidad de intérpretes externos"
+          }
+        },
+        "visionStatement": "Cerrar la brecha de comunicación para los usuarios del lenguaje de señas, empoderándolos con herramientas de comunicación verbal inclusivas, accesibles y en tiempo real",
+        "targetAudience": {
+          "deafOrHardOfHearing": "Rompa las barreras de comunicación y participe plenamente en cualquier entorno con EchoSign. Su voz, empoderada",
+          "educationalInstitutions": "Mejore la inclusión en las aulas con traducción de lenguaje de señas en tiempo real. EchoSign apoya a todos los estudiantes",
+          "corporateEnvironments": "Mejore la accesibilidad en entornos profesionales con comunicación en tiempo real. EchoSign fomenta lugares de trabajo inclusivos"
+        },
+        "valuePropositionStatement": "Para las personas que se comunican a través del lenguaje de señas y buscan expandir sus capacidades de comunicación verbal, EchoSign es una plataforma impulsada por IA que traduce el lenguaje de señas a habla natural en tiempo real. A diferencia de los métodos tradicionales que dependen de intérpretes, EchoSign permite a los usuarios \"hablar\" de forma independiente en diversos entornos, fomentando la inclusión y la independencia"
+      },
+      "echosign_wearable": {
+        "title": "EchoSign Wearable",
+        "tagline": "Su voz, llevada en la palma de su mano",
+        "description": "Un dispositivo portátil que traduce el lenguaje de señas en voz sobre la marcha, mejorando la comunicación móvil.",
+        "valueProposition": {
+          "problem": "Los usuarios de lenguaje de señas necesitan una solución portátil y siempre disponible para una comunicación fluida en entornos dinámicos y en movimiento.",
+          "solution": "EchoSign Wearable es un dispositivo compacto y portátil que traduce el lenguaje de señas en palabras habladas en tiempo real, garantizando una comunicación fluida en cualquier lugar.",
+          "keyBenefits": {
+            "mobility": "Los usuarios pueden comunicarse sin esfuerzo dondequiera que estén, ya sea viajando, en el trabajo o socializando.",
+            "independence": "Elimina la necesidad de configuraciones externas o intérpretes.",
+            "convenience": "Ligero y fácil de usar, garantiza que la comunicación esté siempre al alcance."
+          },
+          "differentiators": [
+            "Diseño compacto y portátil para comunicación en tiempo real sobre la marcha.",
+            "Se integra perfectamente con la vida diaria, permitiendo una accesibilidad constante.",
+            "Sistema impulsado por IA que garantiza traducciones precisas en entornos variados."
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "needForPortability": "La necesidad de una solución de traducción de lenguaje de señas portátil y siempre disponible.",
+            "stationarySystems": "Limitaciones de los sistemas fijos de traducción de lenguaje de señas, que restringen el movimiento y la flexibilidad."
+          },
+          "solutionOriented": {
+            "realTime": "EchoSign Wearable es un dispositivo compacto y portátil que traduce el lenguaje de señas en palabras habladas en tiempo real, garantizando una comunicación fluida en cualquier entorno",
+            "compactDesign": "Tecnología portátil ligera que permite la comunicación móvil."
+          },
+          "uniqueDifferentiators": {
+            "mobility": "Proporciona la máxima movilidad para que los usuarios de lenguaje de señas se comuniquen libremente en cualquier entorno.",
+            "independence": "Permite a los usuarios ser independientes en su comunicación sin depender de otros o de configuraciones fijas."
+          }
+        },
+        "visionStatement": "Hacer que la comunicación fluida sea accesible en cualquier lugar y en cualquier momento para los usuarios de lenguaje de señas a través de tecnología portátil innovadora.",
+        "targetAudience": {
+          "onTheGoSignLanguageUsers": "Comuníquese sin esfuerzo sin importar dónde se encuentre. EchoSign Wearable asegura que nunca esté sin su voz.",
+          "professionals": "Mejore su capacidad para comunicarse en entornos profesionales con una solución portátil en tiempo real.",
+          "socialAndCasualSettings": "Participe en conversaciones sociales sin barreras. EchoSign Wearable permite una interacción fluida en todas partes."
+        },
+        "valuePropositionStatement": "Para los usuarios activos de lenguaje de señas que buscan una comunicación fluida, EchoSign Wearable es un dispositivo portátil que traduce el lenguaje de señas en palabras habladas en tiempo real. A diferencia de los sistemas estacionarios, EchoSign Wearable brinda la libertad y movilidad para comunicarse sin esfuerzo en cualquier situación."
+      },
+      "mentor_mirror": {
+        "title": "Mentor Mirror",
+        "tagline": "Opere como los maestros sin años de estudio",
+        "description": "Una plataforma de trading impulsada por IA que refleja las estrategias de mentores experimentados para ayudar a los operadores en tiempo real.",
+        "valueProposition": {
+          "problem": "Los operadores principiantes e intermedios a menudo carecen del tiempo, la experiencia o la confianza para tomar decisiones de trading informadas.",
+          "solution": "Mentor Mirror replica las estrategias de mentores de trading experimentados utilizando IA, proporcionando a los usuarios información útil y orientación automatizada.",
+          "keyBenefits": {
+            "expertise": "Acceso a estrategias de trading impulsadas por IA modeladas a partir de mentores exitosos.",
+            "efficiency": "Ahorre tiempo con información automatizada y menos investigación manual.",
+            "confidence": "Tome decisiones informadas con un sistema respaldado por metodologías probadas."
+          },
+          "differentiators": [
+            "Replicación impulsada por IA de estrategias de trading exitosas.",
+            "Información y orientación útiles en tiempo real adaptadas a las necesidades del usuario.",
+            "Reduce los errores emocionales y acelera el aprendizaje para operadores de todos los niveles."
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "lackOfExpertise": "Muchos operadores carecen del tiempo, la experiencia o el conocimiento para operar de manera efectiva.",
+            "emotionalErrors": "Los errores emocionales a menudo conducen a malas decisiones y resultados en el trading."
+          },
+          "solutionOriented": {
+            "aiInsights": "Información y orientación en tiempo real basadas en estrategias de trading probadas.",
+            "automatedTradingSupport": "Sistemas automatizados que brindan recomendaciones útiles para mejorar la toma de decisiones."
+          },
+          "uniqueDifferentiators": {
+            "provenMethodologies": "Los operadores se benefician de estrategias modeladas según los enfoques de mentores exitosos.",
+            "emotionalErrorReduction": "Mentor Mirror minimiza las influencias emocionales, ayudando a los operadores a enfocarse en decisiones basadas en datos."
+          }
+        },
+        "visionStatement": "Democratizar la mentoría financiera, capacitando a los operadores con orientación impulsada por IA que replica la experiencia de profesionales experimentados.",
+        "targetAudience": {
+          "aspiringTraders": "Aprenda estrategias de trading y aplíquelas con confianza gracias a la información respaldada por IA. Mentor Mirror está aquí para ayudarle a crecer.",
+          "intermediateTraders": "Mejore sus habilidades de trading con mentoría y orientación en tiempo real. Mentor Mirror acelera su camino.",
+          "busyProfessionals": "Participe en el trading sin invertir horas interminables. Mentor Mirror simplifica la toma de decisiones."
+        },
+        "valuePropositionStatement": "Para operadores principiantes e intermedios que buscan mejorar sus resultados, Mentor Mirror es una plataforma impulsada por IA que replica las estrategias de mentores experimentados. A diferencia de las herramientas de trading tradicionales, Mentor Mirror proporciona análisis en tiempo real y orientación automatizada, lo que permite a los usuarios operar con confianza"
+      }
+    },
+    "categories": {
+      "All": "Todo",
+      "EdTech": "EdTech",
+      "FinTech": "FinTech",
+      "Security": "Seguridad",
+      "Accessibility": "Accesibilidad"
+    },
+    "labels": {
+      "teachers": "Profesores",
+      "students": "Estudiantes",
+      "administratorsAndPolicymakers": "Administradores y Creadores de Políticas",
+      "homeowners": "Propietarios",
+      "propertyManagers": "Administradores de Propiedades",
+      "smartHomeEnthusiasts": "Entusiastas del Hogar Inteligente",
+      "smallBusiness": "Pequeñas Empresas",
+      "travelersAndRemoteHomeowners": "Viajeros y Propietarios Remotos",
+      "deafOrHardOfHearing": "Sordos y con Dificultades Auditivas",
+      "educationalInstitutions": "Instituciones Educativas",
+      "corporateEnvironments": "Entornos Corporativos",
+      "onTheGoSignLanguageUsers": "Usuarios de Lenguaje de Señas Activos",
+      "professionals": "Profesionales",
+      "socialAndCasualSettings": "Entornos Sociales y Informales",
+      "aspiringTraders": "Operadores Principiantes",
+      "intermediateTraders": "Operadores Intermedios",
+      "busyProfessionals": "Profesionales Ocupados",
+      "ProblemFocused": "Enfocado en el Problema",
+      "SolutionOriented": "Orientado a la Solución",
+      "UniqueDifferentiators": "Diferenciadores Únicos",
+      "highDropoutRates": "Altas Tasas de Deserción",
+      "overburdenedTeachers": "Profesores Sobrecargados",
+      "lackOfDataDrivenApproaches": "Falta de Enfoques Basados en Datos",
+      "aiAdaptiveLearning": "Aprendizaje Adaptativo de IA",
+      "masteryLearning": "Aprendizaje de Dominio",
+      "integratedDashboards": "Paneles Integrados",
+      "culturalAlignment": "Alineación Cultural",
+      "crossCuttingIssues": "Temas Transversales",
+      "nationalCurriculum": "Plan de Estudios Nacional",
+      "tediousManualReview": "Revisión Manual Tediosa",
+      "lackOfIntelligenceInSystems": "Falta de Inteligencia en los Sistemas",
+      "aiAlgorithms": "Algoritmos de IA",
+      "eventDetection": "Detección de Eventos",
+      "personalization": "Personalización",
+      "timeSaving": "Ahorro de Tiempo",
+      "peaceOfMind": "Tranquilidad",
+      "languageBarriers": "Barreras de Idioma",
+      "interpreterDependence": "Dependencia de Intérpretes",
+      "aiTranslation": "Traducción de IA",
+      "adaptiveLearning": "Aprendizaje Adaptativo",
+      "accessibility": "Accesibilidad",
+      "empowerment": "Empoderamiento",
+      "needForPortability": "Necesidad de Portabilidad",
+      "stationarySystems": "Sistemas Estacionarios",
+      "realTime": "Tiempo Real",
+      "compactDesign": "Diseño Compacto",
+      "mobility": "Movilidad",
+      "lackOfExpertise": "Falta de Experiencia",
+      "emotionalErrors": "Errores Emocionales",
+      "aiInsights": "Información de IA",
+      "automatedTradingSupport": "Soporte de Trading Automatizado",
+      "provenMethodologies": "Metodologías Probadas",
+      "emotionalErrorReduction": "Reducción de Errores Emocionales",
+      "Students": "Estudiantes",
+      "Teachers": "Profesores",
+      "Schools": "Escuelas",
+      "Policymakers": "Creadores de Políticas",
+      "TimeEfficiency": "Eficiencia de Tiempo",
+      "EnhancedSecurity": "Seguridad Mejorada",
+      "Personalization": "Personalización",
+      "Independence": "Independencia",
+      "Inclusivity": "Inclusividad",
+      "Flexibility": "Flexibilidad",
+      "Mobility": "Movilidad",
+      "Convenience": "Conveniencia",
+      "Expertise": "Experiencia",
+      "Efficiency": "Eficiencia",
+      "Confidence": "Confianza"
+    }
+  },
+  "aletuShowcase": {
+    "latestInnovation": "ÚLTIMA INNOVACIÓN",
+    "title": "Empoderando el Futuro de la",
+    "titleGrad": "Digital Education",
+    "desc": "ALETU es nuestra plataforma insignia de aprendizaje en línea diseñada específicamente para el plan de estudios de Uganda. Experimente un entorno de aprendizaje gamificado, social y basado en el dominio que a los estudiantes realmente les encanta.",
+    "tryDemo": "Probar la Demostración",
+    "demoNote": "* Experimente el portal del estudiante en toda su gloria funcional.",
+    "portalTitle": "Portal del Estudiante ALETU",
+    "portalDesc": "Una experiencia educativa única en su tipo para la juventud de Uganda.",
+    "streak": "Racha",
+    "streakVal": "12 Días",
+    "mastery": "Dominio",
+    "masteryVal": "92% Cálculo",
+    "features": {
+      "gamifiedTitle": "Aprendizaje Gamificado",
+      "gamifiedDesc": "XP, rachas y tablas de clasificación para mantener a los estudiantes interesados.",
+      "socialTitle": "Interacción Social",
+      "socialDesc": "Foros colaborativos de preguntas y respuestas y apoyo entre pares.",
+      "masteryTitle": "Enfoque en el Dominio",
+      "masteryDesc": "Módulos impulsados por IA que aseguran una comprensión profunda de los conceptos.",
+      "curriculumTitle": "Alineado al Currículo",
+      "curriculumDesc": "Diseñado específicamente para el plan de estudios nacional de Uganda de S1 a S6."
+    }
+  },
+  "innovationSupport": {
+    "title": "Apoyar el Desarrollo",
+    "description": "Su contribución impulsa directamente la evolución de {{name}}. Ayúdenos a impulsar un cambio significativo a través de soluciones de IA innovadoras.",
+    "kofiDisclaimer": "Pagos seguros procesados por Ko-fi"
+  },
+  "partners": {
+    "title": "NUESTROS CLIENTES"
+  },
+  "socialHub": {
+    "liveFeed": "CANAL EN VIVO",
+    "title": "Centro Social",
+    "subtitle": "Entérese de nuestras últimas actualizaciones, perspectivas de la industria e historias de innovación en LinkedIn y X.",
+    "youtubeBtn": "Canal de YouTube",
+    "linkedinBtn": "Página de LinkedIn",
+    "xBtn": "Perfil de X",
+    "viewOn": "Ver en {{platform}}"
+  },
+  "alumni": {
+    "networkBadge": "Red de Exalumnos",
+    "title": "Legado de Granville-Tech",
+    "titleInnovators": "Innovadores",
+    "subtitle": "Conozca a las mentes brillantes que han dado forma a Granville-Tech y continúan liderando la revolución de la IA en todo el mundo.",
+    "connectWithUs": "Conéctese con nosotros:",
+    "brandTagline": "Impulsando la innovación con soluciones de IA",
+    "bios": {
+      "sujal": "Pasante de IA @Techolution | Ex - Asociado de investigación de IA @WorkingFox | Ganador del Smart India Hackathon interno | Ganador de GDSC WinterHacks 2022 | Estudiante de informática con experiencia en IA/ML | IIIT Kottayam'26.",
+      "dharren": "Fundador y CTSO, ACL | IA robusta y sistemas autónomos | Tecnología de defensa, salud y medio ambiente.",
+      "vijay": "Desarrollador backend | Golang | DevOps, actualmente estudiando en IIIT Kottayam.",
+      "radhika": "Pasante @ IBM ISL | Pasante de investigación de IA/ML @TCS Research | Ex pasante de MLE @ Granville Tech | Estudiante en el Instituto Indio de Tecnología de la Información Kottayam.",
+      "suraj": "Desarrollador backend @Sovansh Technology | Pasante de desarrollo de software @Granville-Tech | GDSC WinterHacks 2022 | Ganador del Smart India Hackathon interno | Estudiante de informática @IIIT Kottayam'26.",
+      "rishi": "Pasante de investigación de IA @SHL || Ex pasante de IA/ML @Dassault Systèmes || Ex pasante de ciencia de datos @SymphonyAI || Ex pasante de IA/ML @Rapid Innovation || Ex pasante de ML @GRANVILLE TECH || Instituto Indio de Tecnología de la Información Kottayam.",
+      "glen": "Pasante de MLE @ TIFIN || Investigador de IA generativa @ Mozilla || Ex mentor del club de IA/ML Enigma-IIITK || Ex pasante de IA generativa @ Granville Tech || Ex pasante de investigación de aprendizaje profundo @ NCCR || IIIT Kottayam '27.",
+      "mohamed": "Ingeniero de IA/ML | Entusiasta de la ciencia de datos | Pasante de AIML @ granville-tech.",
+      "praveen": "IIITK'27 | Pasante de IA @ Backspace Tech | Pasante de IA generativa @ Granville Tech | Pasante de IA @ Infosys Springboard | Pasante de investigación @ NIT Trichy | Entusiasta de IA y ML | Sublíder de IA y DS @ Betalabs IIIT Kottayam.",
+      "alok": "Pasante de investigación @IIT Hyd | Ex pasante de desarrollo @IBL | Ex pasante de diseño @Granville Tech | Ex líder de @Tech-Club IIITK.",
+      "kishore": "IIIT Kottayam '27 | Ex pasante de investigación @ NIT Trichy | Ex pasante de IA generativa @ Granville Tech.",
+      "aaditya": "MNNIT '25 Bachiller en Tecnología - BTech, Ingeniería Mecánica. Contribuyó a ALETU, una plataforma de aprendizaje adaptativa impulsada por IA."
+    }
+  },
+  "booking": {
+    "title": "Programar una consulta"
+  },
+  "newsletter": {
+    "title": "Manténgase a la Vanguardia",
+    "desc": "Suscríbase a nuestro boletín para recibir las últimas novedades en soluciones de IA e innovación.",
+    "successMsg": "¡Gracias! ¡Estaremos en contacto!",
+    "backBtn": "Volver",
+    "placeholder": "tu@ejemplo.com",
+    "joinWaitlist": "Unirse a la lista de espera",
+    "rateLimitError": "Demasiados registros, inténtelo de nuevo en un momento.",
+    "generalError": "¡Ups! Algo salió mal, inténtelo de nuevo.",
+    "disclaimer": "Sin spam. Solo innovación. Cancele su suscripción en cualquier momento."
+  }
+}

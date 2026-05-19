@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpenIcon, ZapIcon, ArrowRightIcon, UsersIcon, TrophyIcon, FlameIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const AletuShowcase = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="aletu-demo" className="py-24 relative overflow-hidden bg-[#050505]">
       {/* Background Decor */}
@@ -31,26 +34,25 @@ const AletuShowcase = () => {
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold mb-6"
               >
                 <ZapIcon className="h-3 w-3" />
-                LATEST INNOVATION
+                {t("aletuShowcase.badge", "LATEST INNOVATION")}
               </motion.div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Empowering the Future of <br />
+                {t("aletuShowcase.titlePart1", "Empowering the Future of")} <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-amber-400">
-                  Digital Education
+                  {t("aletuShowcase.titlePart2", "Digital Education")}
                 </span>
               </h2>
               <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
-                ALETU is our flagship E-learning platform designed specifically for the Ugandan curriculum. 
-                Experience a gamified, social, and mastery-based learning environment that students actually love.
+                {t("aletuShowcase.description", "ALETU is our flagship E-learning platform designed specifically for the Ugandan curriculum. Experience a gamified, social, and mastery-based learning environment that students actually love.")}
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
               {[
-                { icon: TrophyIcon, title: "Gamified Learning", desc: "XP, streaks, and leaderboards to keep students engaged." },
-                { icon: UsersIcon, title: "Social Interaction", desc: "Collaborative Q&A forums and peer-to-peer support." },
-                { icon: FlameIcon, title: "Mastery Focus", desc: "AI-driven modules that ensure deep concept understanding." },
-                { icon: BookOpenIcon, title: "Curriculum Aligned", desc: "Specifically tailored for S1-S6 Uganda National Curriculum." }
+                { icon: TrophyIcon, title: t("aletuShowcase.features.gamified.title", "Gamified Learning"), desc: t("aletuShowcase.features.gamified.desc", "XP, streaks, and leaderboards to keep students engaged.") },
+                { icon: UsersIcon, title: t("aletuShowcase.features.social.title", "Social Interaction"), desc: t("aletuShowcase.features.social.desc", "Collaborative Q&A forums and peer-to-peer support.") },
+                { icon: FlameIcon, title: t("aletuShowcase.features.mastery.title", "Mastery Focus"), desc: t("aletuShowcase.features.mastery.desc", "AI-driven modules that ensure deep concept understanding.") },
+                { icon: BookOpenIcon, title: t("aletuShowcase.features.curriculum.title", "Curriculum Aligned"), desc: t("aletuShowcase.features.curriculum.desc", "Specifically tailored for S1-S6 Uganda National Curriculum.") }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4">
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
@@ -69,11 +71,11 @@ const AletuShowcase = () => {
                 to="/aletu"
                 className="group relative inline-flex items-center gap-3 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-2xl transition-all shadow-xl shadow-indigo-600/20"
               >
-                Try the Live Demo
+                {t("aletuShowcase.tryDemo", "Try the Live Demo")}
                 <ArrowRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <p className="mt-4 text-xs text-gray-500 italic">
-                * Experience the Student Portal in its full functional glory.
+                {t("aletuShowcase.footnote", "* Experience the Student Portal in its full functional glory.")}
               </p>
             </div>
           </motion.div>
@@ -97,9 +99,9 @@ const AletuShowcase = () => {
                   <div className="w-16 h-16 rounded-2xl bg-indigo-600 flex items-center justify-center mb-6 animate-bounce">
                     <BookOpenIcon className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">ALETU Student Portal</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">{t("aletuShowcase.cardTitle", "ALETU Student Portal")}</h3>
                   <p className="text-indigo-200/70 text-sm max-w-xs mx-auto">
-                    A first-of-its-kind educational experience for Ugandan youth.
+                    {t("aletuShowcase.cardDesc", "A first-of-its-kind educational experience for Ugandan youth.")}
                   </p>
                 </div>
 
@@ -114,8 +116,8 @@ const AletuShowcase = () => {
                       <FlameIcon className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Streak</p>
-                      <p className="text-sm font-bold text-white">12 Days</p>
+                      <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{t("aletuShowcase.streakLabel", "Streak")}</p>
+                      <p className="text-sm font-bold text-white">{t("aletuShowcase.streakValue", "12 Days")}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -130,8 +132,8 @@ const AletuShowcase = () => {
                       <TrophyIcon className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Mastery</p>
-                      <p className="text-sm font-bold text-white">92% Calculus</p>
+                      <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{t("aletuShowcase.masteryLabel", "Mastery")}</p>
+                      <p className="text-sm font-bold text-white">{t("aletuShowcase.masteryValue", "92% Calculus")}</p>
                     </div>
                   </div>
                 </motion.div>

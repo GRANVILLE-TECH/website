@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function InnovationSupportCTA({ innovationName }) {
+  const { t } = useTranslation();
+
   return (
     <div className="w-full flex-shrink-0 p-4 space-y-8">
       <div className="text-center mb-8">
@@ -14,11 +17,13 @@ export default function InnovationSupportCTA({ innovationName }) {
           <Heart className="text-red-500 w-10 h-10 fill-red-500" />
         </motion.div>
         <h3 className="text-3xl font-bold text-white mb-4">
-          Support the Development
+          {t("supportCTA.title", "Support the Development")}
         </h3>
         <p className="text-silver max-w-2xl mx-auto text-lg">
-          Your contribution directly fuels the evolution of <span className="text-yellow-400 font-semibold">{innovationName}</span>. 
-          Help us drive meaningful change through innovative AI solutions.
+          {t("supportCTA.description", {
+            defaultValue: "Your contribution directly fuels the evolution of {{name}}. Help us drive meaningful change through innovative AI solutions.",
+            name: innovationName
+          })}
         </p>
       </div>
 
@@ -41,7 +46,7 @@ export default function InnovationSupportCTA({ innovationName }) {
 
       <div className="text-center mt-12 pb-8">
         <p className="text-gray-500 text-sm italic">
-          Secure payments powered by Ko-fi
+          {t("supportCTA.securePayment", "Secure payments powered by Ko-fi")}
         </p>
       </div>
     </div>

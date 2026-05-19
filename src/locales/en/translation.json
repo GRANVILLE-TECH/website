@@ -1,0 +1,551 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "innovations": "Innovations",
+    "services": "Services",
+    "booking": "Booking",
+    "resources": "Resources",
+    "alumni": "Alumni",
+    "contact": "Contact",
+    "navigationTitle": "Navigation",
+    "office": "Office",
+    "location": "Kampala, Uganda"
+  },
+  "hero": {
+    "badge": "✦ Driving Innovation with AI Solutions",
+    "headlinePart1": "Reimagining",
+    "headlinePart2": "The Future",
+    "headlinePart3": "of Intelligence",
+    "subCopy": "Pioneering transformative AI solutions that redefine industries and empower a smarter tomorrow across Africa and beyond.",
+    "ctaInnovations": "Our Innovations",
+    "ctaContact": "Get in Touch",
+    "scroll": "Scroll",
+    "rotatingRing": "Granville-Tech • AI Solutions • Innovation • Africa •"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Granville-Tech is at the forefront of AI-driven innovation, empowering businesses with transformative solutions. Our team of experts develops cutting-edge AI technologies to solve real-world challenges and drive impactful change in industries across the globe.",
+    "coreValues": "Our Core Values",
+    "finalParagraph": "At Granville-Tech, we're not just creating products we're crafting experiences that resonate, inspire, and transform. Each innovation is a testament to our dedication to pushing boundaries and redefining possibilities. We invite you to be a part of this exciting journey, to imagine alongside us, and to help shape a future where technology serves as a force for positive change.",
+    "values": {
+      "network": {
+        "title": "Network",
+        "description": "Collaboration is key to success. We believe in unity."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Pushing boundaries with solutions that shape the future."
+      },
+      "legacy": {
+        "title": "Legacy",
+        "description": "Creating a lasting impact for generations to come."
+      },
+      "creativity": {
+        "title": "Creativity",
+        "description": "Embracing curiosity to discover new horizons."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Continually striving for the highest standards."
+      }
+    }
+  },
+  "contact": {
+    "getInTouch": "Get in Touch with Granville-Tech",
+    "tagline": "We're here to answer any questions you have about our AI solutions",
+    "title": "Contact Us",
+    "instruction": "Fill out the form below, and we'll get back to you within 24 hours.",
+    "scheduleConsultation": "Schedule a Consultation",
+    "orEmailUs": "Or email us directly at:",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number (Optional)",
+      "selectService": "Select a Service",
+      "query": "Enter Your Query",
+      "submit": "Submit",
+      "sending": "Sending..."
+    },
+    "errors": {
+      "firstName": "First name is required.",
+      "lastName": "Last name is required.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Email address is invalid. Please enter a valid email.",
+      "phoneInvalid": "Phone number must be between 10-15 digits.",
+      "service": "Please select a service.",
+      "message": "Message is required."
+    },
+    "services": {
+      "recommendation": "Recommendation Systems",
+      "consulting": "AI Strategy Consulting",
+      "custom": "Custom AI Solutions",
+      "assistants": "Intelligent Assistants",
+      "enterprise": "Enterprise Intelligence"
+    },
+    "success": {
+      "title": "Message Sent!",
+      "description": "Thank you for reaching out. Our team will get back to you within 24 hours.",
+      "dismiss": "Dismiss"
+    },
+    "error": {
+      "title": "Oops! Something went wrong",
+      "description": "We couldn't send your message. Please try again later or email us directly.",
+      "tryAgain": "Try Again"
+    }
+  },
+  "footer": {
+    "brandTagline": "Driving Innovation with AI Solutions",
+    "connect": "Connect with us:",
+    "copyright": "© {{year}} Granville-Tech. All rights reserved.",
+    "crafted": "Designed and developed with precision to drive AI solutions forward."
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Transforming Business through Intelligent Technology",
+    "recommendationTitle": "Recommendation Systems",
+    "recommendationDesc": "AI-powered algorithms delivering personalized insights through advanced behavioral analysis and contextual understanding",
+    "recommendationBenefits": [
+      "Intelligent recommendation engine",
+      "Real-time user profiling",
+      "Adaptive learning mechanisms"
+    ],
+    "strategyTitle": "AI Strategy Consulting",
+    "strategyDesc": "Comprehensive digital transformation strategy leveraging AI to unlock operational efficiency and competitive advantages",
+    "strategyBenefits": [
+      "Strategic AI integration",
+      "Innovation frameworks",
+      "Enterprise AI assessment"
+    ],
+    "customTitle": "Custom AI Solutions",
+    "customDesc": "Bespoke intelligent systems engineered to solve complex business challenges with scalable, modular architectures",
+    "customBenefits": [
+      "Tailored AI architecture",
+      "Scalable solution design",
+      "Innovation pipeline"
+    ],
+    "enterpriseTitle": "Enterprise Intelligence",
+    "enterpriseDesc": "Proprietary AI models trained on organizational data, generating actionable insights for intelligent decision-making",
+    "enterpriseBenefits": [
+      "Domain-specific modeling",
+      "Predictive analytics",
+      "Knowledge amplification"
+    ],
+    "assistantsTitle": "Intelligent Assistants",
+    "assistantsDesc": "Advanced multi-channel engagement platforms using natural language processing for sophisticated customer interactions",
+    "assistantsBenefits": [
+      "Omni-channel support",
+      "Contextual communication",
+      "Enhanced engagement"
+    ]
+  },
+  "videoShowcase": {
+    "title": "Vision in Action",
+    "description": "Discover the intersection of research and technology as we pioneer intelligent solutions designed to educate and transform industries.",
+    "caption": "Reimagining the future with every innovation",
+    "iframeTitle": "Granville-Tech — See Our Vision in Action"
+  },
+  "innovations": {
+    "title": "Our Innovations",
+    "subtitle": "Pioneering transformative AI solutions that redefine industries and empower a smarter tomorrow.",
+    "backToHome": "Back to Home",
+    "detailTitle": "Granville-Tech Innovations",
+    "detailSubtitle": "Discover the latest AI innovations and projects.",
+    "requestDemo": "Request Demo",
+    "contactUs": "Contact Us",
+    "demoVideo": "Demo Video",
+    "valueProposition": "Value Proposition",
+    "keyComponents": "Key Components",
+    "visionStatement": "Vision Statement",
+    "targetAudience": "Target Audience",
+    "problem": "Problem",
+    "solution": "Solution",
+    "keyBenefits": "Key Benefits",
+    "differentiators": "Differentiators",
+    "lookingForMore": "Looking for more?",
+    "lookingForMoreDesc": "These documents represent our core strategy and technical foundations. Contact our team for detailed implementation case studies or partnership inquiries.",
+    "watchDemo": "Watch Demo",
+    "videoBadge": "VIDEO",
+    "problemFocused": "Problem Focused",
+    "solutionOriented": "Solution Oriented",
+    "uniqueDifferentiators": "Unique Differentiators",
+    "items": {
+      "aletu": {
+        "title": "Adaptive learning for educational transform of Uganda",
+        "tagline": "Revolutionizing education, one student at a time",
+        "description": "A cloud-based, AI-driven educational platform designed for secondary schools in Uganda. It delivers personalized, mastery-based instruction aligned with local curriculums",
+        "valueProposition": {
+          "problem": "For secondary schools in Uganda facing challenges with high dropout rates, limited teacher capacity, and low student engagement",
+          "solution": "ALETU is a personalized, adaptive educational platform that leverages AI-driven learning paths, mastery learning principles, and cognitive assessments to transform educational outcomes",
+          "keyBenefits": {
+            "students": "Receive engaging, tailored education that improves outcomes",
+            "teachers": "Save time on administrative tasks and focus on meaningful mentorship",
+            "schools": "Reduce dropout rates and improve overall academic performance",
+            "policymakers": "Gain actionable insights to inform national educational strategies"
+          },
+          "differentiators": [
+            "Personalized, culturally aligned educational content",
+            "Seamless integration of cross-cutting issues like environmental awareness and ethics",
+            "AI-generated lesson plans and assessments aligned with the national curriculum"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "highDropoutRates": "High dropout rates in Ugandan secondary schools",
+            "overburdenedTeachers": "Overburdened teachers with limited tools for personalization",
+            "lackOfDataDrivenApproaches": "Lack of data-driven approaches to monitor and improve student performance"
+          },
+          "solutionOriented": {
+            "aiAdaptiveLearning": "AI-powered adaptive learning ensures every student progresses at their own pace",
+            "masteryLearning": "Mastery learning principles ensure students fully understand concepts before advancing",
+            "integratedDashboards": "Integrated dashboards and analytics give teachers actionable insights for intervention"
+          },
+          "uniqueDifferentiators": {
+            "culturalAlignment": "Personalized, culturally aligned educational content",
+            "crossCuttingIssues": "Seamless integration of cross-cutting issues like environmental awareness and ethics",
+            "nationalCurriculum": "AI-generated lesson plans and assessments aligned with the national curriculum"
+          }
+        },
+        "visionStatement": "To provide adaptive, AI-powered educational solutions that empower students to excel through personalized learning, support teachers in their roles as mentors and advocates, and enable schools to deliver data-driven, inclusive, and impactful education for a brighter future",
+        "targetAudience": {
+          "teachers": "Spend less time on administrative tasks and more time mentoring and inspiring your students ALETU is here to help you make a greater impact",
+          "students": "Your learning, your pace, your future ALETU helps you succeed by making every lesson just right for you",
+          "administratorsAndPolicymakers": "Drive better educational outcomes with data-driven insights and adaptive learning technologies ALETU aligns with your goals for a brighter future"
+        },
+        "valuePropositionStatement": "ALETU empowers Ugandan secondary schools to overcome high dropout rates, limited teacher capacity, and low student engagement by providing an AI-driven, culturally aligned educational platform It delivers personalized learning paths, mastery-based instruction, and actionable insights for educators, enabling improved academic outcomes, reduced dropout rates, and data-informed policymaking for a brighter educational future",
+        "presentations": {
+          "blueprint": {
+            "title": "Adaptive Education Blueprint",
+            "description": "A comprehensive guide to transforming Uganda's educational landscape through adaptive AI."
+          },
+          "curriculum": {
+            "title": "Neural Curriculum",
+            "description": "Deep dive into the AI-driven curriculum design and mastery-based learning paths."
+          },
+          "mastery": {
+            "title": "Scaling Mastery in Africa",
+            "description": "Strategic framework for scaling high-impact educational solutions across the continent."
+          }
+        }
+      },
+      "timesift": {
+        "title": "TimeSift",
+        "tagline": "Rediscover peace of mind with intelligent security",
+        "description": "An AI-driven security system that transforms hours of CCTV footage into curated daily highlight reels, saving time and enhancing security",
+        "valueProposition": {
+          "problem": "Homeowners and property managers face the tedious task of manually reviewing hours of CCTV footage to monitor their homes or properties Conventional systems lack intelligence to identify and summarize significant activities, making security inefficient and time-consuming",
+          "solution": "TimeSift uses advanced AI to sift through hours of footage and generate concise highlight reels tailored to user preferencesIt identifies significant events like unusual movements, visitors, or deliveries, saving users time while enhancing security",
+          "keyBenefits": {
+            "timeEfficiency": "Users spend less time reviewing irrelevant footage",
+            "enhancedSecurity": "Alerts on unusual or suspicious activity",
+            "personalization": "Learns user preferences to provide tailored summaries"
+          },
+          "differentiators": [
+            "Automatically detects and highlights significant events",
+            "Personalizes summaries based on user-defined preferences",
+            "Saves time while enhancing peace of mind by providing a quick and actionable view of daily activities"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "tediousManualReview": "Time-consuming process of manually reviewing hours of CCTV footage",
+            "lackOfIntelligenceInSystems": "Conventional systems lack intelligence to identify and summarize significant activities"
+          },
+          "solutionOriented": {
+            "aiAlgorithms": "AI-driven system that sifts through footage to automatically generate highlight reels",
+            "eventDetection": "Detection of significant events such as unusual movements, visitors, or deliveries"
+          },
+          "uniqueDifferentiators": {
+            "personalization": "Adapts to user preferences to provide highly relevant summaries",
+            "timeSaving": "Transforms hours of footage into a brief, actionable highlight reel",
+            "peaceOfMind": "Ensures users are always aware of critical events without having to sift through long footage"
+          }
+        },
+        "visionStatement": "To redefine home and property security with AI, providing effortless security and peace of mind by turning hours of video into moments of significance",
+        "targetAudience": {
+          "homeowners": "Spend less time monitoring footage and more time enjoying your home TimeSift delivers the peace of mind you deserve",
+          "propertyManagers": "Manage multiple properties with ease by quickly reviewing relevant security footage TimeSift helps you focus on what matters most",
+          "smartHomeEnthusiasts": "Integrate TimeSift with your smart home to make security even smarter and more efficient",
+          "smallBusiness": "Small business owners with basic security setups",
+          "travelersAndRemoteHomeowners": "Travelers and remote homeowners who need periodic summaries of property activity"
+        },
+        "valuePropositionStatement": "For homeowners, property managers, and smart home enthusiasts seeking smarter and more efficient security Solutions, TimeSift is an AI-driven system that transforms hours of CCTV footage into curated daily highlight reels Unlike traditional security systems that rely on manual review"
+      },
+      "echosign": {
+        "title": "EchoSign",
+        "tagline": "Giving voice to the unspoken",
+        "description": "An AI-powered platform that converts sign language into spoken words in real-time using advanced vision processing models",
+        "valueProposition": {
+          "problem": "Individuals who rely on sign language face barriers in verbal communication, especially in professional, academic, and public settings",
+          "solution": "EchoSign uses advanced AI to translate sign language into spoken words in real-time, fostering inclusivity and independence",
+          "keyBenefits": {
+            "independence": "Users can communicate verbally without relying on interpreters",
+            "inclusivity": "Seamlessly participate in conversations, presentations, and professional engagements",
+            "flexibility": "Adaptable to various settings, including classrooms, conferences, and media environments"
+          },
+          "differentiators": [
+            "Real-time sign language translation into natural speech",
+            "AI-powered system that accurately interprets hand gestures, facial expressions, and body movements",
+            "Designed for a wide range of environments, from education to professional spaces"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "languageBarriers": "Individuals who rely on sign language face barriers in verbal communication, especially in professional, academic, and public settings",
+            "interpreterDependence": "Dependence on interpreters limits independence and spontaneity, creating challenges in seamless communication"
+          },
+          "solutionOriented": {
+            "aiTranslation": "EchoSign uses advanced AI to translate sign language into spoken words in realtime",
+            "adaptiveLearning": "It analyzes hand gestures, facial expressions, and body movements to provide accurate and natural speech synthesis, enabling independence and accessibility"
+          },
+          "uniqueDifferentiators": {
+            "accessibility": "Makes verbal communication accessible for individuals using sign language",
+            "empowerment": "Empowers users to engage independently without needing external interpreters"
+          }
+        },
+        "visionStatement": "To bridge the communication gap for sign language users, empowering them with real-time, inclusive, and accessible verbal communication tools",
+        "targetAudience": {
+          "deafOrHardOfHearing": "Break communication barriers and engage fully in any setting with EchoSign Your voice, empowered",
+          "educationalInstitutions": "Enhance inclusivity in classrooms with real-time sign language translation. EchoSign supports every student",
+          "corporateEnvironments": "Improve accessibility in professional settings with real-time communication. EchoSign fosters inclusive workplaces"
+        },
+        "valuePropositionStatement": "For individuals who communicate through sign language and seek to expand their verbal communication capabilities, EchoSign is an AI-powered platform that translates sign language into natural speech in real-time. Unlike traditional methods that rely on interpreters, EchoSign enables users to independently “speak” in various settings, fostering inclusivity, independence, and seamless interaction"
+      },
+      "echosign_wearable": {
+        "title": "EchoSign Wearable",
+        "tagline": "Your voice, carried in the palm of your hand",
+        "description": "A wearable device that translates sign language into speech on the go, enhancing mobile communication.",
+        "valueProposition": {
+          "problem": "Sign language users need a portable, always-available solution for seamless communication in dynamic, on-the-go environments.",
+          "solution": "EchoSign Wearable is a compact, portable device that translates sign language into spoken words in real-time, ensuring fluid communication in any setting.",
+          "keyBenefits": {
+            "mobility": "Users can communicate effortlessly wherever they are, whether traveling, at work, or socializing.",
+            "independence": "Eliminates the need for external setups or interpreters.",
+            "convenience": "Lightweight and easy to use, it ensures communication is always within reach."
+          },
+          "differentiators": [
+            "Compact and portable design for real-time communication on the go.",
+            "Seamlessly integrates with daily life, enabling constant accessibility.",
+            "AI-powered system that ensures accurate translations in varied environments."
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "needForPortability": "The need for a portable, always-available sign language translation solution.",
+            "stationarySystems": "Limitations of stationary sign language translation systems, restricting movement and flexibility."
+          },
+          "solutionOriented": {
+            "realTime": "EchoSign Wearable is a compact, portable device that translates sign language into spoken words in real-time, ensuring fluid communication in any setting",
+            "compactDesign": "Lightweight wearable technology that enables mobile communication."
+          },
+          "uniqueDifferentiators": {
+            "mobility": "Provides ultimate mobility for sign language users to communicate freely in any setting.",
+            "independence": "Enables users to be independent in communication without relying on others or stationary setups."
+          }
+        },
+        "visionStatement": "To make seamless communication accessible anywhere, anytime for sign language users through innovative wearable technology.",
+        "targetAudience": {
+          "onTheGoSignLanguageUsers": "Communicate effortlessly no matter where you are. EchoSign Wearable ensures you’re never without your voice.",
+          "professionals": "Enhance your ability to communicate in professional environments with a portable, real-time solution.",
+          "socialAndCasualSettings": "Engage in social conversations without barriers. EchoSign Wearable allows for seamless interaction everywhere."
+        },
+        "valuePropositionStatement": "For on-the-go sign language users who seek seamless communication, the EchoSign Wearable is a portable device that translates sign language into spoken words in real-time. Unlike stationary systems, EchoSign Wearable provides the freedom and mobility to communicate effortlessly in any setting, from professional meetings to casual interactions."
+      },
+      "mentor_mirror": {
+        "title": "Mentor Mirror",
+        "tagline": "Trade like the masters without years of study",
+        "description": "An AI-powered trading platform that mirrors strategies of seasoned mentors to assist traders in real-time.",
+        "valueProposition": {
+          "problem": "Aspiring and intermediate traders often lack the time, expertise, or confidence to make informed trading decisions.",
+          "solution": "Mentor Mirror replicates the strategies of seasoned trading mentors using AI, providing users with actionable insights and automated guidance.",
+          "keyBenefits": {
+            "expertise": "Access to AI-driven trading strategies modeled after successful mentors.",
+            "efficiency": "Save time with automated insights and reduced manual research.",
+            "confidence": "Make informed decisions with a system backed by proven methodologies."
+          },
+          "differentiators": [
+            "AI-driven replication of successful trading strategies.",
+            "Real-time, actionable insights and guidance tailored to the user’s needs.",
+            "Reduces emotional errors and accelerates learning for traders of all levels."
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "lackOfExpertise": "Many traders lack the time, experience, or knowledge to trade effectively.",
+            "emotionalErrors": "Emotional errors often lead to poor trading decisions and outcomes."
+          },
+          "solutionOriented": {
+            "aiInsights": "Real-time insights and guidance based on proven trading strategies.",
+            "automatedTradingSupport": "Automated systems that provide actionable recommendations to enhance decision-making."
+          },
+          "uniqueDifferentiators": {
+            "provenMethodologies": "Traders benefit from strategies modeled after successful mentors’ approaches.",
+            "emotionalErrorReduction": "Mentor Mirror minimizes emotional influences, helping traders focus on data-driven decisions."
+          }
+        },
+        "visionStatement": "To democratize financial mentorship, empowering traders with AI-driven guidance that replicates the expertise of seasoned professionals.",
+        "targetAudience": {
+          "aspiringTraders": "Learn trading strategies and apply them confidently with AI-backed insights. Mentor Mirror is here to help you grow.",
+          "intermediateTraders": "Enhance your trading skills with real-time mentorship and guidance. Mentor Mirror accelerates your journey.",
+          "busyProfessionals": "Engage in trading without investing endless hours. Mentor Mirror streamlines decision-making."
+        },
+        "valuePropositionStatement": "For aspiring and intermediate traders seeking to improve their trading outcomes, Mentor Mirror is an AI-powered platform that replicates the strategies of seasoned trading mentors. Unlike traditional trading tools, Mentor Mirror provides real-time actionable insights and automated guidance, empowering users to trade confidently and efficiently while minimizing learning curves and emotional errors."
+      }
+    },
+    "categories": {
+      "All": "All",
+      "EdTech": "EdTech",
+      "FinTech": "FinTech",
+      "Security": "Security",
+      "Accessibility": "Accessibility"
+    },
+    "labels": {
+      "teachers": "Teachers",
+      "students": "Students",
+      "administratorsAndPolicymakers": "Administrators & Policymakers",
+      "homeowners": "Homeowners",
+      "propertyManagers": "Property Managers",
+      "smartHomeEnthusiasts": "Smart Home Enthusiasts",
+      "smallBusiness": "Small Business",
+      "travelersAndRemoteHomeowners": "Travelers & Remote Homeowners",
+      "deafOrHardOfHearing": "Deaf & Hard of Hearing",
+      "educationalInstitutions": "Educational Institutions",
+      "corporateEnvironments": "Corporate Environments",
+      "onTheGoSignLanguageUsers": "On-the-Go Sign Language Users",
+      "professionals": "Professionals",
+      "socialAndCasualSettings": "Social & Casual Settings",
+      "aspiringTraders": "Aspiring Traders",
+      "intermediateTraders": "Intermediate Traders",
+      "busyProfessionals": "Busy Professionals",
+      "ProblemFocused": "Problem Focused",
+      "SolutionOriented": "Solution Oriented",
+      "UniqueDifferentiators": "Unique Differentiators",
+      "highDropoutRates": "High Dropout Rates",
+      "overburdenedTeachers": "Overburdened Teachers",
+      "lackOfDataDrivenApproaches": "Lack of Data-Driven Approaches",
+      "aiAdaptiveLearning": "AI Adaptive Learning",
+      "masteryLearning": "Mastery Learning",
+      "integratedDashboards": "Integrated Dashboards",
+      "culturalAlignment": "Cultural Alignment",
+      "crossCuttingIssues": "Cross-Cutting Issues",
+      "nationalCurriculum": "National Curriculum",
+      "tediousManualReview": "Tedious Manual Review",
+      "lackOfIntelligenceInSystems": "Lack of Intelligence in Systems",
+      "aiAlgorithms": "AI Algorithms",
+      "eventDetection": "Event Detection",
+      "personalization": "Personalization",
+      "timeSaving": "Time Saving",
+      "peaceOfMind": "Peace of Mind",
+      "languageBarriers": "Language Barriers",
+      "interpreterDependence": "Interpreter Dependence",
+      "aiTranslation": "AI Translation",
+      "adaptiveLearning": "Adaptive Learning",
+      "accessibility": "Accessibility",
+      "empowerment": "Empowerment",
+      "needForPortability": "Need for Portability",
+      "stationarySystems": "Stationary Systems",
+      "realTime": "Real Time",
+      "compactDesign": "Compact Design",
+      "mobility": "Mobility",
+      "lackOfExpertise": "Lack of Expertise",
+      "emotionalErrors": "Emotional Errors",
+      "aiInsights": "AI Insights",
+      "automatedTradingSupport": "Automated Trading Support",
+      "provenMethodologies": "Proven Methodologies",
+      "emotionalErrorReduction": "Emotional Error Reduction",
+      "Students": "Students",
+      "Teachers": "Teachers",
+      "Schools": "Schools",
+      "Policymakers": "Policymakers",
+      "TimeEfficiency": "Time Efficiency",
+      "EnhancedSecurity": "Enhanced Security",
+      "Personalization": "Personalization",
+      "Independence": "Independence",
+      "Inclusivity": "Inclusivity",
+      "Flexibility": "Flexibility",
+      "Mobility": "Mobility",
+      "Convenience": "Convenience",
+      "Expertise": "Expertise",
+      "Efficiency": "Efficiency",
+      "Confidence": "Confidence"
+    }
+  },
+  "aletuShowcase": {
+    "latestInnovation": "LATEST INNOVATION",
+    "title": "Empowering the Future of",
+    "titleGrad": "Digital Education",
+    "desc": "ALETU is our flagship E-learning platform designed specifically for the Ugandan curriculum. Experience a gamified, social, and mastery-based learning environment that students actually love.",
+    "tryDemo": "Try the Live Demo",
+    "demoNote": "* Experience the Student Portal in its full functional glory.",
+    "portalTitle": "ALETU Student Portal",
+    "portalDesc": "A first-of-its-kind educational experience for Ugandan youth.",
+    "streak": "Streak",
+    "streakVal": "12 Days",
+    "mastery": "Mastery",
+    "masteryVal": "92% Calculus",
+    "features": {
+      "gamifiedTitle": "Gamified Learning",
+      "gamifiedDesc": "XP, streaks, and leaderboards to keep students engaged.",
+      "socialTitle": "Social Interaction",
+      "socialDesc": "Collaborative Q&A forums and peer-to-peer support.",
+      "masteryTitle": "Mastery Focus",
+      "masteryDesc": "AI-driven modules that ensure deep concept understanding.",
+      "curriculumTitle": "Curriculum Aligned",
+      "curriculumDesc": "Specifically tailored for S1-S6 Uganda National Curriculum."
+    }
+  },
+  "innovationSupport": {
+    "title": "Support the Development",
+    "description": "Your contribution directly fuels the evolution of {{name}}. Help us drive meaningful change through innovative AI solutions.",
+    "kofiDisclaimer": "Secure payments powered by Ko-fi"
+  },
+  "partners": {
+    "title": "OUR CLIENTS"
+  },
+  "socialHub": {
+    "liveFeed": "LIVE FEED",
+    "title": "Social Hub",
+    "subtitle": "Catch our latest updates, industry insights, and innovation stories across LinkedIn and X.",
+    "youtubeBtn": "YouTube Channel",
+    "linkedinBtn": "LinkedIn Page",
+    "xBtn": "X Profile",
+    "viewOn": "View on {{platform}}"
+  },
+  "alumni": {
+    "networkBadge": "Alumni Network",
+    "title": "Granville-Tech Legacy",
+    "titleInnovators": "Innovators",
+    "subtitle": "Meet the brilliant minds who have shaped Granville-Tech and continue to lead the AI revolution worldwide.",
+    "connectWithUs": "Connect with us:",
+    "brandTagline": "Driving Innovation with AI Solutions",
+    "bios": {
+      "sujal": "AI Intern @Techolution | Ex - AI Research Associate @WorkingFox | Internal Smart India Hackathon Winner | GDSC WinterHacks 2022 Winner | Computer science undergrad with expertise in AI/ML | IIIT Kottayam’26.",
+      "dharren": "Founder & CTSO, ACL | Rogue-Proof AI & Autonomous Systems | Defense, Healthcare & Environmental Tech.",
+      "vijay": "Backend developer | Golang | DevOps, currently studying at IIIT Kottayam.",
+      "radhika": "Intern @ IBM ISL | AI/ML Research Intern @TCS Research | Ex-MLE Intern @ Granville Tech | Student at Indian Institute of Information technology kottayam.",
+      "suraj": "Backend Developer @Sovansh Technology |Software Development Intern @Granville-Tech | GDSC WinterHacks 2022 | Internal Smart India Hackathon Winner | Computer Science undergrad @IIIT Kottayam’26.",
+      "rishi": "AI Research Intern @SHL ||Ex-AI/ML Intern @Dassault Systèmes ||Ex-Data Science Intern @SymphonyAI ||Ex-AI/ML Intern @Rapid Innovation || Ex-ML Intern @GRANVILLE TECH || Indian Institute of Information Technology Kottayam",
+      "glen": "MLE Intern @ TIFIN || Generative AI Researcher @ Mozilla || Ex-Mentor of AI/ML Club Enigma-IIITK || Ex-Generative AI Intern @ Granville Tech || Ex-Deep Learning Research Intern @ NCCR || IIIT Kottayam ’27.",
+      "mohamed": "AI/ML Engineer | Data Science Enthusiast l AIML intern @ granville-tech.",
+      "praveen": "IIITK’27 | AI Intern @ Backspace Tech | Generative AI Intern @ Granville Tech | AI Intern @ Infosys Springboard | Research Intern @ NIT Trichy | AI & ML Enthusiast | AI & DS SubLead @ Betalabs IIIT Kottayam.",
+      "alok": "Research Intern @IIT Hyd | Ex Developer Intern @IBL | Ex-Design Intern @Granville Tech | Ex-Lead @Tech-Club IIITK.",
+      "kishore": "IIIT Kottayam ’27 | Ex - Research Intern @ NIT Trichy | Ex - Generative AI intern @ Granville Tech.",
+      "aaditya": "MNNIT '25 Bachelor of Technology - BTech, Mechanical Engineering Contributed to ALETU, an AI-powered adaptive learning platform ."
+    }
+  },
+  "booking": {
+    "title": "Schedule a Consultation"
+  },
+  "newsletter": {
+    "title": "Stay Ahead of the Curve",
+    "desc": "Subscribe to our newsletter for the latest insights in AI solutions and innovation.",
+    "successMsg": "Thanks! We'll be in touch!",
+    "backBtn": "Back",
+    "placeholder": "you@example.com",
+    "joinWaitlist": "Join Waitlist",
+    "rateLimitError": "Too many signups, please try again in a little while.",
+    "generalError": "Oops! Something went wrong, please try again.",
+    "disclaimer": "No spam. Just innovation. Unsubscribe at any time."
+  }
+}

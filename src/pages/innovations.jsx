@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import { PlayCircle, FileText, Download, ExternalLink, Heart } from "lucide-react";
+import { PlayCircle, FileText, Download, ExternalLink } from "lucide-react";
 import InnovationSupportCTA from "../components/InnovationSupportCTA";
 
 // Import ALETU Presentations
@@ -19,6 +20,7 @@ import timeshift from "../assets/innovations/time shift.jpg";
 
 const innovationInfo = [
   {
+    key: "aletu",
     title: "Adaptive learning for educational transform of Uganda",
     tagline: "Revolutionizing education, one student at a time",
     category: "EdTech",
@@ -91,16 +93,19 @@ const innovationInfo = [
       "ALETU empowers Ugandan secondary schools to overcome high dropout rates, limited teacher capacity, and low student engagement by providing an AI-driven, culturally aligned educational platform It delivers personalized learning paths, mastery-based instruction, and actionable insights for educators, enabling improved academic outcomes, reduced dropout rates, and data-informed policymaking for a brighter educational future",
     presentations: [
       {
+        key: "blueprint",
         title: "Adaptive Education Blueprint",
         description: "A comprehensive guide to transforming Uganda's educational landscape through adaptive AI.",
         file: blueprintPdf
       },
       {
+        key: "curriculum",
         title: "Neural Curriculum",
         description: "Deep dive into the AI-driven curriculum design and mastery-based learning paths.",
         file: curriculumPdf
       },
       {
+        key: "mastery",
         title: "Scaling Mastery in Africa",
         description: "Strategic framework for scaling high-impact educational solutions across the continent.",
         file: masteryPdf
@@ -108,12 +113,13 @@ const innovationInfo = [
     ]
   },
   {
+    key: "timesift",
     title: "TimeSift",
     tagline: "Rediscover peace of mind with intelligent security",
     category: "Security",
     description:
       "An AI-driven security system that transforms hours of CCTV footage into curated daily highlight reels, saving time and enhancing security",
-    videoUrl: null, // Add your Cloudinary video URL here
+    videoUrl: null,
     hasVideo: false,
     ValueProposition: {
       Problem:
@@ -181,12 +187,13 @@ const innovationInfo = [
       "For homeowners, property managers, and smart home enthusiasts seeking smarter and more efficient security Solutions, TimeSift is an AI-driven system that transforms hours of CCTV footage into curated daily highlight reels Unlike traditional security systems that rely on manual review",
   },
   {
+    key: "echosign",
     title: "EchoSign",
     tagline: "Giving voice to the unspoken",
     category: "Accessibility",
     description:
       "An AI-powered platform that converts sign language into spoken words in real-time using advanced vision processing models",
-    videoUrl: null, // Add your Cloudinary video URL here
+    videoUrl: null,
     hasVideo: false,
     ValueProposition: {
       Problem:
@@ -247,12 +254,13 @@ const innovationInfo = [
       "For individuals who communicate through sign language and seek to expand their verbal communication capabilities, EchoSign is an AI-powered platform that translates sign language into natural speech in real-time. Unlike traditional methods that rely on interpreters, EchoSign enables users to independently “speak” in various settings, fostering inclusivity, independence, and seamless interaction",
   },
   {
+    key: "echosign_wearable",
     title: "EchoSign Wearable",
     tagline: "Your voice, carried in the palm of your hand",
     category: "Accessibility",
     description:
       "A wearable device that translates sign language into speech on the go, enhancing mobile communication.",
-    videoUrl: null, // Add your Cloudinary video URL here
+    videoUrl: null,
     hasVideo: false,
     ValueProposition: {
       Problem:
@@ -313,12 +321,13 @@ const innovationInfo = [
       "For on-the-go sign language users who seek seamless communication, the EchoSign Wearable is a portable device that translates sign language into spoken words in real-time. Unlike stationary systems, EchoSign Wearable provides the freedom and mobility to communicate effortlessly in any setting, from professional meetings to casual interactions.",
   },
   {
+    key: "mentor_mirror",
     title: "Mentor Mirror",
     tagline: "Trade like the masters without years of study",
     category: "FinTech",
     description:
       "An AI-powered trading platform that mirrors strategies of seasoned mentors to assist traders in real-time.",
-    videoUrl: null, // Add your Cloudinary video URL here
+    videoUrl: null,
     hasVideo: false,
     ValueProposition: {
       Problem:
@@ -386,22 +395,27 @@ const formatKey = (key) => {
     .replace(/^./, (str) => str.toUpperCase());
 };
 
+const toCamelCase = (str) => {
+  return str.charAt(0).toLowerCase() + str.slice(1);
+};
+
 // Images mapped for JSON data
 const imageMapping = {
-  "Adaptive learning for educational transform of Uganda": aletu,
-  TimeSift: timeshift,
-  EchoSign: echo,
-  "EchoSign Wearable": echoWearable,
-  "Mentor Mirror": mirrorMentor,
+  aletu: aletu,
+  timesift: timeshift,
+  echosign: echo,
+  echosign_wearable: echoWearable,
+  mentor_mirror: mirrorMentor,
 };
 
 // Map JSON data and attach images dynamically
 const innovations = innovationInfo.map((item) => ({
   ...item,
-  image: imageMapping[item.title],
+  image: imageMapping[item.key],
 }));
 
 export default function Innovations() {
+  const { t } = useTranslation();
   const [activeInnovation, setActiveInnovation] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -449,11 +463,10 @@ export default function Innovations() {
           }}
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4"
         >
-          Our Innovations
+          {t("innovations.title", "Our Innovations")}
         </motion.h2>
         <p className="text-lg sm:text-xl text-silver max-w-3xl mx-auto">
-          Pioneering transformative AI solutions that redefine industries and
-          empower a smarter tomorrow.
+          {t("innovations.subtitle", "Pioneering transformative AI solutions that redefine industries and empower a smarter tomorrow.")}
         </p>
       </div>
 
@@ -471,7 +484,7 @@ export default function Innovations() {
                 : 'bg-[#1e1e1e] text-gray-300 hover:bg-[#2a2a2a] border border-gray-700'
                 }`}
             >
-              {category}
+              {t("innovations.categories." + category, category)}
             </motion.button>
           ))}
         </div>
@@ -510,7 +523,7 @@ export default function Innovations() {
               {innovation.image && (
                 <img
                   src={innovation.image}
-                  alt={`AI Solution for ${innovation.category}: ${innovation.title} - ${innovation.tagline}`}
+                  alt={`AI Solution for ${innovation.category}: ${t("innovations.items." + innovation.key + ".title", innovation.title)} - ${t("innovations.items." + innovation.key + ".tagline", innovation.tagline)}`}
                   className="w-full h-full object-cover"
                 />
               )}
@@ -520,7 +533,9 @@ export default function Innovations() {
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center hover:bg-black/60 transition-all duration-300 cursor-pointer">
                   <div className="flex flex-col items-center gap-2">
                     <PlayCircle className="w-16 h-16 text-white" />
-                    <span className="text-white font-semibold text-sm">Watch Demo</span>
+                    <span className="text-white font-semibold text-sm">
+                      {t("innovations.watchDemo", "Watch Demo")}
+                    </span>
                   </div>
                 </div>
               )}
@@ -529,24 +544,26 @@ export default function Innovations() {
               {innovation.hasVideo && (
                 <div className="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
                   <PlayCircle className="w-3 h-3" />
-                  VIDEO
+                  {t("innovations.videoBadge", "VIDEO")}
                 </div>
               )}
 
               {/* Category Badge */}
               <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
-                {innovation.category}
+                {t("innovations.categories." + innovation.category, innovation.category)}
               </div>
             </div>
 
             <div className="text-center px-4 py-2">
               <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">
-                {innovation.title}
+                {t("innovations.items." + innovation.key + ".title", innovation.title)}
               </h3>
               <p className="text-sm text-silver font-medium italic mb-4">
-                {innovation.tagline || ""}
+                {t("innovations.items." + innovation.key + ".tagline", innovation.tagline) || ""}
               </p>
-              <p className="text-silver text-sm">{innovation.description}</p>
+              <p className="text-silver text-sm">
+                {t("innovations.items." + innovation.key + ".description", innovation.description)}
+              </p>
             </div>
           </motion.div>
         ))}
@@ -560,7 +577,7 @@ export default function Innovations() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="bg-gradient-to-b from-[#1a1a1a] via-[#111111] to-[#1a1a1a] text-gray-300  w-[90%] sm:w-[80%] mx-auto p-8 rounded-lg shadow-lg relative h-[80vh] border border-neutral-700 overflow-hidden">
+          <div className="bg-gradient-to-b from-[#1a1a1a] via-[#111111] to-[#1a1a1a] text-gray-300 w-[90%] sm:w-[80%] mx-auto p-8 rounded-lg shadow-lg relative h-[80vh] border border-neutral-700 overflow-hidden">
             {/* Close Button */}
             <button
               onClick={(e) => {
@@ -568,7 +585,7 @@ export default function Innovations() {
                 handleCloseModal();
               }}
               aria-label="Close Modal"
-              className="absolute top-4 right-4 text-silver t hover:text-gray-200 text-4xl transition-colors"
+              className="absolute top-4 right-4 text-silver hover:text-gray-200 text-4xl transition-colors"
             >
               &times;
             </button>
@@ -586,7 +603,7 @@ export default function Innovations() {
                 {activeInnovation.hasVideo && (
                   <div className="w-full flex-shrink-0 p-4 space-y-8">
                     <h3 className="text-3xl font-semibold text-white text-center mb-6">
-                      {activeInnovation.title} - Demo Video
+                      {t("innovations.items." + activeInnovation.key + ".title", activeInnovation.title)} - {t("innovations.videoDemoTitle", "Demo Video")}
                     </h3>
 
                     <div className="aspect-video w-full bg-black rounded-lg overflow-hidden">
@@ -596,31 +613,33 @@ export default function Innovations() {
                         allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                         allowFullScreen
                         frameBorder="0"
-                        title={`${activeInnovation.title} Demo Video`}
+                        title={`${t("innovations.items." + activeInnovation.key + ".title", activeInnovation.title)} Demo Video`}
                       />
                     </div>
 
                     <div className="text-center mt-6">
                       <p className="text-lg text-gray-300 mb-4">
-                        {activeInnovation.description}
+                        {t("innovations.items." + activeInnovation.key + ".description", activeInnovation.description)}
                       </p>
                       <p className="text-sm text-gray-400 italic mb-6">
-                        &ldquo;{activeInnovation.tagline}&rdquo;
+                        &ldquo;{t("innovations.items." + activeInnovation.key + ".tagline", activeInnovation.tagline)}&rdquo;
                       </p>
 
                       {/* CTA Buttons */}
                       <div className="flex flex-wrap gap-4 justify-center mt-8">
                         <a
                           href="#contact"
+                          onClick={handleCloseModal}
                           className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                         >
-                          Request Demo
+                          {t("innovations.requestDemo", "Request Demo")}
                         </a>
                         <a
                           href="#contact"
+                          onClick={handleCloseModal}
                           className="px-6 py-3 bg-[#1e1e1e] text-white font-semibold rounded-lg border border-gray-600 hover:border-yellow-400 transition-all duration-300 hover:scale-105"
                         >
-                          Contact Us
+                          {t("innovations.contactUs", "Contact Us")}
                         </a>
                       </div>
                     </div>
@@ -632,10 +651,13 @@ export default function Innovations() {
                   <div className="w-full flex-shrink-0 p-4 space-y-8">
                     <div className="text-center mb-8">
                       <h3 className="text-3xl font-semibold text-white mb-2">
-                        Resource Library
+                        {t("innovations.labels.resourceLibrary", "Resource Library")}
                       </h3>
                       <p className="text-silver">
-                        Explore our detailed presentations and technical blueprints for {activeInnovation.title}.
+                        {t("innovations.resourcesSubtitle", {
+                          defaultValue: "Explore our detailed presentations and technical blueprints for {{name}}.",
+                          name: t("innovations.items." + activeInnovation.key + ".title", activeInnovation.title)
+                        })}
                       </p>
                     </div>
 
@@ -649,9 +671,11 @@ export default function Innovations() {
                           <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-yellow-500/20 transition-all">
                             <FileText className="text-black w-8 h-8" />
                           </div>
-                          <h4 className="text-white font-bold mb-2">{presentation.title}</h4>
+                          <h4 className="text-white font-bold mb-2">
+                            {t("innovations.items." + activeInnovation.key + ".presentations." + presentation.key + ".title", presentation.title)}
+                          </h4>
                           <p className="text-gray-400 text-sm mb-6 flex-grow">
-                            {presentation.description}
+                            {t("innovations.items." + activeInnovation.key + ".presentations." + presentation.key + ".description", presentation.description)}
                           </p>
                           <div className="flex gap-3 w-full">
                             <a
@@ -660,14 +684,14 @@ export default function Innovations() {
                               rel="noopener noreferrer"
                               className="flex-1 bg-white/10 hover:bg-white/20 text-white py-2 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-all"
                             >
-                              <ExternalLink size={14} /> View
+                              <ExternalLink size={14} /> {t("resources.viewBtn", "View")}
                             </a>
                             <a
                               href={presentation.file}
                               download
                               className="flex-1 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black py-2 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all"
                             >
-                              <Download size={14} /> Get PDF
+                              <Download size={14} /> {t("resources.downloadBtn", "Get PDF")}
                             </a>
                           </div>
                         </motion.div>
@@ -680,9 +704,11 @@ export default function Innovations() {
                           <ExternalLink className="text-yellow-500 w-5 h-5" />
                         </div>
                         <div>
-                          <h5 className="text-white font-semibold mb-1">Looking for more?</h5>
+                          <h5 className="text-white font-semibold mb-1">
+                            {t("innovations.lookingForMore", "Looking for more?")}
+                          </h5>
                           <p className="text-gray-400 text-sm">
-                            These documents represent our core strategy and technical foundations. Contact our team for detailed implementation case studies or partnership inquiries.
+                            {t("innovations.lookingForMoreDesc", "These documents represent our core strategy and technical foundations. Contact our team for detailed implementation case studies or partnership inquiries.")}
                           </p>
                         </div>
                       </div>
@@ -694,14 +720,14 @@ export default function Innovations() {
                 <div className="w-full flex-shrink-0 p-4 space-y-8">
                   <div>
                     <h3 className="sm:text-2xl font-semibold text-lg text-white border-b mb-4 border-silver pb-2">
-                      ValuePropositionStatement
+                      {t("innovations.labels.ValuePropositionStatement", "Value Proposition Statement")}
                     </h3>
                     <p className="text-lg">
-                      {activeInnovation.ValuePropositionStatement}
+                      {t("innovations.items." + activeInnovation.key + ".valuePropositionStatement", activeInnovation.ValuePropositionStatement)}
                     </p>
                   </div>
                   <h3 className="text-2xl text-white font-semibold border-b border-silver pb-2">
-                    Key Components
+                    {t("innovations.labels.KeyComponents", "Key Components")}
                   </h3>
                   {[
                     "ProblemFocused",
@@ -710,7 +736,7 @@ export default function Innovations() {
                   ].map((section) => (
                     <div key={section}>
                       <h4 className="text-lg font-medium text-white mb-2">
-                        {formatKey(section)}
+                        {t("innovations.labels." + section, formatKey(section))}
                       </h4>
                       <ul className="list-disc pl-6 space-y-2">
                         {Object.entries(
@@ -718,9 +744,9 @@ export default function Innovations() {
                         ).map(([key, value]) => (
                           <li key={key}>
                             <strong className="text-white">
-                              {formatKey(key)}:
+                              {t("innovations.labels." + key, formatKey(key))}:
                             </strong>{" "}
-                            {value}
+                            {t("innovations.items." + activeInnovation.key + ".keyComponents." + toCamelCase(section) + "." + key, value)}
                           </li>
                         ))}
                       </ul>
@@ -732,23 +758,25 @@ export default function Innovations() {
                 <div className="w-full flex-shrink-0 p-6 space-y-6">
                   <div>
                     <h3 className="text-2xl font-semibold text-white border-b mb-4 border-silver pb-2">
-                      Vision Statement
+                      {t("innovations.visionStatement", "Vision Statement")}
                     </h3>
                     <p className="text-lg">
-                      {activeInnovation.VisionStatement}
+                      {t("innovations.items." + activeInnovation.key + ".visionStatement", activeInnovation.VisionStatement)}
                     </p>
                   </div>
                   <div>
                     <h3 className="text-2xl font-semibold text-white border-b border-silver pb-2">
-                      Target Audience
+                      {t("innovations.targetAudience", "Target Audience")}
                     </h3>
                     {Object.entries(activeInnovation.TargetAudience).map(
                       ([key, { Message }]) => (
                         <div key={key} className="mb-4 mt-4">
                           <strong className="text-white">
-                            {formatKey(key)}:
+                            {t("innovations.labels." + key, formatKey(key))}:
                           </strong>
-                          <p className="text-gray-300">{Message}</p>
+                          <p className="text-gray-300">
+                            {t("innovations.items." + activeInnovation.key + ".targetAudience." + key, Message)}
+                          </p>
                         </div>
                       )
                     )}
@@ -758,45 +786,46 @@ export default function Innovations() {
                 {/* Value Proposition Section */}
                 <div className="w-full flex-shrink-0 p-6 space-y-6">
                   <h3 className="text-2xl font-semibold text-white border-b border-silver pb-2">
-                    Value Proposition
+                    {t("innovations.valueProposition", "Value Proposition")}
                   </h3>
                   <div className="space-y-4">
                     <div>
                       <h4 className="text-lg font-medium text-white">
-                        Problem
+                        {t("innovations.problem", "Problem")}
                       </h4>
                       <p className="text-gray-300">
-                        {activeInnovation.ValueProposition.Problem}
+                        {t("innovations.items." + activeInnovation.key + ".valueProposition.problem", activeInnovation.ValueProposition.Problem)}
                       </p>
                     </div>
                     <div>
                       <h4 className="text-lg font-medium text-white">
-                        Solution
+                        {t("innovations.solution", "Solution")}
                       </h4>
                       <p className="text-gray-300">
-                        {activeInnovation.ValueProposition.Solution}
+                        {t("innovations.items." + activeInnovation.key + ".valueProposition.solution", activeInnovation.ValueProposition.Solution)}
                       </p>
                     </div>
                     <div>
                       <h4 className="text-lg font-medium text-white">
-                        Key Benefits
+                        {t("innovations.keyBenefits", "Key Benefits")}
                       </h4>
                       <ul className="list-disc pl-6 space-y-2">
                         {Object.entries(
                           activeInnovation.ValueProposition.KeyBenefits
                         ).map(([key, value]) => (
                           <li key={key}>
-                            <strong>{key}:</strong> {value}
+                            <strong>{t("innovations.labels." + key, formatKey(key))}:</strong>{" "}
+                            {t("innovations.items." + activeInnovation.key + ".valueProposition.keyBenefits." + key, value)}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
                       <h4 className="text-lg font-medium text-white">
-                        Differentiators
+                        {t("innovations.differentiators", "Differentiators")}
                       </h4>
                       <ul className="list-disc pl-6 space-y-2">
-                        {activeInnovation.ValueProposition.Differentiators.map(
+                        {(t("innovations.items." + activeInnovation.key + ".valueProposition.differentiators", { returnObjects: true }) || activeInnovation.ValueProposition.Differentiators).map(
                           (item, index) => (
                             <li key={index}>{item}</li>
                           )
@@ -811,22 +840,21 @@ export default function Innovations() {
                         onClick={handleCloseModal}
                         className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                       >
-                        Request Demo
+                        {t("innovations.requestDemo", "Request Demo")}
                       </a>
                       <a
                         href="#contact"
                         onClick={handleCloseModal}
                         className="px-6 py-3 bg-[#1e1e1e] text-white font-semibold rounded-lg border border-gray-600 hover:border-yellow-400 transition-all duration-300 hover:scale-105"
                       >
-                        Contact Us
+                        {t("innovations.contactUs", "Contact Us")}
                       </a>
                     </div>
                   </div>
                 </div>
                 {/* Support Slide */}
-                <InnovationSupportCTA innovationName={activeInnovation.title} />
+                <InnovationSupportCTA innovationName={t("innovations.items." + activeInnovation.key + ".title", activeInnovation.title)} />
               </div>
-
             </div>
 
             {/* Navigation Buttons */}

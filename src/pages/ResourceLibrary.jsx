@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Download, ExternalLink, Library } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 // Import ALETU Presentations
 import blueprintPdf from "../assets/ALETU slides/ALETU_Africa_s_Adaptive_Education_Blueprint.pdf";
@@ -9,18 +10,21 @@ import masteryPdf from "../assets/ALETU slides/ALETU_Scaling_Mastery_in_Africa.p
 
 const resources = [
   {
+    key: "blueprint",
     title: "Adaptive Education Blueprint",
     category: "ALETU / Strategic",
     description: "A comprehensive guide to transforming Uganda's educational landscape through adaptive AI.",
     file: blueprintPdf
   },
   {
+    key: "curriculum",
     title: "Neural Curriculum",
     category: "ALETU / Technical",
     description: "Deep dive into the AI-driven curriculum design and mastery-based learning paths.",
     file: curriculumPdf
   },
   {
+    key: "mastery",
     title: "Scaling Mastery in Africa",
     category: "ALETU / Strategic",
     description: "Strategic framework for scaling high-impact educational solutions across the continent.",
@@ -29,6 +33,8 @@ const resources = [
 ];
 
 export default function ResourceLibrary() {
+  const { t } = useTranslation();
+
   return (
     <section id="resources" className="bg-[#0a0a0a] text-white py-32 px-6">
       <div className="max-w-7xl mx-auto">
@@ -40,14 +46,14 @@ export default function ResourceLibrary() {
               className="flex items-center gap-2 text-yellow-500 font-bold tracking-widest text-sm mb-4 uppercase"
             >
               <Library size={18} />
-              Knowledge Hub
+              {t("resources.knowledgeHub", "Knowledge Hub")}
             </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-extrabold mb-6"
             >
-              Resource Library
+              {t("resources.title", "Resource Library")}
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -55,8 +61,7 @@ export default function ResourceLibrary() {
               transition={{ delay: 0.1 }}
               className="text-silver text-lg"
             >
-              Access our technical blueprints, strategic frameworks, and educational curricula. 
-              These documents outline our commitment to driving innovation across Africa.
+              {t("resources.subtitle", "Access our technical blueprints, strategic frameworks, and educational curricula. These documents outline our commitment to driving innovation across Africa.")}
             </motion.p>
           </div>
         </div>
@@ -76,15 +81,15 @@ export default function ResourceLibrary() {
                   <FileText className="text-yellow-500 w-8 h-8" />
                 </div>
                 <span className="text-[10px] font-bold tracking-widest uppercase py-1 px-3 bg-white/5 rounded-full text-gray-400">
-                  {resource.category}
+                  {t("resources.items." + resource.key + ".category", resource.category)}
                 </span>
               </div>
 
               <h3 className="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors">
-                {resource.title}
+                {t("resources.items." + resource.key + ".title", resource.title)}
               </h3>
               <p className="text-gray-400 leading-relaxed mb-8 flex-grow">
-                {resource.description}
+                {t("resources.items." + resource.key + ".description", resource.description)}
               </p>
 
               <div className="flex gap-4">
@@ -94,14 +99,14 @@ export default function ResourceLibrary() {
                   rel="noopener noreferrer"
                   className="flex-1 bg-white/5 hover:bg-white/10 text-white py-3 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 border border-white/5 transition-all"
                 >
-                  <ExternalLink size={16} /> View
+                  <ExternalLink size={16} /> {t("resources.viewBtn", "View")}
                 </a>
                 <a
                   href={resource.file}
                   download
                   className="flex-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-black py-3 rounded-2xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/30 transition-all"
                 >
-                  <Download size={16} /> Download
+                  <Download size={16} /> {t("resources.downloadBtn", "Download")}
                 </a>
               </div>
             </motion.div>
@@ -113,16 +118,17 @@ export default function ResourceLibrary() {
           whileInView={{ opacity: 1, y: 0 }}
           className="mt-20 p-12 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 border border-yellow-500/20 rounded-[40px] text-center"
         >
-          <h3 className="text-3xl font-bold mb-4">Strategic Partnerships</h3>
+          <h3 className="text-3xl font-bold mb-4">
+            {t("resources.partnerships.title", "Strategic Partnerships")}
+          </h3>
           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-            Interested in the technical implementation or looking to partner on these initiatives? 
-            Let's collaborate to build the future of adaptive learning together.
+            {t("resources.partnerships.desc", "Interested in the technical implementation or looking to partner on these initiatives? Let's collaborate to build the future of adaptive learning together.")}
           </p>
           <a 
             href="#contact" 
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-yellow-400 transition-all"
           >
-            Get in Touch <ExternalLink size={18} />
+            {t("resources.partnerships.cta", "Get in Touch")} <ExternalLink size={18} />
           </a>
         </motion.div>
       </div>

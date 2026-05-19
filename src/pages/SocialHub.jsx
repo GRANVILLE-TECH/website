@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Linkedin, ExternalLink, Calendar, Youtube } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 // Custom X (Twitter) Icon Component
 const XIcon = ({ className }) => (
@@ -53,6 +54,7 @@ const socialPosts = [
 ];
 
 const SocialCard = ({ post, index }) => {
+  const { t } = useTranslation();
   const isLinkedIn = post.platform === "linkedin";
   
   return (
@@ -76,11 +78,11 @@ const SocialCard = ({ post, index }) => {
           </div>
           <div className="flex items-center text-silver text-xs space-x-1 opacity-60">
             <Calendar className="w-3 h-3" />
-            <span>{post.date}</span>
+            <span>{t("socialHub.dates." + post.date, post.date)}</span>
           </div>
         </div>
         <p className="text-white/90 text-sm leading-relaxed mb-6 line-clamp-4 font-medium">
-          {post.content}
+          {t("socialHub.posts." + post.id + ".content", post.content)}
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
           {post.tags.map((tag, idx) => (
@@ -96,7 +98,10 @@ const SocialCard = ({ post, index }) => {
         rel="noopener noreferrer"
         className="inline-flex items-center text-xs font-semibold text-white group-hover:text-silver transition-colors"
       >
-        View on {isLinkedIn ? "LinkedIn" : post.platform === "youtube" ? "YouTube" : "X"}
+        {t("socialHub.viewOnPlatform", {
+          defaultValue: "View on {{platform}}",
+          platform: isLinkedIn ? "LinkedIn" : post.platform === "youtube" ? "YouTube" : "X"
+        })}
         <ExternalLink className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
       </a>
     </motion.div>
@@ -104,6 +109,8 @@ const SocialCard = ({ post, index }) => {
 };
 
 export default function SocialHub() {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-gradient-to-b from-black to-[#111111] w-full py-32 px-6 relative overflow-hidden">
       {/* Decorative background glows */}
@@ -119,7 +126,7 @@ export default function SocialHub() {
             className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-xs font-semibold text-silver mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-[#0077b5] animate-pulse" />
-            <span>LIVE FEED</span>
+            <span>{t("socialHub.liveFeed", "LIVE FEED")}</span>
           </motion.div>
           
           <motion.h2
@@ -129,7 +136,7 @@ export default function SocialHub() {
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6"
           >
-            Social Hub
+            {t("socialHub.title", "Social Hub")}
           </motion.h2>
           <motion.p
             initial={{ y: 30, opacity: 0 }}
@@ -138,7 +145,7 @@ export default function SocialHub() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg sm:text-xl text-silver max-w-2xl mx-auto opacity-80"
           >
-            Catch our latest updates, industry insights, and innovation stories across LinkedIn and X.
+            {t("socialHub.subtitle", "Catch our latest updates, industry insights, and innovation stories across LinkedIn and X.")}
           </motion.p>
           <motion.a
             whileHover={{ scale: 1.05 }}
@@ -148,7 +155,7 @@ export default function SocialHub() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all"
           >
-            YouTube Channel
+            {t("socialHub.youtubeChannel", "YouTube Channel")}
             <Youtube className="ml-2 w-5 h-5" />
           </motion.a>
         </div>
@@ -168,7 +175,7 @@ export default function SocialHub() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all"
           >
-            LinkedIn Page
+            {t("socialHub.linkedinPage", "LinkedIn Page")}
             <Linkedin className="ml-2 w-5 h-5" />
           </motion.a>
           <motion.a
@@ -179,7 +186,7 @@ export default function SocialHub() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all"
           >
-            X Profile
+            {t("socialHub.xProfile", "X Profile")}
             <XIcon className="ml-2 w-5 h-5" />
           </motion.a>
         </div>

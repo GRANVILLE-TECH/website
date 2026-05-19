@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import {
   ChevronRight,
@@ -10,7 +11,7 @@ import {
 } from "lucide-react";
 
 const ServiceCard = React.memo(
-  ({ icon: Icon, title, description, benefits, index }) => {
+  ({ icon: Icon, title, description, benefits = [], index }) => {
     return (
       <motion.div
         initial={{ opacity: 0, x: -50 }} // Side-in from the left
@@ -57,65 +58,42 @@ const ServiceCard = React.memo(
 );
 
 const ServicesPage = () => {
+  const { t } = useTranslation();
+
   const services = React.useMemo(
     () => [
       {
         icon: Globe,
-        title: "Recommendation Systems",
-        description:
-          "AI-powered algorithms delivering personalized insights through advanced behavioral analysis and contextual understanding",
-        benefits: [
-          "Intelligent recommendation engine",
-          "Real-time user profiling",
-          "Adaptive learning mechanisms",
-        ],
+        title: t("services.recommendationTitle"),
+        description: t("services.recommendationDesc"),
+        benefits: t("services.recommendationBenefits", { returnObjects: true }) || [],
       },
       {
         icon: Brain,
-        title: "AI Strategy Consulting",
-        description:
-          "Comprehensive digital transformation strategy leveraging AI to unlock operational efficiency and competitive advantages",
-        benefits: [
-          "Strategic AI integration",
-          "Innovation frameworks",
-          "Enterprise AI assessment",
-        ],
+        title: t("services.strategyTitle"),
+        description: t("services.strategyDesc"),
+        benefits: t("services.strategyBenefits", { returnObjects: true }) || [],
       },
       {
         icon: Code,
-        title: "Custom AI Solutions",
-        description:
-          "Bespoke intelligent systems engineered to solve complex business challenges with scalable, modular architectures",
-        benefits: [
-          "Tailored AI architecture",
-          "Scalable solution design",
-          "Innovation pipeline",
-        ],
+        title: t("services.customTitle"),
+        description: t("services.customDesc"),
+        benefits: t("services.customBenefits", { returnObjects: true }) || [],
       },
       {
         icon: Database,
-        title: "Enterprise Intelligence",
-        description:
-          "Proprietary AI models trained on organizational data, generating actionable insights for intelligent decision-making",
-        benefits: [
-          "Domain-specific modeling",
-          "Predictive analytics",
-          "Knowledge amplification",
-        ],
+        title: t("services.enterpriseTitle"),
+        description: t("services.enterpriseDesc"),
+        benefits: t("services.enterpriseBenefits", { returnObjects: true }) || [],
       },
       {
         icon: Settings,
-        title: "Intelligent Assistants",
-        description:
-          "Advanced multi-channel engagement platforms using natural language processing for sophisticated customer interactions",
-        benefits: [
-          "Omni-channel support",
-          "Contextual communication",
-          "Enhanced engagement",
-        ],
+        title: t("services.assistantsTitle"),
+        description: t("services.assistantsDesc"),
+        benefits: t("services.assistantsBenefits", { returnObjects: true }) || [],
       },
     ],
-    []
+    [t]
   );
 
   return (
@@ -131,10 +109,10 @@ const ServicesPage = () => {
           }}
           className="text-5xl md:text-5xl lg:text-6xl font-bold text-center mb-4 text-white tracking-tighter"
         >
-          Our Services
+          {t("services.title")}
         </motion.h2>
         <p className="text-lg text-center mb-16 text-silver">
-          Transforming Business through Intelligent Technology
+          {t("services.subtitle")}
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -144,7 +122,7 @@ const ServicesPage = () => {
               icon={service.icon}
               title={service.title}
               description={service.description}
-              benefits={service.benefits}
+              benefits={Array.isArray(service.benefits) ? service.benefits : []}
               index={index} // Pass the index for staggered animation
             />
           ))}

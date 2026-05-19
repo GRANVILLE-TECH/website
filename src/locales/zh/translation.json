@@ -1,0 +1,551 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "innovations": "我们的创新",
+    "services": "服务项目",
+    "booking": "预约服务",
+    "resources": "资源库",
+    "alumni": "校友会",
+    "contact": "联系我们",
+    "navigationTitle": "导航",
+    "office": "办事处",
+    "location": "乌干达坎帕拉"
+  },
+  "hero": {
+    "badge": "✦ 用 AI 解决方案驱动创新",
+    "headlinePart1": "重新想象",
+    "headlinePart2": "智能",
+    "headlinePart3": "的未来",
+    "subCopy": "开拓变革性的人工智能解决方案，重新定义行业，为非洲及其他地区赋能更智慧的明天。",
+    "ctaInnovations": "我们的创新",
+    "ctaContact": "取得联系",
+    "scroll": "滚动",
+    "rotatingRing": "Granville-Tech • 人工智能解决方案 • 创新 • 非洲 •"
+  },
+  "about": {
+    "title": "关于我们",
+    "description": "Granville-Tech 处于人工智能驱动创新的前沿，用变革性解决方案为企业赋能。我们的专家团队致力于开发尖端的人工智能技术，以解决现实世界的挑战，并推动全球行业的变革。",
+    "coreValues": "核心价值观",
+    "finalParagraph": "在 Granville-Tech，我们不仅是在创造产品，更是在打造能够产生共鸣、激发灵感并带来变革的体验。每一次创新都见证了我们超越极限、重新定义可能的决心。我们邀请您加入这段令人兴奋的旅程，与我们共同想象，并携手塑造一个技术成为推动积极变革力量的未来。",
+    "values": {
+      "network": {
+        "title": "网络合作",
+        "description": "合作是成功的关键。我们坚信团结的力量。"
+      },
+      "innovation": {
+        "title": "持续创新",
+        "description": "通过塑造未来的解决方案不断突破边界。"
+      },
+      "legacy": {
+        "title": "传承发展",
+        "description": "为子孙后代创造持久深远的影响。"
+      },
+      "creativity": {
+        "title": "非凡创意",
+        "description": "保持好奇心，不断探索新的地平线。"
+      },
+      "excellence": {
+        "title": "卓越品质",
+        "description": "坚持不懈地追求最高标准。"
+      }
+    }
+  },
+  "contact": {
+    "getInTouch": "与 Granville-Tech 取得联系",
+    "tagline": "我们随时为您解答关于人工智能解决方案的任何疑问",
+    "title": "联系我们",
+    "instruction": "请填写下表，我们将在24小时内回复您。",
+    "scheduleConsultation": "预约咨询",
+    "orEmailUs": "或者直接给我们发送电子邮件：",
+    "form": {
+      "firstName": "名字",
+      "lastName": "姓氏",
+      "email": "电子邮箱",
+      "phone": "电话号码 (可选)",
+      "selectService": "选择一项服务",
+      "query": "输入您的咨询内容",
+      "submit": "提交",
+      "sending": "发送中..."
+    },
+    "errors": {
+      "firstName": "名字是必填项。",
+      "lastName": "姓氏是必填项。",
+      "emailRequired": "电子邮箱是必填项。",
+      "emailInvalid": "电子邮箱格式无效。请输入有效的电子邮箱。",
+      "phoneInvalid": "电话号码必须在 10 到 15 位数字之间。",
+      "service": "请选择一项服务。",
+      "message": "留言内容是必填项。"
+    },
+    "services": {
+      "recommendation": "推荐系统",
+      "consulting": "AI 战略咨询",
+      "custom": "定制 AI 解决方案",
+      "assistants": "智能助理",
+      "enterprise": "企业智能"
+    },
+    "success": {
+      "title": "消息已发送！",
+      "description": "感谢您的联系。我们的团队将在24小时内与您回复。",
+      "dismiss": "关闭"
+    },
+    "error": {
+      "title": "糟糕！出了点问题",
+      "description": "我们无法发送您的消息. 请稍后再试，或直接向我们发送电子邮件。",
+      "tryAgain": "重试"
+    }
+  },
+  "footer": {
+    "brandTagline": "用 AI 解决方案驱动创新",
+    "connect": "关注我们：",
+    "copyright": "© {{year}} Granville-Tech。版权所有。",
+    "crafted": "精心设计与开发，助力人工智能解决方案不断前行。"
+  },
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "通过智能技术实现业务转型",
+    "recommendationTitle": "推荐系统",
+    "recommendationDesc": "基于人工智能的算法，通过先进的行为分析和上下文理解提供个性化洞察",
+    "recommendationBenefits": [
+      "智能推荐引擎",
+      "实时用户画像",
+      "自适应学习机制"
+    ],
+    "strategyTitle": "人工智能战略咨询",
+    "strategyDesc": "利用人工智能解锁运营效率和竞争优势的全面数字化转型战略",
+    "strategyBenefits": [
+      "战略性AI整合",
+      "创新框架",
+      "企业级AI评估"
+    ],
+    "customTitle": "定制化人工智能解决方案",
+    "customDesc": "专为解决复杂业务挑战而设计的定制智能系统，具有可扩展的模块化架构",
+    "customBenefits": [
+      "量身定制的AI架构",
+      "可扩展的方案设计",
+      "创新管道"
+    ],
+    "enterpriseTitle": "企业智能",
+    "enterpriseDesc": "利用组织数据训练的专属人工智能模型，为智能决策生成可操作的洞察",
+    "enterpriseBenefits": [
+      "特定领域建模",
+      "预测性分析",
+      "知识放大"
+    ],
+    "assistantsTitle": "智能助手",
+    "assistantsDesc": "先进的多渠道互动平台，采用自然语言处理技术实现精细的客户互动",
+    "assistantsBenefits": [
+      "全渠道支持",
+      "上下文沟通",
+      "提升参与度"
+    ]
+  },
+  "videoShowcase": {
+    "title": "视觉与行动",
+    "description": "探索研究与技术的交汇点，我们开创旨在教育和转型行业的智能解决方案。",
+    "caption": "每一次创新都在重新构想未来",
+    "iframeTitle": "Granville-Tech — 见证我们的视觉与行动"
+  },
+  "innovations": {
+    "title": "我们的创新",
+    "subtitle": "开创变革性人工智能解决方案，重新定义行业，赋能更智能的明天。",
+    "backToHome": "返回首页",
+    "detailTitle": "Granville-Tech 创新项目",
+    "detailSubtitle": "发现最新的人工智能创新和项目。",
+    "requestDemo": "申请演示",
+    "contactUs": "联系我们",
+    "demoVideo": "演示视频",
+    "valueProposition": "价值主张",
+    "keyComponents": "核心要素",
+    "visionStatement": "愿景陈述",
+    "targetAudience": "目标受众",
+    "problem": "痛点",
+    "solution": "解决方案",
+    "keyBenefits": "主要优势",
+    "differentiators": "独特优势",
+    "lookingForMore": "寻找更多信息？",
+    "lookingForMoreDesc": "这些文件代表了我们的核心战略和技术基础。联系我们的团队以获取详细的实施案例研究或合作咨询。",
+    "watchDemo": "观看演示",
+    "videoBadge": "视频",
+    "problemFocused": "针对痛点",
+    "solutionOriented": "面向方案",
+    "uniqueDifferentiators": "独特差异点",
+    "items": {
+      "aletu": {
+        "title": "乌干达教育转型的自适应学习平台",
+        "tagline": "彻底变革教育，服务每一位学生",
+        "description": "专为乌干达中学设计的云端人工智能教育平台。它提供与当地课程相匹配的个性化、基于掌握程度的教学",
+        "valueProposition": {
+          "problem": "针对乌干达中学面临的高流失率、教师精力有限以及学生参与度低等挑战",
+          "solution": "ALETU是一个个性化的自适应教育平台，它利用人工智能学习路径、掌握度学习原则和认知评估来变革教育成果",
+          "keyBenefits": {
+            "students": "获得能提高学习成果的互动式定制教育",
+            "teachers": "节省行政事务时间，专注于有意义的指导和传授",
+            "schools": "降低流失率并提高整体学术表现",
+            "policymakers": "获得可操作的洞察以指导国家教育战略"
+          },
+          "differentiators": [
+            "个性化、契合文化背景的教学内容",
+            "无缝融入环境意识和伦理等跨领域议题",
+            "与国家课程一致的AI生成教案和评估"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "highDropoutRates": "乌干达中学的高流失率",
+            "overburdenedTeachers": "教师负担过重，缺乏个性化教学的工具",
+            "lackOfDataDrivenApproaches": "缺乏用于监控和改善学生表现的数据驱动方法"
+          },
+          "solutionOriented": {
+            "aiAdaptiveLearning": "AI驱动的自适应学习确保每个学生都能按照自己的节奏进步",
+            "masteryLearning": "掌握度学习原则确保学生在晋级前完全理解概念",
+            "integratedDashboards": "集成式仪表盘和分析功能为教师提供可用于干预的可行洞察"
+          },
+          "uniqueDifferentiators": {
+            "culturalAlignment": "个性化、符合文化背景的教育内容",
+            "crossCuttingIssues": "无缝融合环境意识和道德等跨领域问题",
+            "nationalCurriculum": "生成与国家课程一致的AI教案和评估"
+          }
+        },
+        "visionStatement": "提供基于人工智能的自适应教育解决方案，通过个性化学习赋能学生脱颖而出，支持教师发挥导师和倡导者的作用，并使学校能够提供数据驱动、包容且有影响力的教育，共同迈向更美好的未来",
+        "targetAudience": {
+          "teachers": "减少行政事务时间，增加指导和激发学生灵感的时间。ALETU在这里帮您产生更大的影响",
+          "students": "你的学习，你的节奏，你的未来。ALETU通过让每一堂课都恰到好处，助你取得成功",
+          "administratorsAndPolicymakers": "利用数据驱动的洞察和自适应学习技术推动更好的教育成果。ALETU符合您通往更美好未来的目标"
+        },
+        "valuePropositionStatement": "ALETU通过提供人工智能驱动、符合文化背景的教育平台，使乌干达中学能够克服高流失率、教师能力受限和学生参与度低的问题。它为教育工作者提供个性化的学习路径、基于掌握程度的教学和可操作的洞察，从而改善学术成果、减少辍学，并为更美好的教育未来提供数据支撑的政策制定依据",
+        "presentations": {
+          "blueprint": {
+            "title": "自适应教育蓝图",
+            "description": "通过自适应AI变革乌干达教育面貌的综合指南。"
+          },
+          "curriculum": {
+            "title": "神经课程",
+            "description": "深入解析AI驱动的课程设计与基于掌握程度的学习路径。"
+          },
+          "mastery": {
+            "title": "在非洲推广掌握度教学",
+            "description": "在非洲大陆推广高影响力教育解决方案的战略框架。"
+          }
+        }
+      },
+      "timesift": {
+        "title": "TimeSift",
+        "tagline": "智能安全，重拾安心",
+        "description": "一种AI驱动的安全系统，可将数小时的监控视频转化为精选的每日精彩瞬间，节省时间并提高安全性",
+        "valueProposition": {
+          "problem": "房主和物业经理面临着手动查看数小时监控视频以监控房屋或财产的繁琐任务。传统系统缺乏识别和总结重要活动的智能，导致安防工作低效且耗时",
+          "solution": "TimeSift使用先进的人工智能筛查数小时的视频，并生成符合用户偏好的简明精彩瞬间。它能识别不寻常的活动、访客或快递送达等重要事件，节省用户时间的同时提高安全性",
+          "keyBenefits": {
+            "timeEfficiency": "用户可以减少查看无关视频的时间",
+            "enhancedSecurity": "对异常或可疑活动发出警报",
+            "personalization": "学习用户偏好以提供量身定制的总结"
+          },
+          "differentiators": [
+            "自动检测并突出显示重要事件",
+            "根据用户定义的偏好进行个性化总结",
+            "通过提供快速、可操作的日常活动视图，节省时间并增添安心感"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "tediousManualReview": "手动查看数小时监控录像的繁琐耗时过程",
+            "lackOfIntelligenceInSystems": "传统系统缺乏识别和概括重要活动的智能"
+          },
+          "solutionOriented": {
+            "aiAlgorithms": "AI驱动的系统，筛选录像并自动生成精彩集锦",
+            "eventDetection": "检测异常移动、访客或交付等重要事件"
+          },
+          "uniqueDifferentiators": {
+            "personalization": "适应用户偏好以提供高度相关的总结",
+            "timeSaving": "将数小时的录像转化为简短、可操作的精彩瞬间",
+            "peaceOfMind": "确保用户始终知晓关键事件，无需筛选长视频"
+          }
+        },
+        "visionStatement": "利用AI重新定义家居和物业安防，将数小时的视频转化为精彩瞬间，带来轻松省心的安防体验",
+        "targetAudience": {
+          "homeowners": "减少监控视频的时间，留出更多时间享受生活。TimeSift为您带来应得的安心",
+          "propertyManagers": "快速查看相关监控，轻松管理多个物业。TimeSift帮您专注于最重要的事情",
+          "smartHomeEnthusiasts": "将TimeSift与智能家居整合，使安防更智能、更高效",
+          "smallBusiness": "配备基本安防系统的中小企业主",
+          "travelersAndRemoteHomeowners": "需要定期查看物业活动摘要的旅客和远程房主"
+        },
+        "valuePropositionStatement": "对于寻求更智能、更高效的安防方案的房主、物业经理和智能家居爱好者来说，TimeSift是一款基于人工智能的系统，可将数小时的监控视频转化为精选的每日摘要，告别传统的手动查看方式"
+      },
+      "echosign": {
+        "title": "EchoSign",
+        "tagline": "为无声者发声",
+        "description": "一个由人工智能驱动的平台，利用先进的视觉处理模型，将手语实时转换为口头语言",
+        "valueProposition": {
+          "problem": "依赖手语的人在口头沟通中面临障碍，尤其是在职业、学术和公共场合",
+          "solution": "EchoSign利用先进的AI实时将手语翻译成口头语言，促进包容性与独立性",
+          "keyBenefits": {
+            "independence": "用户可以在不依赖翻译员的情况下进行口头交流",
+            "inclusivity": "无缝参与对话、演讲和商务交流",
+            "flexibility": "适应各种环境，包括教室、会议和媒体环境"
+          },
+          "differentiators": [
+            "实时手语翻译为自然语音",
+            "AI驱动系统能准确解读手势、面部表情和身体动作",
+            "适用于从教育到专业空间的广泛环境"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "languageBarriers": "依赖手语的人士在口语交流中面临壁垒，尤其是在职业、学术和公共场合",
+            "interpreterDependence": "对翻译人员的依赖限制了独立性与自发性，为顺畅沟通带来了挑战"
+          },
+          "solutionOriented": {
+            "aiTranslation": "EchoSign使用先进AI将手语实时翻译成口语",
+            "adaptiveLearning": "它分析手势、面部表情和身体动作以提供准确自然的语音合成，实现自立和无障碍交流"
+          },
+          "uniqueDifferentiators": {
+            "accessibility": "为手语使用者提供可行的口语沟通途径",
+            "empowerment": "赋能用户独立交流，无需外部翻译协助"
+          }
+        },
+        "visionStatement": "消除手语使用者的沟通障碍，赋予他们实时、包容和无障碍的口头沟通工具",
+        "targetAudience": {
+          "deafOrHardOfHearing": "借助EchoSign打破沟通壁垒，在任何环境中尽情表达。你的声音，被赋予力量",
+          "educationalInstitutions": "通过实时手语翻译提升课堂包容性。EchoSign支持每一位学生",
+          "corporateEnvironments": "通过实时沟通提高工作场所的无障碍程度。EchoSign创造包容性职场"
+        },
+        "valuePropositionStatement": "对于使用手语沟通并希望扩展口头表达能力的人士，EchoSign是一款人工智能驱动的平台，能够将手语实时翻译为自然语音。与依赖人工翻译的传统方法不同，EchoSign让用户能在各种场合下自主“发声”，促进包容与独立"
+      },
+      "echosign_wearable": {
+        "title": "EchoSign Wearable",
+        "tagline": "托于掌心的随身声音",
+        "description": "一款便携式可穿戴设备，可在移动中将手语翻译成语音，提升移动通讯体验。",
+        "valueProposition": {
+          "problem": "手语使用者需要一款便携、随时随地可用的方案，以便在动态、移动环境中进行顺畅沟通。",
+          "solution": "EchoSign Wearable是一款紧凑型便携设备，能实时将手语翻译成口语，确保在任何环境下沟通顺畅。",
+          "keyBenefits": {
+            "mobility": "用户无论在旅行、工作还是社交，随时随地都能轻松交流。",
+            "independence": "消除对外部设备或翻译人员的依赖。",
+            "convenience": "轻巧易用，确保沟通始终触手可及。"
+          },
+          "differentiators": [
+            "紧凑便携的设计，支持随时随地的实时交流。",
+            "无缝融入日常生活，实现随时可及的便利。",
+            "AI驱动的系统，确保在多变环境中提供精准的翻译。"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "needForPortability": "对手语翻译方案便携性及随时可用性的迫切需求。",
+            "stationarySystems": "固定式手语翻译系统的局限性，限制了移动性和灵活性。"
+          },
+          "solutionOriented": {
+            "realTime": "EchoSign Wearable是一款紧凑便携的设备，能够实时将手语翻译为口语，保证在任何场合都能进行流畅的沟通",
+            "compactDesign": "轻巧的可穿戴技术，让移动沟通成为可能。"
+          },
+          "uniqueDifferentiators": {
+            "mobility": "为手语使用者提供极佳的移动性，使他们可以在任何环境中自由交谈。",
+            "independence": "让用户在沟通中实现自立，无需依赖他人或固定设备。"
+          }
+        },
+        "visionStatement": "通过创新的可穿戴技术，让手语使用者随时随地都能进行无障碍的沟通。",
+        "targetAudience": {
+          "onTheGoSignLanguageUsers": "随时随地，轻松交流。EchoSign Wearable确保你永远不会失声。",
+          "professionals": "通过便携、实时的方案，提升您在职场环境中的交流能力。",
+          "socialAndCasualSettings": "无障碍参与社交活动。EchoSign Wearable让随时随地的交流更加自然。"
+        },
+        "valuePropositionStatement": "对于追求随时随地顺畅沟通的活跃手语使用者来说，EchoSign Wearable是一款便携式设备，能够实时将手语翻译成口头语音。相比固定系统，EchoSign Wearable提供了在各种场合中自由交谈的灵活性。"
+      },
+      "mentor_mirror": {
+        "title": "Mentor Mirror",
+        "tagline": "像大师一样交易，无需多年摸索",
+        "description": "一个AI驱动的交易平台，复制经验丰富导师的策略，为交易员提供实时辅助。",
+        "valueProposition": {
+          "problem": "新手和中级交易员往往缺乏时间、专业知识或信心来做出明智的交易决策。",
+          "solution": "Mentor Mirror利用AI复制资深交易导师的策略，为用户提供可操作的洞察和自动化引导。",
+          "keyBenefits": {
+            "expertise": "获取模拟成功导师策略的AI交易方案。",
+            "efficiency": "通过自动化洞察节省时间，减少手动研究。",
+            "confidence": "在经验证的方案支持下做出更明智的决策。"
+          },
+          "differentiators": [
+            "基于AI复制成功的交易策略。",
+            "根据用户需求定制的实时、可操作洞察与引导。",
+            "减少情绪化错误，加速各级别交易员的学习过程。"
+          ]
+        },
+        "keyComponents": {
+          "problemFocused": {
+            "lackOfExpertise": "许多交易员缺乏有效交易所需要的时间、经验或知识。",
+            "emotionalErrors": "情绪化错误往往导致糟糕的交易决策和结果。"
+          },
+          "solutionOriented": {
+            "aiInsights": "基于经验证的交易策略提供实时洞察与引导。",
+            "automatedTradingSupport": "提供可操作建议的自动化系统，以优化决策制定。"
+          },
+          "uniqueDifferentiators": {
+            "provenMethodologies": "交易员从模拟成功导师的策略中受益。",
+            "emotionalErrorReduction": "Mentor Mirror尽量减少情绪干扰，协助交易员专注于数据驱动的决策。"
+          }
+        },
+        "visionStatement": "使金融指导民主化，用复制专业人士经验的AI引导赋能交易员。",
+        "targetAudience": {
+          "aspiringTraders": "借助AI支持的洞察，自信学习并应用交易策略。Mentor Mirror伴您成长。",
+          "intermediateTraders": "通过实时指导和传授提升交易技能。Mentor Mirror加速您的交易旅程。",
+          "busyProfessionals": "无需投入无尽的时间即可参与交易。Mentor Mirror简化了决策流程。"
+        },
+        "valuePropositionStatement": "针对希望改善交易结果的新手和中级交易员，Mentor Mirror是一款人工智能驱动的平台，能够复制资深导师的交易策略。与传统交易工具不同，它提供实时、可操作的洞察和自动化指导，协助用户在减少摸索和情绪干扰的同时自信交易"
+      }
+    },
+    "categories": {
+      "All": "全部",
+      "EdTech": "教育科技",
+      "FinTech": "金融科技",
+      "Security": "安全防护",
+      "Accessibility": "无障碍支持"
+    },
+    "labels": {
+      "teachers": "教师",
+      "students": "学生",
+      "administratorsAndPolicymakers": "管理者与政策制定者",
+      "homeowners": "业主",
+      "propertyManagers": "物业经理",
+      "smartHomeEnthusiasts": "智能家居爱好者",
+      "smallBusiness": "小企业",
+      "travelersAndRemoteHomeowners": "旅客与远程业主",
+      "deafOrHardOfHearing": "听力障碍人士",
+      "educationalInstitutions": "教育机构",
+      "corporateEnvironments": "企业环境",
+      "onTheGoSignLanguageUsers": "移动手语使用者",
+      "professionals": "专业人士",
+      "socialAndCasualSettings": "社交与休闲场合",
+      "aspiringTraders": "交易新手",
+      "intermediateTraders": "中级交易员",
+      "busyProfessionals": "忙碌的专业人士",
+      "ProblemFocused": "针对痛点",
+      "SolutionOriented": "面向方案",
+      "UniqueDifferentiators": "独特差异点",
+      "highDropoutRates": "高流失率",
+      "overburdenedTeachers": "教师负担过重",
+      "lackOfDataDrivenApproaches": "缺乏数据驱动方法",
+      "aiAdaptiveLearning": "AI自适应学习",
+      "masteryLearning": "掌握度学习",
+      "integratedDashboards": "集成式仪表盘",
+      "culturalAlignment": "文化契合度",
+      "crossCuttingIssues": "跨领域议题",
+      "nationalCurriculum": "国家课程大纲",
+      "tediousManualReview": "繁琐的手动查看",
+      "lackOfIntelligenceInSystems": "系统缺乏智能",
+      "aiAlgorithms": "AI算法",
+      "eventDetection": "事件检测",
+      "personalization": "个性化",
+      "timeSaving": "节省时间",
+      "peaceOfMind": "安心省心",
+      "languageBarriers": "语言障碍",
+      "interpreterDependence": "对翻译员的依赖",
+      "aiTranslation": "AI翻译",
+      "adaptiveLearning": "自适应学习",
+      "accessibility": "无障碍",
+      "empowerment": "赋能",
+      "needForPortability": "便携性需求",
+      "stationarySystems": "固定式系统",
+      "realTime": "实时",
+      "compactDesign": "紧凑设计",
+      "mobility": "移动性",
+      "lackOfExpertise": "缺乏经验",
+      "emotionalErrors": "情绪化错误",
+      "aiInsights": "AI洞察",
+      "automatedTradingSupport": "自动化交易支持",
+      "provenMethodologies": "验证的方法论",
+      "emotionalErrorReduction": "减少情绪化错误",
+      "Students": "学生",
+      "Teachers": "教师",
+      "Schools": "学校",
+      "Policymakers": "政策制定者",
+      "TimeEfficiency": "时间效率",
+      "EnhancedSecurity": "增强的安全防护",
+      "Personalization": "个性化",
+      "Independence": "独立性",
+      "Inclusivity": "包容性",
+      "Flexibility": "灵活性",
+      "Mobility": "移动性",
+      "Convenience": "便利性",
+      "Expertise": "专业经验",
+      "Efficiency": "效率",
+      "Confidence": "信心"
+    }
+  },
+  "aletuShowcase": {
+    "latestInnovation": "最新创新项目",
+    "title": "赋能未来的",
+    "titleGrad": "数字教育",
+    "desc": "ALETU是我们专为乌干达课程设计的旗舰在线学习平台。体验一个学生真正喜爱的、基于掌握程度的游戏化和社交化学习环境。",
+    "tryDemo": "试用在线演示",
+    "demoNote": "* 体验完整功能版学生门户的魅力。",
+    "portalTitle": "ALETU 学生门户",
+    "portalDesc": "为乌干达青少年打造的行业首创教育体验。",
+    "streak": "连续学习",
+    "streakVal": "12 天",
+    "mastery": "掌握度",
+    "masteryVal": "92% 微积分",
+    "features": {
+      "gamifiedTitle": "游戏化学习",
+      "gamifiedDesc": "XP、连续天数和排行榜，让学生保持学习热情。",
+      "socialTitle": "社交化互动",
+      "socialDesc": "协作式问答社区和同伴互助支持。",
+      "masteryTitle": "专注掌握度",
+      "masteryDesc": "AI模块确保学生深入理解概念后才晋级。",
+      "curriculumTitle": "契合教学大纲",
+      "curriculumDesc": "专为乌干达S1-S6国家课程大纲定制。"
+    }
+  },
+  "innovationSupport": {
+    "title": "支持项目研发",
+    "description": "您的支持将直接推动 {{name}} 的不断演进。支持我们通过创新型AI方案带来有意义的变革。",
+    "kofiDisclaimer": "由 Ko-fi 提供安全的支付支持"
+  },
+  "partners": {
+    "title": "我们的客户"
+  },
+  "socialHub": {
+    "liveFeed": "实时动态",
+    "title": "社交中心",
+    "subtitle": "通过 LinkedIn 和 X 随时关注我们的最新动态、行业洞察和创新故事。",
+    "youtubeBtn": "YouTube 频道",
+    "linkedinBtn": "LinkedIn 页面",
+    "xBtn": "X 个人主页",
+    "viewOn": "在 {{platform}} 上查看"
+  },
+  "alumni": {
+    "networkBadge": "校友网络",
+    "title": "Granville-Tech 传承",
+    "titleInnovators": "创新者",
+    "subtitle": "结识那些塑造了 Granville-Tech 并继续在世界各地引领 AI 变革的杰出校友。",
+    "connectWithUs": "与我们联系：",
+    "brandTagline": "利用 AI 解决方案驱动创新",
+    "bios": {
+      "sujal": "AI实习生 @Techolution | 前AI研究助理 @WorkingFox | 印度内部智能挑战赛获奖者 | GDSC WinterHacks 2022获奖者 | 具备AI/ML专业背景的计算机科学本科生 | IIIT Kottayam'26。",
+      "dharren": "创始人兼CTSO, ACL | 强防伪AI与自主系统领域 | 国防、医疗与环保科技专家。",
+      "vijay": "后端开发工程师 | Golang | DevOps，目前就读于 IIIT Kottayam。",
+      "radhika": "实习生 @ IBM ISL | AI/ML研究实习生 @TCS Research | 前MLE实习生 @ Granville Tech | 就读于印度信息技术研究所Kottayam。",
+      "suraj": "后端开发工程师 @Sovansh Technology | 软件开发实习生 @Granville-Tech | GDSC WinterHacks 2022获奖者 | 印度内部智能挑战赛获奖者 | 计算机科学本科生 @IIIT Kottayam'26。",
+      "rishi": "AI研究实习生 @SHL || 前AI/ML实习生 @达索系统 || 前数据科学实习生 @SymphonyAI || 前AI/ML实习生 @Rapid Innovation || 前ML实习生 @Granville Tech || 印度信息技术研究所Kottayam。",
+      "glen": "MLE实习生 @ TIFIN || 生成式AI研究员 @ Mozilla || 前AI/ML俱乐部Enigma-IIITK导师 || 前生成式AI实习生 @ Granville Tech || 前深度学习研究实习生 @ NCCR || IIIT Kottayam '27。",
+      "mohamed": "AI/ML工程师 | 数据科学发烧友 | AIML实习生 @ granville-tech。",
+      "praveen": "IIITK'27 | AI实习生 @ Backspace Tech | 生成式AI实习生 @ Granville Tech | AI实习生 @ 浦项 Springboard | 研究实习生 @ NIT Trichy | AI与机器学习发烧友 | Betalabs IIIT Kottayam AI与数据科学副组长。",
+      "alok": "研究实习生 @IIT Hyd | 前开发实习生 @IBL | 前设计实习生 @Granville Tech | 前技术俱乐部IIITK负责人。",
+      "kishore": "IIIT Kottayam '27 | 前研究实习生 @ NIT Trichy | 前生成式AI实习生 @ Granville Tech。",
+      "aaditya": "MNNIT '25 工学学士，机械工程。参与开发了AI自适应学习平台ALETU。"
+    }
+  },
+  "booking": {
+    "title": "预约咨询"
+  },
+  "newsletter": {
+    "title": "保持领先地位",
+    "desc": "订阅我们的时事通讯，获取AI解决方案和创新的最新洞察。",
+    "successMsg": "感谢！我们会与您保持联系！",
+    "backBtn": "返回",
+    "placeholder": "you@example.com",
+    "joinWaitlist": "加入候补名单",
+    "rateLimitError": "注册请求过多，请稍后再试。",
+    "generalError": "糟糕！出错了，请重试。",
+    "disclaimer": "无垃圾邮件。专注创新。随时可以退订。"
+  }
+}

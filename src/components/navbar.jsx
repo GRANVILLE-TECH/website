@@ -1,17 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, Linkedin, Youtube, Mail } from 'lucide-react';
+import { Menu, X, ArrowRight, Linkedin, Youtube, Mail, Globe, ChevronDown } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import logo from "../assets/Logo.svg";
+import { useTranslation } from 'react-i18next';
 
 export default function Nav() {
+  const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const languages = [
+    { code: 'en', label: 'English' },
+    { code: 'fr', label: 'Français' },
+    { code: 'es', label: 'Español' },
+    { code: 'ar', label: 'العربية' },
+    { code: 'zh', label: '中文' }
+  ];
+
+  const currentLanguageCode = i18n.language ? i18n.language.split('-')[0] : 'en';
+  const currentLanguage = languages.find(l => l.code === currentLanguageCode) || languages[0];
 
   // Scroll handler for navbar background
   useEffect(() => {
@@ -29,13 +43,13 @@ export default function Nav() {
       const path = window.location.pathname;
 
       if (path === '/alumni') {
-        document.title = 'Alumni - Granville-Tech';
+        document.title = `${t('nav.alumni')} - Granville-Tech`;
       } else if (path === '/articles') {
-        document.title = 'Articles - Granville-Tech';
+        document.title = `Articles - Granville-Tech`;
       } else if (path === '/innovations' && !hash) {
-        document.title = 'Innovations - Granville-Tech';
+        document.title = `${t('nav.innovations')} - Granville-Tech`;
       } else if (hash === '#home' || (path === '/' && !hash)) {
-        document.title = 'Home - Granville-Tech';
+        document.title = `${t('nav.home')} - Granville-Tech`;
       } else if (hash) {
         const title = hash.replace('#', '').charAt(0).toUpperCase() + hash.slice(1);
         document.title = `${title} - Granville-Tech`;
@@ -47,16 +61,23 @@ export default function Nav() {
     handleTitle();
     window.addEventListener('hashchange', handleTitle);
     return () => window.removeEventListener('hashchange', handleTitle);
-  }, [location]);
+  }, [location, t]);
+
+  useEffect(() => {
+    if (!langDropdownOpen) return;
+    const closeDropdown = () => setLangDropdownOpen(false);
+    window.addEventListener('click', closeDropdown);
+    return () => window.removeEventListener('click', closeDropdown);
+  }, [langDropdownOpen]);
 
   const navItems = [
-    { name: 'Home', href: '/#home' },
-    { name: 'About', href: '/#about' },
-    { name: 'Innovations', href: '/#innovations' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Booking', href: '/#booking' },
-    { name: 'Resources', href: '/#resources' },
-    { name: 'Alumni', href: '/alumni' },
+    { name: t('nav.home'), href: '/#home' },
+    { name: t('nav.about'), href: '/#about' },
+    { name: t('nav.innovations'), href: '/#innovations' },
+    { name: t('nav.services'), href: '/#services' },
+    { name: t('nav.booking'), href: '/#booking' },
+    { name: t('nav.resources'), href: '/#resources' },
+    { name: t('nav.alumni'), href: '/alumni' },
   ];
 
   const socialLinks = [
@@ -123,11 +144,54 @@ export default function Nav() {
             ))}
           </ul>
 
+          {/* Language Dropdown Selector */}
+          <div className="relative">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLangDropdownOpen(!langDropdownOpen);
+              }}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-400/50 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 active:scale-95"
+            >
+              <Globe className="h-3.5 w-3.5 text-amber-400" />
+              <span>{currentLanguage.code}</span>
+              <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${langDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {langDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute right-0 mt-2 py-1.5 w-32 bg-black/90 backdrop-blur-xl border border-white/15 rounded-xl shadow-2xl z-[120]"
+                >
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        i18n.changeLanguage(lang.code);
+                        setLangDropdownOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-200 block ${
+                        currentLanguage.code === lang.code
+                          ? 'text-amber-400 bg-white/5'
+                          : 'text-white/70 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <Link
             to="/#contact"
             className="px-6 py-2.5 bg-white text-black text-xs font-black tracking-widest uppercase rounded-full hover:bg-amber-400 transition-all duration-300 shadow-xl active:scale-95"
           >
-            Contact
+            {t('nav.contact')}
           </Link>
         </div>
 
@@ -156,7 +220,28 @@ export default function Nav() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(245,158,11,0.1),transparent)]" />
             
             <div className="relative z-10 flex flex-col h-full py-20">
-              <span className="text-amber-400 text-[10px] tracking-[0.5em] font-black uppercase mb-8 block">Navigation</span>
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-amber-400 text-[10px] tracking-[0.5em] font-black uppercase">
+                  {t('nav.navigationTitle')}
+                </span>
+                
+                {/* Mobile Language Switcher */}
+                <div className="flex gap-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => i18n.changeLanguage(lang.code)}
+                      className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-wider border rounded transition-all ${
+                        currentLanguage.code === lang.code
+                          ? 'border-amber-400 text-amber-400 bg-amber-400/10'
+                          : 'border-white/10 text-white/60 hover:text-white hover:border-white/20'
+                      }`}
+                    >
+                      {lang.code}
+                    </button>
+                  ))}
+                </div>
+              </div>
               
               <ul className="space-y-6">
                 {navItems.map((item, index) => (
@@ -187,8 +272,8 @@ export default function Nav() {
                   ))}
                 </div>
                 <div className="space-y-2">
-                  <p className="text-white/40 text-xs tracking-widest uppercase">Office</p>
-                  <p className="text-white text-lg font-bold">Kampala, Uganda</p>
+                  <p className="text-white/40 text-xs tracking-widest uppercase">{t('nav.office')}</p>
+                  <p className="text-white text-lg font-bold">{t('nav.location')}</p>
                 </div>
               </div>
             </div>

@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import Contact_hero from "../assets/rb_74.png";
+import { useTranslation } from "react-i18next";
 
 const ContactPage = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -56,18 +58,18 @@ const ContactPage = () => {
   const validateForm = (data = formData) => {
     const newErrors = {};
 
-    if (!data.firstName) newErrors.firstName = "First name is required.";
-    if (!data.lastName) newErrors.lastName = "Last name is required.";
+    if (!data.firstName) newErrors.firstName = t('contact.errors.firstName');
+    if (!data.lastName) newErrors.lastName = t('contact.errors.lastName');
     if (!data.email) {
-      newErrors.email = "Email is required.";
+      newErrors.email = t('contact.errors.emailRequired');
     } else if (!/\S+@\S+\.\S+/.test(data.email)) {
-      newErrors.email = "Email address is invalid. Please enter a valid email.";
+      newErrors.email = t('contact.errors.emailInvalid');
     }
     if (data.phone && !/^\d{10,15}$/.test(data.phone)) {
-      newErrors.phone = "Phone number must be between 10-15 digits.";
+      newErrors.phone = t('contact.errors.phoneInvalid');
     }
-    if (!data.service) newErrors.service = "Please select a service.";
-    if (!data.message) newErrors.message = "Message is required.";
+    if (!data.service) newErrors.service = t('contact.errors.service');
+    if (!data.message) newErrors.message = t('contact.errors.message');
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -141,9 +143,41 @@ const handleServiceSelect = (service) => {
       });
       return;
     }
-    const bookingSection = document.getElementById("booking");
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: "smooth" });
+
+    // Load Calendly script and stylesheet on-demand
+    const scriptId = "calendly-popup-script";
+    let script = document.getElementById(scriptId);
+
+    if (!script) {
+      // Load CSS first
+      const styleId = "calendly-popup-style";
+      if (!document.getElementById(styleId)) {
+        const link = document.createElement("link");
+        link.id = styleId;
+        link.rel = "stylesheet";
+        link.href = "https://assets.calendly.com/assets/external/widget.css";
+        document.head.appendChild(link);
+      }
+
+      // Load JS
+      script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      script.onload = () => {
+        if (window.Calendly) {
+          window.Calendly.initPopupWidget({
+            url: "https://calendly.com/nayebaredominique7/30min",
+          });
+        }
+      };
+      document.body.appendChild(script);
+    } else {
+      // If already requested but not finished loading, scroll to inline widget instead
+      const bookingSection = document.getElementById("booking");
+      if (bookingSection) {
+        bookingSection.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -169,7 +203,7 @@ const handleServiceSelect = (service) => {
             ease: "easeOut",
           }}
         >
-          Get in Touch with Granville-Tech
+          {t('contact.getInTouch')}
         </motion.h1>
         <motion.p
           className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl font-medium text-white max-w-3xl"
@@ -180,7 +214,7 @@ const handleServiceSelect = (service) => {
             ease: "easeOut",
           }}
         >
-          We’re here to answer any questions you have about our AI solutions
+          {t('contact.tagline')}
         </motion.p>
       </motion.div>
       {/* Hero Section */}
@@ -200,7 +234,7 @@ const handleServiceSelect = (service) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Contact Us
+          {t('contact.title')}
         </motion.h2>
         <motion.p
           className="mt-2 text-center text-silver"
@@ -208,7 +242,7 @@ const handleServiceSelect = (service) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Fill out the form below, and we'll get back to you within 24 hours.
+          {t('contact.instruction')}
         </motion.p>
 
         <div className="flex flex-col items-center mt-6 space-y-4">
@@ -217,7 +251,7 @@ const handleServiceSelect = (service) => {
             className="px-6 py-3 bg-gray-300 text-black rounded-lg hover:bg-white transition-all duration-300"
             whileInView={{ opacity: [0, 1], y: [20, 0] }}
           >
-            Schedule a Consultation
+            {t('contact.scheduleConsultation')}
           </motion.button>
           
           <motion.div
@@ -226,7 +260,7 @@ const handleServiceSelect = (service) => {
             transition={{ delay: 0.2 }}
             className="flex items-center gap-2 text-silver"
           >
-            <span className="text-gray-500">Or email us directly at:</span>
+            <span className="text-gray-500">{t('contact.orEmailUs')}</span>
             <a 
               href="mailto:info@granvilletech.co?subject=Inquiry from Granville-Tech Website" 
               className="text-white hover:text-yellow-500 font-semibold transition-colors underline decoration-yellow-500/30 underline-offset-4"
@@ -266,7 +300,7 @@ const handleServiceSelect = (service) => {
                   type="text"
                   name={field}
                   placeholder={
-                    field === "firstName" ? "First Name" : "Last Name"
+                    field === "firstName" ? t('contact.form.firstName') : t('contact.form.lastName')
                   }
                   value={formData[field]}
                   onChange={handleChange}
@@ -291,7 +325,7 @@ const handleServiceSelect = (service) => {
               <motion.input
                 type="email"
                 name="email"
-                placeholder="Email Address"
+                placeholder={t('contact.form.email')}
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full p-4 bg-black border rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-silver transition-all duration-300"
@@ -311,7 +345,7 @@ const handleServiceSelect = (service) => {
               <motion.input
                 type="text"
                 name="phone"
-                placeholder="Phone Number (Optional)"
+                placeholder={t('contact.form.phone')}
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full p-4 bg-black border rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-silver transition-all duration-300"
@@ -340,43 +374,54 @@ const handleServiceSelect = (service) => {
               }}
             >
               <button
+                type="button"
                 onClick={toggleDropdown}
                 className="w-full p-4 pl-2 bg-black border text-left rounded-lg text-gray-300 focus:ring-2 focus:ring-silver"
                 aria-haspopup="listbox"
                 aria-expanded={isOpen}
               >
-                {formData.service || "Select a Service"}
+                {(() => {
+                  const serviceOptions = [
+                    { value: "Recommendation Systems", label: t('contact.services.recommendation') },
+                    { value: "AI Strategy Consulting", label: t('contact.services.consulting') },
+                    { value: "Custom AI Solutions", label: t('contact.services.custom') },
+                    { value: "Intelligent Assistants", label: t('contact.services.assistants') },
+                    { value: "Enterprise Intelligence", label: t('contact.services.enterprise') }
+                  ];
+                  const selectedServiceObj = serviceOptions.find(opt => opt.value === formData.service);
+                  return selectedServiceObj ? selectedServiceObj.label : t('contact.form.selectService');
+                })()}
               </button>
               {isOpen && (
                 <motion.ul
                   ref={dropdownRef}
-                  className="absolute w-full mt-2 bg-black p-1 border transition-all duration-300 rounded-lg text-gray-300"
+                  className="absolute w-full mt-2 bg-black p-1 border transition-all duration-300 rounded-lg text-gray-300 z-50"
                   whileInView={{ opacity: [0, 1], y: [30, 0] }}
                   transition={{ duration: 0.4 }}
                   role="listbox"
                   aria-label="Service Options"
                 >
                   {[
-                    "Recommendation Systems",
-                    "AI Strategy Consulting",
-                    "Custom AI Solutions",
-                    "Intelligent Assistants",
-                    "Enterprise Intelligence",
-                  ].map((service, index) => (
+                    { value: "Recommendation Systems", label: t('contact.services.recommendation') },
+                    { value: "AI Strategy Consulting", label: t('contact.services.consulting') },
+                    { value: "Custom AI Solutions", label: t('contact.services.custom') },
+                    { value: "Intelligent Assistants", label: t('contact.services.assistants') },
+                    { value: "Enterprise Intelligence", label: t('contact.services.enterprise') }
+                  ].map((opt, index) => (
                     <li
                       key={index}
-                      onClick={() => handleServiceSelect(service)}
+                      onClick={() => handleServiceSelect(opt.value)}
                       className="px-4 py-2 hover:bg-gray-300 hover:text-black cursor-pointer transition-all duration-200 rounded-lg"
                       role="option"
-                      aria-selected={formData.service === service}
+                      aria-selected={formData.service === opt.value}
                       tabIndex={0}
                       onKeyDown={(e) => {
                         if (e.key === "Enter" || e.key === " ") {
-                          handleServiceSelect(service);
+                          handleServiceSelect(opt.value);
                         }
                       }}
                     >
-                      {service}
+                      {opt.label}
                     </li>
                   ))}
                 </motion.ul>
@@ -392,7 +437,7 @@ const handleServiceSelect = (service) => {
           <div>
             <motion.textarea
               name="message"
-              placeholder="Enter Your Query "
+              placeholder={t('contact.form.query')}
               value={formData.message}
               onChange={handleChange}
               className="w-full p-4 bg-black border rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-silver transition-all duration-300"
@@ -418,7 +463,7 @@ const handleServiceSelect = (service) => {
                 disabled
               >
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                Sending...
+                {t('contact.form.sending')}
               </button>
             ) : (
               <motion.button
@@ -431,7 +476,7 @@ const handleServiceSelect = (service) => {
                 }}
                 className="w-full p-4 bg-gray-300 text-black rounded-lg hover:bg-white transition-all duration-300"
               >
-                Submit
+                {t('contact.form.submit')}
               </motion.button>
             )}
           </div>
@@ -454,14 +499,14 @@ const handleServiceSelect = (service) => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                  <p className="text-gray-400">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">{t('contact.success.title')}</h3>
+                  <p className="text-gray-400">{t('contact.success.description')}</p>
                 </div>
                 <button 
                   onClick={() => setSuccessMessage("")}
                   className="mt-2 text-sm text-gray-500 hover:text-white transition-colors"
                 >
-                  Dismiss
+                  {t('contact.success.dismiss')}
                 </button>
               </div>
             </motion.div>
@@ -475,13 +520,13 @@ const handleServiceSelect = (service) => {
               exit={{ opacity: 0, scale: 0.9, y: -20 }}
               className="mt-8 p-6 bg-red-500/10 border border-red-500/20 backdrop-blur-xl rounded-2xl text-center"
             >
-              <h3 className="text-xl font-bold text-red-500 mb-2">Oops! Something went wrong</h3>
-              <p className="text-gray-400">We couldn't send your message. Please try again later or email us directly.</p>
+              <h3 className="text-xl font-bold text-red-500 mb-2">{t('contact.error.title')}</h3>
+              <p className="text-gray-400">{t('contact.error.description')}</p>
               <button 
                 onClick={() => setSuccessMessage("")}
                 className="mt-4 px-4 py-2 bg-red-500/20 text-red-500 rounded-lg hover:bg-red-500/30 transition-all"
               >
-                Try Again
+                {t('contact.error.tryAgain')}
               </button>
             </motion.div>
           )}

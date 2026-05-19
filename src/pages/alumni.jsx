@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, GraduationCap } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Nav from '../components/navbar';
 import useSEO from '../hooks/useSEO';
 import logo from "../assets/Logo.svg";
@@ -21,9 +22,10 @@ import aadityaImg from '../assets/team/Aaditya yadav.jpg';
 import vijayImg from '../assets/team/Vijay venkat.jpg';
 import dharrenImg from '../assets/team/dharren pius makoha.jpg';
 
-// Alumni Data with extracted bios
+// Alumni Data with extracted bios and keys
 const alumniData = [
   {
+    key: "sujal",
     name: "Sujal Saraswat",
     bio: "AI Intern @Techolution | Ex - AI Research Associate @WorkingFox | Internal Smart India Hackathon Winner | GDSC WinterHacks 2022 Winner | Computer science undergrad with expertise in AI/ML | IIIT Kottayam’26.",
     image: sujalImg,
@@ -32,6 +34,7 @@ const alumniData = [
     isDark: true
   },
   {
+    key: "dharren",
     name: "Dharren Pius Makoha",
     bio: "Founder & CTSO, ACL | Rogue-Proof AI & Autonomous Systems | Defense, Healthcare & Environmental Tech.",
     image: dharrenImg,
@@ -40,6 +43,7 @@ const alumniData = [
     isDark: false
   },
   {
+    key: "vijay",
     name: "Vijay Venkat",
     bio: "Backend developer | Golang | DevOps, currently studying at IIIT Kottayam.",
     image: vijayImg,
@@ -48,6 +52,7 @@ const alumniData = [
     isDark: true
   },
   {
+    key: "radhika",
     name: "Radhika Nambiar",
     bio: "Intern @ IBM ISL | AI/ML Research Intern @TCS Research | Ex-MLE Intern @ Granville Tech | Student at Indian Institute of Information technology kottayam.",
     image: radhikaImg,
@@ -56,6 +61,7 @@ const alumniData = [
     isDark: false
   },
   {
+    key: "suraj",
     name: "Suraj Rathor",
     bio: "Backend Developer @Sovansh Technology |Software Development Intern @Granville-Tech | GDSC WinterHacks 2022 | Internal Smart India Hackathon Winner | Computer Science undergrad @IIIT Kottayam’26.",
     image: surajImg,
@@ -64,6 +70,7 @@ const alumniData = [
     isDark: true
   },
   {
+    key: "rishi",
     name: "Rishi Jain",
     bio: "AI Research Intern @SHL ||Ex-AI/ML Intern @Dassault Systèmes ||Ex-Data Science Intern @SymphonyAI ||Ex-AI/ML Intern @Rapid Innovation || Ex-ML Intern @GRANVILLE TECH || Indian Institute of Information Technology Kottayam",
     image: rishiImg,
@@ -72,6 +79,7 @@ const alumniData = [
     isDark: false
   },
   {
+    key: "glen",
     name: "Glen Enosh",
     bio: "MLE Intern @ TIFIN || Generative AI Researcher @ Mozilla || Ex-Mentor of AI/ML Club Enigma-IIITK || Ex-Generative AI Intern @ Granville Tech ||  Ex-Deep Learning Research Intern @ NCCR || IIIT Kottayam ’27.",
     image: glenImg,
@@ -80,6 +88,7 @@ const alumniData = [
     isDark: true
   },
   {
+    key: "mursaleen",
     name: "Mohd Mursaleen",
     bio: "AI/ML Engineer | Data Science Enthusiast l AIML intern @ granville-tech.",
     image: mohamedImg,
@@ -88,6 +97,7 @@ const alumniData = [
     isDark: false
   },
   {
+    key: "praveen",
     name: "Praveen Kumar",
     bio: "IIITK’27 | AI Intern @ Backspace Tech | Generative AI Intern @ Granville Tech | AI Intern @ Infosys Springboard | Research Intern @ NIT Trichy | AI & ML Enthusiast | AI & DS  SubLead @ Betalabs IIIT Kottayam.",
     image: praveenImg,
@@ -96,6 +106,7 @@ const alumniData = [
     isDark: true
   },
   {
+    key: "alok",
     name: "Alok Prakash",
     bio: "Research Intern @IIT Hyd | Ex Developer Intern @IBL | Ex-Design Intern @Granville Tech | Ex-Lead @Tech-Club IIITK.",
     image: alokImg,
@@ -104,6 +115,7 @@ const alumniData = [
     isDark: false
   },
   {
+    key: "kishore",
     name: "Kishore Shankar S",
     bio: "IIIT Kottayam ’27 | Ex - Research Intern @ NIT Trichy | Ex - Generative AI intern @ Granville Tech.",
     image: kishoreImg,
@@ -112,6 +124,7 @@ const alumniData = [
     isDark: true
   },
   {
+    key: "aaditya",
     name: "Aaditya Yadav",
     bio: "MNNIT '25 Bachelor of Technology - BTech, Mechanical Engineering Contributed to  ALETU, an AI-powered adaptive learning platform .",
     image: aadityaImg,
@@ -122,10 +135,13 @@ const alumniData = [
 ];
 
 export default function Alumni() {
+  const { t } = useTranslation();
+
   useSEO(
-    "Alumni Network",
-    "Connect with our community of innovators and professionals who have been part of the Granville-Tech journey."
+    t("alumni.seoTitle", "Alumni Network"),
+    t("alumni.seoDesc", "Connect with our community of innovators and professionals who have been part of the Granville-Tech journey.")
   );
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -144,14 +160,14 @@ export default function Alumni() {
               className="flex items-center gap-2 text-[#2d4a3e] font-bold tracking-widest uppercase mb-4"
             >
               <GraduationCap size={20} />
-              Alumni Network
+              {t("alumni.badge", "Alumni Network")}
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-7xl font-extrabold text-[#1a3a2a] mb-6"
             >
-              Granville-Tech Legacy <span className="text-[#4a7c59]">Innovators</span>
+              {t("alumni.titlePrefix", "Granville-Tech Legacy")} <span className="text-[#4a7c59]">{t("alumni.titleSuffix", "Innovators")}</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -159,7 +175,7 @@ export default function Alumni() {
               transition={{ delay: 0.1 }}
               className="text-gray-600 text-lg max-w-2xl"
             >
-              Meet the brilliant minds who have shaped Granville-Tech and continue to lead the AI revolution worldwide.
+              {t("alumni.subtitle", "Meet the brilliant minds who have shaped Granville-Tech and continue to lead the AI revolution worldwide.")}
             </motion.p>
           </div>
 
@@ -206,7 +222,7 @@ export default function Alumni() {
                   </h3>
                   <p className={`text-sm leading-relaxed mb-8 ${person.isDark ? 'text-gray-300' : 'text-gray-500'
                     }`}>
-                    {person.bio}
+                    {t("alumni.items." + person.key + ".bio", person.bio)}
                   </p>
                 </div>
 
@@ -214,7 +230,7 @@ export default function Alumni() {
                 <div className="mt-auto">
                   <p className={`text-sm font-bold italic tracking-wide ${person.isDark ? 'text-[#aef359]' : 'text-[#1a3a2a]'
                     }`}>
-                    {person.university}
+                    {t("alumni.items." + person.key + ".university", person.university)}
                   </p>
                 </div>
               </motion.div>
@@ -231,11 +247,11 @@ export default function Alumni() {
               Granville-Tech
             </h3>
             <p className="text-lg font-light text-white opacity-85">
-              Driving Innovation with AI Solutions
+              {t("footer.brandTagline", "Driving Innovation with AI Solutions")}
             </p>
           </div>
           <div className="mb-12">
-            <p className="text-white opacity-85 mb-4">Connect with us:</p>
+            <p className="text-white opacity-85 mb-4">{t("footer.connect", "Connect with us:")}</p>
             <div className="flex gap-6">
               <a href="https://www.linkedin.com/company/granvilletek/" target="_blank" rel="noopener noreferrer" className="text-silver hover:text-white transition-all"><AiFillLinkedin size={28} /></a>
               <a href="https://x.com/Niquestetia" target="_blank" rel="noopener noreferrer" className="text-silver hover:text-white transition-all"><FaXTwitter size={24} /></a>
@@ -244,7 +260,7 @@ export default function Alumni() {
             </div>
           </div>
           <div className="border-t border-gray-300 pt-6">
-            <p>&copy; {new Date().getFullYear()} Granville-Tech. All rights reserved.</p>
+            <p>{t("footer.copyright", { defaultValue: "© {{year}} Granville-Tech. All rights reserved.", year: new Date().getFullYear() })}</p>
           </div>
         </div>
       </footer>

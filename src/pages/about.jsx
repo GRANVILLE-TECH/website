@@ -2,8 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 // Images now imported within the component
 import InteractiveSelector from "../components/InteractiveSelector";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <section
       className="bg-gradient-to-b w-[100%] from-black to-[#111111] text-white py-32 px-6 relative overflow-hidden"
@@ -21,7 +23,7 @@ export default function About() {
             ease: "easeOut",
           }}
         >
-          About Us
+          {t('about.title')}
         </motion.h2>
         <motion.p
           className="text-xl sm:text-2xl text-center max-w-4xl mx-auto mb-20 z-20 text-silver leading-relaxed"
@@ -29,10 +31,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Granville-Tech is at the forefront of AI-driven innovation, empowering
-          businesses with transformative solutions. Our team of experts develops
-          cutting-edge AI technologies to solve real-world challenges and drive
-          impactful change in industries across the globe
+          {t('about.description')}
         </motion.p>
       </div>
 
@@ -43,7 +42,7 @@ export default function About() {
         initial={{ opacity: 0 }}
         transition={{ duration: 1, delay: 0.8 }}
       >
-        Our Core Values
+        {t('about.coreValues')}
       </motion.h3>
 
       {/* Core Values Grid */}
@@ -64,12 +63,7 @@ export default function About() {
           stiffness: 80,
         }}
       >
-        At Granville-Tech, we're not just creating products we're crafting
-        experiences that resonate, inspire, and transform. Each innovation is a
-        testament to our dedication to pushing boundaries and redefining
-        possibilities. We invite you to be a part of this exciting journey, to
-        imagine alongside us, and to help shape a future where technology serves
-        as a force for positive change
+        {t('about.finalParagraph')}
       </motion.p>
     </section>
   );

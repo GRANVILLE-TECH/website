@@ -6,39 +6,41 @@ import innovation from '../assets/values/innovation.webp';
 import legacy from '../assets/values/legacy.webp';
 import creativity from '../assets/values/creativity.webp';
 import './InteractiveSelector.css';
+import { useTranslation } from 'react-i18next';
 
 const InteractiveSelector = () => {
+    const { t } = useTranslation();
     const [activeIndex, setActiveIndex] = useState(0);
     const [animatedOptions, setAnimatedOptions] = useState([]);
 
     const options = [
         {
-            title: "Network",
-            description: "Collaboration is key to success. We believe in unity.",
+            title: t('about.values.network.title'),
+            description: t('about.values.network.description'),
             image: oneness,
             icon: <FaHandshake size={24} className="text-white" />
         },
         {
-            title: "Innovation",
-            description: "Pushing boundaries with solutions that shape the future.",
+            title: t('about.values.innovation.title'),
+            description: t('about.values.innovation.description'),
             image: innovation,
             icon: <FaLightbulb size={24} className="text-white" />
         },
         {
-            title: "Legacy",
-            description: "Creating a lasting impact for generations to come.",
+            title: t('about.values.legacy.title'),
+            description: t('about.values.legacy.description'),
             image: legacy,
             icon: <FaHistory size={24} className="text-white" />
         },
         {
-            title: "Creativity",
-            description: "Embracing curiosity to discover new horizons.",
+            title: t('about.values.creativity.title'),
+            description: t('about.values.creativity.description'),
             image: creativity,
             icon: <FaPaintBrush size={24} className="text-white" />
         },
         {
-            title: "Excellence",
-            description: "Continually striving for the highest standards.",
+            title: t('about.values.excellence.title'),
+            description: t('about.values.excellence.description'),
             image: excellence,
             icon: <FaMedal size={24} className="text-white" />
         }

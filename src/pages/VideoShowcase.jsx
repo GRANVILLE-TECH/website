@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 export default function VideoShowcase() {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-gradient-to-b w-full from-[#111111] to-black text-white py-24 px-6 relative overflow-hidden">
       {/* Subtle background texture */}
@@ -17,11 +20,10 @@ export default function VideoShowcase() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4">
-            Vision in Action
+            {t("videoShowcase.title")}
           </h2>
           <p className="text-lg sm:text-xl text-silver max-w-2xl mx-auto leading-relaxed">
-            Discover the intersection of research and technology as we pioneer 
-            intelligent solutions designed to educate and transform industries.
+            {t("videoShowcase.description")}
           </p>
         </motion.div>
 
@@ -46,7 +48,7 @@ export default function VideoShowcase() {
           >
             <iframe
               src="https://www.youtube.com/embed/WtPkQEKQIbg?rel=0&modestbranding=1&color=white"
-              title="Granville-Tech — See Our Vision in Action"
+              title={t("videoShowcase.iframeTitle")}
               className="w-full h-full"
               frameBorder="0"
               loading="lazy"
@@ -65,7 +67,7 @@ export default function VideoShowcase() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
         >
           <p className="text-sm sm:text-base text-silver opacity-70 tracking-wide">
-            Reimagining the future with every innovation
+            {t("videoShowcase.caption")}
           </p>
         </motion.div>
       </div>

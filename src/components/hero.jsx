@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { MeshGradient, PulsingBorder } from "@paper-design/shaders-react"
 import { motion } from "framer-motion"
+import { useTranslation } from "react-i18next"
 
 // Granville-Tech brand colors
 // Primary: #f59e0b (amber/gold) — from existing logo palette
@@ -8,6 +9,7 @@ import { motion } from "framer-motion"
 // Dark:    #000000 / #0a0a0a
 
 export default function GranvilleHero() {
+  const { t } = useTranslation()
   const containerRef = useRef(null)
   const [isActive, setIsActive] = useState(false)
 
@@ -108,7 +110,7 @@ export default function GranvilleHero() {
           >
             <div className="absolute top-0 left-1 right-1 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent rounded-full" />
             <span className="text-white/90 text-sm font-medium relative z-10 tracking-wide">
-              ✦ Driving Innovation with AI Solutions
+              {t('hero.badge')}
             </span>
           </motion.div>
 
@@ -132,10 +134,10 @@ export default function GranvilleHero() {
               animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             >
-              Reimagining
+              {t('hero.headlinePart1')}
             </motion.span>
-            <span className="block font-black text-white drop-shadow-2xl">The Future</span>
-            <span className="block font-light text-white/70 italic text-5xl md:text-6xl lg:text-7xl">of Intelligence</span>
+            <span className="block font-black text-white drop-shadow-2xl">{t('hero.headlinePart2')}</span>
+            <span className="block font-light text-white/70 italic text-5xl md:text-6xl lg:text-7xl">{t('hero.headlinePart3')}</span>
           </motion.h1>
 
           {/* Sub-copy */}
@@ -145,8 +147,7 @@ export default function GranvilleHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Pioneering transformative AI solutions that redefine industries and
-            empower a smarter tomorrow across Africa and beyond.
+            {t('hero.subCopy')}
           </motion.p>
 
           {/* CTA buttons */}
@@ -162,7 +163,7 @@ export default function GranvilleHero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Our Innovations
+              {t('hero.ctaInnovations')}
             </motion.button>
             <motion.button
               onClick={() => scrollToSection("contact")}
@@ -170,7 +171,7 @@ export default function GranvilleHero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Get in Touch
+              {t('hero.ctaContact')}
             </motion.button>
           </motion.div>
         </div>
@@ -214,13 +215,13 @@ export default function GranvilleHero() {
             </defs>
             <text style={{ fontSize: "7px", fill: "rgba(255,255,255,0.7)", fontWeight: 500 }}>
               <textPath href="#granville-ring" startOffset="0%">
-                Granville-Tech • AI Solutions • Innovation • Africa •
+                {t('hero.rotatingRing')}
               </textPath>
             </text>
           </motion.svg>
         </div>
       </div>
-
+ 
       {/* ── Scroll indicator ──────────────────────────────────────── */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 opacity-40"
@@ -228,7 +229,7 @@ export default function GranvilleHero() {
         animate={{ opacity: 0.4 }}
         transition={{ delay: 1.6, duration: 0.6 }}
       >
-        <span className="text-white text-[9px] font-mono tracking-widest uppercase">Scroll</span>
+        <span className="text-white text-[9px] font-mono tracking-widest uppercase">{t('hero.scroll')}</span>
         <motion.div
           className="w-px h-8 bg-white/60"
           animate={{ scaleY: [1, 0.3, 1] }}

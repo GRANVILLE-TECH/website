@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { LogoCarousel } from "../components/LogoCarousel";
 import partner1 from "../assets/partners/cerfodes.webp";
 import partner2 from "../assets/partners/GAIMESVG.svg";
 
 export default function Partners() {
+  const { t } = useTranslation();
   const partners = [
     {
       id: 1,
@@ -33,7 +35,7 @@ export default function Partners() {
         }}
         className="text-4xl sm:text-5xl lg:text-5xl text-center font-extrabold mb-12 text-white"
       >
-        OUR CLIENTS
+        {t("partners.title", "OUR CLIENTS")}
       </motion.h2>
 
       <div className="w-full">

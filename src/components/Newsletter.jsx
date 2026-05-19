@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 
 const Newsletter = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState(""); // "", "loading", "success", "error"
 
@@ -76,7 +78,7 @@ const Newsletter = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Stay Ahead of the Curve
+            {t("newsletter.title", "Stay Ahead of the Curve")}
           </motion.h2>
           <motion.p 
             className="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl mx-auto"
@@ -84,7 +86,7 @@ const Newsletter = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Subscribe to our newsletter for the latest insights in AI solutions and innovation.
+            {t("newsletter.subtitle", "Subscribe to our newsletter for the latest insights in AI solutions and innovation.")}
           </motion.p>
 
           <AnimatePresence mode="wait">
@@ -101,13 +103,13 @@ const Newsletter = () => {
                     <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span>Thanks! We'll be in touch!</span>
+                    <span>{t("newsletter.successMessage", "Thanks! We'll be in touch!")}</span>
                   </div>
                   <button 
                     onClick={() => setStatus("")}
                     className="text-sm text-gray-500 hover:text-[#EDEADE] transition-colors underline underline-offset-4"
                   >
-                    &larr; Back
+                    &larr; {t("newsletter.backBtn", "Back")}
                   </button>
                 </div>
               </motion.div>
@@ -124,7 +126,7 @@ const Newsletter = () => {
                 >
                   <input
                     type="email"
-                    placeholder="you@example.com"
+                    placeholder={t("newsletter.placeholder", "you@example.com")}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="flex-1 p-4 bg-black/40 border border-[#EDEADE]/10 rounded-xl text-[#EDEADE] placeholder-gray-500 focus:ring-2 focus:ring-[#EDEADE]/30 outline-none transition-all"
@@ -138,7 +140,7 @@ const Newsletter = () => {
                     {status === "loading" ? (
                       <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></div>
                     ) : (
-                      "Join Waitlist"
+                      t("newsletter.joinBtn", "Join Waitlist")
                     )}
                   </button>
                 </form>
@@ -147,14 +149,14 @@ const Newsletter = () => {
                   <div className="flex flex-col items-center gap-2 mt-4">
                     <p className="text-red-400 text-sm">
                       {localStorage.getItem("loops-form-timestamp") && Number(localStorage.getItem("loops-form-timestamp")) + 60000 > new Date().valueOf()
-                        ? "Too many signups, please try again in a little while."
-                        : "Oops! Something went wrong, please try again."}
+                        ? t("newsletter.rateLimitError", "Too many signups, please try again in a little while.")
+                        : t("newsletter.genericError", "Oops! Something went wrong, please try again.")}
                     </p>
                     <button 
                       onClick={() => setStatus("")}
                       className="text-xs text-gray-500 hover:text-[#EDEADE] transition-colors"
                     >
-                      &larr; Back
+                      &larr; {t("newsletter.backBtn", "Back")}
                     </button>
                   </div>
                 )}
@@ -163,7 +165,7 @@ const Newsletter = () => {
           </AnimatePresence>
 
           <p className="mt-6 text-xs text-gray-500">
-            No spam. Just innovation. Unsubscribe at any time.
+            {t("newsletter.privacyPolicy", "No spam. Just innovation. Unsubscribe at any time.")}
           </p>
         </motion.div>
       </div>
