@@ -35,7 +35,7 @@ export default function Partners() {
         }}
         className="text-4xl sm:text-5xl lg:text-5xl text-center font-extrabold mb-12 text-white"
       >
-        {t("partners.title", "OUR CLIENTS")}
+        {t("partners.title", "TRUSTED BY")}
       </motion.h2>
 
       <div className="w-full">

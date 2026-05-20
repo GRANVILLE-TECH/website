@@ -104,9 +104,9 @@ export default function Nav() {
           : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
         {/* Logo Section */}
-        <Link to="/#home" className="flex items-center gap-4 group">
+        <Link to="/#home" className="flex items-center gap-3 xl:gap-4 group">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -115,23 +115,23 @@ export default function Nav() {
             <img src={logo} alt="Granville-Tech Logo" className="h-10 w-auto" />
           </motion.div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-[0.15em] text-white group-hover:text-amber-400 transition-colors uppercase font-serif">
+            <span className="text-lg xl:text-xl font-bold tracking-[0.15em] text-white group-hover:text-amber-400 transition-colors uppercase font-serif">
               Granville
             </span>
-            <span className="text-[10px] tracking-[0.3em] text-white/40 group-hover:text-amber-400/60 transition-colors uppercase">
+            <span className="text-[9px] xl:text-[10px] tracking-[0.3em] text-white/40 group-hover:text-amber-400/60 transition-colors uppercase">
               Intelligence
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-10">
-          <ul className="flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-10">
+          <ul className="flex items-center gap-5 xl:gap-8">
             {navItems.map((item, index) => (
               <li key={index}>
                 <Link
                   to={item.href}
-                  className={`text-sm font-bold tracking-widest uppercase relative group transition-colors duration-300 ${
+                  className={`inline-block text-xs xl:text-sm font-bold tracking-widest uppercase relative group transition-colors duration-300 ${
                     isActive(item.href) ? 'text-amber-400' : 'text-white/70 hover:text-white'
                   }`}
                 >
@@ -151,9 +151,9 @@ export default function Nav() {
                 e.stopPropagation();
                 setLangDropdownOpen(!langDropdownOpen);
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-400/50 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 active:scale-95"
+              className="flex items-center gap-1 px-2.5 py-1.5 xl:gap-1.5 xl:px-3 xl:py-1.5 rounded-full border border-white/10 hover:border-amber-400/50 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white text-[10px] xl:text-xs font-semibold uppercase tracking-wider transition-all duration-300 active:scale-95"
             >
-              <Globe className="h-3.5 w-3.5 text-amber-400" />
+              <Globe className="h-3 xl:h-3.5 w-3 xl:w-3.5 text-amber-400" />
               <span>{currentLanguage.code}</span>
               <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${langDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -189,7 +189,7 @@ export default function Nav() {
 
           <Link
             to="/#contact"
-            className="px-6 py-2.5 bg-white text-black text-xs font-black tracking-widest uppercase rounded-full hover:bg-amber-400 transition-all duration-300 shadow-xl active:scale-95"
+            className="inline-flex items-center justify-center px-4 py-2 xl:px-6 xl:py-2.5 bg-white text-black text-[10px] xl:text-xs font-black tracking-widest uppercase rounded-full hover:bg-amber-400 transition-all duration-300 shadow-xl active:scale-95"
           >
             {t('nav.contact')}
           </Link>
