@@ -15,8 +15,8 @@ import masteryPdf from "../assets/ALETU slides/ALETU_Scaling_Mastery_in_Africa.p
 import aletu from "../assets/innovations/Data-Science-Practitioner.png-update-min-702x468.png";
 import mirrorMentor from "../assets/innovations/mirrior mentor.webp";
 import echo from "../assets/innovations/echo sign.jpg";
-import echoWearable from "../assets/innovations/ech sign wearable.webp";
-import timeshift from "../assets/innovations/time shift.jpg";
+import echoWearable from "../assets/innovations/echosign.webp";
+import timeshift from "../assets/innovations/timeshift.jpg";
 
 const innovationInfo = [
   {

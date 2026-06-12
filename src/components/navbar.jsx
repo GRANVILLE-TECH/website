@@ -78,6 +78,7 @@ export default function Nav() {
     { name: t('nav.booking'), href: '/#booking' },
     { name: t('nav.resources'), href: '/#resources' },
     { name: t('nav.alumni'), href: '/alumni' },
+    { name: 'Initiatives', href: '/lecture', highlight: true },
   ];
 
   const socialLinks = [
@@ -104,7 +105,7 @@ export default function Nav() {
           : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <div className="max-w-[90rem] mx-auto flex justify-between items-center px-4 xl:px-6">
         {/* Logo Section */}
         <Link to="/#home" className="flex items-center gap-3 xl:gap-4 group">
           <motion.div
@@ -125,14 +126,16 @@ export default function Nav() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-10">
-          <ul className="flex items-center gap-5 xl:gap-8">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-8">
+          <ul className="flex items-center gap-2 xl:gap-7">
             {navItems.map((item, index) => (
               <li key={index}>
                 <Link
                   to={item.href}
-                  className={`inline-block text-xs xl:text-sm font-bold tracking-widest uppercase relative group transition-colors duration-300 ${
-                    isActive(item.href) ? 'text-amber-400' : 'text-white/70 hover:text-white'
+                  className={`inline-block whitespace-nowrap text-[10px] xl:text-sm font-bold tracking-widest uppercase relative group transition-colors duration-300 ${
+                    item.highlight
+                      ? 'text-amber-400 hover:text-amber-300'
+                      : isActive(item.href) ? 'text-amber-400' : 'text-white/70 hover:text-white'
                   }`}
                 >
                   {item.name}

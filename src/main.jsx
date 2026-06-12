@@ -18,6 +18,7 @@ const InnovationsPage = lazy(() => import('./pages/InnovationsPage.jsx'));
 const Alumni = lazy(() => import('./pages/alumni.jsx'));
 const AletuApp = lazy(() => import('./aletu/AletuApp.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
+const LecturePage = lazy(() => import('./pages/LecturePage.jsx'));
 
 const PageLoader = () => (
   <div className="min-h-screen bg-black flex items-center justify-center">
@@ -36,6 +37,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/innovations" element={<InnovationsPage />} />
           <Route path="/alumni" element={<Alumni />} />
           <Route path="/aletu/*" element={<AletuApp />} />
+          <Route path="/lecture" element={<LecturePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
