@@ -16,11 +16,9 @@ import { FaXTwitter } from 'react-icons/fa6';
 import emailjs from '@emailjs/browser';
 
 // ─── EmailJS Configuration ───────────────────────────────────────
-// REPLACE THESE WITH YOUR ACTUAL EMAILJS CREDENTIALS
-export const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID_HERE';
-export const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID_HERE';
-export const EMAILJS_PUBLIC_KEY = 'H1TweB7817PmTZJIA';
-export const EMAILJS_PRIVATE_KEY = '2oxNKx66gd9YnFALgRDHF'; // Not used in frontend emailjs.send()
+export const EMAILJS_SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+export const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+export const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 // ─── Event Config ────────────────────────────────────────────────
 const EVENT_DATE = new Date('2026-08-23T09:00:00+03:00');
