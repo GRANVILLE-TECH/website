@@ -36,32 +36,32 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Update the document title based on the current hash
+  // Update the document title based on the current path
   useEffect(() => {
     const handleTitle = () => {
-      const hash = window.location.hash;
-      const path = window.location.pathname;
+      const path = location.pathname;
 
       if (path === '/alumni') {
         document.title = `${t('nav.alumni')} - Granville-Tech`;
       } else if (path === '/articles') {
         document.title = `Articles - Granville-Tech`;
-      } else if (path === '/innovations' && !hash) {
+      } else if (path === '/innovations') {
         document.title = `${t('nav.innovations')} - Granville-Tech`;
-      } else if (hash === '#home' || (path === '/' && !hash)) {
+      } else if (path === '/') {
         document.title = `${t('nav.home')} - Granville-Tech`;
-      } else if (hash) {
-        const title = hash.replace('#', '').charAt(0).toUpperCase() + hash.slice(1);
-        document.title = `${title} - Granville-Tech`;
       } else {
-        document.title = 'Granville-Tech';
+        const sectionName = path.substring(1);
+        if (sectionName) {
+          const title = sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
+          document.title = `${title} - Granville-Tech`;
+        } else {
+          document.title = 'Granville-Tech';
+        }
       }
     };
 
     handleTitle();
-    window.addEventListener('hashchange', handleTitle);
-    return () => window.removeEventListener('hashchange', handleTitle);
-  }, [location, t]);
+  }, [location.pathname, t]);
 
   useEffect(() => {
     if (!langDropdownOpen) return;
@@ -71,12 +71,12 @@ export default function Nav() {
   }, [langDropdownOpen]);
 
   const navItems = [
-    { name: t('nav.home'), href: '/#home' },
-    { name: t('nav.about'), href: '/#about' },
-    { name: t('nav.innovations'), href: '/#innovations' },
-    { name: t('nav.services'), href: '/#services' },
-    { name: t('nav.booking'), href: '/#booking' },
-    { name: t('nav.resources'), href: '/#resources' },
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.innovations'), href: '/innovations' },
+    { name: t('nav.services'), href: '/services' },
+    { name: t('nav.booking'), href: '/booking' },
+    { name: t('nav.resources'), href: '/resources' },
     { name: t('nav.alumni'), href: '/alumni' },
     { name: 'Initiatives', href: '/lecture', highlight: true },
   ];
@@ -88,13 +88,7 @@ export default function Nav() {
   ];
 
   const isActive = (href) => {
-    if (href === '/#home' && location.pathname === '/' && !window.location.hash) {
-      return true;
-    }
-    if (href.startsWith('/#')) {
-      return location.pathname === '/' && window.location.hash === href.replace('/', '');
-    }
-    return location.pathname === href;
+    return location.pathname === href || (location.pathname === '/' && href === '/');
   };
 
   return (
@@ -107,7 +101,7 @@ export default function Nav() {
     >
       <div className="max-w-[90rem] mx-auto flex justify-between items-center px-4 xl:px-6">
         {/* Logo Section */}
-        <Link to="/#home" className="flex items-center gap-3 xl:gap-4 group">
+        <Link to="/" className="flex items-center gap-3 xl:gap-4 group">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -191,7 +185,7 @@ export default function Nav() {
           </div>
 
           <Link
-            to="/#contact"
+            to="/contact"
             className="inline-flex items-center justify-center px-4 py-2 xl:px-6 xl:py-2.5 bg-white text-black text-[10px] xl:text-xs font-black tracking-widest uppercase rounded-full hover:bg-amber-400 transition-all duration-300 shadow-xl active:scale-95"
           >
             {t('nav.contact')}

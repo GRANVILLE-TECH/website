@@ -33,8 +33,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/about" element={<App />} />
+          <Route path="/innovations" element={<App />} />
+          <Route path="/services" element={<App />} />
+          <Route path="/booking" element={<App />} />
+          <Route path="/resources" element={<App />} />
+          <Route path="/partners" element={<App />} />
+          <Route path="/contact" element={<App />} />
           <Route path="/articles" element={<ArticlesPage />} />
-          <Route path="/innovations" element={<InnovationsPage />} />
           <Route path="/alumni" element={<Alumni />} />
           <Route path="/aletu/*" element={<AletuApp />} />
           <Route path="/lecture" element={<LecturePage />} />

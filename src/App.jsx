@@ -11,7 +11,7 @@ import Booking from "./pages/booking";
 import ResourceLibrary from "./pages/ResourceLibrary";
 import ContactUs from "./pages/contact";
 import Newsletter from "./components/Newsletter";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import AletuShowcase from "./components/AletuShowcase";
 import { AiFillLinkedin, AiFillYoutube, AiFillMail } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
@@ -57,11 +57,31 @@ export default function App() {
     t('hero.subCopy')
   );
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     // Hide loader immediately once initial JS is ready
     setIsLoading(false);
   }, []);
+
+  // Scroll to section when URL path changes
+  useEffect(() => {
+    if (isLoading) return;
+    
+    const path = location.pathname.substring(1); // remove leading slash
+    const sections = ['about', 'innovations', 'services', 'booking', 'resources', 'partners', 'contact', 'aletu-demo'];
+    
+    if (sections.includes(path)) {
+      const element = document.getElementById(path);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else if (path === '') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location.pathname, isLoading]);
 
   if (isLoading) {
     return <Loader />;
@@ -163,76 +183,76 @@ export default function App() {
           <nav className="mb-6 sm:mb-8">
             <ul className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
               <li>
-                <a
-                  href="#home"
+                <Link
+                  to="/"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   {t('nav.home')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#about"
+                <Link
+                  to="/about"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   {t('nav.about')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#innovations"
+                <Link
+                  to="/innovations"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   {t('nav.innovations')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#aletu-demo"
+                <Link
+                  to="/aletu-demo"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   ALETU LMS
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#services"
+                <Link
+                  to="/services"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   {t('nav.services')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#booking"
+                <Link
+                  to="/booking"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   {t('nav.booking')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#resources"
+                <Link
+                  to="/resources"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   {t('nav.resources')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#alumni"
+                <Link
+                  to="/alumni"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   {t('nav.alumni')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   className="text-silver hover:text-white transition-all duration-300"
                 >
                   {t('nav.contact')}
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
