@@ -102,42 +102,49 @@
     "crafted": "精心设计与开发，助力人工智能解决方案不断前行。"
   },
   "services": {
-    "title": "我们的服务",
-    "subtitle": "通过智能技术实现业务转型",
-    "recommendationTitle": "推荐系统",
-    "recommendationDesc": "基于人工智能的算法，通过先进的行为分析和上下文理解提供个性化洞察",
-    "recommendationBenefits": [
-      "智能推荐引擎",
-      "实时用户画像",
-      "自适应学习机制"
+    "title": "Our Services",
+    "subtitle": "Transforming Business through Intelligent Technology",
+    "financialTitle": "Autonomous Financial Forecasting & Runway Modeling",
+    "financialDesc": "Instead of delivering static spreadsheets, this service deploys custom data agents that continuously connect to a client’s live transaction ledgers to simulate cash flow under varying macroeconomic shocks, predicting exact bankruptcy horizons.",
+    "financialBenefits": [
+      "Live ledger connections",
+      "Macroeconomic shock simulations",
+      "Bankruptcy horizon prediction"
     ],
-    "strategyTitle": "人工智能战略咨询",
-    "strategyDesc": "利用人工智能解锁运营效率和竞争优势的全面数字化转型战略",
-    "strategyBenefits": [
-      "战略性AI整合",
-      "创新框架",
-      "企业级AI评估"
+    "pricingTitle": "Latent Preference Mining & Price Optimization",
+    "pricingDesc": "AI pipelines that securely ingest historical negotiation data, multi-turn sales emails, and transcripts to map out a customer group's hidden 'price-quality threshold curve,' optimizing contract pricing without risking churn.",
+    "pricingBenefits": [
+      "Hidden price-quality curve mapping",
+      "Optimal contract pricing",
+      "Churn risk mitigation"
     ],
-    "customTitle": "定制化人工智能解决方案",
-    "customDesc": "专为解决复杂业务挑战而设计的定制智能系统，具有可扩展的模块化架构",
-    "customBenefits": [
-      "量身定制的AI架构",
-      "可扩展的方案设计",
-      "创新管道"
+    "stressTestTitle": "Synthetic Cohort Stress-Testing",
+    "stressTestDesc": "Building a simulated digital twin of the client’s market, populating it with thousands of LLM-driven 'synthetic customer personas' that mimic actual target demographics, price sensitivities, and support expectations.",
+    "stressTestBenefits": [
+      "Digital market twin simulation",
+      "LLM-driven synthetic personas",
+      "Safe sandbox testing"
     ],
-    "enterpriseTitle": "企业智能",
-    "enterpriseDesc": "利用组织数据训练的专属人工智能模型，为智能决策生成可操作的洞察",
-    "enterpriseBenefits": [
-      "特定领域建模",
-      "预测性分析",
-      "知识放大"
+    "strategicTitle": "Contingent Strategic Planning & Agentic Memos",
+    "strategicDesc": "AI-powered executive copilots that generate 'conditional plans.' Instead of rigid quarterly goals, these systems draft multi-scenario execution frameworks to build agile corporate strategies that automatically adapt to shifting data signals.",
+    "strategicBenefits": [
+      "Multi-scenario execution frameworks",
+      "Adaptive corporate strategies",
+      "AI-powered executive copilots"
     ],
-    "assistantsTitle": "智能助手",
-    "assistantsDesc": "先进的多渠道互动平台，采用自然语言处理技术实现精细的客户互动",
-    "assistantsBenefits": [
-      "全渠道支持",
-      "上下文沟通",
-      "提升参与度"
+    "alignmentTitle": "Multi-Agent Organizational Alignment Consulting",
+    "alignmentDesc": "Designing multi-agent systems where distinct AI personas are assigned isolated corporate roles, with an aggregation layer that reconciles conflicting inputs into cohesive, balanced corporate action steps to eliminate data silos.",
+    "alignmentBenefits": [
+      "Distinct AI personas by role",
+      "Conflicting input reconciliation",
+      "Cohesive corporate action steps"
+    ],
+    "growthTitle": "Fine-Grained Targeted Growth Operations",
+    "growthDesc": "Setting up programmatic AI pipelines that map specific customer segments to tailored ad channels, while simultaneously routing targeted development resources to features that only those high-value segments care about.",
+    "growthBenefits": [
+      "Tailored ad channel mapping",
+      "Targeted feature development",
+      "High-value segment focus"
     ]
   },
   "videoShowcase": {

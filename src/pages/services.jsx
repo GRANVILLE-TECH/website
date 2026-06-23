@@ -3,11 +3,12 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import {
   ChevronRight,
-  Brain,
-  Settings,
-  Code,
-  Globe,
-  Database,
+  TrendingUp,
+  Target,
+  Users,
+  GitBranch,
+  Network,
+  Rocket,
 } from "lucide-react";
 
 const ServiceCard = React.memo(
@@ -63,34 +64,40 @@ const ServicesPage = () => {
   const services = React.useMemo(
     () => [
       {
-        icon: Globe,
-        title: t("services.recommendationTitle"),
-        description: t("services.recommendationDesc"),
-        benefits: t("services.recommendationBenefits", { returnObjects: true }) || [],
+        icon: TrendingUp,
+        title: t("services.financialTitle"),
+        description: t("services.financialDesc"),
+        benefits: t("services.financialBenefits", { returnObjects: true }) || [],
       },
       {
-        icon: Brain,
-        title: t("services.strategyTitle"),
-        description: t("services.strategyDesc"),
-        benefits: t("services.strategyBenefits", { returnObjects: true }) || [],
+        icon: Target,
+        title: t("services.pricingTitle"),
+        description: t("services.pricingDesc"),
+        benefits: t("services.pricingBenefits", { returnObjects: true }) || [],
       },
       {
-        icon: Code,
-        title: t("services.customTitle"),
-        description: t("services.customDesc"),
-        benefits: t("services.customBenefits", { returnObjects: true }) || [],
+        icon: Users,
+        title: t("services.stressTestTitle"),
+        description: t("services.stressTestDesc"),
+        benefits: t("services.stressTestBenefits", { returnObjects: true }) || [],
       },
       {
-        icon: Database,
-        title: t("services.enterpriseTitle"),
-        description: t("services.enterpriseDesc"),
-        benefits: t("services.enterpriseBenefits", { returnObjects: true }) || [],
+        icon: GitBranch,
+        title: t("services.strategicTitle"),
+        description: t("services.strategicDesc"),
+        benefits: t("services.strategicBenefits", { returnObjects: true }) || [],
       },
       {
-        icon: Settings,
-        title: t("services.assistantsTitle"),
-        description: t("services.assistantsDesc"),
-        benefits: t("services.assistantsBenefits", { returnObjects: true }) || [],
+        icon: Network,
+        title: t("services.alignmentTitle"),
+        description: t("services.alignmentDesc"),
+        benefits: t("services.alignmentBenefits", { returnObjects: true }) || [],
+      },
+      {
+        icon: Rocket,
+        title: t("services.growthTitle"),
+        description: t("services.growthDesc"),
+        benefits: t("services.growthBenefits", { returnObjects: true }) || [],
       },
     ],
     [t]

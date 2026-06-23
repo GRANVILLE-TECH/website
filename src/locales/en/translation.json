@@ -104,40 +104,47 @@
   "services": {
     "title": "Our Services",
     "subtitle": "Transforming Business through Intelligent Technology",
-    "recommendationTitle": "Recommendation Systems",
-    "recommendationDesc": "AI-powered algorithms delivering personalized insights through advanced behavioral analysis and contextual understanding",
-    "recommendationBenefits": [
-      "Intelligent recommendation engine",
-      "Real-time user profiling",
-      "Adaptive learning mechanisms"
+    "financialTitle": "Autonomous Financial Forecasting & Runway Modeling",
+    "financialDesc": "Instead of delivering static spreadsheets, this service deploys custom data agents that continuously connect to a client’s live transaction ledgers to simulate cash flow under varying macroeconomic shocks, predicting exact bankruptcy horizons.",
+    "financialBenefits": [
+      "Live ledger connections",
+      "Macroeconomic shock simulations",
+      "Bankruptcy horizon prediction"
     ],
-    "strategyTitle": "AI Strategy Consulting",
-    "strategyDesc": "Comprehensive digital transformation strategy leveraging AI to unlock operational efficiency and competitive advantages",
-    "strategyBenefits": [
-      "Strategic AI integration",
-      "Innovation frameworks",
-      "Enterprise AI assessment"
+    "pricingTitle": "Latent Preference Mining & Price Optimization",
+    "pricingDesc": "AI pipelines that securely ingest historical negotiation data, multi-turn sales emails, and transcripts to map out a customer group's hidden 'price-quality threshold curve,' optimizing contract pricing without risking churn.",
+    "pricingBenefits": [
+      "Hidden price-quality curve mapping",
+      "Optimal contract pricing",
+      "Churn risk mitigation"
     ],
-    "customTitle": "Custom AI Solutions",
-    "customDesc": "Bespoke intelligent systems engineered to solve complex business challenges with scalable, modular architectures",
-    "customBenefits": [
-      "Tailored AI architecture",
-      "Scalable solution design",
-      "Innovation pipeline"
+    "stressTestTitle": "Synthetic Cohort Stress-Testing",
+    "stressTestDesc": "Building a simulated digital twin of the client’s market, populating it with thousands of LLM-driven 'synthetic customer personas' that mimic actual target demographics, price sensitivities, and support expectations.",
+    "stressTestBenefits": [
+      "Digital market twin simulation",
+      "LLM-driven synthetic personas",
+      "Safe sandbox testing"
     ],
-    "enterpriseTitle": "Enterprise Intelligence",
-    "enterpriseDesc": "Proprietary AI models trained on organizational data, generating actionable insights for intelligent decision-making",
-    "enterpriseBenefits": [
-      "Domain-specific modeling",
-      "Predictive analytics",
-      "Knowledge amplification"
+    "strategicTitle": "Contingent Strategic Planning & Agentic Memos",
+    "strategicDesc": "AI-powered executive copilots that generate 'conditional plans.' Instead of rigid quarterly goals, these systems draft multi-scenario execution frameworks to build agile corporate strategies that automatically adapt to shifting data signals.",
+    "strategicBenefits": [
+      "Multi-scenario execution frameworks",
+      "Adaptive corporate strategies",
+      "AI-powered executive copilots"
     ],
-    "assistantsTitle": "Intelligent Assistants",
-    "assistantsDesc": "Advanced multi-channel engagement platforms using natural language processing for sophisticated customer interactions",
-    "assistantsBenefits": [
-      "Omni-channel support",
-      "Contextual communication",
-      "Enhanced engagement"
+    "alignmentTitle": "Multi-Agent Organizational Alignment Consulting",
+    "alignmentDesc": "Designing multi-agent systems where distinct AI personas are assigned isolated corporate roles, with an aggregation layer that reconciles conflicting inputs into cohesive, balanced corporate action steps to eliminate data silos.",
+    "alignmentBenefits": [
+      "Distinct AI personas by role",
+      "Conflicting input reconciliation",
+      "Cohesive corporate action steps"
+    ],
+    "growthTitle": "Fine-Grained Targeted Growth Operations",
+    "growthDesc": "Setting up programmatic AI pipelines that map specific customer segments to tailored ad channels, while simultaneously routing targeted development resources to features that only those high-value segments care about.",
+    "growthBenefits": [
+      "Tailored ad channel mapping",
+      "Targeted feature development",
+      "High-value segment focus"
     ]
   },
   "videoShowcase": {

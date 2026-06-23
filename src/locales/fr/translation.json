@@ -102,42 +102,49 @@
     "crafted": "Conçu et développé avec précision pour faire progresser les solutions d'IA."
   },
   "services": {
-    "title": "Nos Services",
-    "subtitle": "Transformer les entreprises grâce à la technologie intelligente",
-    "recommendationTitle": "Systèmes de recommandation",
-    "recommendationDesc": "Algorithmes basés sur l'IA fournissant des informations personnalisées grâce à une analyse comportementale avancée et une compréhension contextuelle",
-    "recommendationBenefits": [
-      "Moteur de recommandation intelligent",
-      "Profilage des utilisateurs en temps réel",
-      "Mécanismes d'apprentissage adaptatifs"
+    "title": "Our Services",
+    "subtitle": "Transforming Business through Intelligent Technology",
+    "financialTitle": "Autonomous Financial Forecasting & Runway Modeling",
+    "financialDesc": "Instead of delivering static spreadsheets, this service deploys custom data agents that continuously connect to a client’s live transaction ledgers to simulate cash flow under varying macroeconomic shocks, predicting exact bankruptcy horizons.",
+    "financialBenefits": [
+      "Live ledger connections",
+      "Macroeconomic shock simulations",
+      "Bankruptcy horizon prediction"
     ],
-    "strategyTitle": "Conseil en stratégie d'IA",
-    "strategyDesc": "Stratégie globale de transformation numérique exploitant l'IA pour libérer l'efficacité opérationnelle et les avantages concurrentiels",
-    "strategyBenefits": [
-      "Intégration stratégique de l'IA",
-      "Cadres d'innovation",
-      "Évaluation de l'IA d'entreprise"
+    "pricingTitle": "Latent Preference Mining & Price Optimization",
+    "pricingDesc": "AI pipelines that securely ingest historical negotiation data, multi-turn sales emails, and transcripts to map out a customer group's hidden 'price-quality threshold curve,' optimizing contract pricing without risking churn.",
+    "pricingBenefits": [
+      "Hidden price-quality curve mapping",
+      "Optimal contract pricing",
+      "Churn risk mitigation"
     ],
-    "customTitle": "Solutions d'IA sur mesure",
-    "customDesc": "Systèmes intelligents personnalisés conçus pour résoudre des défis commerciaux complexes avec des architectures évolutives et modulaires",
-    "customBenefits": [
-      "Architecture d'IA sur mesure",
-      "Conception de solutions évolutives",
-      "Pipeline d'innovation"
+    "stressTestTitle": "Synthetic Cohort Stress-Testing",
+    "stressTestDesc": "Building a simulated digital twin of the client’s market, populating it with thousands of LLM-driven 'synthetic customer personas' that mimic actual target demographics, price sensitivities, and support expectations.",
+    "stressTestBenefits": [
+      "Digital market twin simulation",
+      "LLM-driven synthetic personas",
+      "Safe sandbox testing"
     ],
-    "enterpriseTitle": "Enterprise Intelligence",
-    "enterpriseDesc": "Modèles d'IA exclusifs formés sur des données organisationnelles, générant des informations exploitables pour une prise de décision intelligente",
-    "enterpriseBenefits": [
-      "Modélisation spécifique au domaine",
-      "Analyses prédictives",
-      "Amplification des connaissances"
+    "strategicTitle": "Contingent Strategic Planning & Agentic Memos",
+    "strategicDesc": "AI-powered executive copilots that generate 'conditional plans.' Instead of rigid quarterly goals, these systems draft multi-scenario execution frameworks to build agile corporate strategies that automatically adapt to shifting data signals.",
+    "strategicBenefits": [
+      "Multi-scenario execution frameworks",
+      "Adaptive corporate strategies",
+      "AI-powered executive copilots"
     ],
-    "assistantsTitle": "Assistants intelligents",
-    "assistantsDesc": "Plateformes d'engagement multicanal avancées utilisant le traitement du langage naturel pour des interactions clients sophistiquées",
-    "assistantsBenefits": [
-      "Support omnicanal",
-      "Communication contextuelle",
-      "Engagement amélioré"
+    "alignmentTitle": "Multi-Agent Organizational Alignment Consulting",
+    "alignmentDesc": "Designing multi-agent systems where distinct AI personas are assigned isolated corporate roles, with an aggregation layer that reconciles conflicting inputs into cohesive, balanced corporate action steps to eliminate data silos.",
+    "alignmentBenefits": [
+      "Distinct AI personas by role",
+      "Conflicting input reconciliation",
+      "Cohesive corporate action steps"
+    ],
+    "growthTitle": "Fine-Grained Targeted Growth Operations",
+    "growthDesc": "Setting up programmatic AI pipelines that map specific customer segments to tailored ad channels, while simultaneously routing targeted development resources to features that only those high-value segments care about.",
+    "growthBenefits": [
+      "Tailored ad channel mapping",
+      "Targeted feature development",
+      "High-value segment focus"
     ]
   },
   "videoShowcase": {

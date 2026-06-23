@@ -13,12 +13,45 @@ import echoSignImg from '../assets/innovations/echosign.webp';
 import timeSiftImg from '../assets/innovations/timeshift.jpg';
 import { AiFillLinkedin, AiFillYoutube, AiFillMail } from 'react-icons/ai';
 import { FaXTwitter } from 'react-icons/fa6';
-import emailjs from '@emailjs/browser';
 
-// ─── EmailJS Configuration ───────────────────────────────────────
-export const EMAILJS_SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
-export const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
-export const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+const RESEND_CLIENT_KEY = import.meta.env.VITE_RESEND_API || '';
+const REGISTRATION_TO = import.meta.env.VITE_REGISTRATION_TO || 'info@granvilletech.co';
+const REGISTRATION_FROM =
+  import.meta.env.VITE_REGISTRATION_FROM || 'Granville Tech <onboarding@resend.dev>';
+
+async function sendLectureRegistrationViaResend(payload) {
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${RESEND_CLIENT_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: REGISTRATION_FROM,
+      to: [REGISTRATION_TO],
+      reply_to: payload.email,
+      subject: `Lecture Registration - ${payload.fullName}`,
+      html: `
+        <h2>New Lecture Registration</h2>
+        <p><strong>Role:</strong> ${payload.role}</p>
+        <p><strong>Full Name:</strong> ${payload.fullName}</p>
+        <p><strong>Email:</strong> ${payload.email}</p>
+        <p><strong>Phone:</strong> ${payload.phone || 'N/A'}</p>
+        <p><strong>Organization:</strong> ${payload.organization || 'N/A'}</p>
+        <p><strong>Role Title:</strong> ${payload.roleTitle || 'N/A'}</p>
+        <p><strong>Interests:</strong> ${payload.interests}</p>
+        <p><strong>Hope To Learn:</strong> ${payload.hopeToLearn || 'N/A'}</p>
+      `,
+    }),
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new Error(data?.message || data?.error || `Resend request failed (${response.status})`);
+  }
+
+  return data;
+}
 
 // ─── Event Config ────────────────────────────────────────────────
 const EVENT_DATE = new Date('2026-08-23T09:00:00+03:00');
@@ -297,7 +330,7 @@ export default function LecturePage() {
     setSubmitError('');
 
     try {
-      const templateParams = {
+      const payload = {
         role: selectedRole,
         fullName: formData.fullName,
         email: formData.email,
@@ -308,18 +341,33 @@ export default function LecturePage() {
         hopeToLearn: hopeToLearn || 'N/A',
       };
 
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
-      );
+      const response = await fetch('/api/lecture-registration', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
 
-      console.log('Lecture Registration Submitted via EmailJS:', templateParams);
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        if (response.status === 404) {
+          if (!RESEND_CLIENT_KEY) {
+            throw new Error('Backend API not deployed and VITE_RESEND_API is missing.');
+          }
+
+          await sendLectureRegistrationViaResend(payload);
+        } else {
+          throw new Error(data?.error || `Request failed with status ${response.status}`);
+        }
+      }
+
+      console.log('Lecture Registration submitted via API:', payload);
       setSubmitted(true);
     } catch (error) {
-      console.error('Error submitting form via EmailJS:', error);
-      setSubmitError('Failed to submit registration. Please try again later.');
+      console.error('Error submitting lecture registration:', error);
+      const details = error?.message || 'Please try again later.';
+      setSubmitError(`Failed to submit registration. ${details}`);
     } finally {
       setIsSubmitting(false);
     }
