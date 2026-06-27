@@ -4,9 +4,9 @@ import { FileText, Download, ExternalLink, Library } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 // ALETU Presentations (served from public folder)
-const blueprintPdf = "/assets/ALETU%20slides/ALETU_Africa_s_Adaptive_Education_Blueprint.pdf";
-const curriculumPdf = "/assets/ALETU%20slides/ALETU_Neural_Curriculum.pdf";
-const masteryPdf = "/assets/ALETU%20slides/ALETU_Scaling_Mastery_in_Africa.pdf";
+const blueprintPdf = "/assets/aletu-slides/ALETU_Africa_s_Adaptive_Education_Blueprint.pdf";
+const curriculumPdf = "/assets/aletu-slides/ALETU_Neural_Curriculum.pdf";
+const masteryPdf = "/assets/aletu-slides/ALETU_Scaling_Mastery_in_Africa.pdf";
 
 const resources = [
   {

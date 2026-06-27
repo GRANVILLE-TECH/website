@@ -7,9 +7,9 @@ import { PlayCircle, FileText, Download, ExternalLink } from "lucide-react";
 import InnovationSupportCTA from "../components/InnovationSupportCTA";
 
 // ALETU Presentations (served from public folder)
-const blueprintPdf = "/assets/ALETU%20slides/ALETU_Africa_s_Adaptive_Education_Blueprint.pdf";
-const curriculumPdf = "/assets/ALETU%20slides/ALETU_Neural_Curriculum.pdf";
-const masteryPdf = "/assets/ALETU%20slides/ALETU_Scaling_Mastery_in_Africa.pdf";
+const blueprintPdf = "/assets/aletu-slides/ALETU_Africa_s_Adaptive_Education_Blueprint.pdf";
+const curriculumPdf = "/assets/aletu-slides/ALETU_Neural_Curriculum.pdf";
+const masteryPdf = "/assets/aletu-slides/ALETU_Scaling_Mastery_in_Africa.pdf";
 
 // Import your image assets
 import aletu from "../assets/innovations/Data-Science-Practitioner.png-update-min-702x468.png";
