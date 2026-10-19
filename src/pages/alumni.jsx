@@ -147,7 +147,7 @@ export default function Alumni() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden bg-[#faf9f6] min-h-screen font-sans">
+    <div className="overflow-x-hidden bg-background text-foreground min-h-screen font-sans">
       <Nav />
 
       <main className="pt-24 pb-32">
@@ -157,7 +157,7 @@ export default function Alumni() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2 text-[#2d4a3e] font-bold tracking-widest uppercase mb-4"
+              className="flex items-center gap-2 text-amber-500 font-bold tracking-widest uppercase mb-4"
             >
               <GraduationCap size={20} />
               {t("alumni.badge", "Alumni Network")}
@@ -165,15 +165,15 @@ export default function Alumni() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-extrabold text-[#1a3a2a] mb-6"
+              className="text-5xl md:text-7xl font-extrabold text-foreground mb-6"
             >
-              {t("alumni.titlePrefix", "Granville-Tech Legacy")} <span className="text-[#4a7c59]">{t("alumni.titleSuffix", "Innovators")}</span>
+              {t("alumni.titlePrefix", "Granville-Tech Legacy")} <span className="text-amber-500">{t("alumni.titleSuffix", "Innovators")}</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-gray-600 text-lg max-w-2xl"
+              className="text-muted-foreground text-lg max-w-2xl"
             >
               {t("alumni.subtitle", "Meet the brilliant minds who have shaped Granville-Tech and continue to lead the AI revolution worldwide.")}
             </motion.p>
@@ -187,14 +187,15 @@ export default function Alumni() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className={`relative p-8 rounded-[2rem] flex flex-col h-full transition-all duration-500 hover:scale-[1.02] ${person.isDark
-                  ? 'bg-[#1a3a2a] text-[#aef359]'
-                  : 'bg-white text-[#1a3a2a] border border-[#e5e7eb]'
-                  }`}
+                className={`relative p-8 rounded-[2rem] flex flex-col h-full transition-all duration-500 hover:scale-[1.02] bg-card border ${
+                  person.isDark
+                    ? 'border-amber-500/30 shadow-md'
+                    : 'border-border shadow-sm'
+                }`}
               >
                 {/* Header: Photo and LinkedIn */}
                 <div className="flex justify-between items-start mb-8">
-                  <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gray-200">
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden bg-muted">
                     <img
                       src={person.image}
                       alt={person.name}
@@ -208,8 +209,7 @@ export default function Alumni() {
                     href={person.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`transition-opacity hover:opacity-70 ${person.isDark ? 'text-[#aef359]' : 'text-[#1a3a2a]'
-                      }`}
+                    className="text-foreground hover:text-amber-500 transition-colors"
                   >
                     <Linkedin size={24} fill="currentColor" />
                   </a>
@@ -217,19 +217,17 @@ export default function Alumni() {
 
                 {/* Content */}
                 <div className="flex-grow">
-                  <h3 className="text-2xl font-bold mb-4 tracking-tight leading-tight">
+                  <h3 className="text-2xl font-bold mb-4 tracking-tight leading-tight text-foreground">
                     {person.name}
                   </h3>
-                  <p className={`text-sm leading-relaxed mb-8 ${person.isDark ? 'text-gray-300' : 'text-gray-500'
-                    }`}>
+                  <p className="text-sm leading-relaxed mb-8 text-muted-foreground">
                     {t("alumni.items." + person.key + ".bio", person.bio)}
                   </p>
                 </div>
 
                 {/* Footer: University */}
                 <div className="mt-auto">
-                  <p className={`text-sm font-bold italic tracking-wide ${person.isDark ? 'text-[#aef359]' : 'text-[#1a3a2a]'
-                    }`}>
+                  <p className="text-sm font-bold italic tracking-wide text-amber-500">
                     {t("alumni.items." + person.key + ".university", person.university)}
                   </p>
                 </div>

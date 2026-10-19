@@ -6,7 +6,7 @@ export default function VideoShowcase() {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-gradient-to-b w-full from-[#111111] to-black text-white py-24 px-6 relative overflow-hidden">
+    <section className="bg-background text-foreground py-24 px-6 relative overflow-hidden border-t border-border">
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.02)_0%,_transparent_70%)]" />
 
@@ -19,10 +19,10 @@ export default function VideoShowcase() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground mb-4">
             {t("videoShowcase.title")}
           </h2>
-          <p className="text-lg sm:text-xl text-silver max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {t("videoShowcase.description")}
           </p>
         </motion.div>
@@ -40,11 +40,7 @@ export default function VideoShowcase() {
 
           {/* Video frame */}
           <div
-            className="relative aspect-video rounded-2xl overflow-hidden border border-gray-300/20 bg-[#0a0a0a]"
-            style={{
-              boxShadow:
-                "0 0 60px rgba(233, 69, 96, 0.05), 0 25px 50px rgba(0, 0, 0, 0.5)",
-            }}
+            className="relative aspect-video rounded-2xl overflow-hidden border border-border bg-black shadow-2xl"
           >
             <iframe
               src="https://www.youtube.com/embed/WtPkQEKQIbg?rel=0&modestbranding=1&color=white"
@@ -66,7 +62,7 @@ export default function VideoShowcase() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
         >
-          <p className="text-sm sm:text-base text-silver opacity-70 tracking-wide">
+          <p className="text-sm sm:text-base text-muted-foreground tracking-wide">
             {t("videoShowcase.caption")}
           </p>
         </motion.div>

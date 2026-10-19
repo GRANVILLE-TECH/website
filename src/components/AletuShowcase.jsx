@@ -8,7 +8,7 @@ const AletuShowcase = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="aletu-demo" className="py-24 relative overflow-hidden bg-[#050505]">
+    <section id="aletu-demo" className="py-24 relative overflow-hidden bg-background text-foreground border-t border-border">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full" />
@@ -36,13 +36,13 @@ const AletuShowcase = () => {
                 <ZapIcon className="h-3 w-3" />
                 {t("aletuShowcase.badge", "LATEST INNOVATION")}
               </motion.div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 {t("aletuShowcase.titlePart1", "Empowering the Future of")} <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-amber-400">
                   {t("aletuShowcase.titlePart2", "Digital Education")}
                 </span>
               </h2>
-              <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
                 {t("aletuShowcase.description", "ALETU is our flagship E-learning platform designed specifically for the Ugandan curriculum. Experience a gamified, social, and mastery-based learning environment that students actually love.")}
               </p>
             </div>
@@ -55,12 +55,12 @@ const AletuShowcase = () => {
                 { icon: BookOpenIcon, title: t("aletuShowcase.features.curriculum.title", "Curriculum Aligned"), desc: t("aletuShowcase.features.curriculum.desc", "Specifically tailored for S1-S6 Uganda National Curriculum.") }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                  <div className="shrink-0 w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shadow-sm">
                     <item.icon className="h-5 w-5 text-indigo-400" />
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold text-sm mb-1">{item.title}</h4>
-                    <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                    <h4 className="text-foreground font-semibold text-sm mb-1">{item.title}</h4>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -74,7 +74,7 @@ const AletuShowcase = () => {
                 {t("aletuShowcase.tryDemo", "Try the Live Demo")}
                 <ArrowRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <p className="mt-4 text-xs text-gray-500 italic">
+              <p className="mt-4 text-xs text-muted-foreground italic">
                 {t("aletuShowcase.footnote", "* Experience the Student Portal in its full functional glory.")}
               </p>
             </div>

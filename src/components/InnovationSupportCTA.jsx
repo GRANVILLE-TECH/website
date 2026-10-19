@@ -16,10 +16,10 @@ export default function InnovationSupportCTA({ innovationName }) {
         >
           <Heart className="text-red-500 w-10 h-10 fill-red-500" />
         </motion.div>
-        <h3 className="text-3xl font-bold text-white mb-4">
+        <h3 className="text-3xl font-bold text-foreground mb-4">
           {t("supportCTA.title", "Support the Development")}
         </h3>
-        <p className="text-silver max-w-2xl mx-auto text-lg">
+        <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
           {t("supportCTA.description", {
             defaultValue: "Your contribution directly fuels the evolution of {{name}}. Help us drive meaningful change through innovative AI solutions.",
             name: innovationName
@@ -27,7 +27,7 @@ export default function InnovationSupportCTA({ innovationName }) {
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-xl">
+      <div className="max-w-4xl mx-auto bg-card border border-border rounded-3xl overflow-hidden shadow-2xl backdrop-blur-xl">
         <div className="p-1 bg-gradient-to-r from-yellow-400/20 via-amber-500/20 to-yellow-400/20">
           <iframe
             id="kofiframe"
@@ -45,7 +45,7 @@ export default function InnovationSupportCTA({ innovationName }) {
       </div>
 
       <div className="text-center mt-12 pb-8">
-        <p className="text-gray-500 text-sm italic">
+        <p className="text-muted-foreground text-sm italic">
           {t("supportCTA.securePayment", "Secure payments powered by Ko-fi")}
         </p>
       </div>

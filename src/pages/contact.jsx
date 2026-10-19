@@ -182,7 +182,7 @@ const handleServiceSelect = (service) => {
   };
 
   return (
-    <div className="min-h-screen w-100% bg-black text-white pt-20  overflow-hidden pb-20">
+    <div className="min-h-screen w-full bg-background text-foreground pt-20 overflow-hidden pb-20 border-t border-border">
       <motion.div
         className=" mx-auto mb-4  transform -translate-x-1/2 z-10 flex flex-col items-center justify-center text-center px-8 sm:px-8 md:px-12 lg:px-14"
         initial={{ opacity: 0, y: 30 }}
@@ -192,10 +192,9 @@ const handleServiceSelect = (service) => {
           ease: "easeOut",
           delay: 0.3,
         }}
-        style={{ textShadow: "2px 4px 6px rgba(0, 0, 0, 0.3)" }}
       >
         <motion.h1
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
@@ -206,7 +205,7 @@ const handleServiceSelect = (service) => {
           {t('contact.getInTouch')}
         </motion.h1>
         <motion.p
-          className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl font-medium text-white max-w-3xl"
+          className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl font-medium text-muted-foreground max-w-3xl"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
@@ -229,7 +228,7 @@ const handleServiceSelect = (service) => {
       {/* Contact Form */}
       <div className="max-w-4xl mx-auto py-8 px-8">
         <motion.h2
-          className="text-4xl font-semibold text-center text-white"
+          className="text-4xl font-semibold text-center text-foreground"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -237,7 +236,7 @@ const handleServiceSelect = (service) => {
           {t('contact.title')}
         </motion.h2>
         <motion.p
-          className="mt-2 text-center text-silver"
+          className="mt-2 text-center text-muted-foreground"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -248,7 +247,7 @@ const handleServiceSelect = (service) => {
         <div className="flex flex-col items-center mt-6 space-y-4">
           <motion.button
             onClick={scheduleConsultation}
-            className="px-6 py-3 bg-gray-300 text-black rounded-lg hover:bg-white transition-all duration-300"
+            className="px-6 py-3 bg-foreground text-background font-semibold rounded-lg hover:bg-amber-400 hover:text-black transition-all duration-300"
             whileInView={{ opacity: [0, 1], y: [20, 0] }}
           >
             {t('contact.scheduleConsultation')}
@@ -258,12 +257,12 @@ const handleServiceSelect = (service) => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-2 text-silver"
+            className="flex items-center gap-2 text-muted-foreground"
           >
-            <span className="text-gray-500">{t('contact.orEmailUs')}</span>
+            <span>{t('contact.orEmailUs')}</span>
             <a 
               href="mailto:info@granvilletech.co?subject=Inquiry from Granville-Tech Website" 
-              className="text-white hover:text-yellow-500 font-semibold transition-colors underline decoration-yellow-500/30 underline-offset-4"
+              className="text-foreground hover:text-amber-500 font-semibold transition-colors underline decoration-amber-500/30 underline-offset-4"
             >
               info@granvilletech.co
             </a>
@@ -295,242 +294,242 @@ const handleServiceSelect = (service) => {
           {/* First and Last Name */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {["firstName", "lastName"].map((field, idx) => (
-              <div key={idx}>
-                <motion.input
-                  type="text"
-                  name={field}
-                  placeholder={
-                    field === "firstName" ? t('contact.form.firstName') : t('contact.form.lastName')
-                  }
-                  value={formData[field]}
-                  onChange={handleChange}
-                  className="w-full p-4 bg-black border rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-silver transition-all duration-300"
-                  whileInView={{ opacity: [0, 1], y: [30, 0] }}
-                  transition={{
-                    duration: 0.4,
-                    ease: "easeOut",
-                    delay: 0.2,
-                  }}
-                />
-                {errors[field] && (
-                  <p className="text-red-500 text-sm mt-1">{errors[field]}</p>
-                )}
-              </div>
-            ))}
-          </div>
+               <div key={idx}>
+                 <motion.input
+                   type="text"
+                   name={field}
+                   placeholder={
+                     field === "firstName" ? t('contact.form.firstName') : t('contact.form.lastName')
+                   }
+                   value={formData[field]}
+                   onChange={handleChange}
+                   className="w-full p-4 bg-card border border-border rounded-lg text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-amber-400 focus:outline-none transition-all duration-300"
+                   whileInView={{ opacity: [0, 1], y: [30, 0] }}
+                   transition={{
+                     duration: 0.4,
+                     ease: "easeOut",
+                     delay: 0.2,
+                   }}
+                 />
+                 {errors[field] && (
+                   <p className="text-red-500 text-sm mt-1">{errors[field]}</p>
+                 )}
+               </div>
+             ))}
+           </div>
 
-          {/* Email and Phone Number */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <motion.input
-                type="email"
-                name="email"
-                placeholder={t('contact.form.email')}
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full p-4 bg-black border rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-silver transition-all duration-300"
-                whileInView={{ opacity: [0, 1], y: [30, 0] }}
-                transition={{
-                  duration: 0.4,
-                  ease: "easeOut",
-                  delay: 0.6,
-                }}
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-              )}
-            </div>
+           {/* Email and Phone Number */}
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+             <div>
+               <motion.input
+                 type="email"
+                 name="email"
+                 placeholder={t('contact.form.email')}
+                 value={formData.email}
+                 onChange={handleChange}
+                 className="w-full p-4 bg-card border border-border rounded-lg text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-amber-400 focus:outline-none transition-all duration-300"
+                 whileInView={{ opacity: [0, 1], y: [30, 0] }}
+                 transition={{
+                   duration: 0.4,
+                   ease: "easeOut",
+                   delay: 0.6,
+                 }}
+               />
+               {errors.email && (
+                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+               )}
+             </div>
 
-            <div>
-              <motion.input
-                type="text"
-                name="phone"
-                placeholder={t('contact.form.phone')}
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full p-4 bg-black border rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-silver transition-all duration-300"
-                whileInView={{ opacity: [0, 1], y: [30, 0] }}
-                transition={{
-                  duration: 0.4,
-                  ease: "easeOut",
-                  delay: 0.6,
-                }}
-              />
-              {errors.phone && (
-                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-              )}
-            </div>
-          </div>
+             <div>
+               <motion.input
+                 type="text"
+                 name="phone"
+                 placeholder={t('contact.form.phone')}
+                 value={formData.phone}
+                 onChange={handleChange}
+                 className="w-full p-4 bg-card border border-border rounded-lg text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-amber-400 focus:outline-none transition-all duration-300"
+                 whileInView={{ opacity: [0, 1], y: [30, 0] }}
+                 transition={{
+                   duration: 0.4,
+                   ease: "easeOut",
+                   delay: 0.6,
+                 }}
+               />
+               {errors.phone && (
+                 <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+               )}
+             </div>
+           </div>
 
-          {/* Service Dropdown */}
-          <div>
-            <motion.div
-              className="relative w-full"
-              whileInView={{ opacity: [0, 1], y: [30, 0] }}
-              transition={{
-                duration: 0.4,
-                ease: "easeOut",
-                delay: 1,
-              }}
-            >
-              <button
-                type="button"
-                onClick={toggleDropdown}
-                className="w-full p-4 pl-2 bg-black border text-left rounded-lg text-gray-300 focus:ring-2 focus:ring-silver"
-                aria-haspopup="listbox"
-                aria-expanded={isOpen}
-              >
-                {(() => {
-                  const serviceOptions = [
-                    { value: "Recommendation Systems", label: t('contact.services.recommendation') },
-                    { value: "AI Strategy Consulting", label: t('contact.services.consulting') },
-                    { value: "Custom AI Solutions", label: t('contact.services.custom') },
-                    { value: "Intelligent Assistants", label: t('contact.services.assistants') },
-                    { value: "Enterprise Intelligence", label: t('contact.services.enterprise') }
-                  ];
-                  const selectedServiceObj = serviceOptions.find(opt => opt.value === formData.service);
-                  return selectedServiceObj ? selectedServiceObj.label : t('contact.form.selectService');
-                })()}
-              </button>
-              {isOpen && (
-                <motion.ul
-                  ref={dropdownRef}
-                  className="absolute w-full mt-2 bg-black p-1 border transition-all duration-300 rounded-lg text-gray-300 z-50"
-                  whileInView={{ opacity: [0, 1], y: [30, 0] }}
-                  transition={{ duration: 0.4 }}
-                  role="listbox"
-                  aria-label="Service Options"
-                >
-                  {[
-                    { value: "Recommendation Systems", label: t('contact.services.recommendation') },
-                    { value: "AI Strategy Consulting", label: t('contact.services.consulting') },
-                    { value: "Custom AI Solutions", label: t('contact.services.custom') },
-                    { value: "Intelligent Assistants", label: t('contact.services.assistants') },
-                    { value: "Enterprise Intelligence", label: t('contact.services.enterprise') }
-                  ].map((opt, index) => (
-                    <li
-                      key={index}
-                      onClick={() => handleServiceSelect(opt.value)}
-                      className="px-4 py-2 hover:bg-gray-300 hover:text-black cursor-pointer transition-all duration-200 rounded-lg"
-                      role="option"
-                      aria-selected={formData.service === opt.value}
-                      tabIndex={0}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          handleServiceSelect(opt.value);
-                        }
-                      }}
-                    >
-                      {opt.label}
-                    </li>
-                  ))}
-                </motion.ul>
-              )}
-            </motion.div>
-            <input type="hidden" name="service" value={formData.service} />
-            {errors.service && (
-              <p className="text-red-500 text-sm mt-1">{errors.service}</p>
-            )}
-          </div>
+           {/* Service Dropdown */}
+           <div>
+             <motion.div
+               className="relative w-full"
+               whileInView={{ opacity: [0, 1], y: [30, 0] }}
+               transition={{
+                 duration: 0.4,
+                 ease: "easeOut",
+                 delay: 1,
+               }}
+             >
+               <button
+                 type="button"
+                 onClick={toggleDropdown}
+                 className="w-full p-4 pl-4 bg-card border border-border text-left rounded-lg text-foreground focus:ring-2 focus:ring-amber-400 focus:outline-none"
+                 aria-haspopup="listbox"
+                 aria-expanded={isOpen}
+               >
+                 {(() => {
+                   const serviceOptions = [
+                     { value: "Recommendation Systems", label: t('contact.services.recommendation') },
+                     { value: "AI Strategy Consulting", label: t('contact.services.consulting') },
+                     { value: "Custom AI Solutions", label: t('contact.services.custom') },
+                     { value: "Intelligent Assistants", label: t('contact.services.assistants') },
+                     { value: "Enterprise Intelligence", label: t('contact.services.enterprise') }
+                   ];
+                   const selectedServiceObj = serviceOptions.find(opt => opt.value === formData.service);
+                   return selectedServiceObj ? selectedServiceObj.label : t('contact.form.selectService');
+                 })()}
+               </button>
+               {isOpen && (
+                 <motion.ul
+                   ref={dropdownRef}
+                   className="absolute w-full mt-2 bg-card p-1 border border-border transition-all duration-300 rounded-lg text-foreground z-50 shadow-xl"
+                   whileInView={{ opacity: [0, 1], y: [30, 0] }}
+                   transition={{ duration: 0.4 }}
+                   role="listbox"
+                   aria-label="Service Options"
+                 >
+                   {[
+                     { value: "Recommendation Systems", label: t('contact.services.recommendation') },
+                     { value: "AI Strategy Consulting", label: t('contact.services.consulting') },
+                     { value: "Custom AI Solutions", label: t('contact.services.custom') },
+                     { value: "Intelligent Assistants", label: t('contact.services.assistants') },
+                     { value: "Enterprise Intelligence", label: t('contact.services.enterprise') }
+                   ].map((opt, index) => (
+                     <li
+                       key={index}
+                       onClick={() => handleServiceSelect(opt.value)}
+                       className="px-4 py-2 hover:bg-muted cursor-pointer transition-all duration-200 rounded-lg"
+                       role="option"
+                       aria-selected={formData.service === opt.value}
+                       tabIndex={0}
+                       onKeyDown={(e) => {
+                         if (e.key === "Enter" || e.key === " ") {
+                           handleServiceSelect(opt.value);
+                         }
+                       }}
+                     >
+                       {opt.label}
+                     </li>
+                   ))}
+                 </motion.ul>
+               )}
+             </motion.div>
+             <input type="hidden" name="service" value={formData.service} />
+             {errors.service && (
+               <p className="text-red-500 text-sm mt-1">{errors.service}</p>
+             )}
+           </div>
 
-          {/* Message */}
-          <div>
-            <motion.textarea
-              name="message"
-              placeholder={t('contact.form.query')}
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full p-4 bg-black border rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-silver transition-all duration-300"
-              rows="4"
-              whileInView={{ opacity: [0, 1], y: [30, 0] }}
-              transition={{
-                duration: 0.4,
-                ease: "easeOut",
-                delay: 1.2,
-              }}
-            />
-            {errors.message && (
-              <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-            )}
-          </div>
+           {/* Message */}
+           <div>
+             <motion.textarea
+               name="message"
+               placeholder={t('contact.form.query')}
+               value={formData.message}
+               onChange={handleChange}
+               className="w-full p-4 bg-card border border-border rounded-lg text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-amber-400 focus:outline-none transition-all duration-300"
+               rows="4"
+               whileInView={{ opacity: [0, 1], y: [30, 0] }}
+               transition={{
+                 duration: 0.4,
+                 ease: "easeOut",
+                 delay: 1.2,
+               }}
+             />
+             {errors.message && (
+               <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+             )}
+           </div>
 
-          {/* Submit Button */}
-          <div>
-            {isSubmitting ? (
-              <button
-                type="button"
-                className="w-full p-4 bg-gray-500 text-white rounded-lg cursor-not-allowed flex items-center justify-center gap-2"
-                disabled
-              >
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                {t('contact.form.sending')}
-              </button>
-            ) : (
-              <motion.button
-                type="submit"
-                whileInView={{ opacity: [0, 1], y: [30, 0] }}
-                transition={{
-                  duration: 0.4,
-                  ease: "easeOut",
-                  delay: 1.4,
-                }}
-                className="w-full p-4 bg-gray-300 text-black rounded-lg hover:bg-white transition-all duration-300"
-              >
-                {t('contact.form.submit')}
-              </motion.button>
-            )}
-          </div>
-        </motion.form>
+           {/* Submit Button */}
+           <div>
+             {isSubmitting ? (
+               <button
+                 type="button"
+                 className="w-full p-4 bg-muted text-muted-foreground rounded-lg cursor-not-allowed flex items-center justify-center gap-2"
+                 disabled
+               >
+                 <div className="w-5 h-5 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin"></div>
+                 {t('contact.form.sending')}
+               </button>
+             ) : (
+               <motion.button
+                 type="submit"
+                 whileInView={{ opacity: [0, 1], y: [30, 0] }}
+                 transition={{
+                   duration: 0.4,
+                   ease: "easeOut",
+                   delay: 1.4,
+                 }}
+                 className="w-full p-4 bg-foreground text-background font-bold rounded-lg hover:bg-amber-400 hover:text-black transition-all duration-300"
+               >
+                 {t('contact.form.submit')}
+               </motion.button>
+             )}
+           </div>
+         </motion.form>
 
-        {/* Success/Error Message */}
-        <AnimatePresence mode="wait">
-          {successMessage === "success" && (
-            <motion.div
-              key="success"
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: -20 }}
-              className="mt-8 p-6 bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl text-center"
-            >
-              <div className="flex flex-col items-center gap-4">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{t('contact.success.title')}</h3>
-                  <p className="text-gray-400">{t('contact.success.description')}</p>
-                </div>
-                <button 
-                  onClick={() => setSuccessMessage("")}
-                  className="mt-2 text-sm text-gray-500 hover:text-white transition-colors"
-                >
-                  {t('contact.success.dismiss')}
-                </button>
-              </div>
-            </motion.div>
-          )}
+         {/* Success/Error Message */}
+         <AnimatePresence mode="wait">
+           {successMessage === "success" && (
+             <motion.div
+               key="success"
+               initial={{ opacity: 0, scale: 0.9, y: 20 }}
+               animate={{ opacity: 1, scale: 1, y: 0 }}
+               exit={{ opacity: 0, scale: 0.9, y: -20 }}
+               className="mt-8 p-6 bg-card border border-border backdrop-blur-xl rounded-2xl text-center shadow-xl"
+             >
+               <div className="flex flex-col items-center gap-4">
+                 <div className="w-16 h-16 bg-amber-400 rounded-full flex items-center justify-center text-black">
+                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                   </svg>
+                 </div>
+                 <div>
+                   <h3 className="text-2xl font-bold text-foreground mb-2">{t('contact.success.title')}</h3>
+                   <p className="text-muted-foreground">{t('contact.success.description')}</p>
+                 </div>
+                 <button 
+                   onClick={() => setSuccessMessage("")}
+                   className="mt-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                 >
+                   {t('contact.success.dismiss')}
+                 </button>
+               </div>
+             </motion.div>
+           )}
 
-          {successMessage === "error" && (
-            <motion.div
-              key="error"
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: -20 }}
-              className="mt-8 p-6 bg-red-500/10 border border-red-500/20 backdrop-blur-xl rounded-2xl text-center"
-            >
-              <h3 className="text-xl font-bold text-red-500 mb-2">{t('contact.error.title')}</h3>
-              <p className="text-gray-400">{t('contact.error.description')}</p>
-              <button 
-                onClick={() => setSuccessMessage("")}
-                className="mt-4 px-4 py-2 bg-red-500/20 text-red-500 rounded-lg hover:bg-red-500/30 transition-all"
-              >
-                {t('contact.error.tryAgain')}
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
+           {successMessage === "error" && (
+             <motion.div
+               key="error"
+               initial={{ opacity: 0, scale: 0.9, y: 20 }}
+               animate={{ opacity: 1, scale: 1, y: 0 }}
+               exit={{ opacity: 0, scale: 0.9, y: -20 }}
+               className="mt-8 p-6 bg-red-500/10 border border-red-500/20 backdrop-blur-xl rounded-2xl text-center"
+             >
+               <h3 className="text-xl font-bold text-red-500 mb-2">{t('contact.error.title')}</h3>
+               <p className="text-muted-foreground">{t('contact.error.description')}</p>
+               <button 
+                 onClick={() => setSuccessMessage("")}
+                 className="mt-4 px-4 py-2 bg-red-500/20 text-red-500 rounded-lg hover:bg-red-500/30 transition-all"
+               >
+                 {t('contact.error.tryAgain')}
+               </button>
+             </motion.div>
+           )}
+         </AnimatePresence>
       </div>
     </div>
   );

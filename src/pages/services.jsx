@@ -22,32 +22,32 @@ const ServiceCard = React.memo(
           ease: "linear",
           delay: index * 0.1, // Staggered delay for sequential animation
         }}
-        className="bg-[#1e1e1e]/75 border border-gray-300/45 rounded-2xl p-6 space-y-5 
+        className="bg-card/75 border border-border rounded-2xl p-6 space-y-5 
         transition-all duration-300 
-        hover:border-gray-300/75 
-        hover:bg-[#1e1e1e]/25
+        hover:border-border/75 
+        hover:bg-card/50
         backdrop-blur-lg
         group"
       >
         <div className="flex items-center space-x-4 mb-4">
           <div className="p-3 rounded-xl">
-            <Icon className="text-gray-300 w-8 h-8 stroke-[1.5] group-hover:text-white" />
+            <Icon className="text-muted-foreground w-8 h-8 stroke-[1.5] group-hover:text-foreground" />
           </div>
-          <h3 className="text-xl font-bold text-white tracking-tight">
+          <h3 className="text-xl font-bold text-foreground tracking-tight">
             {title}
           </h3>
         </div>
-        <p className="text-silver text-sm leading-relaxed mb-4 line-clamp-3">
+        <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
           {description}
         </p>
-        <div className="border-t border-gray-800/30 pt-4">
+        <div className="border-t border-border/30 pt-4">
           <ul className="space-y-2">
             {benefits.map((benefit, idx) => (
               <li
                 key={idx}
-                className="flex items-center text-gray-300 text-xs tracking-wide"
+                className="flex items-center text-muted-foreground text-xs tracking-wide"
               >
-                <ChevronRight className="mr-2 w-4 h-4 text-white stroke-[2]" />
+                <ChevronRight className="mr-2 w-4 h-4 text-foreground stroke-[2]" />
                 {benefit}
               </li>
             ))}
@@ -104,7 +104,7 @@ const ServicesPage = () => {
   );
 
   return (
-    <div className="min-h-screen w-[100%] bg-black py-32 px-4  sm:px-6 lg:px-8">
+    <div className="min-h-screen w-[100%] bg-background py-32 px-4  sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.h2
           initial={{ y: 50, opacity: 0 }}
@@ -114,11 +114,11 @@ const ServicesPage = () => {
             delay: 0.2,
             ease: "easeOut",
           }}
-          className="text-5xl md:text-5xl lg:text-6xl font-bold text-center mb-4 text-white tracking-tighter"
+          className="text-5xl md:text-5xl lg:text-6xl font-bold text-center mb-4 text-foreground tracking-tighter"
         >
           {t("services.title")}
         </motion.h2>
-        <p className="text-lg text-center mb-16 text-silver">
+        <p className="text-lg text-center mb-16 text-muted-foreground">
           {t("services.subtitle")}
         </p>
 

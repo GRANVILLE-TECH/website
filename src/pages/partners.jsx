@@ -23,7 +23,7 @@ export default function Partners() {
 
   return (
     <section
-      className="bg-gradient-to-b w-[100%] from-black to-[#111111] text-white py-20 px-8 md:pr-20 pr-6  sm:pr-16 relative overflow-hidden"
+      className="bg-background text-foreground w-[100%] py-20 px-8 md:pr-20 pr-6 sm:pr-16 relative overflow-hidden border-t border-border"
     >
       <motion.h2
         initial={{ y: 50, opacity: 0 }}
@@ -33,7 +33,7 @@ export default function Partners() {
           delay: 0.2,
           ease: "easeOut",
         }}
-        className="text-4xl sm:text-5xl lg:text-5xl text-center font-extrabold mb-12 text-white"
+        className="text-4xl sm:text-5xl lg:text-5xl text-center font-extrabold mb-12 text-foreground"
       >
         {t("partners.title", "TRUSTED BY")}
       </motion.h2>

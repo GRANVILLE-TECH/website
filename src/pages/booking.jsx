@@ -7,10 +7,10 @@ const Booking = () => {
 
   return (
     <section
-      className="bg-gradient-to-b w-full from-black to-[#111111] text-white py-20 px-6"
+      className="bg-background text-foreground w-full py-20 px-6 border-t border-border"
     >
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-8">
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-8 text-foreground">
           {t("booking.title", "Schedule a Consultation")}
         </h2>
         <CalendlyWidget

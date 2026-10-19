@@ -8,7 +8,7 @@ export default function About() {
   const { t } = useTranslation();
   return (
     <section
-      className="bg-gradient-to-b w-[100%] from-black to-[#111111] text-white py-32 px-6 relative overflow-hidden"
+      className="bg-background w-[100%] text-foreground py-32 px-6 relative overflow-hidden border-t border-border"
     >
       <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-black to-[#0a0a0a] opacity-10 z-0"></div>
 

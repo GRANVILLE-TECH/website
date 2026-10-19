@@ -63,30 +63,30 @@ const SocialCard = ({ post, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-[#1e1e1e]/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/20 transition-all group h-full"
+      className="bg-card border border-border rounded-2xl p-6 flex flex-col justify-between hover:border-amber-400/50 shadow-sm hover:shadow-md transition-all group h-full"
     >
       <div>
         <div className="flex justify-between items-start mb-4">
-          <div className={`${isLinkedIn ? "bg-[#0077b5]/10" : "bg-white/5"} p-2 rounded-lg`}>
+          <div className={`${isLinkedIn ? "bg-[#0077b5]/10" : "bg-muted"} p-2 rounded-lg`}>
             {isLinkedIn ? (
               <Linkedin className="text-[#0077b5] w-5 h-5" />
             ) : post.platform === "youtube" ? (
               <Youtube className="text-[#FF0000] w-5 h-5" />
             ) : (
-              <XIcon className="text-white w-5 h-5" />
+              <XIcon className="text-foreground w-5 h-5" />
             )}
           </div>
-          <div className="flex items-center text-silver text-xs space-x-1 opacity-60">
+          <div className="flex items-center text-muted-foreground text-xs space-x-1">
             <Calendar className="w-3 h-3" />
             <span>{t("socialHub.dates." + post.date, post.date)}</span>
           </div>
         </div>
-        <p className="text-white/90 text-sm leading-relaxed mb-6 line-clamp-4 font-medium">
+        <p className="text-foreground/90 text-sm leading-relaxed mb-6 line-clamp-4 font-medium">
           {t("socialHub.posts." + post.id + ".content", post.content)}
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
           {post.tags.map((tag, idx) => (
-            <span key={idx} className="text-[10px] font-medium text-silver/60 bg-white/5 px-2 py-1 rounded-full">
+            <span key={idx} className="text-[10px] font-medium text-muted-foreground bg-muted px-2 py-1 rounded-full">
               {tag}
             </span>
           ))}
@@ -96,7 +96,7 @@ const SocialCard = ({ post, index }) => {
         href={post.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center text-xs font-semibold text-white group-hover:text-silver transition-colors"
+        className="inline-flex items-center text-xs font-semibold text-foreground group-hover:text-amber-500 transition-colors"
       >
         {t("socialHub.viewOnPlatform", {
           defaultValue: "View on {{platform}}",
@@ -112,10 +112,10 @@ export default function SocialHub() {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-gradient-to-b from-black to-[#111111] w-full py-32 px-6 relative overflow-hidden">
+    <section className="bg-background text-foreground w-full py-32 px-6 relative overflow-hidden border-t border-border">
       {/* Decorative background glows */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#0077b5]/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -123,7 +123,7 @@ export default function SocialHub() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-xs font-semibold text-silver mb-6"
+            className="inline-flex items-center space-x-2 bg-muted border border-border px-4 py-1.5 rounded-full text-xs font-semibold text-muted-foreground mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-[#0077b5] animate-pulse" />
             <span>{t("socialHub.liveFeed", "LIVE FEED")}</span>
@@ -134,7 +134,7 @@ export default function SocialHub() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground mb-6"
           >
             {t("socialHub.title", "Social Hub")}
           </motion.h2>
@@ -143,7 +143,7 @@ export default function SocialHub() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg sm:text-xl text-silver max-w-2xl mx-auto opacity-80"
+            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
           >
             {t("socialHub.subtitle", "Catch our latest updates, industry insights, and innovation stories across LinkedIn and X.")}
           </motion.p>
@@ -153,7 +153,7 @@ export default function SocialHub() {
             href="http://www.youtube.com/@granvilletech"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all"
+            className="inline-flex items-center px-6 py-3 bg-muted border border-border text-foreground font-bold rounded-xl hover:bg-foreground hover:text-background transition-all"
           >
             {t("socialHub.youtubeChannel", "YouTube Channel")}
             <Youtube className="ml-2 w-5 h-5" />
@@ -173,7 +173,7 @@ export default function SocialHub() {
             href="https://www.linkedin.com/company/granvilletek/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all"
+            className="inline-flex items-center px-6 py-3 bg-muted border border-border text-foreground font-bold rounded-xl hover:bg-foreground hover:text-background transition-all"
           >
             {t("socialHub.linkedinPage", "LinkedIn Page")}
             <Linkedin className="ml-2 w-5 h-5" />
@@ -184,7 +184,7 @@ export default function SocialHub() {
             href="https://x.com/Niquestetia"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-white/5 border border-white/10 text-white font-bold rounded-xl hover:bg-white hover:text-black transition-all"
+            className="inline-flex items-center px-6 py-3 bg-muted border border-border text-foreground font-bold rounded-xl hover:bg-foreground hover:text-background transition-all"
           >
             {t("socialHub.xProfile", "X Profile")}
             <XIcon className="ml-2 w-5 h-5" />

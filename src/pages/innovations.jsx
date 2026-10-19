@@ -450,7 +450,7 @@ export default function Innovations() {
 
   return (
     <section
-      className="bg-gradient-to-b from-black via-[#111111] to-[#111111] w-[100%] text-white py-32 px-6"
+      className="bg-background text-foreground w-[100%] py-32 px-6 border-t border-border"
     >
       <div className="text-center mb-20">
         <motion.h2
@@ -461,11 +461,11 @@ export default function Innovations() {
             delay: 0.2,
             ease: "easeOut",
           }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-foreground mb-4"
         >
           {t("innovations.title", "Our Innovations")}
         </motion.h2>
-        <p className="text-lg sm:text-xl text-silver max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
           {t("innovations.subtitle", "Pioneering transformative AI solutions that redefine industries and empower a smarter tomorrow.")}
         </p>
       </div>
@@ -481,7 +481,7 @@ export default function Innovations() {
               whileTap={{ scale: 0.95 }}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${selectedCategory === category
                 ? 'bg-gradient-to-r from-yellow-400 to-amber-500 text-black shadow-lg'
-                : 'bg-[#1e1e1e] text-gray-300 hover:bg-[#2a2a2a] border border-gray-700'
+                : 'bg-card text-muted-foreground hover:bg-muted border border-border'
                 }`}
             >
               {t("innovations.categories." + category, category)}
@@ -495,7 +495,7 @@ export default function Innovations() {
         {filteredInnovations.map((innovation, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center bg-gradient-to-b from-[#1e1e1e] to-black rounded-xl cursor-pointer transform relative overflow-hidden"
+            className="flex flex-col items-center bg-card border border-border rounded-xl cursor-pointer transform relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             onClick={() => {
               setActiveInnovation(innovation);
               setCurrentPage(1);
@@ -518,7 +518,7 @@ export default function Innovations() {
               ease: "easeInOut",
             }}
           >
-            <div className="relative overflow-hidden rounded-t-xl w-full h-64 bg-gradient-to-br from-[#1a1a1a] to-black">
+            <div className="relative overflow-hidden rounded-t-xl w-full h-64 bg-muted">
               {/* Innovation Image */}
               {innovation.image && (
                 <img
@@ -554,14 +554,14 @@ export default function Innovations() {
               </div>
             </div>
 
-            <div className="text-center px-4 py-2">
-              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">
+            <div className="text-center px-4 py-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-2">
                 {t("innovations.items." + innovation.key + ".title", innovation.title)}
               </h3>
-              <p className="text-sm text-silver font-medium italic mb-4">
+              <p className="text-sm text-amber-500 font-medium italic mb-4">
                 {t("innovations.items." + innovation.key + ".tagline", innovation.tagline) || ""}
               </p>
-              <p className="text-silver text-sm">
+              <p className="text-muted-foreground text-sm">
                 {t("innovations.items." + innovation.key + ".description", innovation.description)}
               </p>
             </div>
@@ -572,12 +572,12 @@ export default function Innovations() {
       {/* Modal with slider */}
       {activeInnovation && (
         <motion.section
-          className="fixed inset-0 bg-black bg-opacity-70 overflow-x-clip z-50 flex items-center justify-center"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm overflow-x-clip z-50 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="bg-gradient-to-b from-[#1a1a1a] via-[#111111] to-[#1a1a1a] text-gray-300 w-[90%] sm:w-[80%] mx-auto p-8 rounded-lg shadow-lg relative h-[80vh] border border-neutral-700 overflow-hidden">
+          <div className="bg-card text-card-foreground w-[90%] sm:w-[80%] mx-auto p-8 rounded-2xl shadow-2xl relative h-[80vh] border border-border overflow-hidden">
             {/* Close Button */}
             <button
               onClick={(e) => {
@@ -585,7 +585,7 @@ export default function Innovations() {
                 handleCloseModal();
               }}
               aria-label="Close Modal"
-              className="absolute top-4 right-4 text-silver hover:text-gray-200 text-4xl transition-colors"
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground text-4xl transition-colors z-10"
             >
               &times;
             </button>
@@ -602,11 +602,11 @@ export default function Innovations() {
                 {/* Video Page - Only show if video exists */}
                 {activeInnovation.hasVideo && (
                   <div className="w-full flex-shrink-0 p-4 space-y-8">
-                    <h3 className="text-3xl font-semibold text-white text-center mb-6">
+                    <h3 className="text-3xl font-semibold text-foreground text-center mb-6">
                       {t("innovations.items." + activeInnovation.key + ".title", activeInnovation.title)} - {t("innovations.videoDemoTitle", "Demo Video")}
                     </h3>
 
-                    <div className="aspect-video w-full bg-black rounded-lg overflow-hidden">
+                    <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-xl">
                       <iframe
                         src={activeInnovation.videoUrl}
                         className="w-full h-full"
@@ -618,10 +618,10 @@ export default function Innovations() {
                     </div>
 
                     <div className="text-center mt-6">
-                      <p className="text-lg text-gray-300 mb-4">
+                      <p className="text-lg text-muted-foreground mb-4">
                         {t("innovations.items." + activeInnovation.key + ".description", activeInnovation.description)}
                       </p>
-                      <p className="text-sm text-gray-400 italic mb-6">
+                      <p className="text-sm text-amber-500 italic mb-6">
                         &ldquo;{t("innovations.items." + activeInnovation.key + ".tagline", activeInnovation.tagline)}&rdquo;
                       </p>
 
@@ -637,7 +637,7 @@ export default function Innovations() {
                         <a
                           href="#contact"
                           onClick={handleCloseModal}
-                          className="px-6 py-3 bg-[#1e1e1e] text-white font-semibold rounded-lg border border-gray-600 hover:border-yellow-400 transition-all duration-300 hover:scale-105"
+                          className="px-6 py-3 bg-muted text-foreground font-semibold rounded-lg border border-border hover:border-amber-400 transition-all duration-300 hover:scale-105"
                         >
                           {t("innovations.contactUs", "Contact Us")}
                         </a>
@@ -650,10 +650,10 @@ export default function Innovations() {
                 {activeInnovation.presentations && (
                   <div className="w-full flex-shrink-0 p-4 space-y-8">
                     <div className="text-center mb-8">
-                      <h3 className="text-3xl font-semibold text-white mb-2">
+                      <h3 className="text-3xl font-semibold text-foreground mb-2">
                         {t("innovations.labels.resourceLibrary", "Resource Library")}
                       </h3>
-                      <p className="text-silver">
+                      <p className="text-muted-foreground">
                         {t("innovations.resourcesSubtitle", {
                           defaultValue: "Explore our detailed presentations and technical blueprints for {{name}}.",
                           name: t("innovations.items." + activeInnovation.key + ".title", activeInnovation.title)
@@ -666,15 +666,15 @@ export default function Innovations() {
                         <motion.div
                           key={idx}
                           whileHover={{ y: -5 }}
-                          className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center group"
+                          className="bg-muted/40 border border-border rounded-2xl p-6 flex flex-col items-center text-center group shadow-sm"
                         >
-                          <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-yellow-500/20 transition-all">
+                          <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-amber-500/20 transition-all">
                             <FileText className="text-black w-8 h-8" />
                           </div>
-                          <h4 className="text-white font-bold mb-2">
+                          <h4 className="text-foreground font-bold mb-2">
                             {t("innovations.items." + activeInnovation.key + ".presentations." + presentation.key + ".title", presentation.title)}
                           </h4>
-                          <p className="text-gray-400 text-sm mb-6 flex-grow">
+                          <p className="text-muted-foreground text-sm mb-6 flex-grow">
                             {t("innovations.items." + activeInnovation.key + ".presentations." + presentation.key + ".description", presentation.description)}
                           </p>
                           <div className="flex gap-3 w-full">
@@ -682,14 +682,14 @@ export default function Innovations() {
                               href={presentation.file}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex-1 bg-white/10 hover:bg-white/20 text-white py-2 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-all"
+                              className="flex-1 bg-muted hover:bg-muted/80 text-foreground py-2 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-all border border-border"
                             >
                               <ExternalLink size={14} /> {t("resources.viewBtn", "View")}
                             </a>
                             <a
                               href={presentation.file}
                               download
-                              className="flex-1 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black py-2 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all"
+                              className="flex-1 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black py-2 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-md"
                             >
                               <Download size={14} /> {t("resources.downloadBtn", "Get PDF")}
                             </a>
@@ -698,16 +698,16 @@ export default function Innovations() {
                       ))}
                     </div>
 
-                    <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-2xl p-6 mt-8">
+                    <div className="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-6 mt-8">
                       <div className="flex items-start gap-4">
-                        <div className="p-2 bg-yellow-500/20 rounded-lg">
-                          <ExternalLink className="text-yellow-500 w-5 h-5" />
+                        <div className="p-2 bg-amber-500/20 rounded-lg">
+                          <ExternalLink className="text-amber-500 w-5 h-5" />
                         </div>
                         <div>
-                          <h5 className="text-white font-semibold mb-1">
+                          <h5 className="text-foreground font-semibold mb-1">
                             {t("innovations.lookingForMore", "Looking for more?")}
                           </h5>
-                          <p className="text-gray-400 text-sm">
+                          <p className="text-muted-foreground text-sm">
                             {t("innovations.lookingForMoreDesc", "These documents represent our core strategy and technical foundations. Contact our team for detailed implementation case studies or partnership inquiries.")}
                           </p>
                         </div>
@@ -719,14 +719,14 @@ export default function Innovations() {
                 {/* Key Components Section */}
                 <div className="w-full flex-shrink-0 p-4 space-y-8">
                   <div>
-                    <h3 className="sm:text-2xl font-semibold text-lg text-white border-b mb-4 border-silver pb-2">
+                    <h3 className="sm:text-2xl font-semibold text-lg text-foreground border-b mb-4 border-border pb-2">
                       {t("innovations.labels.ValuePropositionStatement", "Value Proposition Statement")}
                     </h3>
-                    <p className="text-lg">
+                    <p className="text-lg text-muted-foreground">
                       {t("innovations.items." + activeInnovation.key + ".valuePropositionStatement", activeInnovation.ValuePropositionStatement)}
                     </p>
                   </div>
-                  <h3 className="text-2xl text-white font-semibold border-b border-silver pb-2">
+                  <h3 className="text-2xl text-foreground font-semibold border-b border-border pb-2">
                     {t("innovations.labels.KeyComponents", "Key Components")}
                   </h3>
                   {[
@@ -735,15 +735,15 @@ export default function Innovations() {
                     "UniqueDifferentiators",
                   ].map((section) => (
                     <div key={section}>
-                      <h4 className="text-lg font-medium text-white mb-2">
+                      <h4 className="text-lg font-medium text-foreground mb-2">
                         {t("innovations.labels." + section, formatKey(section))}
                       </h4>
                       <ul className="list-disc pl-6 space-y-2">
                         {Object.entries(
                           activeInnovation.KeyComponents[section]
                         ).map(([key, value]) => (
-                          <li key={key}>
-                            <strong className="text-white">
+                          <li key={key} className="text-muted-foreground">
+                            <strong className="text-foreground">
                               {t("innovations.labels." + key, formatKey(key))}:
                             </strong>{" "}
                             {t("innovations.items." + activeInnovation.key + ".keyComponents." + toCamelCase(section) + "." + key, value)}
@@ -757,24 +757,24 @@ export default function Innovations() {
                 {/* Vision Statement Section */}
                 <div className="w-full flex-shrink-0 p-6 space-y-6">
                   <div>
-                    <h3 className="text-2xl font-semibold text-white border-b mb-4 border-silver pb-2">
+                    <h3 className="text-2xl font-semibold text-foreground border-b mb-4 border-border pb-2">
                       {t("innovations.visionStatement", "Vision Statement")}
                     </h3>
-                    <p className="text-lg">
+                    <p className="text-lg text-muted-foreground">
                       {t("innovations.items." + activeInnovation.key + ".visionStatement", activeInnovation.VisionStatement)}
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-white border-b border-silver pb-2">
+                    <h3 className="text-2xl font-semibold text-foreground border-b border-border pb-2">
                       {t("innovations.targetAudience", "Target Audience")}
                     </h3>
                     {Object.entries(activeInnovation.TargetAudience).map(
                       ([key, { Message }]) => (
                         <div key={key} className="mb-4 mt-4">
-                          <strong className="text-white">
+                          <strong className="text-foreground">
                             {t("innovations.labels." + key, formatKey(key))}:
                           </strong>
-                          <p className="text-gray-300">
+                          <p className="text-muted-foreground">
                             {t("innovations.items." + activeInnovation.key + ".targetAudience." + key, Message)}
                           </p>
                         </div>
@@ -785,56 +785,56 @@ export default function Innovations() {
 
                 {/* Value Proposition Section */}
                 <div className="w-full flex-shrink-0 p-6 space-y-6">
-                  <h3 className="text-2xl font-semibold text-white border-b border-silver pb-2">
+                  <h3 className="text-2xl font-semibold text-foreground border-b border-border pb-2">
                     {t("innovations.valueProposition", "Value Proposition")}
                   </h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-lg font-medium text-white">
+                      <h4 className="text-lg font-medium text-foreground">
                         {t("innovations.problem", "Problem")}
                       </h4>
-                      <p className="text-gray-300">
+                      <p className="text-muted-foreground">
                         {t("innovations.items." + activeInnovation.key + ".valueProposition.problem", activeInnovation.ValueProposition.Problem)}
                       </p>
                     </div>
                     <div>
-                      <h4 className="text-lg font-medium text-white">
+                      <h4 className="text-lg font-medium text-foreground">
                         {t("innovations.solution", "Solution")}
                       </h4>
-                      <p className="text-gray-300">
+                      <p className="text-muted-foreground">
                         {t("innovations.items." + activeInnovation.key + ".valueProposition.solution", activeInnovation.ValueProposition.Solution)}
                       </p>
                     </div>
                     <div>
-                      <h4 className="text-lg font-medium text-white">
+                      <h4 className="text-lg font-medium text-foreground">
                         {t("innovations.keyBenefits", "Key Benefits")}
                       </h4>
                       <ul className="list-disc pl-6 space-y-2">
                         {Object.entries(
                           activeInnovation.ValueProposition.KeyBenefits
                         ).map(([key, value]) => (
-                          <li key={key}>
-                            <strong>{t("innovations.labels." + key, formatKey(key))}:</strong>{" "}
+                          <li key={key} className="text-muted-foreground">
+                            <strong className="text-foreground">{t("innovations.labels." + key, formatKey(key))}:</strong>{" "}
                             {t("innovations.items." + activeInnovation.key + ".valueProposition.keyBenefits." + key, value)}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-lg font-medium text-white">
+                      <h4 className="text-lg font-medium text-foreground">
                         {t("innovations.differentiators", "Differentiators")}
                       </h4>
                       <ul className="list-disc pl-6 space-y-2">
                         {(t("innovations.items." + activeInnovation.key + ".valueProposition.differentiators", { returnObjects: true }) || activeInnovation.ValueProposition.Differentiators).map(
                           (item, index) => (
-                            <li key={index}>{item}</li>
+                            <li key={index} className="text-muted-foreground">{item}</li>
                           )
                         )}
                       </ul>
                     </div>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-wrap gap-4 justify-center mt-8 pt-6 border-t border-gray-700">
+                    <div className="flex flex-wrap gap-4 justify-center mt-8 pt-6 border-t border-border">
                       <a
                         href="#contact"
                         onClick={handleCloseModal}
@@ -845,7 +845,7 @@ export default function Innovations() {
                       <a
                         href="#contact"
                         onClick={handleCloseModal}
-                        className="px-6 py-3 bg-[#1e1e1e] text-white font-semibold rounded-lg border border-gray-600 hover:border-yellow-400 transition-all duration-300 hover:scale-105"
+                        className="px-6 py-3 bg-muted text-foreground font-semibold rounded-lg border border-border hover:border-amber-400 transition-all duration-300 hover:scale-105"
                       >
                         {t("innovations.contactUs", "Contact Us")}
                       </a>
@@ -863,13 +863,13 @@ export default function Innovations() {
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
                 aria-label="Previous Page"
-                className="bg-[white] text-black px-4 py-2 rounded-lg shadow hover:border border border-transparent hover:border-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-foreground text-background px-4 py-2 rounded-lg shadow hover:bg-amber-400 hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <MdKeyboardDoubleArrowLeft className="text-lg" />
               </button>
 
               {/* Page Indicator */}
-              <span className="text-white text-sm">
+              <span className="text-foreground text-sm font-semibold">
                 {currentPage} / {getTotalPages()}
               </span>
 
@@ -877,7 +877,7 @@ export default function Innovations() {
                 onClick={handleNextPage}
                 disabled={currentPage === getTotalPages()}
                 aria-label="Next Page"
-                className="bg-[white] text-black px-4 py-2 rounded-lg shadow hover:border border border-transparent hover:border-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-foreground text-background px-4 py-2 rounded-lg shadow hover:bg-amber-400 hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <MdKeyboardDoubleArrowRight className="text-lg" />
               </button>

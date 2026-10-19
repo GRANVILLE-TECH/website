@@ -88,7 +88,7 @@ export default function App() {
   }
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden bg-background text-foreground">
       {/* Header Section */}
       <header>
         <Nav />
@@ -135,16 +135,16 @@ export default function App() {
         </DeferredSection>
 
         <DeferredSection id="articles">
-          <section className="py-24 px-6 bg-black relative overflow-hidden">
+          <section className="py-24 px-6 bg-background relative overflow-hidden border-t border-border">
             <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/5 to-sky-500/5" />
             <div className="max-w-7xl mx-auto relative z-10 text-center">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">Insight Collective</h2>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-6">Insight Collective</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-10">
                 Deep dives into AI ethics, neural architectures, and the future of educational technology in emerging markets.
               </p>
               <Link
                 to="/articles"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-amber-400 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background font-bold rounded-full hover:bg-amber-400 hover:text-black transition-all duration-300"
               >
                 Explore Articles <ArrowRightIcon className="h-5 w-5" />
               </Link>
@@ -166,15 +166,15 @@ export default function App() {
       </main>
 
       {/* Footer Section */}
-      <footer className="bg-[#111111] text-silver py-4 px-6 sm:py-8 sm:px-10 lg:py-12 lg:px-20">
+      <footer className="bg-card text-muted-foreground border-t border-border py-4 px-6 sm:py-8 sm:px-10 lg:py-12 lg:px-20">
         <div className="max-w-7xl mx-auto text-left">
           {/* Branding Section */}
           <div className="mb-6 sm:mb-8">
-            <h3 className="text-3xl sm:text-4xl font-bold flex text-white gap-4 items-center mb-4">
+            <h3 className="text-3xl sm:text-4xl font-bold flex text-foreground gap-4 items-center mb-4">
               <img src={logo} className="h-14 w-auto" alt="logo" />
               Granville-Tech
             </h3>
-            <p className="text-lg sm:text-xl font-light text-white opacity-85">
+            <p className="text-lg sm:text-xl font-light text-muted-foreground">
               {t('footer.brandTagline')}
             </p>
           </div>
@@ -185,7 +185,7 @@ export default function App() {
               <li>
                 <Link
                   to="/"
-                  className="text-silver hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
                   {t('nav.home')}
                 </Link>
@@ -193,7 +193,7 @@ export default function App() {
               <li>
                 <Link
                   to="/about"
-                  className="text-silver hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
                   {t('nav.about')}
                 </Link>
@@ -201,7 +201,7 @@ export default function App() {
               <li>
                 <Link
                   to="/innovations"
-                  className="text-silver hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
                   {t('nav.innovations')}
                 </Link>
@@ -209,7 +209,7 @@ export default function App() {
               <li>
                 <Link
                   to="/aletu-demo"
-                  className="text-silver hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
                   ALETU LMS
                 </Link>
@@ -217,7 +217,7 @@ export default function App() {
               <li>
                 <Link
                   to="/services"
-                  className="text-silver hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
                   {t('nav.services')}
                 </Link>
@@ -225,7 +225,7 @@ export default function App() {
               <li>
                 <Link
                   to="/booking"
-                  className="text-silver hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
                   {t('nav.booking')}
                 </Link>
@@ -233,7 +233,7 @@ export default function App() {
               <li>
                 <Link
                   to="/resources"
-                  className="text-silver hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
                   {t('nav.resources')}
                 </Link>
@@ -241,7 +241,7 @@ export default function App() {
               <li>
                 <Link
                   to="/alumni"
-                  className="text-silver hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
                   {t('nav.alumni')}
                 </Link>
@@ -249,7 +249,7 @@ export default function App() {
               <li>
                 <Link
                   to="/contact"
-                  className="text-silver hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
                   {t('nav.contact')}
                 </Link>
@@ -259,7 +259,7 @@ export default function App() {
 
           {/* Social Links */}
           <div className="mb-6 sm:mb-12">
-            <p className="text-sm sm:text-base text-white opacity-85 mb-4">
+            <p className="text-sm sm:text-base text-foreground mb-4 font-medium">
               {t('footer.connect')}
             </p>
             <div className="flex flex-wrap gap-6 sm:gap-10">
@@ -267,7 +267,7 @@ export default function App() {
                 href="https://www.linkedin.com/company/granvilletek/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-silver hover:text-white transition-all duration-300"
+                className="inline-flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-all duration-300"
               >
                 <AiFillLinkedin size={28} />
                 <span className="text-lg">LinkedIn</span>
@@ -276,7 +276,7 @@ export default function App() {
                 href="https://x.com/Niquestetia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-silver hover:text-white transition-all duration-300"
+                className="inline-flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-all duration-300"
               >
                 <FaXTwitter size={24} />
                 <span className="text-lg">X</span>
@@ -285,14 +285,14 @@ export default function App() {
                 href="http://www.youtube.com/@granvilletech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-silver hover:text-white transition-all duration-300"
+                className="inline-flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-all duration-300"
               >
                 <AiFillYoutube size={28} />
                 <span className="text-lg">YouTube</span>
               </a>
               <a
                 href="mailto:info@granvilletech.co?subject=Inquiry from Granville-Tech Website"
-                className="inline-flex items-center space-x-2 text-silver hover:text-white transition-all duration-300"
+                className="inline-flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-all duration-300"
               >
                 <AiFillMail size={28} />
                 <span className="text-lg font-medium">info@granvilletech.co</span>
@@ -301,11 +301,11 @@ export default function App() {
           </div>
 
           {/* Copyright & Legal */}
-          <div className="mt-8 sm:mt-10 border-t border-gray-300 pt-6">
-            <p className="text-sm sm:text-base text-silver opacity-80">
+          <div className="mt-8 sm:mt-10 border-t border-border pt-6">
+            <p className="text-sm sm:text-base text-muted-foreground">
               {t('footer.copyright', { year: new Date().getFullYear() })}
             </p>
-            <p className="text-sm sm:text-base text-silver opacity-80 mt-2">
+            <p className="text-sm sm:text-base text-muted-foreground mt-2">
               {t('footer.crafted')}
             </p>
           </div>

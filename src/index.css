@@ -15,12 +15,12 @@
   --color-accent: #E94560;
   --color-secondary-accent: #0F3460;
 
-  /* Neutral Colors */
+  /* Neutral Colors — dark mode defaults */
   --color-background: #121212;
   --color-surface: #1E1E1E;
   --color-border: #333333;
 
-  /* Text Colors */
+  /* Text Colors — dark mode defaults */
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #B0B0B0;
   --color-text-disabled: #666666;
@@ -33,7 +33,24 @@
   /* Gradients */
   --gradient-button: linear-gradient(135deg, #E94560, #0F3460);
   --gradient-background: linear-gradient(135deg, #1A1A2E, #0F3460);
+
+  /* Transition speed for theme switching */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
+/* Light mode overrides for brand tokens */
+:root:not(.dark) {
+  --color-background: #F5F5F7;
+  --color-surface: #FFFFFF;
+  --color-border: #E0E0E0;
+
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-text-disabled: #AAAAAA;
+
+  --gradient-background: linear-gradient(135deg, #dce6f5, #e8f0fe);
+}
+
 ::-webkit-scrollbar {
   display: none; /* Hides the scrollbar */
 }
@@ -42,8 +59,9 @@ body{
   font-family: "Red Rose", serif;
   padding: 0;
   margin: 0;
-
+  transition: var(--theme-transition);
 }
+
 
 .orbitron-logo {
   font-family: "Orbitron", sans-serif;
@@ -69,23 +87,23 @@ html {
     --font-sans: 'Geist Variable', sans-serif;
   }
   :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
+    --background: oklch(0.97 0.002 240);
+    --foreground: oklch(0.13 0 0);
     --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
+    --card-foreground: oklch(0.13 0 0);
     --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
+    --popover-foreground: oklch(0.13 0 0);
     --primary: oklch(0.205 0 0);
     --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
+    --secondary: oklch(0.94 0 0);
     --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
+    --muted: oklch(0.94 0 0);
+    --muted-foreground: oklch(0.45 0 0);
+    --accent: oklch(0.94 0 0);
     --accent-foreground: oklch(0.205 0 0);
     --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
+    --border: oklch(0.88 0 0);
+    --input: oklch(0.88 0 0);
     --ring: oklch(0.708 0 0);
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
@@ -93,13 +111,13 @@ html {
     --chart-4: oklch(0.371 0 0);
     --chart-5: oklch(0.269 0 0);
     --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
+    --sidebar: oklch(0.94 0 0);
     --sidebar-foreground: oklch(0.145 0 0);
     --sidebar-primary: oklch(0.205 0 0);
     --sidebar-primary-foreground: oklch(0.985 0 0);
     --sidebar-accent: oklch(0.97 0 0);
     --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-border: oklch(0.88 0 0);
     --sidebar-ring: oklch(0.708 0 0);
   }
   .dark {
@@ -137,6 +155,7 @@ html {
   }
   * {
     @apply border-border outline-ring/50;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
   body {
     @apply bg-background text-foreground;

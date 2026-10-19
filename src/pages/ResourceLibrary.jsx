@@ -36,14 +36,14 @@ export default function ResourceLibrary() {
   const { t } = useTranslation();
 
   return (
-    <section id="resources" className="bg-[#0a0a0a] text-white py-32 px-6">
+    <section id="resources" className="bg-background text-foreground py-32 px-6 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2 text-yellow-500 font-bold tracking-widest text-sm mb-4 uppercase"
+              className="flex items-center gap-2 text-amber-500 font-bold tracking-widest text-sm mb-4 uppercase"
             >
               <Library size={18} />
               {t("resources.knowledgeHub", "Knowledge Hub")}
@@ -51,7 +51,7 @@ export default function ResourceLibrary() {
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-extrabold mb-6"
+              className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground"
             >
               {t("resources.title", "Resource Library")}
             </motion.h2>
@@ -59,7 +59,7 @@ export default function ResourceLibrary() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-silver text-lg"
+              className="text-muted-foreground text-lg"
             >
               {t("resources.subtitle", "Access our technical blueprints, strategic frameworks, and educational curricula. These documents outline our commitment to driving innovation across Africa.")}
             </motion.p>
@@ -74,21 +74,21 @@ export default function ResourceLibrary() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group bg-gradient-to-b from-[#1a1a1a] to-black border border-white/10 rounded-3xl p-8 flex flex-col h-full hover:border-yellow-500/50 transition-all duration-500"
+              className="group bg-card border border-border rounded-3xl p-8 flex flex-col h-full hover:border-amber-400 transition-all duration-500 shadow-sm hover:shadow-xl"
             >
               <div className="flex justify-between items-start mb-8">
-                <div className="p-4 bg-yellow-500/10 rounded-2xl group-hover:bg-yellow-500/20 transition-colors">
-                  <FileText className="text-yellow-500 w-8 h-8" />
+                <div className="p-4 bg-amber-500/10 rounded-2xl group-hover:bg-amber-500/20 transition-colors">
+                  <FileText className="text-amber-500 w-8 h-8" />
                 </div>
-                <span className="text-[10px] font-bold tracking-widest uppercase py-1 px-3 bg-white/5 rounded-full text-gray-400">
+                <span className="text-[10px] font-bold tracking-widest uppercase py-1 px-3 bg-muted rounded-full text-muted-foreground">
                   {t("resources.items." + resource.key + ".category", resource.category)}
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors">
+              <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-amber-500 transition-colors">
                 {t("resources.items." + resource.key + ".title", resource.title)}
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-8 flex-grow">
+              <p className="text-muted-foreground leading-relaxed mb-8 flex-grow">
                 {t("resources.items." + resource.key + ".description", resource.description)}
               </p>
 
@@ -97,7 +97,7 @@ export default function ResourceLibrary() {
                   href={resource.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-white/5 hover:bg-white/10 text-white py-3 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 border border-white/5 transition-all"
+                  className="flex-1 bg-muted hover:bg-muted/80 text-foreground py-3 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 border border-border transition-all"
                 >
                   <ExternalLink size={16} /> {t("resources.viewBtn", "View")}
                 </a>
@@ -116,17 +116,17 @@ export default function ResourceLibrary() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="mt-20 p-12 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 border border-yellow-500/20 rounded-[40px] text-center"
+          className="mt-20 p-12 bg-gradient-to-r from-amber-500/10 to-yellow-500/5 border border-amber-500/20 rounded-[40px] text-center"
         >
-          <h3 className="text-3xl font-bold mb-4">
+          <h3 className="text-3xl font-bold mb-4 text-foreground">
             {t("resources.partnerships.title", "Strategic Partnerships")}
           </h3>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-8">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             {t("resources.partnerships.desc", "Interested in the technical implementation or looking to partner on these initiatives? Let's collaborate to build the future of adaptive learning together.")}
           </p>
           <a 
             href="#contact" 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-yellow-400 transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background font-bold rounded-full hover:bg-amber-400 hover:text-black transition-all"
           >
             {t("resources.partnerships.cta", "Get in Touch")} <ExternalLink size={18} />
           </a>

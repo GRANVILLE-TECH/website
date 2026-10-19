@@ -13,6 +13,7 @@ import echoSignImg from '../assets/innovations/echosign.webp';
 import timeSiftImg from '../assets/innovations/timeshift.jpg';
 import { AiFillLinkedin, AiFillYoutube, AiFillMail } from 'react-icons/ai';
 import { FaXTwitter } from 'react-icons/fa6';
+import { useTheme } from '../hooks/useTheme';
 
 const RESEND_CLIENT_KEY = import.meta.env.VITE_RESEND_API || '';
 const REGISTRATION_TO = import.meta.env.VITE_REGISTRATION_TO || 'info@granvilletech.co';
@@ -161,7 +162,7 @@ function CountdownUnit({ value, label }) {
   return (
     <div className="flex flex-col items-center">
       <div className="relative">
-        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-card border border-border shadow-sm flex items-center justify-center">
           <AnimatePresence mode="popLayout">
             <motion.span
               key={value}
@@ -169,7 +170,7 @@ function CountdownUnit({ value, label }) {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-2xl sm:text-3xl font-black text-white tabular-nums"
+              className="text-2xl sm:text-3xl font-black text-foreground tabular-nums"
             >
               {String(value).padStart(2, '0')}
             </motion.span>
@@ -177,7 +178,7 @@ function CountdownUnit({ value, label }) {
         </div>
         <div className="absolute -top-px left-2 right-2 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
       </div>
-      <span className="text-[10px] sm:text-xs text-white/40 uppercase tracking-[0.2em] font-bold mt-2">
+      <span className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-[0.2em] font-bold mt-2">
         {label}
       </span>
     </div>
@@ -195,8 +196,8 @@ function StepIndicator({ current, total }) {
               i < current
                 ? 'bg-amber-400 text-black'
                 : i === current
-                ? 'bg-white/10 text-white border-2 border-amber-400'
-                : 'bg-white/5 text-white/30 border border-white/10'
+                ? 'bg-card text-foreground border-2 border-amber-400 shadow-sm'
+                : 'bg-muted text-muted-foreground border border-border'
             }`}
           >
             {i < current ? <CheckCircle2 className="w-4 h-4" /> : i + 1}
@@ -204,7 +205,7 @@ function StepIndicator({ current, total }) {
           {i < total - 1 && (
             <div
               className={`h-0.5 flex-1 rounded-full transition-all duration-500 ${
-                i < current ? 'bg-amber-400' : 'bg-white/10'
+                i < current ? 'bg-amber-400' : 'bg-border'
               }`}
             />
           )}
@@ -256,6 +257,8 @@ function FloatingParticles() {
 // MAIN PAGE
 // ═════════════════════════════════════════════════════════════════
 export default function LecturePage() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
   const countdown = useCountdown(EVENT_DATE);
   const [step, setStep] = useState(0); // 0=role, 1=about, 2=interests
   const [submitted, setSubmitted] = useState(false);
@@ -383,22 +386,22 @@ export default function LecturePage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Nav />
 
       {/* ═══ HERO ═══════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background layers */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a1a] to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background dark:from-black dark:via-[#0a0a1a] dark:to-black" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(245,158,11,0.12),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_80%,rgba(14,165,233,0.08),transparent_60%)]" />
 
         {/* Grid pattern */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03]"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+              'linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
@@ -413,8 +416,8 @@ export default function LecturePage() {
             transition={{ delay: 0.2 }}
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-400/10 border border-amber-400/20 mb-8"
           >
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-amber-400 text-sm font-bold tracking-widest uppercase">
+            <Sparkles className="w-4 h-4 text-amber-500" />
+            <span className="text-amber-500 font-bold tracking-widest uppercase text-sm">
               Public Lecture — August 23, 2026
             </span>
           </motion.div>
@@ -426,7 +429,7 @@ export default function LecturePage() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-4 leading-[0.95] tracking-tight"
           >
-            <span className="block text-white">{EVENT_TITLE}</span>
+            <span className="block text-foreground">{EVENT_TITLE}</span>
             <span
               className="block mt-2"
               style={{
@@ -447,7 +450,7 @@ export default function LecturePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-lg sm:text-xl text-white/50 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
+            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light"
           >
             Join industry professionals sharing how they use AI in their everyday work — 
             from writing and design to healthcare and finance. Discover what your future career 
@@ -469,10 +472,10 @@ export default function LecturePage() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border backdrop-blur-sm shadow-sm"
               >
-                <item.icon className="w-4 h-4 text-amber-400/80" />
-                <span className="text-sm text-white/70 font-medium">{item.text}</span>
+                <item.icon className="w-4 h-4 text-amber-500" />
+                <span className="text-sm text-foreground/80 font-medium">{item.text}</span>
               </div>
             ))}
           </motion.div>
@@ -484,16 +487,16 @@ export default function LecturePage() {
             transition={{ delay: 0.8 }}
             className="mb-12"
           >
-            <p className="text-xs text-white/30 uppercase tracking-[0.3em] font-bold mb-4">
+            <p className="text-xs text-muted-foreground uppercase tracking-[0.3em] font-bold mb-4">
               Event starts in
             </p>
             <div className="flex justify-center gap-3 sm:gap-5">
               <CountdownUnit value={countdown.days} label="Days" />
-              <div className="flex items-center text-white/20 text-2xl font-light self-start mt-5">:</div>
+              <div className="flex items-center text-muted-foreground/40 text-2xl font-light self-start mt-5">:</div>
               <CountdownUnit value={countdown.hours} label="Hours" />
-              <div className="flex items-center text-white/20 text-2xl font-light self-start mt-5">:</div>
+              <div className="flex items-center text-muted-foreground/40 text-2xl font-light self-start mt-5">:</div>
               <CountdownUnit value={countdown.minutes} label="Min" />
-              <div className="flex items-center text-white/20 text-2xl font-light self-start mt-5">:</div>
+              <div className="flex items-center text-muted-foreground/40 text-2xl font-light self-start mt-5">:</div>
               <CountdownUnit value={countdown.seconds} label="Sec" />
             </div>
           </motion.div>
@@ -514,11 +517,11 @@ export default function LecturePage() {
         </div>
 
         {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* ═══ OUR INITIATIVES ════════════════════════════════════════ */}
-      <section className="relative py-24 px-6 bg-[#060507]">
+      <section className="relative py-24 px-6 bg-muted/30 border-t border-border">
         <div className="max-w-5xl mx-auto mb-16 text-center">
 
           <motion.h2 
@@ -526,7 +529,7 @@ export default function LecturePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-black text-white mb-6"
+            className="text-4xl sm:text-5xl font-black text-foreground mb-6"
           >
             Our Initiatives
           </motion.h2>
@@ -535,7 +538,7 @@ export default function LecturePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-white/50 max-w-2xl mx-auto"
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             Discover how Granville-Tech applies artificial intelligence in the real world to solve everyday challenges and empower communities.
           </motion.p>
@@ -546,11 +549,11 @@ export default function LecturePage() {
             testimonials={INITIATIVES}
             autoplay={true}
             colors={{
-              name: "#f7f7ff",
-              designation: "#e1e1e1",
-              testimony: "#f1f1f7",
-              arrowBackground: "#1a1a1a",
-              arrowForeground: "#f1f1f7",
+              name: isDark ? "#f7f7ff" : "#111827",
+              designation: isDark ? "#d1d5db" : "#4b5563",
+              testimony: isDark ? "#9ca3af" : "#374151",
+              arrowBackground: isDark ? "#1e1e1e" : "#e5e7eb",
+              arrowForeground: isDark ? "#f1f1f7" : "#111827",
               arrowHoverBackground: "#f59e0b",
             }}
             fontSizes={{
@@ -563,8 +566,8 @@ export default function LecturePage() {
       </section>
 
       {/* ═══ REGISTRATION FORM ═══════════════════════════════════════ */}
-      <section id="registration-form" className="relative py-24 px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#080810] to-black" />
+      <section id="registration-form" className="relative py-24 px-6 border-t border-border bg-background">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background dark:from-black dark:via-[#080810] dark:to-black" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(245,158,11,0.06),transparent_60%)]" />
 
         <div className="relative z-10 max-w-2xl mx-auto">
@@ -575,11 +578,11 @@ export default function LecturePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-3">
               {submitted ? 'You\'re In!' : 'Reserve Your Spot'}
             </h2>
             {!submitted && (
-              <p className="text-white/40 text-base">
+              <p className="text-muted-foreground text-base">
                 Complete the form below to register — it only takes a minute.
               </p>
             )}
@@ -608,7 +611,7 @@ export default function LecturePage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-2xl font-bold text-white mb-3"
+                  className="text-2xl font-bold text-foreground mb-3"
                 >
                   Registration Confirmed!
                 </motion.h3>
@@ -616,18 +619,18 @@ export default function LecturePage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="text-white/50 max-w-md mx-auto mb-4"
+                  className="text-muted-foreground max-w-md mx-auto mb-4"
                 >
-                  Thank you, <span className="text-amber-400 font-semibold">{formData.fullName}</span>!
+                  Thank you, <span className="text-amber-500 font-semibold">{formData.fullName}</span>!
                   We've received your registration for the public lecture.
                 </motion.p>
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="text-white/30 text-sm"
+                  className="text-muted-foreground text-sm"
                 >
-                  A confirmation will be sent to <span className="text-white/60">{formData.email}</span>
+                  A confirmation will be sent to <span className="text-foreground font-medium">{formData.email}</span>
                 </motion.p>
 
                 {/* Decorative burst */}
@@ -658,7 +661,7 @@ export default function LecturePage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl"
+                className="bg-card border border-border rounded-3xl p-6 sm:p-10 shadow-xl"
               >
                 <StepIndicator current={step} total={3} />
 
@@ -674,8 +677,8 @@ export default function LecturePage() {
                       exit="exit"
                       transition={{ duration: 0.3 }}
                     >
-                      <h3 className="text-xl font-bold text-white mb-1">What describes you best?</h3>
-                      <p className="text-white/40 text-sm mb-6">
+                      <h3 className="text-xl font-bold text-foreground mb-1">What describes you best?</h3>
+                      <p className="text-muted-foreground text-sm mb-6">
                         This helps us tailor the experience for you.
                       </p>
 
@@ -692,8 +695,8 @@ export default function LecturePage() {
                               }}
                               className={`relative w-full text-left p-5 rounded-2xl border-2 transition-all duration-300 cursor-pointer group ${
                                 selected
-                                  ? 'border-amber-400 bg-amber-400/5'
-                                  : 'border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]'
+                                  ? 'border-amber-400 bg-amber-400/10 dark:bg-amber-400/5'
+                                  : 'border-border bg-background hover:border-amber-400/50 hover:bg-muted/50'
                               }`}
                               whileHover={{ scale: 1.01 }}
                               whileTap={{ scale: 0.99 }}
@@ -707,21 +710,21 @@ export default function LecturePage() {
                                   <Icon className="w-6 h-6 text-white" />
                                 </div>
                                 <div className="flex-1">
-                                  <p className="text-white font-bold text-base">{role.label}</p>
-                                  <p className="text-white/40 text-sm">{role.description}</p>
+                                  <p className="text-foreground font-bold text-base">{role.label}</p>
+                                  <p className="text-muted-foreground text-sm">{role.description}</p>
                                 </div>
                                 <div
                                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all ${
                                     selected
                                       ? 'border-amber-400 bg-amber-400'
-                                      : 'border-white/20'
+                                      : 'border-muted-foreground/30'
                                   }`}
                                 >
                                   {selected && (
                                     <motion.div
                                       initial={{ scale: 0 }}
                                       animate={{ scale: 1 }}
-                                      className="w-2 h-2 rounded-full bg-black"
+                                      className="w-2 h-2 rounded-full bg-black dark:bg-black"
                                     />
                                   )}
                                 </div>
@@ -748,15 +751,15 @@ export default function LecturePage() {
                       exit="exit"
                       transition={{ duration: 0.3 }}
                     >
-                      <h3 className="text-xl font-bold text-white mb-1">Tell us about yourself</h3>
-                      <p className="text-white/40 text-sm mb-6">
+                      <h3 className="text-xl font-bold text-foreground mb-1">Tell us about yourself</h3>
+                      <p className="text-muted-foreground text-sm mb-6">
                         So we can personalize your experience at the lecture.
                       </p>
 
                       <div className="space-y-5">
                         {/* Full Name */}
                         <div>
-                          <label className="block text-white/60 text-sm font-semibold mb-2">
+                          <label className="block text-foreground/80 text-sm font-semibold mb-2">
                             <User className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
                             Full Name <span className="text-red-400">*</span>
                           </label>
@@ -767,7 +770,7 @@ export default function LecturePage() {
                               setFormData({ ...formData, fullName: e.target.value })
                             }
                             placeholder="e.g. John Doe"
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-amber-400/50 focus:bg-white/[0.07] transition-all duration-300"
+                            className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all duration-300"
                           />
                           {errors.fullName && (
                             <p className="text-red-400 text-xs mt-1.5">{errors.fullName}</p>
@@ -776,7 +779,7 @@ export default function LecturePage() {
 
                         {/* Email */}
                         <div>
-                          <label className="block text-white/60 text-sm font-semibold mb-2">
+                          <label className="block text-foreground/80 text-sm font-semibold mb-2">
                             <Mail className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
                             Email Address <span className="text-red-400">*</span>
                           </label>
@@ -787,7 +790,7 @@ export default function LecturePage() {
                               setFormData({ ...formData, email: e.target.value })
                             }
                             placeholder="you@example.com"
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-amber-400/50 focus:bg-white/[0.07] transition-all duration-300"
+                            className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all duration-300"
                           />
                           {errors.email && (
                             <p className="text-red-400 text-xs mt-1.5">{errors.email}</p>
@@ -796,9 +799,9 @@ export default function LecturePage() {
 
                         {/* Phone */}
                         <div>
-                          <label className="block text-white/60 text-sm font-semibold mb-2">
+                          <label className="block text-foreground/80 text-sm font-semibold mb-2">
                             <Phone className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
-                            Phone Number <span className="text-white/20">(optional)</span>
+                            Phone Number <span className="text-muted-foreground font-normal">(optional)</span>
                           </label>
                           <input
                             type="tel"
@@ -807,7 +810,7 @@ export default function LecturePage() {
                               setFormData({ ...formData, phone: e.target.value })
                             }
                             placeholder="+256 700 000 000"
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-amber-400/50 focus:bg-white/[0.07] transition-all duration-300"
+                            className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all duration-300"
                           />
                           {errors.phone && (
                             <p className="text-red-400 text-xs mt-1.5">{errors.phone}</p>
@@ -816,7 +819,7 @@ export default function LecturePage() {
 
                         {/* Organization — label adapts to role */}
                         <div>
-                          <label className="block text-white/60 text-sm font-semibold mb-2">
+                          <label className="block text-foreground/80 text-sm font-semibold mb-2">
                             <Building2 className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
                             {roleConfig?.orgLabel || 'Organization'}
                           </label>
@@ -833,13 +836,13 @@ export default function LecturePage() {
                                 ? 'e.g. Kampala International School'
                                 : 'e.g. Granville-Tech'
                             }
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-amber-400/50 focus:bg-white/[0.07] transition-all duration-300"
+                            className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all duration-300"
                           />
                         </div>
 
                         {/* Role / Title — label adapts */}
                         <div>
-                          <label className="block text-white/60 text-sm font-semibold mb-2">
+                          <label className="block text-foreground/80 text-sm font-semibold mb-2">
                             {roleConfig?.roleLabel || 'Title'}
                           </label>
                           <input
@@ -855,7 +858,7 @@ export default function LecturePage() {
                                 ? 'e.g. Physics, Senior School'
                                 : 'e.g. Software Engineer'
                             }
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-amber-400/50 focus:bg-white/[0.07] transition-all duration-300"
+                            className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all duration-300"
                           />
                         </div>
                       </div>
@@ -873,8 +876,8 @@ export default function LecturePage() {
                       exit="exit"
                       transition={{ duration: 0.3 }}
                     >
-                      <h3 className="text-xl font-bold text-white mb-1">What interests you most?</h3>
-                      <p className="text-white/40 text-sm mb-6">
+                      <h3 className="text-xl font-bold text-foreground mb-1">What interests you most?</h3>
+                      <p className="text-muted-foreground text-sm mb-6">
                         Select the topics you'd love to learn about from professionals who use AI daily.
                       </p>
 
@@ -888,7 +891,7 @@ export default function LecturePage() {
                               className={`text-left p-3.5 rounded-xl border transition-all duration-300 cursor-pointer group ${
                                 selected
                                   ? 'border-amber-400/60 bg-amber-400/10'
-                                  : 'border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]'
+                                  : 'border-border bg-background hover:border-amber-400/40 hover:bg-muted/50'
                               }`}
                               whileTap={{ scale: 0.97 }}
                             >
@@ -896,7 +899,7 @@ export default function LecturePage() {
                                 <span className="text-lg">{topic.icon}</span>
                                 <span
                                   className={`text-sm font-medium transition-colors ${
-                                    selected ? 'text-amber-300' : 'text-white/60 group-hover:text-white/80'
+                                    selected ? 'text-amber-500 dark:text-amber-300 font-semibold' : 'text-muted-foreground group-hover:text-foreground'
                                   }`}
                                 >
                                   {topic.label}
@@ -907,7 +910,7 @@ export default function LecturePage() {
                                     animate={{ scale: 1 }}
                                     className="ml-auto"
                                   >
-                                    <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                                    <CheckCircle2 className="w-4 h-4 text-amber-500" />
                                   </motion.div>
                                 )}
                               </div>
@@ -928,7 +931,7 @@ export default function LecturePage() {
 
                       {/* Free text */}
                       <div>
-                        <label className="block text-white/60 text-sm font-semibold mb-2">
+                        <label className="block text-foreground/80 text-sm font-semibold mb-2">
                           What do you hope to learn at this lecture?
                         </label>
                         <textarea
@@ -936,7 +939,7 @@ export default function LecturePage() {
                           onChange={(e) => setHopeToLearn(e.target.value)}
                           rows={3}
                           placeholder="e.g. I want to know how AI can help me in my daily work as a teacher..."
-                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/20 focus:outline-none focus:border-amber-400/50 focus:bg-white/[0.07] transition-all duration-300 resize-none"
+                          className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all duration-300 resize-none"
                         />
                       </div>
                     </motion.div>
@@ -944,11 +947,11 @@ export default function LecturePage() {
                 </AnimatePresence>
 
                 {/* ── Navigation Buttons ──────────────────────────────── */}
-                <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/5">
+                <div className="flex items-center justify-between mt-8 pt-6 border-t border-border">
                   {step > 0 ? (
                     <button
                       onClick={prevStep}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 text-white/50 hover:text-white text-sm font-semibold transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 text-muted-foreground hover:text-foreground text-sm font-semibold transition-colors cursor-pointer"
                     >
                       <ArrowLeft className="w-4 h-4" />
                       Back
@@ -984,27 +987,27 @@ export default function LecturePage() {
       </section>
 
       {/* ═══ FOOTER ═══════════════════════════════════════════════════ */}
-      <footer className="bg-[#111111] text-silver py-12 px-6 lg:px-20">
+      <footer className="bg-card text-muted-foreground border-t border-border py-12 px-6 lg:px-20">
         <div className="max-w-7xl mx-auto text-left">
           <div className="mb-8">
-            <h3 className="text-3xl font-bold flex text-white gap-4 items-center mb-4">
+            <h3 className="text-3xl font-bold flex text-foreground gap-4 items-center mb-4">
               <img src={logo} className="h-14 w-auto" alt="logo" />
               Granville-Tech
             </h3>
-            <p className="text-lg font-light text-white opacity-85">
+            <p className="text-lg font-light text-muted-foreground">
               Driving Innovation with AI Solutions
             </p>
           </div>
           <div className="mb-12">
-            <p className="text-white opacity-85 mb-4">Connect with us:</p>
+            <p className="text-foreground mb-4 font-medium">Connect with us:</p>
             <div className="flex gap-6">
-              <a href="https://www.linkedin.com/company/granvilletek/" target="_blank" rel="noopener noreferrer" className="text-silver hover:text-white transition-all"><AiFillLinkedin size={28} /></a>
-              <a href="https://x.com/Niquestetia" target="_blank" rel="noopener noreferrer" className="text-silver hover:text-white transition-all"><FaXTwitter size={24} /></a>
-              <a href="http://www.youtube.com/@granvilletech" target="_blank" rel="noopener noreferrer" className="text-silver hover:text-white transition-all"><AiFillYoutube size={28} /></a>
-              <a href="mailto:info@granvilletech.co?subject=Inquiry from Granville-Tech Website" className="text-silver hover:text-white transition-all"><AiFillMail size={28} /></a>
+              <a href="https://www.linkedin.com/company/granvilletek/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-all"><AiFillLinkedin size={28} /></a>
+              <a href="https://x.com/Niquestetia" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-all"><FaXTwitter size={24} /></a>
+              <a href="http://www.youtube.com/@granvilletech" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-all"><AiFillYoutube size={28} /></a>
+              <a href="mailto:info@granvilletech.co?subject=Inquiry from Granville-Tech Website" className="text-muted-foreground hover:text-foreground transition-all"><AiFillMail size={28} /></a>
             </div>
           </div>
-          <div className="border-t border-gray-300 pt-6">
+          <div className="border-t border-border pt-6">
             <p>© {new Date().getFullYear()} Granville-Tech. All rights reserved.</p>
           </div>
         </div>

@@ -406,13 +406,13 @@ export default function ArticlesPage() {
     switch (contentItem.type) {
       case 'paragraph':
         return (
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-muted-foreground leading-relaxed mb-4">
             {contentItem.text}
           </p>
         );
       case 'subheading':
         return (
-          <h4 className="text-xl font-semibold text-white mt-6 mb-3">
+          <h4 className="text-xl font-semibold text-foreground mt-6 mb-3">
             {contentItem.text}
           </h4>
         );
@@ -420,7 +420,7 @@ export default function ArticlesPage() {
         return (
           <ul className="list-disc pl-6 space-y-2 mb-4">
             {contentItem.items.map((item, idx) => (
-              <li key={idx} className="text-gray-300 leading-relaxed">
+              <li key={idx} className="text-muted-foreground leading-relaxed">
                 {item}
               </li>
             ))}
@@ -429,13 +429,13 @@ export default function ArticlesPage() {
       case 'table':
         return (
           <div className="overflow-x-auto mb-6">
-            <table className="w-full border-collapse border border-gray-700 rounded-lg">
+            <table className="w-full border-collapse border border-border rounded-lg">
               <thead>
                 <tr className="bg-gradient-to-r from-yellow-400 to-amber-500">
                   {contentItem.headers.map((header, idx) => (
                     <th
                       key={idx}
-                      className="border border-gray-700 px-4 py-3 text-left text-black font-semibold"
+                      className="border border-border px-4 py-3 text-left text-black font-semibold"
                     >
                       {header}
                     </th>
@@ -446,12 +446,12 @@ export default function ArticlesPage() {
                 {contentItem.rows.map((row, rowIdx) => (
                   <tr
                     key={rowIdx}
-                    className={rowIdx % 2 === 0 ? 'bg-[#1a1a1a]' : 'bg-[#111111]'}
+                    className={rowIdx % 2 === 0 ? 'bg-card' : 'bg-muted/50'}
                   >
                     {row.map((cell, cellIdx) => (
                       <td
                         key={cellIdx}
-                        className="border border-gray-700 px-4 py-3 text-gray-300"
+                        className="border border-border px-4 py-3 text-foreground"
                       >
                         {cell}
                       </td>
@@ -468,7 +468,7 @@ export default function ArticlesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-[#111111] to-[#111111] text-white py-16 px-6">
+    <div className="min-h-screen bg-background text-foreground py-16 px-6">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto mb-16">
         <motion.div
@@ -477,10 +477,10 @@ export default function ArticlesPage() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-center mb-8"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-foreground mb-4">
             Granville-Tech Articles & Insights
           </h1>
-          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Deep dives into African EdTech strategy, innovation, and the future of education
           </p>
         </motion.div>
@@ -498,20 +498,20 @@ export default function ArticlesPage() {
                 setActiveArticle(article);
                 setCurrentPage(1);
               }}
-              className="bg-gradient-to-b from-[#1e1e1e] to-[#111111] rounded-xl p-6 cursor-pointer border border-gray-800 hover:border-yellow-400 transition-all duration-300 shadow-lg hover:shadow-2xl"
+              className="bg-card rounded-xl p-6 cursor-pointer border border-border hover:border-amber-400 transition-all duration-300 shadow-sm hover:shadow-xl"
             >
               {/* Article Header */}
               <div className="mb-4">
-                <h2 className="text-2xl font-bold text-white mb-2 leading-tight">
+                <h2 className="text-2xl font-bold text-foreground mb-2 leading-tight">
                   {article.title}
                 </h2>
-                <p className="text-gray-400 text-sm italic mb-4">
+                <p className="text-muted-foreground text-sm italic mb-4">
                   {article.subtitle}
                 </p>
               </div>
 
               {/* Article Meta */}
-              <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-400">
+              <div className="flex flex-wrap gap-4 mb-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <User size={16} />
                   <span>{article.author}</span>
@@ -527,7 +527,7 @@ export default function ArticlesPage() {
               </div>
 
               {/* Excerpt */}
-              <p className="text-gray-300 mb-4 leading-relaxed">
+              <p className="text-muted-foreground mb-4 leading-relaxed">
                 {article.excerpt}
               </p>
 
@@ -545,7 +545,7 @@ export default function ArticlesPage() {
               </div>
 
               {/* Read More CTA */}
-              <div className="flex items-center gap-2 text-yellow-400 font-semibold">
+              <div className="flex items-center gap-2 text-amber-500 font-semibold">
                 <BookOpen size={18} />
                 <span>Read Article</span>
               </div>
@@ -557,7 +557,7 @@ export default function ArticlesPage() {
         <div className="text-center">
           <Link
             to="/"
-            className="inline-block px-6 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="inline-block px-6 py-3 bg-foreground text-background font-semibold rounded-lg shadow-lg hover:bg-amber-400 hover:text-black transition-all duration-300 hover:scale-105"
           >
             Back to Home
           </Link>
@@ -567,21 +567,21 @@ export default function ArticlesPage() {
       {/* Article Reading Modal */}
       {activeArticle && (
         <motion.div
-          className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
           onClick={handleCloseModal}
         >
           <div
-            className="bg-gradient-to-b from-[#1a1a1a] via-[#111111] to-[#1a1a1a] w-full max-w-5xl h-[85vh] rounded-lg shadow-2xl relative border border-gray-700 overflow-hidden"
+            className="bg-card text-card-foreground w-full max-w-5xl h-[85vh] rounded-2xl shadow-2xl relative border border-border overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={handleCloseModal}
               aria-label="Close Modal"
-              className="absolute top-4 right-4 text-gray-400 hover:text-white text-4xl transition-colors z-10"
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground text-4xl transition-colors z-10"
             >
               &times;
             </button>
@@ -590,21 +590,21 @@ export default function ArticlesPage() {
             <div className="h-full overflow-y-auto px-8 py-8">
               {/* Article Header (shown on first page) */}
               {currentPage === 1 && (
-                <div className="mb-8 pb-6 border-b border-gray-700">
-                  <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3 leading-tight">
+                <div className="mb-8 pb-6 border-b border-border">
+                  <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 leading-tight">
                     {activeArticle.title}
                   </h1>
-                  <p className="text-xl text-gray-400 italic mb-4">
+                  <p className="text-xl text-muted-foreground italic mb-4">
                     {activeArticle.subtitle}
                   </p>
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-400 mb-4">
+                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
                     <div className="flex items-center gap-2">
                       <User size={16} />
                       <span>{activeArticle.author}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Calendar size={16} />
-                      <span>{new Date(activeArticle.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                      <span>{new Date(article.date || activeArticle.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock size={16} />
@@ -628,7 +628,7 @@ export default function ArticlesPage() {
               {/* Current Section Content */}
               {activeArticle.sections[currentPage - 1] && (
                 <div className="mb-20">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-b border-yellow-400 pb-3">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 border-b border-amber-400 pb-3">
                     {activeArticle.sections[currentPage - 1].title}
                   </h2>
                   <div className="space-y-4">
@@ -643,19 +643,19 @@ export default function ArticlesPage() {
             </div>
 
             {/* Navigation Controls */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#111111] to-transparent p-6">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background to-transparent p-6">
               <div className="flex justify-center items-center gap-4">
                 <button
                   onClick={handlePrevPage}
                   disabled={currentPage === 1}
                   aria-label="Previous Section"
-                  className="bg-white text-black px-4 py-2 rounded-lg shadow hover:bg-gray-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  className="bg-foreground text-background px-4 py-2 rounded-lg shadow hover:bg-amber-400 hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                 >
                   <MdKeyboardDoubleArrowLeft className="text-lg" />
                   <span className="hidden sm:inline">Previous</span>
                 </button>
 
-                <span className="text-white text-sm font-semibold px-4 py-2 bg-[#1a1a1a] rounded-lg border border-gray-700">
+                <span className="text-foreground text-sm font-semibold px-4 py-2 bg-muted rounded-lg border border-border">
                   Section {currentPage} / {getTotalPages()}
                 </span>
 
@@ -663,7 +663,7 @@ export default function ArticlesPage() {
                   onClick={handleNextPage}
                   disabled={currentPage === getTotalPages()}
                   aria-label="Next Section"
-                  className="bg-white text-black px-4 py-2 rounded-lg shadow hover:bg-gray-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  className="bg-foreground text-background px-4 py-2 rounded-lg shadow hover:bg-amber-400 hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                 >
                   <span className="hidden sm:inline">Next</span>
                   <MdKeyboardDoubleArrowRight className="text-lg" />

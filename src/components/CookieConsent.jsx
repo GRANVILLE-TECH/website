@@ -37,14 +37,14 @@ const CookieConsent = () => {
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] w-[95%] max-w-2xl"
         >
-          <div className="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row items-center gap-6">
+          <div className="bg-card/95 border border-border rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row items-center gap-6 backdrop-blur-xl text-card-foreground">
             <div className="bg-gradient-to-br from-yellow-400 to-amber-600 p-3 rounded-xl shadow-lg shrink-0">
-              <Cookie className="text-white w-8 h-8" />
+              <Cookie className="text-black w-8 h-8" />
             </div>
             
             <div className="flex-1 text-center md:text-left">
-              <h3 className="text-white font-bold text-lg mb-1">Cookie Preferences</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <h3 className="text-foreground font-bold text-lg mb-1">Cookie Preferences</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 We use cookies to enhance your experience, analyze traffic, and serve personalized content. By clicking "Accept All", you agree to our use of cookies.
               </p>
             </div>
@@ -52,7 +52,7 @@ const CookieConsent = () => {
             <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
               <button
                 onClick={handleDecline}
-                className="px-6 py-2.5 rounded-xl border border-white/10 text-white text-sm font-medium hover:bg-white/5 transition-colors whitespace-nowrap"
+                className="px-6 py-2.5 rounded-xl border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors whitespace-nowrap"
               >
                 Decline
               </button>
@@ -66,7 +66,8 @@ const CookieConsent = () => {
 
             <button 
               onClick={() => setIsVisible(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Close"
             >
               <X size={18} />
             </button>
